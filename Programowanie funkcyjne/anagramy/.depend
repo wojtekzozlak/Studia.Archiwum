@@ -1,0 +1,11 @@
+anagramy.cmo: strAnagramHash.cmi klasy.cmi 
+anagramy.cmx: strAnagramHash.cmx klasy.cmx 
+klasy.cmo: pMap.cmi klasy.cmi 
+klasy.cmx: pMap.cmx klasy.cmi 
+pMap.cmo: pMap.cmi 
+pMap.cmx: pMap.cmi 
+strAnagramHash.cmo: strAnagramHash.cmi 
+strAnagramHash.cmx: strAnagramHash.cmi 
+klasy.cmi: 
+pMap.cmi: 
+strAnagramHash.cmi: 

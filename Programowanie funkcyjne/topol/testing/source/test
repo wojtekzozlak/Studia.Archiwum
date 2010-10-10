@@ -1,0 +1,25 @@
+#!/bin/bash
+./bin/test < in/00.in > out/00.out
+echo "test00 done"
+./bin/test < in/01.in > out/01.out
+echo "test01 done"
+./bin/test < in/02.in > out/02.out
+echo "test02 done"
+./bin/test < in/03.in > out/03.out
+echo "test03 done"
+./bin/test < in/04.in > out/04.out
+echo "test04 done"
+./bin/test < in/05.in > out/05.out
+echo "test05 done"
+./bin/test < in/06.in > out/06.out
+echo "test06 done"
+./bin/test < in/07.in > out/07.out
+echo "test07 done"
+./bin/test < in/08.in > out/08.out
+echo "test08 done"
+./bin/test < in/09.in > out/09.out
+echo "test09 done"
+./bin/test < in/10.in > out/10.out
+echo "test10 done"
+grep "fail" out -R -n -s > log.txt
+echo "sprawdz plik log.txt - jesli jest pusty, to znaczy, ze nie znaleziono blednych wynikow"

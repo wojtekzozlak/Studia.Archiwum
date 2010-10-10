@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "" > log_grande.txt
+
+for i in `seq 1 10`
+do
+  make tests
+  ./test
+  wc log.txt >> log_grande.txt
+  echo "------------\n\n"
+done
