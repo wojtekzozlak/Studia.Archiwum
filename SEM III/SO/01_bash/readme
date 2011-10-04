@@ -1,0 +1,517 @@
+Laboratorium 1
+==============
+
+Skrypty interpretatora polecen, cz. 1
+-------------------------------------
+
+Literatura:
+   [1] P.P.Silvester " System Operacyjny UNIX", rozdzial 4.3 
+       (str. 86-99) 
+   [2] man bash (z naciskiem na fragment 'Compound Commands' opisujacy
+       polecenia zlozone), czyli strony podrecznika systemowego 
+       poswiecone interpretatorowi polecen bash 
+
+
+1. Co to jest skrypt?
+   ------------------
+
+Skrypt to program (plik tekstowy) interpretowany (nie kompilowany),
+zawierajacy sekwencje polecen danego interpretatora. W systemach 
+uniksowych zwykle jest dostepnych wiele interpretatorow polecen.
+Dla Linuksa standardowym interpretatorem jest bash. 
+
+2. Jak uruchamiamy skrypty?
+   ------------------------
+
+Skrypty mozemy uruchamiac na trzy sposoby:
+a) nadajac programowi prawo do wykonywania (chmod +x <skrypt>) 
+i uruchamiajac go przez nazwe, tak jak kazde inne polecenie 
+(./<skrypt>)
+b) wywolujac interpretator z nazwa skryptu jako parametrem 
+(bash <skrypt>)
+c) korzystajac z polecenia source, dla ktorego skrotem jest kropka: .
+(source <skrypt> lub . <skrypt>) (patrz przyklady 01_source i
+02_source).
+
+W pierwszych dwoch przypadkach jest uruchamiany nowy proces
+interpretatora, ktory czyta i interpretuje zadany skrypt, a w trzecim
+przypadku skrypt jest wykonywany przez aktualny interpretator.
+Sposob uruchomienia ma wplyw na wykonywanie polecen wbudowanych 
+(patrz punkt 3).
+
+Dobrym zwyczajem jest wpisywanie w pierwszym wierszu skryptu nazwy
+interpretatora, dla ktorego ten skrypt jest przeznaczony, na przyklad:
+#!/bin/bash (w pierwszym wierszu, zaczynajac od pierwszej kolumny, w
+kazdym innym przypadku znak # oznacza komentarz od miejsca wystapienia
+do konca wiersza). W przypadku uruchamiania skryptu przez nazwe ma to
+znaczenie nie tylko ozdobne, ale wskazuje tez jaki program
+interpretatora nalezy wywolac. 
+
+Prosze sprobowac napisac w pierwszym wierszu dowolnego skryptu 
+#!/bin/ls -la lub #!/bin/echo i porownac z wykonaniem oryginalnym.
+
+Uwaga:
+Ustawienie bitu suid dla skryptow nie powoduje zmiany uprawnien
+procesu, ktory wykonuje skrypt (ze wzgledow bezpieczenstwa). 
+ 
+3. Polecenia  
+   ---------
+   
+Polecenia mozna podzielic na wbudowane oraz zewnetrzne. Polecenia
+wbudowane sa zaimplementowane w programie interpretatora, natomiast
+zewnetrzne to osobne programy. Liste polecen wbudowanych mozna
+uzyskac za pomoca polecenia help, ktore dostarcza takze szczegolowa
+informacje na temat poszczegolnych polecen wbudowanych (nie maja
+one swoich wlasnych stron w podreczniku systemowym man). Wykonanie
+polecenia wbudowanego ma znaczenie tylko dla interpretatora, ktory
+to polecenie wykonuje, na przyklad po wykonaniu skryptu:
+
+#!/bin/bash
+mkdir ~/__test
+cd ~/__test
+
+a) przez nazwe - zostaniesz w katalogu, z ktorego wywolales skrypt
+(polecenie cd wykonalo sie w nowym interpretatorze wykonujacym 
+skrypt i tylko tam mialo efekt),
+b) przez kropke - zmienisz katalog, poniewaz skrypt wykonuje sie w
+biezacym interpretatorze.
+
+Powinienes znac nastepujace polecenia (jezeli ich nie znasz lub nie
+pamietasz skorzystaj ze stron podrecznika systemowego man lub info
+opisujacych poszczegolne polecenia):
+
+   echo  
+   ls
+   touch
+   find
+   grep 
+   cut
+   sort 
+   uniq
+   find 
+   who
+   expr
+   wc
+   head
+   tail
+   diff
+   patch
+   tr
+   getopts   (polecenie wbudowane)
+   exit	     (polecenie wbudowane)
+
+Pamietaj o mozliwosci laczenia polecen w potok za pomoca operatora |,
+Na przyklad polecenie:  who | sort | cut -f1 -d" " | uniq | wc -l 
+przekaze liczbe wszystkich zalogowanych uzytkownikow.
+
+4. Parametry wywolania skryptu
+   ----------------------------
+
+Skrypty mozna uruchamiac z parametrami (i opcjami - patrz getopts). Do
+kolejnych parametrow odwolujemy sie przez ich kolejne numery, na
+przyklad $1 to wartosc pierwszego parametru, $2 drugiego i tak az do $9, 
+potem ${10} itd.
+
+Pytanie:
+Jaka jest wartosc $10?
+
+W skryptach mozemy rowniez korzystac z parametrow specjalnych (sekcja
+Special Parameters w [2]):
+- $0 - nazwa skryptu 
+- $# - liczba parametrow
+- $* i $@ - napis zlozony ze wszystkich parametrow
+- $$ - identyfikator (PID) biezacego procesu
+- $? - kod zakonczenia ostatniego polecenia
+
+Do operowania na liscie parametrow sluzy takze polecenie shift <n>, 
+ktore przesuwa wszystkie parametry w lewo o <n> pozycji, co oznacza 
+ze parametr <n>+1 staje sie pierwszym, <n>+2 drugim itd. Polecenie 
+shift bez parametru jest rownowazne shift 1.
+
+Przyklady ilustrujace powyzsze konstrukcje znajdziesz w plikach 1_args
+oraz 2_shift, ktore nalezy uruchomic kilkakrotnie z roznymi 
+parametrami.
+
+5. Zmienne 
+   -------
+a) W skryptach mozna uzywac zmiennych. Korzystanie ze zmiennej nie 
+wymaga jej uprzedniego zadeklarowania. O ile nie wskazemy inaczej 
+zmienna sluzy do przechowywania wartosci napisowych. Domyslna 
+wartoscia zmiennej jest napis pusty. Do przypisanie wartosci zmiennym 
+sluzy operator =, np. LICZBA=5 lub NAPIS="Ala ma kota" (bez spacji 
+przed i po = ). Zwyczajowo, nazwy zmiennych pisane sa duzymi literami.
+
+Jezeli chcemy odwolac sie do wartosci zmiennej to jej nazwe
+poprzedzamy znakiem $, np. polecenie 
+
+echo $NAPIS
+
+powoduje wypisanie "Ala ma kota". 
+
+Jezeli chcemy przechowywac na zmiennej wartosci liczbowe
+(dopuszczalne sa tylko wartosci calkowitoliczbowe), to mozemy zmiennej
+przypisac odpowiedni atrybut poleceniem declare -i <zmienna>.
+Polecenie declare umozliwia ustawianie takze innych atrybutow
+zmiennym - szczegoly w help declare. Przypisanie zmiennej tego
+atrybutu upraszcza poslugiwanie sie operacjami arytmetycznymi (patrz 
+punkt 2 w scenariuszu do Laboratorium 2).  
+
+
+b) zmienne srodowiskowe (systemowe) 
+
+Interpretator polecen pozwala na korzystanie z zestawu
+predefiniowanych zmiennych srodowiskowych. Zmienne te opisuja pewne
+wlasnosci srodowiska wykonywania programow. Przykladowe zmienne
+srodowiskowe to HOME, SHELL, USER, PATH, PWD, RANDOM, SECONDS,
+TERM. Pelna lista znajdziesz w sekcji Shell Variables w [2]. Do
+wypisania wartosci zmiennych srodowiskowych mozesz posluzyc sie
+poleceniem set bez parametrow (wiecej o poleceniu set w czesci d).
+
+c) polecenie read
+
+read [NAME1 NAME2 ...]
+
+Polecenie read umozliwia przeczytanie jednego wiersza ze
+standardowego wejscia, a zatem interakcje z uzytkownikiem. Kolejne
+wyrazy sa przypisywane do kolejnych zmiennych NAME1, NAME2 itd. Jezeli
+zmiennych jest mniej niz wyrazow, to ostatnia zmienna zawiera
+pozostala czesc napisu. Polecenie read umozliwia przekazanie napisu z
+zacheta do wprowadzenia zmiennej (opcja -p jak prompt) oraz
+wyspecyfikowanie maksymalnego czasu oczekiwania na wprowadzenie danych
+przez uzytkownika (opcja -t, jak timeout). Jezeli nie przekazemy
+nazwy zmiennej (zmiennych) to wiersz jest przypisywany na zmienna
+REPLY (szczegoly w help read).
+
+d) polecenie set
+
+Mozliwosci wykorzystania polecenia set sa roznorodne (szczegoly w help
+set). Skupimy sie tylko na dwoch z nich. Po pierwsze polecenie set
+pozwala na ustawienie wartosci parametrow pozycyjnych wewnatrz
+skryptu. Na przyklad polecenie
+
+set STRING1 STRING2
+
+przypisze parametrom pozycyjnym $1 i $2 wartosci odpowiednio STRING1 i
+STRING2. Jezeli skrypt byl uruchomiony z wieksza liczba parametrow, a
+wiec $3, $4 itd. mialy przypisane wartosci, to zostana one wyzerowane.
+
+Polecenie set z opcja -x pozwala na sledzenie wykonania skryptu -
+kazdy wiersz skryptu przed wykonaniem zostanie wypisany (poprzedzony
+znakiem (znakami) ze zmiennej srodowiskowej PS4. 
+
+e) widocznosc zmiennych
+
+Zmienne sa definiowane i widoczne w biezacej instancji interpretatora
+polecen. Jezeli jakas zmienna chcemy uczynic widoczna w programach
+wywolywanych z biezacej instancji interpretatora, to mozemy ja
+wyeksportowac poslugujac sie poleceniem export (lub declare
+-x). Jezeli zmienna zostanie wyeksportowana, to w srodowisku kazdego
+procesu utworzonego przez wywolanie programu z biezacej instancji
+interpretatora pojawi sie kopia tej zmiennej (o takiej samej nazwie i
+wartosci). 
+
+Uwaga:
+Eksportowanie zmiennych dziala tylko w jedna strone - zmienna z
+procesu potomnego nie moze zostac wyeksportowana do procesu macierzystego,
+dlatego tez skryptu uruchamianego inaczej niz przez kropke nie mozna
+uzyc do ustawiania wartosci zmiennych.
+
+
+
+6. Instrukcja warunkowa i polecenie test
+   --------------------------------------
+
+a) wykonanie warunkowe
+
+Kazde polecenie przekazuje kod zakonczenia: 0 oznacza pomyslne 
+zakonczenie, a 1 blad. Polecenia mozna laczyc za pomoca operatorow: 
+- && - wykonaj nastepne polecenie pod warunkiem, ze poprzednie 
+zakonczylo sie sukcesem
+- || - wykonaj nastepne polecenie pod warunkiem, ze poprzednie 
+zakonczylo sie porazka
+- ; - wykonaj nastepne polecenie bez wzgledu na kod zakonczenia
+poprzedniego
+
+Na przyklad polecenie:
+
+rm <plik> 2>/dev/null || echo "Nie mozna usunac takiego pliku"
+
+usunie plik lub wypisze stosowny komunikat.
+
+b) instrukcja warunkowa if
+
+Skladnia:
+
+if COMMANDS1 
+then COMMANDS2 
+[ else COMMANDS3 ]
+fi
+
+lub
+
+if COMMANDS1; then COMMANDS2; [ else COMMANDS3; ] fi
+
+Polecenia COMMANDS1 z warunku sa wykonywane i zgodnie z kodem
+zakonczenia ostatniego z nich wykonuja sie COMMANDS2 lub
+COMMANDS3. Instrukcje warunkowe mozna zagniezdzac. Przy zagniezdzaniu
+mozna tez skorzystac z konstrukcji elif.
+
+Uwaga:
+Slowa kluczowe if, then, else oraz fi sa traktowane jak niezalezne
+polecenia, wiec umieszczanie ich w jednym wierszu wymaga zastosowania
+srednika. 
+ 
+c) polecenie test
+
+Jako warunek instrukcji if mozemy umiescic polecenie test (help
+test). Polecenie to pozwala na:
+a) testowanie wlasnosci plikow (np. rodzaju plikow -d katalog, -f plik
+zwykly itp., atrybutow -r prawo do czytania, -w prawo do pisania czy
+wreszcie niepustosci -s)  
+b) porownywanie napisow (-z pusty napis, -n niepusty napis, = i !=
+odpowiednio identyczne i rozne napisy)
+c) porownywanie wartosci numerycznych (-eq -ne -lt -le -gt -ge)
+
+Testy mozna laczyc w wyrazenia spojnikami logicznymi !, -a -o
+(odpowiednio negacja, koniunkcja, alternatywa).
+
+Uwagi:
+a) korzystanie z nazwy "test" dla swoich programow i uruchamianie ich
+bez podawania sciezki wiaze sie z mozliwoscia wywolywania systemowego
+polecenia test i w zwiazku z tym otrzymywania nieoczekiwanych rezultatow,
+b) spacje wystepujace w napisach maja znaczenie przy operacjach
+porownywania napisow
+c) nie nalezy korzystac z operatorow <, > i = do porownywania wartosci
+liczbowych  
+d) instrukcja test zawiera specjalne opcje do testowania pustosci i
+niepustosci napisow
+
+Zamiast polecenia test mozemy uzyc nowoczesniejszej skladni z
+nawiasami kwadratowymi
+[ <wyrazenie ktore testujemy> ] (a takze [[ <wyrazenie ktore testujemy> ]]) 
+
+Przyklad uzycia instrukcji warunkowej if oraz polecenia test
+znajdziesz w skrypcie (pliku) 3_if.
+
+7. Instrukcje zlozone 
+   -------------------
+
+a) petla while
+
+Skladnia:
+
+while COMMANDS1
+do COMMANDS2
+done
+
+lub 
+
+while COMMANDS1; do COMMANDS2; done
+
+Wykonuje polecenia COMMANDS2 dopoki kod zakonczenia COMMANDS1 jest
+rowny 0.
+
+Przyklad uzycia konstrukcji while znajdziesz w pliku 4_while.
+
+Uwaga:
+Petli while oraz instrukcji read (patrz 5) mozna uzyc do przetwarzania
+plikow wiersz po wierszu. Szkielet takiej petli moglby wygladac
+nastepujaco: 
+
+while read WIERSZ
+do
+ <polecenia korzystajace z wartosci WIERSZ>
+done < <plik>
+
+lub 
+
+cat <plik> | while read WIERSZ
+do
+ <polecenia korzystajace z wartosci WIERSZ>
+done 
+
+b) petla for
+
+Skladnia:
+
+for NAME [in WORDS ... ] 
+do COMMANDS
+done
+
+lub
+
+for NAME [in WORDS ... ;] do COMMANDS; done
+
+Petla for, inaczej niz w innych jezykach programowania, nie sluzy do
+iterowania po wartosciach liczbowych z pewnego zakresu (choc mozna 
+jej do tego uzyc - patrz Uwagi), ale do iterowania po plikach badz
+parametrach pozycyjnych skryptu. 
+Jezeli petli for nie przekazemy listy obiektow (okreslonej jako WORDS),
+to zmienna sterujaca petli NAME bedzie przybierac wartosci 
+odpowiadajace kolejnym parametrom pozycyjnym skryptu, w przeciwnym przypadku
+zmienna NAME bedzie przyjmowac kolejne wartosci z listy. Zatem jezeli 
+jako WORDS uzyjemy *, ktora rozwija sie do nazw wszystkich obiektow w biezacym 
+katalogu, to petla moze wykonac sie dla kazdego takiego obiektu.
+
+Przyklady uzycia petli for znajdziesz w pliku 5_for. 
+
+Uwaga:
+1) Korzystajac z polecenia seq <n>, ktore przekazuje ciag liczb 
+od 1 do <n> mozna uzyc petli for do iterowania po kolejnych liczbach 
+z przedzialu do 1 do <n>:
+
+for ZMIENNA in `seq <n>`
+do
+<tresc petli z odwolaniem do ZMIENNA>
+done
+
+Znaczenie konstrukcji `<polecenie>` (polecenie ujete w apostrofy)
+jest wyjasnione w punkcie 8.
+
+2) W nowszych wersjach bash'a zamiast seq (zewnetrznego polecenia)
+rekomendowane jest uzycie konstrukcji {1..n} (wbudowanej w interpretator)
+
+3) Nowsze wersje interpretatora bash maja jeszcze jedna wersje petli for
+for (( expr1 ; expr2 ; expr3 )) ; do list ; done.
+
+Dziala ona podobnie do petli for z jezyka C. Szczegoly w [2].
+
+ Cwiczenie 1: 
+ ============ 
+ Napisz skrypt, ktory wypisze nazwy wszystkich programow znajdujacych
+ sie w katalogu przekazanym jako parametr, ktore uzytkownik wywolujacy
+ skrypt moze uruchamiac.
+
+
+ Cwiczenie 2:
+ ============
+ Napisz skrypt, ktory wyswietli wszystkie niepuste pliki zwykle z
+ katalogow przekazanych jako argumenty lub z katalogu biezacego jezeli
+ nie dostanie parametrow. Skrypt powinien sprawdzac poprawnosc
+ przekazanych parametrow.
+
+
+ Cwiczenie 3:
+ ============
+ Napisz skrypt, ktory wypisze swoj najwiekszy parametr. Zakladamy, ze
+ parametry sa liczbami.  
+ 
+
+
+c) instrukcja case 
+
+Skladnia:
+
+case WORD in 
+[PATTERN [| PATTERN]...) COMMANDS ;;]
+... 
+esac
+
+lub
+
+case WORD in [PATTERN [| PATTERN]...) COMMANDS ;;]... esac
+
+Wybiera do wykonania polecenia COMMANDS na podstawie dopasowania
+wartosci WORD (na przyklad wartosci zmiennej) do wzorca PATTERN. Znak
+| sluzy do rozdzielania wzorcow wielokrotnych. Wzorzec *
+zastepuje dowolny ciag znakow, ? jeden znak, a nawiasy kwadratowe
+pozwalaja na wyspecyfikowanie ciagu znakow (np. [a-d]* to wyrazy
+zaczynajace sie na litery a, b, c lub d). Szczegoly w sekcji Pathname
+Expansion w [2].
+
+Przyklad uzycia konstrukcji case znajdziesz w pliku 6_case. 
+
+
+8. Cudzyslowy 
+   ----------
+W skryptach mozna korzystac z roznego rodzaju cudzyslowow (sekcja
+QUOTING w [2]). Cudzyslowy pozwalaja inaczej interpretowac wartosc tego
+co w nich umiescimy.
+
+a) cudzyslowy "" - pozwalaja na budowanie napisow skladajacych sie z
+wielu czlonow. Jezeli jednym z czlonow napisu jest odwolanie do
+zmiennej, to w miejsce to zostanie wstawiona wartosc zmiennej. Znaki
+specjalne, takie jak * czy ?, ktore zazwyczaj rozwijaja sie do nazw 
+plikow, sa interpretowane doslownie. Na przyklad:
+
+echo "Katalog domowy to $HOME"; echo "Pliki w nim to: *"
+
+wypisze
+
+Katalog domowy to /home/agata
+Pliki w nim to: * 
+
+b) apostrofy '' - wszystko co umiescimy wewnatrz jest interpretowane
+doslownie. Podobne znaczenie ma ukosnik wsteczny \, ktory kasuje
+znaczenie specjalne jednego znaku. Na przyklad polecenie:
+
+echo 'Katalog domowy to $HOME'; echo 'Pliki w nim to: *'; echo \$HOME
+
+powoduje wypisanie:
+
+Katalog domowy to $HOME
+Pliki w nim to: * 
+$HOME
+
+c) odwrotne apostrofy `` - polecenie, ktore jest umieszczone miedzy
+odwrotnymi apostrofami wykonuje sie i jego miejsce zajmuje wynik jego
+wykonania (a dokladniej to co polecenie wypisuje na standardowe
+wyjscie). Istnieje tez alternatywna skladnia, ktora jest preferowana
+`<polecenie>` jest rownowazne $(<polecenie>). Przyklad:
+
+if [ `who | sort | cut -f1 -d" " | uniq | wc -l` -gt 1 ]
+then echo Sa zalogowni inni uzytkownicy
+else echo Jestes sam
+fi
+
+W poleceniu tym najpierw wykona sie ciag polecen w potoku, a wynik
+wykonania tego polecenia, czyli liczba zalogowanych uzytkownikow
+zostanie wstawiona w miejce potoku i porownana z 1.
+
+ Pytanie: 
+ ========
+ Jaki bedzie wynik wykonania polecenia: set $(date); echo $4?
+
+9. Nawiasy
+   -------
+
+Umieszczenie sekwencji polecen wewnatrz nawiasow klamrowych 
+{ COMMANDS; } ma znaczenie czysto syntaktyczne - polecenia te sa
+wykonywane w biezacym interpretatorze.
+
+Umieszczenie sekwencji polecen wewnatrz nawiasow okraglych
+( COMMANDS ) powoduje wykonanie tych polecen w nowym interpretatorze. 
+Aby to przetestowac mozesz sprobowac wykonac nastepujace polecenie:
+
+(export HOME=/tmp; ls $HOME); ls $HOME
+
+Wiecej przykladow znajdziesz w pliku 7_parenth, a informacji w sekcji
+Compound Commands w [2].
+
+ Cwiczenie 4
+ ===========
+
+ Plik dane.txt stanowi baze danych zawierajaca dane na temat wieku osob
+ w poszczegolnych miejscowosciach. W kazdym wierszu pliku jest wpis: 
+ imie,  spacja, nazwisko, spacja, miejscowosc, spacja, wiek. 
+ Na przyklad:
+
+ Anna Jopek Warszawa 30
+ Jan Kowalski Lublin 70
+ Piotr Nowak Gdynia 10
+ Adam Iwanicki Warszawa 4
+ Piotr Iwanicki Warszawa 30
+
+ Napisz skrypty, ktore odpowiedza na pytania:
+ 1. Ile jest roznych miejscowosci w bazie?
+ 2. Jakie sa: imie, nazwisko i wiek 4 najstarszych osob z Warszawy?
+ 3. Dla kazdego nazwiska podanego jako parametr (mozna podac dowolnie 
+ wiele nazwisk jako parametry skryptu) jaki jest wiek najmlodszej 
+ osoby o tym nazwisku?
+
+
+=========================================================================
+Autor: Agata Janowska
+Aktualizacja: 28.04.2003
+Ostatnio weryfikowane: 04.10.2010 (KRz)
+=========================================================================

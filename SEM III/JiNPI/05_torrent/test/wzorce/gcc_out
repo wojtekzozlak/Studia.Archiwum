@@ -1,0 +1,100 @@
+Test 1:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: cannot allocate an object of abstract type ‘Peer’
+p2pSimulator.h:9: note:   because the following virtual functions are pure within ‘Peer’:
+p2pSimulator.h:12: note: 	virtual void Peer::accept(Peer&)
+
+Test 2:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: cannot allocate an object of abstract type ‘PeerFactory’
+p2pSimulator.h:23: note:   because the following virtual functions are pure within ‘PeerFactory’:
+p2pSimulator.h:25: note: 	virtual Peer* PeerFactory::constructPeer(unsigned int)
+
+Test 3:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: cannot allocate an object of abstract type ‘WakeupSequence’
+p2pSimulator.h:46: note:   because the following virtual functions are pure within ‘WakeupSequence’:
+p2pSimulator.h:48: note: 	virtual const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > > WakeupSequence::nextPeer()
+p2pSimulator.h:49: note: 	virtual const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > > WakeupSequence::begin()
+p2pSimulator.h:50: note: 	virtual const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > > WakeupSequence::end()
+
+Test 4:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: no matching function for call to ‘LinearWakeupSequence::LinearWakeupSequence()’
+p2pSimulator.h:63: note: candidates are: LinearWakeupSequence::LinearWakeupSequence(const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > >&, const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > >&)
+p2pSimulator.h:61: note:                 LinearWakeupSequence::LinearWakeupSequence(const LinearWakeupSequence&)
+
+Test 5:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: no matching function for call to ‘AvgCalcPeer::AvgCalcPeer()’
+p2pSimulator.h:75: note: candidates are: AvgCalcPeer::AvgCalcPeer(double)
+p2pSimulator.h:73: note:                 AvgCalcPeer::AvgCalcPeer(const AvgCalcPeer&)
+
+Test 6:
+
+Test 7:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: lvalue required as increment operand
+
+Test 8:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: lvalue required as increment operand
+
+Test 9:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: passing ‘const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > >’ as ‘this’ argument of ‘std::_Rb_tree_iterator<_Tp>& std::_Rb_tree_iterator<_Tp>::operator++() [with _Tp = std::pair<const unsigned int, boost::shared_ptr<Peer> >]’ discards qualifiers
+
+Test 10:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: passing ‘const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > >’ as ‘this’ argument of ‘std::_Rb_tree_iterator<_Tp>& std::_Rb_tree_iterator<_Tp>::operator++() [with _Tp = std::pair<const unsigned int, boost::shared_ptr<Peer> >]’ discards qualifiers
+
+Test 11:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: lvalue required as increment operand
+
+Test 12:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: passing ‘const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > >’ as ‘this’ argument of ‘std::_Rb_tree_iterator<_Tp>& std::_Rb_tree_iterator<_Tp>::operator++() [with _Tp = std::pair<const unsigned int, boost::shared_ptr<Peer> >]’ discards qualifiers
+
+Test 13:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: passing ‘const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > >’ as ‘this’ argument of ‘std::_Rb_tree_iterator<_Tp>& std::_Rb_tree_iterator<_Tp>::operator++() [with _Tp = std::pair<const unsigned int, boost::shared_ptr<Peer> >]’ discards qualifiers
+
+Test 14:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: passing ‘const std::_Rb_tree_iterator<std::pair<const unsigned int, boost::shared_ptr<Peer> > >’ as ‘this’ argument of ‘std::_Rb_tree_iterator<_Tp>& std::_Rb_tree_iterator<_Tp>::operator++() [with _Tp = std::pair<const unsigned int, boost::shared_ptr<Peer> >]’ discards qualifiers
+
+Test 15:
+helga_1337.cpp: In function ‘int main()’:
+helga_1337.cpp:10: error: lvalue required as left operand of assignment
+
+Test 16:
+
+Test 17:
+
+Test 18:
+
+Test 19:
+
+Test 20:
+
+Test 21:
+
+Test 22:
+
+Test 23:
+
+Test 24:
+
+Test 25:
+
+Test 26:
+
+Test 27:
+
+Test 28:
+
+Test 29:
+
+Test 30:
+

@@ -1,0 +1,26 @@
+1. Obejrzeć specyfikację XMLRPC (http://www.xmlrpc.com/spec).
+   Jakie są główne różnice? W jakich zastosowaniach lepiej użyć XMLRPC,
+   a w jakich podejścia z opis-protokolow.txt.
+
+2. Obejrzeć specyfikację warstwy transportowej SSH
+   (ftp://sunsite.icm.edu.pl/pub/doc/rfc/rfc4251.txt oraz
+    ftp://sunsite.icm.edu.pl/pub/doc/rfc/rfc4253.txt). Znaleźć
+   opis formatu wymienianych pakietów. Jakie są główne różnice?
+
+3. W protokole powyżej, gdzie przydałby się opis działania
+   protokołu w postaci automatu?
+
+4. Obejrzyj specyfikację protokołu TCP
+   (ftp://sunsite.icm.edu.pl/pub/doc/rfc/rfc793.txt)
+   W jaki sposób został opisany format binarny pakietów?
+   Jakie są zalety i wady tego formatu w porównaniu z
+   formatem z opis-dzialania.txt.
+
+5. W protokole powyżej znajdź opis działania w postaci
+   automatu.
+
+6. Obejrzyj protokół komunikacji w grze QUAKE
+   (http://www.gamers.org/dEngine/quake/QDP/qnp.html)
+   Jakie są zalety i wady tego formatu w porównaniu z
+   formatem z opis-dzialania.txt. Czy mógłbyś naszkicować
+   automat dla działania tego protokołu?

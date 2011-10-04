@@ -1,0 +1,24 @@
+XML-RPC
+
+W katalogu znajduj± siê dwie przyk³adowe implementacje serwera i klienta,
+jedna w Javie, druga w Pythonie. Oczywi¶cie mo¿na u¿ywaæ serwera napisanego
+w jednym jêzyku, a klienta - w innym.
+
+Aby programy w Javie zadzia³a³y niezbêdne jest zainstalowanie biblioteki
+Apache XML-RPC, dostêpnej pod adresem http://ws.apache.org/xmlrpc/
+
+Opis XML-RPC mo¿na znale¼æ w XML-RPC HOWTO, dostêpnym pod adresem
+http://xmlrpc-c.sourceforge.net/xmlrpc-howto/xmlrpc-howto.html
+
+S± tam te¿ przyk³ady w innych jêzykach programowania. (Nietrudno zauwa¿yæ,
+¿e programy w katalogu to w³a¶nie te przyk³ady, gdy trzeba - nieco
+poprawione.)
+
+Patrz±c na zamieszczone tam przyk³ady w C i C++ nietrudno jest zauwa¿yæ, ¿e
+w jêzykach takich jak Java, czy Python (Ruby, PHP, ...) niektóre rzeczy robi
+siê ³atwiej. Przegl±daj±c FAQ dla XML-RPC.NET
+(http://www.xml-rpc.net/faq/xmlrpcnetfaq.html) mo¿na stwierdziæ, ¿e i na
+platformie .NET nie jest bardzo trudno. Mo¿na te¿ tam zobaczyæ zastosowanie
+atrybutów (adnotacji w nawiasach kwadratowych przy
+klasach/interfejsach/funkcjach, w Javie zwanych metadanymi) do okre¶lania,
+które metody powinny zostaæ udostêpnione.

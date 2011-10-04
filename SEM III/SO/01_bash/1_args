@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#----------------------------------------------
+#
+# Procedura ilustruje wykorzystanie symboli $i
+# oraz polecenia shift
+#
+#---------------------------------------------- 
+echo Program $0 wywolano z $# parametrami
+echo -- pierwszy:   $1
+echo -- drugi:      $2
+echo -- trzeci:     $3
+echo -- wszystkie:  $*
+
+shift
+
+echo Po przesunieciu zostalo $# parametrow
+echo -- pierwszy:   $1
+echo -- drugi:      $2
+echo -- trzeci:     $3
+echo -- wszystkie:  $*
+

@@ -1,0 +1,14 @@
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+long long troj4(long long n){long long wynik = 0;long long buf;buf=(n*(n+1)*(2*n+1))/6;
+buf+=(n*(n+1))/2;buf/=2;wynik+=buf;buf=(n*(n+1)*(2*n+1))/6;buf-=(n*(n+1))/2;buf-=((n-1+(n%2-1))*(n-n/2))/2;wynik+=buf/2;buf=(n*(n+1)*(2*n+1))/6;buf-=(1+n+(n%2-1))*(n-n/2);buf+=3*(n-n/2);buf-=n*(n+1);wynik-=buf/4;return wynik;
+}
+int main(){
+long long n,m;
+scanf("%lld", &n);
+for(long long i=1; i<=n; i++){
+scanf("%lld", &m);
+printf("%lld\n", troj4(m));
+}
+}

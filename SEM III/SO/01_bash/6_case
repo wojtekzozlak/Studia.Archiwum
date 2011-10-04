@@ -1,0 +1,50 @@
+#!/bin/bash 
+
+#------------------------------------------------------------------------------
+#
+# Procedura ilustruje wykorzystanie polecenia case
+# do zamiany liczby z zakresu od 1 do 99 na zapis slowny
+#
+#------------------------------------------------------------------------------
+
+if [ -z $1 ]
+then echo Podaj liczbe
+elif [ $1 -lt 1 -o $1 -gt 99 ]
+  then echo Podaj liczbe z zakresu od 1 do 99
+  else 
+     case $1 in
+       10) echo dziesiec;; 
+       11) echo jedenascie;;
+       12) echo dwanascie;;
+       13) echo trzynascie;;
+       14) echo czternascie;;
+       15) echo pietnascie;;
+       16) echo szesnascie;;
+       17) echo siedemnascie;;
+       18) echo osiemnascie;;
+       19) echo dziewietnascie;;
+       2?) echo -n dwadziescia" ";;
+       3?) echo -n trzydziesci" ";;
+       4?) echo -n czterdziesci" ";;
+       5?) echo -n piecdziesiat" ";;
+       6?) echo -n szescdziesiat" ";;
+       7?) echo -n siedemdziesiat" ";;
+       8?) echo -n osiemdziesiat" ";;
+       9?) echo -n dziewiecdziesiat" ";;
+     esac
+     if [ $1 -lt 10 -o $1 -gt 19 ]
+     then
+        case $1 in
+          *0) echo;;
+          *1) echo jeden;; 
+          *2) echo dwa;; 
+          *3) echo trzy;; 
+          *4) echo cztery;; 
+          *5) echo piec;; 
+          *6) echo szesc;; 
+          *7) echo siedem;; 
+          *8) echo osiem;; 
+          *9) echo dziewiec;; 
+        esac
+      fi
+fi

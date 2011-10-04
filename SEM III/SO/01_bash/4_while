@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#--------------------------------------------------------
+#
+# Procedura sprawdza czy uzytkownik $1 pracuje w systemie 
+# i jesli nie, to usypia proces na 3 sekundy i ponawia 
+# sprawdzenie; zakonczenie przez CTRL-C
+#
+#--------------------------------------------------------
+if test $# -ne 1 
+then echo Podaj nazwe uzytkownika
+else
+   while test `who | grep $1 |wc -l` -eq 0   # uwaga na znaki ` ... ` !
+      do echo "$1 jeszcze nie pracuje";      # co by bylo bez nich ? 
+         sleep 3; done
+
+   echo -e "$1 pracuje\a\n"
+fi

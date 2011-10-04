@@ -1,0 +1,84 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{MD'2010 - zadanie domowe nr 4}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+\small Najpierw spróbujmy znaleźć wzór rekurencyjny przez interpretację kombinatoryczną. Czynnością jaką chcemy wykonywać jest umieszczanie $n$ ponumerowanych kul w kolejnych $n$ przegródkach, w taki sposób, że jeśli jakaś przegródka zawiera kulę, to przegródka po lewej też (skrajnie lewa zawsze musi mieć coś w sobie). Fajnie by było znaleźć jakąś cechę wspólną wszytkim takim rozkładom. Może myśl wydaje się trywialna, ale czymś co na pewno posiada każde rozłożenie piłeczek jest pierwsza oraz ostatnia zapełniona przegródka (w przypadku rozłożenia ,,wszystko w jedną'' pojęcia są tożsame). No to wyszczególnijmy któryś z tych obiektów, dla większej fantazji niech będzie to ostatnia zapełniona przegródka. Może się w niej znajdować od $1$ do $n$ elementów - niech będzie to jakieś $k$. Odłóżmy je sobie na bok. Pozostałe $n-k$ piłeczek możemy rozmieścić w $n-k$ przegródkach zgodnie takimi samymy zasadami jak na początku (czyli bez dziur). Czyli na $S_{n-k}$ sposobów. \\ \\
+
+Łatwo zauważyć, że nie uzyskamy w ten sposób dwóch identycznych rozkładów (jeśli wybraliśmy różne $k$ elementów, to różnią się ostatnią przegródką, a jeśli wybraliśmy takie same elementy, to każdy rozkład z $S_{n-k}$ występuje pojedynczo. Nie pomijamy też żadnego układu, bo dla dowolnego możemy dobrać dokładnie takie $k$ elementów jakie ma w ostatniej komórce, a pozostałe przegródki są jakimś rozłożeniem z $S_{n-k}$. Czyli jest dobrze. Zapisujemy to teraz w formie wzoru
+\[
+  S_{n} = \sum_{k=1}^{n} {n \choose k} S_{n-k}
+\]
+
+Teraz, korzystając z symetrii współczynników dwumianowych, z odrobiną uwagi przy rozpisywaniu, możemy to przekształcić przez odwrócenie sumowania. No i dodajmy na końcu Iversona dla uzgodnienia $S_{0}$.
+\[
+  S_{n} = \sum_{k=0}^{n-1} {n \choose k} S_{k} + [n=0]
+\]
+
+Następnie, przejdźmy przejdźmy do funkcji tworzących
+
+\[
+  S(x) = \sum_{n}^{\infty}\left( \sum_{k=0}^{n-1} {n \choose k} S_{k} \frac{x^{n}}{n!}\right) + 1
+\]
+
+Mamy prawie splot dwumianowy z jedynką. Brakuje jednego wyrazu, dopiszmy go sobie i odejmijmy
+
+\[
+  S(x) = \sum_{n}^{\infty}\left( \left( \sum_{k=0}^{n} {n \choose k} S_{k} - S_{n} \right) \frac{x^{n}}{n!}\right) + 1
+\]
+
+\[
+  S(x) = \sum_{n}^{\infty}\left( \sum_{k=0}^{n} {n \choose k} S_{k} \right) \frac{x^{n}}{n!} - \sum_{n}^{\infty} S_{n} \frac{x^{n}}{n!} + 1
+\]
+
+I teraz już widać
+
+\[
+  S(x) = S(x)e^{x} - S(x) + 1
+\]
+
+\[
+  S(x) = \frac{1}{2 - e^x}
+\]
+
+Czyli funkcję tworzącą już mamy. No to wyciągamy $\frac{1}{2}$ przed nawias i rozwijamy w szereg geometryczny
+
+\[
+  S(x) = \frac{1}{2} \sum_{k}^{\infty} (\frac{e^{x}}{2})^k = \sum_{k}^{\infty} \frac{e^{kx}}{2^{k+1}} 
+\]
+
+Z rozwinięcia Taylora w szereg funkcji $e^{kx}$ gdzie $k$ to jakaś stała otrzymujemy równość
+
+\[
+  e^{kx} = \sum_{n}^{\infty} \frac{k^n x^n}{n!}
+\]
+
+Podstawiamy i mamy
+
+\[
+  S(x) = \sum_{k}^{\infty} \sum_{n}^{\infty} \frac{k^n x^n}{2^{k+1} n!}
+\]
+
+Następnie zamieniamy kolejność sumowania i wyciągamy uwolnione wyrazy poza wewnętrzną sumę
+
+\[
+  S(x) = \sum_{n}^{\infty} \sum_{k}^{\infty} \frac{k^n x^n}{2^{k+1} n!} = \sum_{n}^{\infty} \left( \sum_{k}^{\infty} \frac{k^n}{2^{k+1}} \right) \frac{x^n}{n!}
+\]
+
+Zatem
+
+\[
+  S_n = \sum_{k}^{\infty} \frac{k^n}{2^{k+1}} 
+\]
+
+Co chcieliśmy udowodnić
+\end{document}
+

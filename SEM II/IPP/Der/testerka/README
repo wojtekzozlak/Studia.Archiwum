@@ -1,0 +1,11 @@
+1. wrzucić plik wykonywalny "zad"
+2. odpalić ./test
+
+Testy 1-10 to testy podstawowe, dobre do sprawdzania ilości node'ów w odpowiednich etapach
+Testy dalsze są losowe
+
+w razie potrzeby można modyfikować plik "conf", zawiera on kolejno
+- ilość testów (numerowane są od 1)
+- pattern od wejścia
+- pattern od wzorcowego wyjścia std
+- pattern od wzorcowego wyjścia err

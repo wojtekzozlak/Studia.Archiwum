@@ -1,0 +1,10 @@
+ZM2="ala ma kota"
+ZM1=1
+echo ZM1=$ZM1
+echo Wywoluje ./02_source
+./02_source
+echo ZM1=$ZM1
+echo Wywoluje . ./02_source
+. ./02_source
+echo ZM1=$ZM1
+

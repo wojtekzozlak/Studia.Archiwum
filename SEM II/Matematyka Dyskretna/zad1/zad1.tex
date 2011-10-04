@@ -1,0 +1,69 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{MD'2010 - zadanie domowe nr 1}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+{\Large Oblicz:
+\[
+  \sum_{k=0}^{\infty} \frac{1}{(k+1)(k+3)(k+5)}.
+\]}
+\line(1,0){350}
+\\
+\\
+\noindent Stosując metodę pobożnych życzeń będę chciał rozwinąć szereg 
+w różnicę wyrazów, by móc go ''teleskopowo'' zwinąć do postaci zwartej. 
+Mianownik sugeruje dwie oddzielne sumy, więc zaryzykuję policzenie następnego wyrażenia:
+{\small \[
+  (\frac{1}{k+1} - \frac{1}{k+3}) - (\frac{1}{k+3} - \frac{1}{k+5}) =
+  \frac{1}{k+1} + \frac{1}{k+5}  - \frac{2}{k+3} =
+  \frac{2(k+3)}{(k+1)(k+5)} - \frac{2}{k+3} =
+\]
+\[
+  = \frac{2(k+3)^{2} - 2(k+1)(k+5)}{(k+1)(k+3)(k+5)} =
+  \frac{2( (k^{2} + 6k + 9) - (k^2 + 6k + 5))}{(k+1)(k+3)(k+5)} = 
+\]
+\[
+  = \frac{8}{(k+1)(k+3)(k+5)}
+\]}
+I w ten sposób, dzięki sporej ilości szczęścia dowiedziałem się, że:
+{\small
+\[
+  \sum_{k=0}^{\infty} \frac{1}{(k+1)(k+3)(k+5)} =  \frac{1}{8} \sum_{k=0}^{\infty} \left( (\frac{1}{k+1} - \frac{1}{k+3}) - (\frac{1}{k+3} - \frac{1}{k+5}) \right)=
+\]
+{\tiny (zakładając, że szukana suma jest skończona)}
+\begin{equation}
+  = \frac{1}{8}\left(\sum_{k=0}^{\infty} (\frac{1}{k+1} - \frac{1}{k+3}) - \sum_{k=0}^{\infty} (\frac{1}{k+3} - \frac{1}{k+5})\right)\label{eq:rozklad}
+\end{equation}
+\\
+Teraz z rozpisania kilku pierwszych wyrazów, skracania, wyciągania wniosków i przejścia granicznego:
+{\small
+\[
+  \sum_{k=0}^{\infty} (\frac{1}{k+1} - \frac{1}{k+3}) = \frac{1}{1} - \frac{1}{3} + \frac{1}{2} - \frac{1}{4} + \frac{1}{3} - \frac{1}{5} + ... + \frac{1}{k+1} - \frac{1}{k+3} =
+\]
+\[
+  = \lim_{k \to \infty}\left( \frac{1}{1} + \frac{1}{2} - \frac{1}{k+2} - \frac{1}{k+3}\right) = \frac{3}{2}
+\]
+{\tiny (oraz analogicznie)}
+\[
+  \sum_{k=0}^{\infty} (\frac{1}{k+3} - \frac{1}{k+5}) = \lim_{k \to \infty}\left( \frac{1}{3} + \frac{1}{4} - \frac{1}{k+4} - \frac{1}{k+5}\right) = \frac{7}{12}
+\]
+}
+
+Zatem, ponieważ powyższe szeregi są zbieżne, (\ref{eq:rozklad}) faktycznie zachodzi i prawdziwa jest równość:
+
+{\small
+\[
+  \sum_{k=0}^{\infty} \frac{1}{(k+1)(k+3)(k+5)} = \frac{1}{8} ( \frac{3}{2} - \frac{7}{12}) = \frac{11}{96}
+\]
+}
+
+\end{document}
+

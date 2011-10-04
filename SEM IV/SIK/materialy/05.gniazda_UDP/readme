@@ -1,0 +1,5 @@
+Żeby umożliwić rozgłaszanie komunikatów, należy ustawić opcję
+gniazda SO_BROADCAST. Służy do tego funkcja setsockopt:
+    int optval = 1;
+    setsockopt(sock, SOL_SOCKET, SO_BROADCAST,
+               (void*) &optval, sizeof(int));

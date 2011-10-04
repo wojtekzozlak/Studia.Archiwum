@@ -1,0 +1,12 @@
+1. Przeczytaj plik mpi.html i uruchom opisane tam przykłady.
+
+2. Zaimplementuj synchronizację procesów za pomocą krążącego znacznika.
+Mamy n procesów numerowanych od 0 do n-1. Proces i czeka na znacznik od
+procesu (i+n-1) mod n, a po jego otrzymaniu wysyła go do procesu (i+1) mod n.
+Komunikację rozpoczyna proces 0. Procesy kończą działanie, gdy znacznik wykona
+zadaną na początku liczbę okrążeń.
+
+3. Zaimplementuj liczenie sum prefiksowych. Jak poprzednio mamy n procesów
+numerowanych od 0 do n-1. Na początku proces i zna liczbę x[i]. Po zakończeniu
+obliczeń proces i powinien poznać sumę x[0] + x[1] + ... + x[i].
+Obliczenie powinno zakończyć się po O(log n) rundach komunikacji.

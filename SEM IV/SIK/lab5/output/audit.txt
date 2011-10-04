@@ -1,0 +1,15 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Fri May  6 17:08:23 2011
+Invocation: foremost 
+Output directory: /home/yellow/Studia/Studia.IV-Semestr/SIK/lab5/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: stdin
+Start: Fri May  6 17:08:23 2011
+Length: Unknown
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+Interrupt received at Fri May  6 17:08:26 2011

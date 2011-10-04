@@ -1,0 +1,37 @@
+Stosowane rozwiazania dla serwera obslugujacego wielu klientow:
+1. Obsluga klientow po jednym na raz
+2. Obsluga klientow - kazdy w oddzielnym watku/procesie
+3. Obsluga klientiow - w miare naplywu danych(select)
+4. Obsluga klientow - pula procesow/watkow potomnych
+
+Rozwiazanie 1. widzielismy na poprzednich zajeciach.
+Dzisiaj ogladac bedziemy rozwiazanie 2.
+
+Wspolbiezne serwery
+=====================
+
+1. Wielu agentow
+------------------------------
+sock = socket(...);
+bind(sock, ...);
+listen(sock, ...);
+
+while(1) {
+  fd = accept(sock, ...);
+  switch (fork()) {
+     case 0:
+       play_hangman(fd, ...);
+       close(fd);
+       exit(0);
+     case -1:
+       /* error */
+       break;
+     default:
+       close(fd);
+  }
+}
+
+2. Jak unikac tworzenia zombies?
+--------------------------------
+#include <signal.h>
+signal(SIGCHLD, SIG_IGN);

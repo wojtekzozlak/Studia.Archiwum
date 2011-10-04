@@ -1,0 +1,65 @@
+1. Projekt protokołu
+
+Zaprojektować protokół do obsługi serwisu cytatów-sentencji.
+Komunikacja ma odbywać się na zasadach paradygmatu klient-serwer.
+Każdy z użytkowników aplikacji może połączyć się z serwerem i na
+zasadach równych praw ma otrzymać losowo wybrany cytat.
+
+W związku z tym, iż cytaty o charakterze sentencji są zwykle krótkie,
+w typowym wypadku mieścić się będą w komunikacie o z góry ustalonym
+maksymalnym rozmiarze (np. 1024 oktety, parametr ten powinien być
+ustalany na etapie kompilacji).  Dlatego należy protokół opracować
+tak, iż cytaty w ogromnej większości wypadków odsyłane będą do
+żądającego w jednym komunikacie. Jednak może się zdarzyć, iż w
+wyjątkowych wypadkach cytaty w jednym komunikacie mieścić się nie
+będą. Trzeba opracować protokół tak, aby zapewniał również możliwość
+przesyłania takich dłuższych cytatów z zachowaniem spójności ich
+treści oraz identyczności odbiorcy.
+
+Protokół trzeba skonstruować tak, aby można było go używać w
+środowisku, gdzie jakaś inna usługa lub usługi w masowy sposób
+pobierają cytaty z serwera i bardziej istotne jest, aby cytaty były
+wysyłane szybko oraz w ramach ustalonego okna czasowego niż to, aby
+wszystkie zawsze dotarły do odbiorcy - chodzi o to, aby usługa cytatów
+nie opóźniała znacząco odpowiedzi serwera innej usługi, która z niego
+korzysta. Niewyświetlenie cytatu nie będzie wielkim problemem dla
+odbiorcy.
+
+2. Implementacja
+
+Wykonać implementację zaprojektowanego protokołu z wykorzystaniem
+interfejsu gniazd. Każdy pisze implementację protokołu, którego nie
+jest autorem.  Implementacja może być napisana w językach C/C++ lub
+Java i powinna obejmować dwa programy: serwer i klienta
+demonstrujących działanie usługi. Program serwera powinien być
+wyraźnie podzielony na moduły:
+ * implementacja protokołu,
+ * baza cytatów,
+ * interfejs użytkownika.
+Program klienta powinien być wyraźnie podzielony na moduły:
+ * implementacja protokołu,
+ * interfejs użytkownika.
+Rozmiar komunikatu powinien być ustalany na etapie kompilacji
+programu.  Interfejs użytkownika w wypadku serwera powinien umożliwiać
+dodawanie ręczne cytatów do bazy oraz zmianę numeru portu, na którym
+działa serwer. Interfejs użytkownika w wypadku klienta powinien
+umożliwiać określenie numeru portu i adresu serwera oraz wyświetlanie
+cytatu. Początkowy numer portu i adres serwera powinny być argumentem
+programu.
+
+Implementacja powinna umożliwiać modyfikację lub podmianę
+któregokolwiek z modułów, bez modyfikacji kodu źródłowego pozostałych.
+
+
+3. Literatura
+
+[1] A. Schubert: Zasady opisywania protokołów, maszynopis w pliku
+    opis-protokołów.txt.
+[2] D.E. Comer, D.L. Stevens: Sieci komputerowe TCP/IP, Tom 3, Programowanie
+    w trybie klient-serwer, WNT.
+[3] R.W. Stevens: UNIX programowanie usług sieciowych, Tom 1, Części 1-3
+    interfejs gniazdowy, WNT.
+[4] R.W. Stevens: Programowanie zastosowań sieciowych w systemie UNIX,
+    Rozdz. 6 Gniazda BSD, WNT.
+[5] Ł. Bieniasz-Krzywiec: Zdalne Kolejki RQP, Opis Protokołu, manuskrypt
+    w pliku LukaszBieniaszKrzywiecRQP.pdf.

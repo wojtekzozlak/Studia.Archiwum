@@ -1,0 +1,17 @@
+==18871== Memcheck, a memory error detector.
+==18871== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==18871== Using LibVEX rev 1884, a library for dynamic binary translation.
+==18871== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==18871== Using valgrind-3.4.1, a dynamic binary instrumentation framework.
+==18871== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==18871== For more details, rerun with: -v
+==18871== 
+1
+2
+1
+==18871== 
+==18871== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 1)
+==18871== malloc/free: in use at exit: 0 bytes in 0 blocks.
+==18871== malloc/free: 2 allocs, 2 frees, 592 bytes allocated.
+==18871== For counts of detected errors, rerun with: -v
+==18871== All heap blocks were freed -- no leaks are possible.

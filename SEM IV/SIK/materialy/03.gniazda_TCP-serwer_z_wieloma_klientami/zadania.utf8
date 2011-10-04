@@ -1,0 +1,26 @@
+W katalogu znajdują się następujące programy:
+(1) s_client1, s_server2
+oraz serwer wielowątkowy
+(2) thread_server.
+
+Programy kompilujemy, wywołując make.
+
+Najpierw zajmujemy się programami (1):
+
+1. Doprowadź serwer do takiego stanu, aby nie pojawiały się zombies.
+
+2. Zmodyfikuj kod klienta, tak aby mógł łączyć się z serwerem uruchomionym
+   na innym komputerze.
+
+3. Wprowadź możliwość podawania numeru portu serwera jako argumentu programu.
+
+4. Dodaj w serwerze wypisywanie adresu IP i portu klienta, który podłączył
+   się do serwera.
+
+W dalszej części zajmujemy się programem (2):
+
+5. Przeanalizuj kod serwera.
+
+6. Zmodyfikuj kod serwera, tak aby w sytuacji braku zasobów (pamięć, wątek)
+   zamiast kończyć działanie, informował klienta o niemożliwości podjęcia jego
+   obsługi. Zadbaj, żeby nie doprowadzić do wycieku pamięci.

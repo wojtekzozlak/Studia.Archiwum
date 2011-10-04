@@ -1,0 +1,18 @@
+1. Przejrzec plik readme i zastanowic sie, ktore polecenia sa
+   nieznane (sprobowac uruchomic przyklady z pliku). 
+
+2. Sprobuj uzyskac informacje o tym, jakie procesy korzystaja z sieci
+   w danym momencie na Twoim komputerze.
+
+3. Wyslac ping-a do komputera, ktory obsluguje poczte w dziedzinie onet.pl.
+
+4. Napisac program, ktory bierze identyfikator uzytkownika oraz adres
+   komputera i wywoluje dla takich danych program telnet z kolejnymi
+   ciagami znakow jako haslami.
+
+5. Wyslac list, ktory posiada wlasne pole naglowka o nazwie X-mojepole
+   i o tresci "tresc mojego pola".
+
+6. Napisac program (lub skrypt) badajacy, jakie sa adresy fizyczne
+   wszystkich komputerow podlaczonych do sieci lokalnej komputera, na
+   ktorym dzialamy.

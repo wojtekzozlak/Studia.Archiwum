@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#-------------------------------------------------------------
+#
+# Procedura podaje wielkosc zbiorow podanych jako parametry
+# Ilustruje obie postaci petli for
+#
+#-------------------------------------------------------------
+
+if [ -z "$1" ] 
+then 
+  echo Podaj nazwy plikow i/lub katalogow
+else
+  for k in 1 2           # postac podstawowa petli for
+  do
+    echo "Obrot $k petli"
+    for j                # postac specjalna: j przebiega liste argumentow
+    do du "$j" ;done
+  done
+fi

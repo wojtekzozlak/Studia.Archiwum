@@ -1,0 +1,19 @@
+program zad2;
+
+uses Bst;
+
+
+var
+  i : integer;
+  d : drzewo;
+begin
+  d := nil; // tworzenie pustego drzewa
+
+  while not eof do begin readln(i);
+    if i > 0 then insert(d, i)
+    else remove(d, -i);
+  end;
+  
+  while d <> nil do writeLn(removeMin(d));
+  
+end.

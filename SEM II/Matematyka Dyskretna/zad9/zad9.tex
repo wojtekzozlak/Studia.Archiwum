@@ -1,0 +1,75 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+
+\pagestyle{fancy}
+\lhead{MD'2010 - zadanie domowe nr 9}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+
+Na początek, żeby pokazać, że umiemy korzystać z funkcji tworzących, czy też ukryć, że nie umiemy użyć wzoru na szereg geometryczny obliczymy formę zwartą wzoru na $a_n$.
+\[
+	c = 10^k
+\]
+\[
+  a_{n} = c a_{n-1} + 1
+\]
+Przesumowujemy wszystko wymnażając razy $x^n$. $a_0$ się zgadza, więc nie poprawiamy Iversonem.
+
+\[
+  a_{n}x^{n} = c x a_{n-1} x^{n-1} + \sum_{k=0}^{n}{x^k}
+\]
+
+\[
+  F(x) = cxF(x) + \frac{1}{1-x}
+\]
+
+\[
+  F(x) = \frac{1}{(1-x)(1-cx)}
+\]
+
+Szybko rachujemy rozbicie na ułamki proste, tak że wychodzi nam:
+
+\[
+  F(x) = \frac{1}{c-1}\cdot\frac{-1}{1-x} + \frac{c}{c-1}\cdot\frac{1}{1-cx}
+\]
+
+\[
+  F(x) = \sum_{k=0}^{n}{( \frac{-1}{c-1} + \frac{c}{c-1}c^k )x^k}
+\]
+
+\[
+  F(x) = \sum_{k=0}^{n}{( \frac{c^{k+1} - 1}{c-1})x^k}
+\]
+
+Zatem ostatecznie!
+
+\[
+  a_{n} = \frac{10^{k(n+1)} - 1}{10^k-1}
+\]
+
+Teraz przejdźmy wreszcie do rzeczy... \\
+
+Weźmy sobie funkcję $G_{c}(l)$ określoną tak, że zwraca liczbę długości $l$ złożoną z samych cyfr $c$. Krótki rzut oka i możemy napisać:
+
+\[
+  a_{n} = \frac{G_{9}(k(n+1))}{G_{9}(k)}
+\]
+
+wyciągnijmy z licznika $G_{9}(n+1)$
+
+\[
+  a_{n} = \frac{G_{9}(n+1)\big( \sum_{i=0}^{n}10^{ki} \big)}{G_{9}(k)}
+\]
+
+I teraz chwila na zastanowienie. Gdy mamy liczby $a, b, c \in \mathbb{Z}$ takie, że $c | ab$ oraz $a, b > c$, to $\frac{ab}{c}$ jest liczbą złożoną. Dlaczego? $ab$ zawiera w sobie $c$. Ale i $a$ i $b$ są od $c$ ostro większe, więc niezależnie od tego jak rozłożone są po nich czynniki z rozkładu $c$ na pierwsze, w obu zostanie jakiś czynnik nieskrócony, nazwijmy je $\alpha_a$, $\alpha_b$. Zatem $\frac{ab}{c} = \alpha_{a}\alpha_{b}$ i jest to liczba złożona. \\
+
+Teraz wróćmy do naszego ciągu. Jak łatwo zauważyć, dla $n > k$ oba czynniki w liczniku ($G_{9}(n+1)$ oraz wielomian) mają w zapisie więcej niż $k$ cyfr. Co za tym idzie są większe od $G_{9}(k)$, które siedzi w mianowniku. Wiemy, że wynikiem tego dzielenia jest liczba całkowita. No to to jest właśnie ten moment, w którym korzystamy z przemyśleń sprzed chwili. Wniosek jest taki, że dla $n > k$ $a_{n}$ jest złożone, co oznacza, że zawiera w sobie najwyżej $k$ wyrazów pierwszych i to w pierwszych $k$ wyrazach. Jest to niewątpliwie skończona liczba, czyli udowodniliśmy co chcieliśmy.
+
+\end{document}

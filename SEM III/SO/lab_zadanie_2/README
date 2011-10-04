@@ -1,0 +1,9 @@
+bst_tree program
+****************************************
+
+1 Compilation
+-------------
+1.1 `make` command builds default version of `klient` and `serwer` programs.
+1.2 `make quiet=1` command builds quiet version of programs which does not
+    prompt. 
+1.3 Use `cleaner` program to clean up IPC queues, if necessary.

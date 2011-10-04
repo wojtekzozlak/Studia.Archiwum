@@ -1,0 +1,109 @@
+Kuznice;1000;
+Nosal;1206;
+Nosalowa Przelecz;1103;
+Bystre;1000;
+Murowaniec;1500;schronisko
+Przelecz miedzy Kopami;1501;uwaga na misie
+Giewont;1894;najbardziej malowniczy piorunochron w Polsce
+Kalatowki;1200;schronisko
+Hala Kondratowa;1333;schronisko
+Kondracka Przelecz;1725;
+Koscielec;2155;
+Kasprowy Wierch;1987;
+Przelecz Karb;1853;
+Czarny Staw Gasienicowy;1624;
+Wielki Kopieniec;1328;piekna panorama Tatr
+Toporowa Cyrhla;950;
+Swinica;2301;
+Swinicka Przelecz;2051;
+Zawrat;2158;
+Kopa Kondracka;2005;
+Przelecz pod Kondracka Kopa;1890;
+Myslenickie Turnie;1360;posrednia stacja kolejki linowej
+Kozi Wierch;2291;
+Zadni Granat;2240;
+Skrajny Granat;2225;
+Polana Olczyska;1035;
+Przelecz Liliowe;1952;
+Czerwone Stawki;1693;
+Szalasiska;1620;
+Zmarzly Staw;1788;
+Kozia Przelecz;2137;
+
+Kuznice;Kalatowki;1650;35'5h;200;1;niebieski;kwiatki;
+Kalatowki;Kuznice;1650;25';0;1;niebieski;;
+Kalatowki;Hala Kondratowa;1600;50';140;1;niebieski;;
+Hala Kondratowa;Kalatowki;1600;40';0;1;niebieski;;
+Kalatowki;Kondracka Przelecz;1700;1h15';380;1;niebieski;;
+Kondracka Przelecz;Kalatowki;1700;55';0;1;niebieski;;
+Kondracka Przelecz;Giewont;650;30';170;2;niebieski;ekspozycja, stromizny;lancuchy
+Giewont;Kondracka Przelecz;650;20';0;2;niebieski;ekspozycja, stromizny;lancuchy
+Kuznice;Nosalowa Przelecz;560;30';100;1;zielony;;
+Nosalowa Przelecz;Kuznice;560;25';0;1;zielony;;
+Kuznice;Myslenickie Turnie;3000;1h15';330;1;zielony;;
+Myslenickie Turnie;Kuznice;3000;1h;0;1;zielony;;
+Myslenickie Turnie;Kasprowy Wierch;3200;1h45';620;1;zielony;;
+Kasprowy Wierch;Myslenickie Turnie;3200;1h15';0;1;zielony;;
+Nosalowa Przelecz;Nosal;300;15';100;1;zielony;;
+Nosal;Nosalowa Przelecz;300;10';0;1;zielony;;
+Nosal;Bystre;400;25';0;1;zielony;;
+Bystre;Nosal;400;40';200;1;zielony;;
+Nosalowa Przelecz;Przelecz miedzy Kopami;3300;1h40';350;1;niebieski;niedzwiedzie;
+Przelecz miedzy Kopami;Nosalowa Przelecz;3300;1h15';70;1;niebieski;niedzwiedzie;
+Nosalowa Przelecz;Polana Olczyska;1400;25';0;1;zolty;;
+Polana Olczyska;Nosalowa Przelecz;1400;30';70;1;zolty;;
+Polana Olczyska;Wielki Kopieniec;2000;1h;280;1;zielony;;
+Wielki Kopieniec;Polana Olczyska;2000;45';0;1;zielony;;
+Wielki Kopieniec;Toporowa Cyrhla;1800;1h;0;1;zielony;;
+Toporowa Cyrhla;Wielki Kopieniec;1800;1h10';380;1;zielony;;
+Kuznice;Przelecz miedzy Kopami;3500;1h40';500;1;zolty;;
+Przelecz miedzy Kopami;Kuznice;3500;1h10';0;1;zolty;;
+Przelecz miedzy Kopami;Murowaniec;1500;20';80;1;niebieski;niedzwiedzie;
+Murowaniec;Przelecz miedzy Kopami;1500;25';80;1;niebieski;niedzwiedzie;
+Kasprowy Wierch;Szalasiska;1700;40';0;1;zolty;;
+Szalasiska;Kasprowy Wierch;1700;55';470;1;zolty;;
+Szalasiska;Murowaniec;1000;25';120;1;zolty;;
+Murowaniec;Szalasiska;1000;30';0;1;zolty;;
+Szalasiska;Przelecz Liliowe;1400;1h;440;1;zielony;;
+Przelecz Liliowe;Szalasiska;1400;45';0;1;zielony;;
+Kasprowy Wierch;Przelecz Liliowe;1300;20';60;1;czerwony;;
+Przelecz Liliowe;Kasprowy Wierch;1300;20';90;1;czerwony;;
+Kondracka Przelecz;Kopa Kondracka;1200;45';280;1;zolty;;
+Kopa Kondracka;Kondracka Przelecz;1200;30';0;1;zolty;;
+Kopa Kondracka;Przelecz pod Kondracka Kopa;550;15';0;1;czerwony;;
+Przelecz pod Kondracka Kopa;Kopa Kondracka;550;20';115;1;czerwony;;
+Przelecz pod Kondracka Kopa;Kasprowy Wierch;3500;1h40';350;1;czerwony;;
+Kasprowy Wierch;Przelecz pod Kondracka Kopa;3500;1h20';300;1;czerwony;;
+Przelecz pod Kondracka Kopa;Hala Kondratowa;2300;1h;0;1;zielony;;
+Hala Kondratowa;Przelecz pod Kondracka Kopa;2300;1h20';560;1;zielony;;
+Przelecz Liliowe;Swinicka Przelecz;1000;30';200;1;czerwony;;
+Swinicka Przelecz;Przelecz Liliowe;1000;25';0;1;czerwony;;
+Swinicka Przelecz;Swinica;700;50';150;2;czerwony;ekspozycja, stromizny, przepascie;lancuchy
+Swinica;Swinicka Przelecz;700;35';0;2;czerwony;ekspozycja, stromizny, przepascie;lancuchy
+Swinicka Przelecz;Czerwone Stawki;1000;40';0;2;czarny;;
+Czerwone Stawki;Swinicka Przelecz;1000;55';350;2;czarny;;
+Szalasiska;Czerwone Stawki;1300;30';100;1;czarny;;
+Czerwone Stawki;Szalasiska;1300;25';0;1;czarny;;
+Czerwone Stawki;Przelecz Karb;800;30';150;1;niebieski;;
+Przelecz Karb;Czerwone Stawki;800;20';0;1;niebieski;;
+Murowaniec;Czarny Staw Gasienicowy;1600;30';120;1;niebieski;;
+Czarny Staw Gasienicowy;Murowaniec;1600;20';0;1;niebieski;;
+Czarny Staw Gasienicowy;Przelecz Karb;850;40';220;1;czarny;;
+Przelecz Karb;Czarny Staw Gasienicowy;850;30';0;1;czarny;;
+Przelecz Karb;Koscielec;700;50';300;2;czarny;;
+Koscielec;Przelecz Karb;700;40';0;2;czarny;;
+Swinica;Zawrat;600;45';0;3;czerwony;przepascie, ekspozycja;lancuchy,klamry
+Zawrat;Swinica;600;50';150;3;czerwony;przepascie, ekspozycja;lancuchy,klamry
+Zmarzly Staw;Zawrat;850;1h20';360;3;niebieski;przepascie, ekspozycja;lancuchy,klamry
+Czarny Staw Gasienicowy;Zmarzly Staw;1700;30';100;1;niebieski;;
+Zmarzly Staw;Czarny Staw Gasienicowy;1700;30';0;1;niebieski;;
+Zmarzly Staw;Kozia Przelecz;900;1h;330;2;zolty;;lancuchy
+Kozia Przelecz;Zmarzly Staw;900;50';0;2;zolty;;lancuchy
+Zawrat;Kozia Przelecz;800;1h45';60;3;czerwony;przepascie, ekspozycja, stromizny;lancuchy,klamry, drabinki
+Kozia Przelecz;Kozi Wierch;750;1h30';160;3;czerwony;przepascie, ekspozycja, stromizny;lancuchy,klamry
+Kozi Wierch;Zadni Granat;1000;1h15';0;3;czerwony;ekspozycja, stromizny;lancuchy,klamry
+Zadni Granat;Skrajny Granat;350;30';0;3;czerwony;przepascie, ekspozycja, stromizny;lancuchy,klamry
+Skrajny Granat;Czarny Staw Gasienicowy;2000;1h30';0;2;zolty;ekspozycja, stromizny;lancuchy,klamry
+Czarny Staw Gasienicowy;Skrajny Granat;2000;2h;600;2;zolty;ekspozycja, stromizny;lancuchy,klamry
+Zmarzly Staw;Zadni Granat;1200;1h15';460;2;zielony;;
+Zadni Granat;Zmarzly Staw;1200;1h05';0;2;zielony;;

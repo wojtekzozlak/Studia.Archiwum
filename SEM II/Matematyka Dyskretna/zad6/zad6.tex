@@ -1,0 +1,27 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{MD'2010 - zadanie domowe nr 6}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+\noindent $G$ - graf silnie spójny, skierowany, skończony \\ \\
+$Kol(R)$ - 2-kolorowanie grafu R, takie, że każdy wierzchołek $x$ jest połączony z pewnym wierzchołkiem $y$ innego koloru, skierowaną krawędzią $<x, y>$
+
+\begin{enumerate}
+\item{ Kol(G) jest określone $\Rightarrow$ $G$ zawiera cykl parzystej długości\\ \\
+Weźmy G w kolorowaniu Kol(G). Teraz wybierzmy dowolny wierzchołek $x$. Z założenia, jest on połączony skierowaną krawędzią z jakimś wierzchołkiem $y$ innego koloru niż on sam. Znajdźmy go i przejdźmy do niego. Teraz, ostatnie dwie czynności (znalezienie sąsiada w innym kolorze i przejście do niego) będziemy wykonywać tak długo, aż wrócimy do jakiegoś wierzchołka już odwiedzonego (możliwość powatarzania ponownie wynika z właściwości kolorowania). A wrócimy do niego na pewno, bo graf jest skończony i w każdym kroku ilość nieodwiedzonych wierzchołków zmniejsza się o $1$. Zatem nastąpi moment, gdy na generowanej przez nas ścieżce domkniemy cykl.\\
+Ponieważ zawsze wybieraliśmy wierzchołek o przeciwnym kolorze, nasz cykl musi składać się z naprzemiennie kolorowanych wierzchołków. Zatem jest ich $2n$ dla pewnego naturalnego $n$ i cykl jest parzystej długości.}
+\item{ Kol(G) jest określone $\Leftarrow$ $G$ zawiera cykl parzystej długości \\ \\
+G zawiera cykl parzystej długości, znajdźmy go sobie. Teraz, pokolorujmy cykl na zmianę dwoma kolorami, począwszy od dowolnego wierzchołka do niego należącego. W ten sposób, wszystkie wierzchołki w cyklu będą spełaniały warunek kolorowania. \\
+Teraz, weźmy dowolny niepokolorowany wierzchołek $x$ i dowolny pokolorowany wierzchołek $y$. Z silnej spójności istnieje ścieżka z $x$ do $y$. Weźmy z niej pierwszy wierzchołek pokolorowany idąc z $x$ (istnieje, bo ścieżka jest skończona i zawiera przynajmniej jeden kolorowy wierzchołek - $y$) i oznaczmy sobie $z$. Teraz, pokolorujmy fragment $x .. z$ naszej ścieżki, tak żeby było dobrze (zaczynamy w $z$ i cofamy się zmieniając kolory, aż do $x$). W ten sposób wierzchołek $x$ oraz wszystkie na ścieżce do $z$ będą spełniały warunki kolorowania.\\
+W jednym takim kroku malujemy przynajmniej 1 wierzchołek otrzymując coraz wiekszy zbiór wierzchołków pokolorowanych spełniających $Kol$, a zatem - ponieważ graf skończony - powtarzając te czynności pomalujemy G do końca otrzymując $Kol(G)$ }
+\end{enumerate}
+
+\end{document}

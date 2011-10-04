@@ -1,0 +1,22 @@
+Zadanie sklada sie z dwu czesci:
+
+1. Poeksperymentuj z programami ilustrujacymi pcap-a. W szczegolnosci
+   sprobuj zmienic funkcje pcap_dispatch na pcap_loop w programie
+   enty oraz sprobuj wypisac tekst ,,zgadnij, gdzie sie pojawie''
+   (chodzi tu o znalezienie mechanizmu wypisania tego tekstu w
+   programie enty odwolujac sie do mechanizmow pcap-a).
+
+2. Napisz program, ktory bedzie mial wywolanie:
+
+	filtr -h|a <nazwa pliku> <liczba1> <liczba2>
+
+   Ma on wypisywac pakiety oraz informacje pcapa o nich z pliku
+   <nazwa pliku> miedzy pakietem liczba1 (wlacznie) a pakietem liczba2
+   (wylaczajac). Przelacznik -h oznacza, iz wypisywane przez
+   program pakiety maja byc wyswietlane szesnastkowo, zas przelacznik -a
+   oznacza, iz maja byc wyswietlane w ASCII (uwaga na wypisywanie
+   znakow niealfanumerycznych).
+
+3. Napisz program, ktory wyszuka w pliku pakiet zawierajacy naglowek IP
+   lub ARP i wypisze informacje o adresach ethernetowych i adresach IP
+   nadawcy i odbiorcy.

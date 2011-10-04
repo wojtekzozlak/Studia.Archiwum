@@ -1,0 +1,13 @@
+#!/bin/bash
+  
+if [ $# -eq 0 ]
+  then set "./"
+fi
+
+for NAZWA in `ls $1`
+do
+  if test -x $1/$NAZWA -a ! -d $1/$NAZWA
+    then echo $NAZWA
+  fi 
+done
+

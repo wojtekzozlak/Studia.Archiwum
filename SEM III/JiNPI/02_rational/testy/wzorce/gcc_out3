@@ -1,0 +1,4044 @@
+Test 1:
+
+Test 2:
+
+Test 3:
+
+Test 4:
+
+Test 5:
+
+Test 6:
+
+Test 7:
+
+Test 8:
+
+Test 9:
+
+Test 10:
+
+Test 11:
+
+Test 12:
+
+Test 13:
+
+Test 14:
+
+Test 15:
+
+Test 16:
+
+Test 17:
+
+Test 18:
+
+Test 19:
+
+Test 20:
+
+Test 21:
+
+Test 22:
+
+Test 23:
+
+Test 24:
+
+Test 25:
+
+Test 26:
+
+Test 27:
+
+Test 28:
+
+Test 29:
+
+Test 30:
+
+Test 31:
+
+Test 32:
+
+Test 33:
+
+Test 34:
+
+Test 35:
+
+Test 36:
+
+Test 37:
+
+Test 38:
+
+Test 39:
+
+Test 40:
+
+Test 41:
+
+Test 42:
+
+Test 43:
+
+Test 44:
+
+Test 45:
+
+Test 46:
+
+Test 47:
+
+Test 48:
+
+Test 49:
+
+Test 50:
+
+Test 51:
+
+Test 52:
+
+Test 53:
+
+Test 54:
+
+Test 55:
+
+Test 56:
+
+Test 57:
+
+Test 58:
+
+Test 59:
+
+Test 60:
+
+Test 61:
+
+Test 62:
+
+Test 63:
+
+Test 64:
+
+Test 65:
+
+Test 66:
+
+Test 67:
+
+Test 68:
+
+Test 69:
+
+Test 70:
+
+Test 71:
+
+Test 72:
+
+Test 73:
+
+Test 74:
+
+Test 75:
+
+Test 76:
+
+Test 77:
+
+Test 78:
+
+Test 79:
+
+Test 80:
+
+Test 81:
+
+Test 82:
+
+Test 83:
+
+Test 84:
+
+Test 85:
+
+Test 86:
+
+Test 87:
+
+Test 88:
+
+Test 89:
+
+Test 90:
+
+Test 91:
+
+Test 92:
+
+Test 93:
+
+Test 94:
+
+Test 95:
+
+Test 96:
+
+Test 97:
+
+Test 98:
+
+Test 99:
+
+Test 100:
+
+Test 101:
+
+Test 102:
+
+Test 103:
+
+Test 104:
+
+Test 105:
+
+Test 106:
+
+Test 107:
+
+Test 108:
+
+Test 109:
+
+Test 110:
+
+Test 111:
+
+Test 112:
+
+Test 113:
+
+Test 114:
+
+Test 115:
+
+Test 116:
+
+Test 117:
+
+Test 118:
+
+Test 119:
+
+Test 120:
+
+Test 121:
+
+Test 122:
+
+Test 123:
+
+Test 124:
+
+Test 125:
+
+Test 126:
+
+Test 127:
+
+Test 128:
+
+Test 129:
+
+Test 130:
+
+Test 131:
+
+Test 132:
+
+Test 133:
+
+Test 134:
+
+Test 135:
+
+Test 136:
+
+Test 137:
+
+Test 138:
+
+Test 139:
+
+Test 140:
+
+Test 141:
+
+Test 142:
+
+Test 143:
+
+Test 144:
+
+Test 145:
+
+Test 146:
+
+Test 147:
+
+Test 148:
+
+Test 149:
+
+Test 150:
+
+Test 151:
+
+Test 152:
+
+Test 153:
+
+Test 154:
+
+Test 155:
+
+Test 156:
+
+Test 157:
+
+Test 158:
+
+Test 159:
+
+Test 160:
+
+Test 161:
+
+Test 162:
+
+Test 163:
+
+Test 164:
+
+Test 165:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 166:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 167:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 168:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 169:
+
+Test 170:
+
+Test 171:
+
+Test 172:
+
+Test 173:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 174:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 175:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 176:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 177:
+
+Test 178:
+
+Test 179:
+
+Test 180:
+
+Test 181:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 182:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 183:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 184:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 185:
+
+Test 186:
+
+Test 187:
+
+Test 188:
+
+Test 189:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 190:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 191:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 192:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 193:
+
+Test 194:
+
+Test 195:
+
+Test 196:
+
+Test 197:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 198:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 199:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 200:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 201:
+
+Test 202:
+
+Test 203:
+
+Test 204:
+
+Test 205:
+
+Test 206:
+
+Test 207:
+
+Test 208:
+
+Test 209:
+
+Test 210:
+
+Test 211:
+
+Test 212:
+
+Test 213:
+
+Test 214:
+
+Test 215:
+
+Test 216:
+
+Test 217:
+
+Test 218:
+
+Test 219:
+
+Test 220:
+
+Test 221:
+
+Test 222:
+
+Test 223:
+
+Test 224:
+
+Test 225:
+
+Test 226:
+
+Test 227:
+
+Test 228:
+
+Test 229:
+
+Test 230:
+
+Test 231:
+
+Test 232:
+
+Test 233:
+
+Test 234:
+
+Test 235:
+
+Test 236:
+
+Test 237:
+
+Test 238:
+
+Test 239:
+
+Test 240:
+
+Test 241:
+
+Test 242:
+
+Test 243:
+
+Test 244:
+
+Test 245:
+
+Test 246:
+
+Test 247:
+
+Test 248:
+
+Test 249:
+
+Test 250:
+
+Test 251:
+
+Test 252:
+
+Test 253:
+
+Test 254:
+
+Test 255:
+
+Test 256:
+
+Test 257:
+
+Test 258:
+
+Test 259:
+
+Test 260:
+
+Test 261:
+
+Test 262:
+
+Test 263:
+
+Test 264:
+
+Test 265:
+
+Test 266:
+
+Test 267:
+
+Test 268:
+
+Test 269:
+
+Test 270:
+
+Test 271:
+
+Test 272:
+
+Test 273:
+
+Test 274:
+
+Test 275:
+
+Test 276:
+
+Test 277:
+
+Test 278:
+
+Test 279:
+
+Test 280:
+
+Test 281:
+
+Test 282:
+
+Test 283:
+
+Test 284:
+
+Test 285:
+
+Test 286:
+
+Test 287:
+
+Test 288:
+
+Test 289:
+
+Test 290:
+
+Test 291:
+
+Test 292:
+
+Test 293:
+
+Test 294:
+
+Test 295:
+
+Test 296:
+
+Test 297:
+
+Test 298:
+
+Test 299:
+
+Test 300:
+
+Test 301:
+
+Test 302:
+
+Test 303:
+
+Test 304:
+
+Test 305:
+
+Test 306:
+
+Test 307:
+
+Test 308:
+
+Test 309:
+
+Test 310:
+
+Test 311:
+
+Test 312:
+
+Test 313:
+
+Test 314:
+
+Test 315:
+
+Test 316:
+
+Test 317:
+
+Test 318:
+
+Test 319:
+
+Test 320:
+
+Test 321:
+
+Test 322:
+
+Test 323:
+
+Test 324:
+
+Test 325:
+
+Test 326:
+
+Test 327:
+
+Test 328:
+
+Test 329:
+
+Test 330:
+
+Test 331:
+
+Test 332:
+
+Test 333:
+
+Test 334:
+
+Test 335:
+
+Test 336:
+
+Test 337:
+
+Test 338:
+
+Test 339:
+
+Test 340:
+
+Test 341:
+
+Test 342:
+
+Test 343:
+
+Test 344:
+
+Test 345:
+
+Test 346:
+
+Test 347:
+
+Test 348:
+
+Test 349:
+
+Test 350:
+
+Test 351:
+
+Test 352:
+
+Test 353:
+
+Test 354:
+
+Test 355:
+
+Test 356:
+
+Test 357:
+
+Test 358:
+
+Test 359:
+
+Test 360:
+
+Test 361:
+
+Test 362:
+
+Test 363:
+
+Test 364:
+
+Test 365:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 366:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 367:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 368:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 369:
+
+Test 370:
+
+Test 371:
+
+Test 372:
+
+Test 373:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 374:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 375:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 376:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 377:
+
+Test 378:
+
+Test 379:
+
+Test 380:
+
+Test 381:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 382:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 383:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 384:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 385:
+
+Test 386:
+
+Test 387:
+
+Test 388:
+
+Test 389:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 390:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 391:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 392:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 393:
+
+Test 394:
+
+Test 395:
+
+Test 396:
+
+Test 397:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 398:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 399:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 400:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 401:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 402:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 403:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 404:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 405:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 406:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 407:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 408:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 409:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 410:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 411:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 412:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 413:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 414:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 415:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 416:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 417:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 418:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 419:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 420:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 421:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 422:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 423:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 424:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 425:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 426:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 427:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 428:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 429:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 430:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 431:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 432:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 433:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 434:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 435:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 436:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 437:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 438:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 439:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 440:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 441:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 442:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 443:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 444:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 445:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 446:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 447:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 448:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 449:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 450:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 451:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 452:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 453:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 454:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 455:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 456:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 457:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 458:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 459:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 460:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 461:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 462:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 463:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 464:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 465:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 466:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 467:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 468:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 469:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 470:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 471:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 472:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 473:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 474:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 475:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 476:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 477:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 478:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 479:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 480:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 481:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 482:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 483:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 484:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 485:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 486:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 487:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 488:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 489:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 490:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 491:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 492:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 493:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 494:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 495:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 496:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 497:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 498:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 499:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 500:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 501:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 502:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 503:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 504:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 505:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 506:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 507:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 508:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 509:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 510:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 511:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 512:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 513:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 514:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 515:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 516:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 517:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 518:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 519:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 520:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 521:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 522:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 523:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 524:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 525:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 526:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 527:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 528:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 529:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 530:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 531:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 532:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 533:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 534:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 535:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 536:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 537:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 538:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 539:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 540:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 541:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 542:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 543:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 544:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 545:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 546:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 547:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 548:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 549:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 550:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 551:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 552:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 553:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 554:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 555:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 556:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 557:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 558:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 559:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 560:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 561:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 562:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 563:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 564:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 565:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 566:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 567:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 568:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 569:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 570:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 571:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 572:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 573:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 574:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 575:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 576:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 577:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 578:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 579:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 580:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 581:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 582:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 583:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 584:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 585:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 586:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 587:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 588:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 589:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 590:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 591:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 592:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 593:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 594:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 595:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 596:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+
+Test 597:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 598:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 599:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 600:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:5: error: expected ‘,’ or ‘;’ before ‘)’ token
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 601:
+
+Test 602:
+
+Test 603:
+
+Test 604:
+
+Test 605:
+
+Test 606:
+
+Test 607:
+
+Test 608:
+
+Test 609:
+
+Test 610:
+
+Test 611:
+
+Test 612:
+
+Test 613:
+
+Test 614:
+
+Test 615:
+
+Test 616:
+
+Test 617:
+
+Test 618:
+
+Test 619:
+
+Test 620:
+
+Test 621:
+
+Test 622:
+
+Test 623:
+
+Test 624:
+
+Test 625:
+
+Test 626:
+
+Test 627:
+
+Test 628:
+
+Test 629:
+
+Test 630:
+
+Test 631:
+
+Test 632:
+
+Test 633:
+
+Test 634:
+
+Test 635:
+
+Test 636:
+
+Test 637:
+
+Test 638:
+
+Test 639:
+
+Test 640:
+
+Test 641:
+
+Test 642:
+
+Test 643:
+
+Test 644:
+
+Test 645:
+
+Test 646:
+
+Test 647:
+
+Test 648:
+
+Test 649:
+
+Test 650:
+
+Test 651:
+
+Test 652:
+
+Test 653:
+
+Test 654:
+
+Test 655:
+
+Test 656:
+
+Test 657:
+
+Test 658:
+
+Test 659:
+
+Test 660:
+
+Test 661:
+
+Test 662:
+
+Test 663:
+
+Test 664:
+
+Test 665:
+
+Test 666:
+
+Test 667:
+
+Test 668:
+
+Test 669:
+
+Test 670:
+
+Test 671:
+
+Test 672:
+
+Test 673:
+
+Test 674:
+
+Test 675:
+
+Test 676:
+
+Test 677:
+
+Test 678:
+
+Test 679:
+
+Test 680:
+
+Test 681:
+
+Test 682:
+
+Test 683:
+
+Test 684:
+
+Test 685:
+
+Test 686:
+
+Test 687:
+
+Test 688:
+
+Test 689:
+
+Test 690:
+
+Test 691:
+
+Test 692:
+
+Test 693:
+
+Test 694:
+
+Test 695:
+
+Test 696:
+
+Test 697:
+
+Test 698:
+
+Test 699:
+
+Test 700:
+
+Test 701:
+
+Test 702:
+
+Test 703:
+
+Test 704:
+
+Test 705:
+
+Test 706:
+
+Test 707:
+
+Test 708:
+
+Test 709:
+
+Test 710:
+
+Test 711:
+
+Test 712:
+
+Test 713:
+
+Test 714:
+
+Test 715:
+
+Test 716:
+
+Test 717:
+
+Test 718:
+
+Test 719:
+
+Test 720:
+
+Test 721:
+
+Test 722:
+
+Test 723:
+
+Test 724:
+
+Test 725:
+
+Test 726:
+
+Test 727:
+
+Test 728:
+
+Test 729:
+
+Test 730:
+
+Test 731:
+
+Test 732:
+
+Test 733:
+
+Test 734:
+
+Test 735:
+
+Test 736:
+
+Test 737:
+
+Test 738:
+
+Test 739:
+
+Test 740:
+
+Test 741:
+
+Test 742:
+
+Test 743:
+
+Test 744:
+
+Test 745:
+
+Test 746:
+
+Test 747:
+
+Test 748:
+
+Test 749:
+
+Test 750:
+
+Test 751:
+
+Test 752:
+
+Test 753:
+
+Test 754:
+
+Test 755:
+
+Test 756:
+
+Test 757:
+
+Test 758:
+
+Test 759:
+
+Test 760:
+
+Test 761:
+
+Test 762:
+
+Test 763:
+
+Test 764:
+
+Test 765:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 766:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 767:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 768:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 769:
+
+Test 770:
+
+Test 771:
+
+Test 772:
+
+Test 773:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 774:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 775:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 776:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 777:
+
+Test 778:
+
+Test 779:
+
+Test 780:
+
+Test 781:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 782:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 783:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 784:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 785:
+
+Test 786:
+
+Test 787:
+
+Test 788:
+
+Test 789:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 790:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 791:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 792:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 793:
+
+Test 794:
+
+Test 795:
+
+Test 796:
+
+Test 797:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 798:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 799:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 800:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 801:
+
+Test 802:
+
+Test 803:
+
+Test 804:
+
+Test 805:
+
+Test 806:
+
+Test 807:
+
+Test 808:
+
+Test 809:
+
+Test 810:
+
+Test 811:
+
+Test 812:
+
+Test 813:
+
+Test 814:
+
+Test 815:
+
+Test 816:
+
+Test 817:
+
+Test 818:
+
+Test 819:
+
+Test 820:
+
+Test 821:
+
+Test 822:
+
+Test 823:
+
+Test 824:
+
+Test 825:
+
+Test 826:
+
+Test 827:
+
+Test 828:
+
+Test 829:
+
+Test 830:
+
+Test 831:
+
+Test 832:
+
+Test 833:
+
+Test 834:
+
+Test 835:
+
+Test 836:
+
+Test 837:
+
+Test 838:
+
+Test 839:
+
+Test 840:
+
+Test 841:
+
+Test 842:
+
+Test 843:
+
+Test 844:
+
+Test 845:
+
+Test 846:
+
+Test 847:
+
+Test 848:
+
+Test 849:
+
+Test 850:
+
+Test 851:
+
+Test 852:
+
+Test 853:
+
+Test 854:
+
+Test 855:
+
+Test 856:
+
+Test 857:
+
+Test 858:
+
+Test 859:
+
+Test 860:
+
+Test 861:
+
+Test 862:
+
+Test 863:
+
+Test 864:
+
+Test 865:
+
+Test 866:
+
+Test 867:
+
+Test 868:
+
+Test 869:
+
+Test 870:
+
+Test 871:
+
+Test 872:
+
+Test 873:
+
+Test 874:
+
+Test 875:
+
+Test 876:
+
+Test 877:
+
+Test 878:
+
+Test 879:
+
+Test 880:
+
+Test 881:
+
+Test 882:
+
+Test 883:
+
+Test 884:
+
+Test 885:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r3 += r1’
+
+Test 886:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r3 -= r1’
+
+Test 887:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r3 *= r1’
+
+Test 888:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r3 /= r1’
+
+Test 889:
+
+Test 890:
+
+Test 891:
+
+Test 892:
+
+Test 893:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r3 += r2’
+
+Test 894:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r3 -= r2’
+
+Test 895:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r3 *= r2’
+
+Test 896:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r3 /= r2’
+
+Test 897:
+
+Test 898:
+
+Test 899:
+
+Test 900:
+
+Test 901:
+
+Test 902:
+
+Test 903:
+
+Test 904:
+
+Test 905:
+
+Test 906:
+
+Test 907:
+
+Test 908:
+
+Test 909:
+
+Test 910:
+
+Test 911:
+
+Test 912:
+
+Test 913:
+
+Test 914:
+
+Test 915:
+
+Test 916:
+
+Test 917:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r3 += r1.Rational::operator-()’
+
+Test 918:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r3 -= r1.Rational::operator-()’
+
+Test 919:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r3 *= r1.Rational::operator-()’
+
+Test 920:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r3 /= r1.Rational::operator-()’
+
+Test 921:
+
+Test 922:
+
+Test 923:
+
+Test 924:
+
+Test 925:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r4 += r1’
+
+Test 926:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r4 -= r1’
+
+Test 927:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r4 *= r1’
+
+Test 928:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r4 /= r1’
+
+Test 929:
+
+Test 930:
+
+Test 931:
+
+Test 932:
+
+Test 933:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r4 += r2’
+
+Test 934:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r4 -= r2’
+
+Test 935:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r4 *= r2’
+
+Test 936:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r4 /= r2’
+
+Test 937:
+
+Test 938:
+
+Test 939:
+
+Test 940:
+
+Test 941:
+
+Test 942:
+
+Test 943:
+
+Test 944:
+
+Test 945:
+
+Test 946:
+
+Test 947:
+
+Test 948:
+
+Test 949:
+
+Test 950:
+
+Test 951:
+
+Test 952:
+
+Test 953:
+
+Test 954:
+
+Test 955:
+
+Test 956:
+
+Test 957:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r4 += r1.Rational::operator-()’
+
+Test 958:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r4 -= r1.Rational::operator-()’
+
+Test 959:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r4 *= r1.Rational::operator-()’
+
+Test 960:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r4 /= r1.Rational::operator-()’
+
+Test 961:
+
+Test 962:
+
+Test 963:
+
+Test 964:
+
+Test 965:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 966:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 967:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 968:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 969:
+
+Test 970:
+
+Test 971:
+
+Test 972:
+
+Test 973:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 974:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 975:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 976:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 977:
+
+Test 978:
+
+Test 979:
+
+Test 980:
+
+Test 981:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 982:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 983:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 984:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 985:
+
+Test 986:
+
+Test 987:
+
+Test 988:
+
+Test 989:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 990:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 991:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 992:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 993:
+
+Test 994:
+
+Test 995:
+
+Test 996:
+
+Test 997:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator+=(const Rational&)’ discards qualifiers
+
+Test 998:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator-=(const Rational&)’ discards qualifiers
+
+Test 999:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator*=(const Rational&)’ discards qualifiers
+
+Test 1000:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: passing ‘const Rational’ as ‘this’ argument of ‘Rational& Rational::operator/=(const Rational&)’ discards qualifiers
+
+Test 1001:
+
+Test 1002:
+
+Test 1003:
+
+Test 1004:
+
+Test 1005:
+
+Test 1006:
+
+Test 1007:
+
+Test 1008:
+
+Test 1009:
+
+Test 1010:
+
+Test 1011:
+
+Test 1012:
+
+Test 1013:
+
+Test 1014:
+
+Test 1015:
+
+Test 1016:
+
+Test 1017:
+
+Test 1018:
+
+Test 1019:
+
+Test 1020:
+
+Test 1021:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r1 += r3’
+
+Test 1022:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r1 -= r3’
+
+Test 1023:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r1 *= r3’
+
+Test 1024:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r1 /= r3’
+
+Test 1025:
+
+Test 1026:
+
+Test 1027:
+
+Test 1028:
+
+Test 1029:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r1 += r4’
+
+Test 1030:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r1 -= r4’
+
+Test 1031:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r1 *= r4’
+
+Test 1032:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r1 /= r4’
+
+Test 1033:
+
+Test 1034:
+
+Test 1035:
+
+Test 1036:
+
+Test 1037:
+
+Test 1038:
+
+Test 1039:
+
+Test 1040:
+
+Test 1041:
+
+Test 1042:
+
+Test 1043:
+
+Test 1044:
+
+Test 1045:
+
+Test 1046:
+
+Test 1047:
+
+Test 1048:
+
+Test 1049:
+
+Test 1050:
+
+Test 1051:
+
+Test 1052:
+
+Test 1053:
+
+Test 1054:
+
+Test 1055:
+
+Test 1056:
+
+Test 1057:
+
+Test 1058:
+
+Test 1059:
+
+Test 1060:
+
+Test 1061:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r2 += r3’
+
+Test 1062:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r2 -= r3’
+
+Test 1063:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r2 *= r3’
+
+Test 1064:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r2 /= r3’
+
+Test 1065:
+
+Test 1066:
+
+Test 1067:
+
+Test 1068:
+
+Test 1069:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r2 += r4’
+
+Test 1070:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r2 -= r4’
+
+Test 1071:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r2 *= r4’
+
+Test 1072:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r2 /= r4’
+
+Test 1073:
+
+Test 1074:
+
+Test 1075:
+
+Test 1076:
+
+Test 1077:
+
+Test 1078:
+
+Test 1079:
+
+Test 1080:
+
+Test 1081:
+
+Test 1082:
+
+Test 1083:
+
+Test 1084:
+
+Test 1085:
+
+Test 1086:
+
+Test 1087:
+
+Test 1088:
+
+Test 1089:
+
+Test 1090:
+
+Test 1091:
+
+Test 1092:
+
+Test 1093:
+
+Test 1094:
+
+Test 1095:
+
+Test 1096:
+
+Test 1097:
+
+Test 1098:
+
+Test 1099:
+
+Test 1100:
+
+Test 1101:
+
+Test 1102:
+
+Test 1103:
+
+Test 1104:
+
+Test 1105:
+
+Test 1106:
+
+Test 1107:
+
+Test 1108:
+
+Test 1109:
+
+Test 1110:
+
+Test 1111:
+
+Test 1112:
+
+Test 1113:
+
+Test 1114:
+
+Test 1115:
+
+Test 1116:
+
+Test 1117:
+
+Test 1118:
+
+Test 1119:
+
+Test 1120:
+
+Test 1121:
+
+Test 1122:
+
+Test 1123:
+
+Test 1124:
+
+Test 1125:
+
+Test 1126:
+
+Test 1127:
+
+Test 1128:
+
+Test 1129:
+
+Test 1130:
+
+Test 1131:
+
+Test 1132:
+
+Test 1133:
+
+Test 1134:
+
+Test 1135:
+
+Test 1136:
+
+Test 1137:
+
+Test 1138:
+
+Test 1139:
+
+Test 1140:
+
+Test 1141:
+
+Test 1142:
+
+Test 1143:
+
+Test 1144:
+
+Test 1145:
+
+Test 1146:
+
+Test 1147:
+
+Test 1148:
+
+Test 1149:
+
+Test 1150:
+
+Test 1151:
+
+Test 1152:
+
+Test 1153:
+
+Test 1154:
+
+Test 1155:
+
+Test 1156:
+
+Test 1157:
+
+Test 1158:
+
+Test 1159:
+
+Test 1160:
+
+Test 1161:
+
+Test 1162:
+
+Test 1163:
+
+Test 1164:
+
+Test 1165:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1166:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1167:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1168:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1169:
+
+Test 1170:
+
+Test 1171:
+
+Test 1172:
+
+Test 1173:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1174:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1175:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1176:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1177:
+
+Test 1178:
+
+Test 1179:
+
+Test 1180:
+
+Test 1181:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘- r1 += r3’
+
+Test 1182:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘- r1 -= r3’
+
+Test 1183:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘- r1 *= r3’
+
+Test 1184:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘- r1 /= r3’
+
+Test 1185:
+
+Test 1186:
+
+Test 1187:
+
+Test 1188:
+
+Test 1189:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘- r1 += r4’
+
+Test 1190:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘- r1 -= r4’
+
+Test 1191:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘- r1 *= r4’
+
+Test 1192:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘- r1 /= r4’
+
+Test 1193:
+
+Test 1194:
+
+Test 1195:
+
+Test 1196:
+
+Test 1197:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1198:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1199:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1200:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1201:
+
+Test 1202:
+
+Test 1203:
+
+Test 1204:
+
+Test 1205:
+
+Test 1206:
+
+Test 1207:
+
+Test 1208:
+
+Test 1209:
+
+Test 1210:
+
+Test 1211:
+
+Test 1212:
+
+Test 1213:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r1 += r2’
+
+Test 1214:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r1 -= r2’
+
+Test 1215:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r1 *= r2’
+
+Test 1216:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r1 /= r2’
+
+Test 1217:
+
+Test 1218:
+
+Test 1219:
+
+Test 1220:
+
+Test 1221:
+
+Test 1222:
+
+Test 1223:
+
+Test 1224:
+
+Test 1225:
+
+Test 1226:
+
+Test 1227:
+
+Test 1228:
+
+Test 1229:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r1 += r4’
+
+Test 1230:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r1 -= r4’
+
+Test 1231:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r1 *= r4’
+
+Test 1232:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r1 /= r4’
+
+Test 1233:
+
+Test 1234:
+
+Test 1235:
+
+Test 1236:
+
+Test 1237:
+
+Test 1238:
+
+Test 1239:
+
+Test 1240:
+
+Test 1241:
+
+Test 1242:
+
+Test 1243:
+
+Test 1244:
+
+Test 1245:
+
+Test 1246:
+
+Test 1247:
+
+Test 1248:
+
+Test 1249:
+
+Test 1250:
+
+Test 1251:
+
+Test 1252:
+
+Test 1253:
+
+Test 1254:
+
+Test 1255:
+
+Test 1256:
+
+Test 1257:
+
+Test 1258:
+
+Test 1259:
+
+Test 1260:
+
+Test 1261:
+
+Test 1262:
+
+Test 1263:
+
+Test 1264:
+
+Test 1265:
+
+Test 1266:
+
+Test 1267:
+
+Test 1268:
+
+Test 1269:
+
+Test 1270:
+
+Test 1271:
+
+Test 1272:
+
+Test 1273:
+
+Test 1274:
+
+Test 1275:
+
+Test 1276:
+
+Test 1277:
+
+Test 1278:
+
+Test 1279:
+
+Test 1280:
+
+Test 1281:
+
+Test 1282:
+
+Test 1283:
+
+Test 1284:
+
+Test 1285:
+
+Test 1286:
+
+Test 1287:
+
+Test 1288:
+
+Test 1289:
+
+Test 1290:
+
+Test 1291:
+
+Test 1292:
+
+Test 1293:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r3 += r2’
+
+Test 1294:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r3 -= r2’
+
+Test 1295:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r3 *= r2’
+
+Test 1296:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r3 /= r2’
+
+Test 1297:
+
+Test 1298:
+
+Test 1299:
+
+Test 1300:
+
+Test 1301:
+
+Test 1302:
+
+Test 1303:
+
+Test 1304:
+
+Test 1305:
+
+Test 1306:
+
+Test 1307:
+
+Test 1308:
+
+Test 1309:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r3 += r4’
+
+Test 1310:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r3 -= r4’
+
+Test 1311:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r3 *= r4’
+
+Test 1312:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r3 /= r4’
+
+Test 1313:
+
+Test 1314:
+
+Test 1315:
+
+Test 1316:
+
+Test 1317:
+
+Test 1318:
+
+Test 1319:
+
+Test 1320:
+
+Test 1321:
+
+Test 1322:
+
+Test 1323:
+
+Test 1324:
+
+Test 1325:
+
+Test 1326:
+
+Test 1327:
+
+Test 1328:
+
+Test 1329:
+
+Test 1330:
+
+Test 1331:
+
+Test 1332:
+
+Test 1333:
+
+Test 1334:
+
+Test 1335:
+
+Test 1336:
+
+Test 1337:
+
+Test 1338:
+
+Test 1339:
+
+Test 1340:
+
+Test 1341:
+
+Test 1342:
+
+Test 1343:
+
+Test 1344:
+
+Test 1345:
+
+Test 1346:
+
+Test 1347:
+
+Test 1348:
+
+Test 1349:
+
+Test 1350:
+
+Test 1351:
+
+Test 1352:
+
+Test 1353:
+
+Test 1354:
+
+Test 1355:
+
+Test 1356:
+
+Test 1357:
+
+Test 1358:
+
+Test 1359:
+
+Test 1360:
+
+Test 1361:
+
+Test 1362:
+
+Test 1363:
+
+Test 1364:
+
+Test 1365:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1366:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1367:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1368:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1369:
+
+Test 1370:
+
+Test 1371:
+
+Test 1372:
+
+Test 1373:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘- r1 += r2’
+
+Test 1374:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘- r1 -= r2’
+
+Test 1375:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘- r1 *= r2’
+
+Test 1376:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘- r1 /= r2’
+
+Test 1377:
+
+Test 1378:
+
+Test 1379:
+
+Test 1380:
+
+Test 1381:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1382:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1383:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1384:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1385:
+
+Test 1386:
+
+Test 1387:
+
+Test 1388:
+
+Test 1389:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘- r1 += r4’
+
+Test 1390:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘- r1 -= r4’
+
+Test 1391:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘- r1 *= r4’
+
+Test 1392:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘- r1 /= r4’
+
+Test 1393:
+
+Test 1394:
+
+Test 1395:
+
+Test 1396:
+
+Test 1397:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1398:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1399:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1400:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1401:
+
+Test 1402:
+
+Test 1403:
+
+Test 1404:
+
+Test 1405:
+
+Test 1406:
+
+Test 1407:
+
+Test 1408:
+
+Test 1409:
+
+Test 1410:
+
+Test 1411:
+
+Test 1412:
+
+Test 1413:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r1 += r2’
+
+Test 1414:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r1 -= r2’
+
+Test 1415:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r1 *= r2’
+
+Test 1416:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r1 /= r2’
+
+Test 1417:
+
+Test 1418:
+
+Test 1419:
+
+Test 1420:
+
+Test 1421:
+
+Test 1422:
+
+Test 1423:
+
+Test 1424:
+
+Test 1425:
+
+Test 1426:
+
+Test 1427:
+
+Test 1428:
+
+Test 1429:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r1 += r4’
+
+Test 1430:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r1 -= r4’
+
+Test 1431:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r1 *= r4’
+
+Test 1432:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r1 /= r4’
+
+Test 1433:
+
+Test 1434:
+
+Test 1435:
+
+Test 1436:
+
+Test 1437:
+
+Test 1438:
+
+Test 1439:
+
+Test 1440:
+
+Test 1441:
+
+Test 1442:
+
+Test 1443:
+
+Test 1444:
+
+Test 1445:
+
+Test 1446:
+
+Test 1447:
+
+Test 1448:
+
+Test 1449:
+
+Test 1450:
+
+Test 1451:
+
+Test 1452:
+
+Test 1453:
+
+Test 1454:
+
+Test 1455:
+
+Test 1456:
+
+Test 1457:
+
+Test 1458:
+
+Test 1459:
+
+Test 1460:
+
+Test 1461:
+
+Test 1462:
+
+Test 1463:
+
+Test 1464:
+
+Test 1465:
+
+Test 1466:
+
+Test 1467:
+
+Test 1468:
+
+Test 1469:
+
+Test 1470:
+
+Test 1471:
+
+Test 1472:
+
+Test 1473:
+
+Test 1474:
+
+Test 1475:
+
+Test 1476:
+
+Test 1477:
+
+Test 1478:
+
+Test 1479:
+
+Test 1480:
+
+Test 1481:
+
+Test 1482:
+
+Test 1483:
+
+Test 1484:
+
+Test 1485:
+
+Test 1486:
+
+Test 1487:
+
+Test 1488:
+
+Test 1489:
+
+Test 1490:
+
+Test 1491:
+
+Test 1492:
+
+Test 1493:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r3 += r2’
+
+Test 1494:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r3 -= r2’
+
+Test 1495:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r3 *= r2’
+
+Test 1496:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r3 /= r2’
+
+Test 1497:
+
+Test 1498:
+
+Test 1499:
+
+Test 1500:
+
+Test 1501:
+
+Test 1502:
+
+Test 1503:
+
+Test 1504:
+
+Test 1505:
+
+Test 1506:
+
+Test 1507:
+
+Test 1508:
+
+Test 1509:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘r3 += r4’
+
+Test 1510:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘r3 -= r4’
+
+Test 1511:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘r3 *= r4’
+
+Test 1512:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘r3 /= r4’
+
+Test 1513:
+
+Test 1514:
+
+Test 1515:
+
+Test 1516:
+
+Test 1517:
+
+Test 1518:
+
+Test 1519:
+
+Test 1520:
+
+Test 1521:
+
+Test 1522:
+
+Test 1523:
+
+Test 1524:
+
+Test 1525:
+
+Test 1526:
+
+Test 1527:
+
+Test 1528:
+
+Test 1529:
+
+Test 1530:
+
+Test 1531:
+
+Test 1532:
+
+Test 1533:
+
+Test 1534:
+
+Test 1535:
+
+Test 1536:
+
+Test 1537:
+
+Test 1538:
+
+Test 1539:
+
+Test 1540:
+
+Test 1541:
+
+Test 1542:
+
+Test 1543:
+
+Test 1544:
+
+Test 1545:
+
+Test 1546:
+
+Test 1547:
+
+Test 1548:
+
+Test 1549:
+
+Test 1550:
+
+Test 1551:
+
+Test 1552:
+
+Test 1553:
+
+Test 1554:
+
+Test 1555:
+
+Test 1556:
+
+Test 1557:
+
+Test 1558:
+
+Test 1559:
+
+Test 1560:
+
+Test 1561:
+
+Test 1562:
+
+Test 1563:
+
+Test 1564:
+
+Test 1565:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1566:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1567:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1568:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1569:
+
+Test 1570:
+
+Test 1571:
+
+Test 1572:
+
+Test 1573:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘- r1 += r2’
+
+Test 1574:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘- r1 -= r2’
+
+Test 1575:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘- r1 *= r2’
+
+Test 1576:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘- r1 /= r2’
+
+Test 1577:
+
+Test 1578:
+
+Test 1579:
+
+Test 1580:
+
+Test 1581:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1582:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1583:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1584:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1585:
+
+Test 1586:
+
+Test 1587:
+
+Test 1588:
+
+Test 1589:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator+=’ in ‘- r1 += r4’
+
+Test 1590:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator-=’ in ‘- r1 -= r4’
+
+Test 1591:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator*=’ in ‘- r1 *= r4’
+
+Test 1592:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: no match for ‘operator/=’ in ‘- r1 /= r4’
+
+Test 1593:
+
+Test 1594:
+
+Test 1595:
+
+Test 1596:
+
+Test 1597:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1598:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1599:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+
+Test 1600:
+kotlet_z_jajka_234911.cpp: In function ‘int main()’:
+kotlet_z_jajka_234911.cpp:6: error: lvalue required as left operand of assignment
+

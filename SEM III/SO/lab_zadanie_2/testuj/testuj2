@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# ../serwer 10 &
+# Nalezy odpalic time ./skrypt - czas wykonania powinien byc rowny podanemu na dole czasowi zakonczenia.
+
+../klient 3 5 1 5 6 & # 1
+sleep 1
+../klient 2 5 5 10 & # 2
+sleep 1
+../klient 2 10 2 3 4 & # 3
+sleep 1
+../klient 3 3 1 2 3 4 5 6 7 8 9 10 # 4
+
+# 0: 1 dostaje
+# 2: 3 dostaje
+# 5: 2 dostaje
+# 12: 4 dostaje
+# 15: 1 dostaje, 3 dostaje
+# 20: 2 dostaje
+# 25: 4 dostaje
+# 28: 1 dostaje
+# 33: 4 dostaje
+# 36: koniec

@@ -1,0 +1,117 @@
+#include <stdlib.h>
+#include <list>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int n, m;
+int *tab;
+int *counters;
+int *sizes;
+int k;
+vector<int> *edges;
+list< pair<int, int*> > sets; // counter of sets
+
+int find(int i)
+{
+  while(tab[i] != -1){ // TODO : skracanie sciezek
+    i = tab[i];
+  }
+  return i;
+}
+
+int set_union(int a, int b) // drugi zostaje nowym reprezentantem
+{
+  a = find(a);
+  b = find(b);
+  if(a != b)
+  {
+    tab[a] = b;
+  }
+  return b;
+}
+
+
+int main()
+{
+//  cout << "start" << endl;
+
+  int nn;
+  cin >> n >> m;
+  nn = n;
+  tab = new int[n];
+  counters = new int[n];
+  sizes = new int[n];
+  edges = new vector<int>[n];
+  for(int i=0; i<n; i++)
+  {
+    tab[i] = -1;
+    sizes[i] = 1;
+    sets.push_back(make_pair(i, &counters[i]));
+  }
+
+//  cout << "krawedzie" << endl;  
+
+  for(int i=0; i<m; i++)
+  {
+    int a, b;
+    cin >> a >> b;
+    a -= 1;
+    b -= 1;
+    edges[a].push_back(b);
+    edges[b].push_back(a);
+  }
+
+
+  list< pair<int, int*> >::iterator it, it2;  
+cout << "sprawdzenie postaci listy" << endl;
+for(it = sets.begin(); it != sets.end(); it++)
+  cout << it->first << " ";
+cout << endl << endl;
+  
+//  cout << "wczytalem dane" << endl;
+
+
+  for(it = sets.begin(); it != sets.end(); )
+  {
+    cout << "zeruje liczniki" << endl;
+    for(it2 = sets.begin(); it2 != sets.end(); it2++) *it2->second = 0;
+    
+    cout << "biore numer wezla ";
+    int i = it->first;
+    cout << i << endl;
+    cout << "zwiekszam liczniki" << endl;
+    for(int j=0; j<edges[i].size(); j++)
+    {
+      cout << "krawedz " << i << " " << edges[i][j] << "(" << find(edges[i][j]) << ")" << endl;
+      counters[find(edges[i][j])]++; // zwiekszam licznik u reprezentanta
+    }
+    
+    cout << "szukam brakow polaczen" << endl;
+    for(it2 = sets.begin(); it2 != sets.end();)
+    {
+      cout << it2->first << ", size: " << sizes[it2->first] << endl;
+      if(*it2->second < sizes[it2->first] && it2->first != it->first) // jesli licznik polaczen jest rozny od rozmiaru zbioru, to trzeba je polaczyc
+      {
+        cout << "niepolaczony z " << it2->first << endl;
+        set_union(it2->first, it->first); // dolaczamy do tego z glownej petli
+        sizes[it->first] += sizes[it2->first];
+        sizes[it2->first] = 0;
+        it2 = sets.erase(it2); // usuwamy podlaczony z listy zbiorow
+        n--;
+      } else it2++;
+    }
+//    sets.pop_front();
+//    it = sets.begin();
+    it++;
+    cout << "----" << endl << "nowy przebieg" << endl;
+  }
+
+  sort(sizes, sizes + nn);
+  cout << n << endl;
+  for(int i=0; i<nn; i++)
+    if(sizes[i] != 0) cout << sizes[i] << " ";
+
+  return 0;
+}

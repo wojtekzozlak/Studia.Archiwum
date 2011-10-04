@@ -1,0 +1,259 @@
+Laboratorium 2 
+==============
+
+Literatura
+----------
+  + M. K. Johnson, E. W. Troan
+    "Oprogramowanie uzytkowe w systemie Linux", rozdz. 9.2.1 i 9.4.1-9.4.5 
+
+  + W. R. Stevens 
+    "Programowanie zastowan sieciowych w systemie UNIX", rozdz. 2.5.1-2.5.4
+
+  + M. J. Bach "Budowa systemu operacyjnego UNIX", rozdz. 7.1, 7.3-7.5 
+
+  + man do poszczegolnych funkcji
+
+Pliki, z ktorych bedziemy korzystac
+-----------------------------------
+   Makefile
+        Plik Makefile.
+
+   err.h
+        Plik naglowkowy biblioteki obslugujacej bledy.
+
+   err.c
+	Biblioteka obslugujaca bledy.
+
+   proc_fork.c
+        Program ilustrujacy tworzenie nowego procesu.
+
+   proc_tree.c 
+	Program tworzacy drzewo procesow - 5 procesow majacych wspolnego 
+	przodka.
+
+   proc_exec.c
+        Program tworzacy nowy proces, ktory wykona polecenie "ps".
+
+   simple_shell.c
+        Przykladowa implementacja bardzo prostego interpretatora polecen.
+
+
+Scenariusz zajec
+----------------
+
+1. Przypomnij sobie informacje na temat programu make
+   --------------------------------------------------
+   Przeczytaj plik Makefile.
+
+ * Wykonaj polecenie make.
+
+   Zwroc uwage na kolejnosc w jakiej kompiluja sie programy.
+
+2. Identyfikator procesu
+   ---------------------
+   Kazdy proces w systemie ma jednoznaczny identyfikator nazywany potocznie
+   PIDem (od angielskiego: Process ID). Identyfikatory aktualnie wykonujacych 
+   sie procesow mozesz poznac wykonujac polecenie ps.
+
+ * Wykonaj polecenie ps. Zobaczysz wszystkie uruchomione przez Ciebie procesy 
+   w tej sesji. Znajdzie sie wsrod nich proces ps i bash, czyli
+   interpretator polecen, ktory analizuje i wykonuje Twoje polecenia. 
+   Pierwsza kolumna to PID procesu, a ostatnia to polecenie, ktore ten 
+   proces wykonuje. Wiecej informacji na temat polecenia ps uzyskasz 
+   wywolujac man ps.
+
+   Z poziomu jezyka programowania proces mozne poznac swoj PID wywolujac 
+   funkcje systemowa: 
+
+        pid_t getpid();
+
+   Wartosci typu pid_t reprezentuja PIDy procesow. Najczesciej jest
+   to dluga liczba calkowita, ale w zaleznosci od wariantu systemu
+   definicja ta moze byc inna. Dlatego lepiej poslugiwac sie 
+   typem pid_t.
+
+3. Tworzenie nowego procesu
+   ------------------------
+   W Linuksie, tak jak we wszystkich systemach uniksowych, istnieje
+   hierarchia procesow. Kazdy proces poza pierwszym procesem w systemie
+   (procesem init o PIDzie 1) jest tworzony przez inny proces. Nowy proces
+   nazywamy procesem potomnym, a proces ktory go stworzyl procesem 
+   macierzystym. 
+
+   Do tworzenia procesow sluzy funkcja systemowa:
+
+        pid_t fork();
+
+   Powrot z wywolania tej funkcji nastepuje dwa razy: w procesie macierzystym
+   i w procesie potomnym. Dla potomka funkcja przekazuje w wyniku 0, a dla 
+   procesu macierzystego PID nowo utworzonego potomka.
+
+   Proces potomny wykonuje taki sam kod jak proces macierzysty - zaczyna 
+   od wykonania nastepnej instrukcji po fork(). Jednak przestrzenie adresowe 
+   tych procesow sa rozlaczne. Kazdy ma swoja kopie zmiennych. Wartosci 
+   zmiennych w procesie potomnym sa poczatkowo takie same jak w procesie 
+   macierzystym w momencie utworzenia nowego procesu. Procesy maja te same 
+   uprawnienia, te same otwarte pliki itd. 
+
+ * Tworzenie nowego procesu ilustruje przyklad proc_fork.c, ktory nalezy 
+   teraz przeczytac i uruchomic ./proc_fork (o funkcji wait bedzie za chwile).
+
+ * Wykonaj polecenie ps -l. W 4-tej kolumnie znajduje sie PID, a w 5-tej
+   PPID, czyli PID procesu macierzystego (Parent PID). Jaki proces jest 
+   procesem macierzystym dla procesu wykonujacego ps? 
+
+4. Oczekiwanie na zakonczenie procesu potomnego
+   --------------------------------------------
+   Proces macierzysty moze zaczekac na zakonczenie procesu potomnego za pomoca
+   funkcji wait() (lub wait3(), wait4(), waitpid()).
+
+        pid_t wait(int *stan);
+
+   Funkcja przekazuje w wyniku PID zakonczonego procesu. Parametr stan jest 
+   wskaznikiem do zmiennej zawierajacej kod zakonczonego procesu.
+   Funkcja jest blokujaca, co oznacza, ze proces macierzysty, ktory ja wywola
+   zostanie wstrzymany, az do zakonczenia jakiegos procesu potomnego. 
+   Jezeli proces nie mial potomkow funkcja zwroci blad (-1). Jezeli potomek 
+   zakonczy sie zanim rodzic wywola wait, to wait nie zablokuje procesu i
+   wykona sie poprawnie dajac w wyniku PID potomka. 
+
+   System przechowuje kody zakonczenia procesow potomnych, az do chwili
+   odebrania ich przez ich procesy macierzyste. Proces potomny, ktorego
+   kod nie zostal odebrany przez rodzica to tzw. zombi (proces, ktory 
+   sie zakonczyl, ale informacje o nim sa przechowywane przez system).
+   Dlatego bardzo wazne jest odbieranie kodow zakonczenia (wywolywanie wait),
+   aby uniknac niepotrzebnego zajmowania miejsca w tablicy procesow.
+
+ * Aby zobaczyc zombi (<defunct>) wpisz do pliku proc_fork.c przed wykonaniem 
+   wait w procesie macierzystym: "sleep(10)" (zawieszenie procesu na 10 
+   sekund), wykonaj make a nastepnie ./proc_fork & (w tle) i ps. 
+
+ * Przeczytaj proc_tree.c i wykonaj kilkukrotnie ./proc_tree. 
+   Przeanalizuj PIDY i zwroc uwage na kolejnosc wypisywania informacji. 
+
+5. Uruchamianie nowych programow
+   -----------------------------
+
+   Procesowi mozemy zlecic wykonanie innego programu - aktualnie 
+   wykonywany program zostanie wtedy zastapiony innym. 
+   Sluza do tego funkcje execXXX() - szesc postaci rozniacych sie sposobem 
+   przekazywania argumentow.
+
+   int execl (const char * sciezka, const char * arg0, ...)
+   int execlp(const char * plik, const char * arg0, ...)
+   int execle(const char * sciezka, const char * arg0, ..., const char ** envp)
+   int execv (const char * sciezka, const char ** argv)
+   int execvp(const char * plik, const char ** argv)
+   int execve(const char * sciezka, const ** char argv, const char ** envp)
+   
+   Krotkie wyjasnienie (wiecej w man 3 exec):
+
+   l - argumenty programu w postaci listy napisow zakonczonej 0 (NULL),
+   v - argumenty programu w postaci tablicy napisow (tak jak argv dla funkcji 
+       main),
+   p - sciezka przeszukiwania ze zmiennej srodowiskowej PATH,
+   e - srodowisko przekazywane recznie jako ostatni parametr 
+       (raczej nie uzywane).
+
+   Parametry:
+
+   - sciezka, to pelna sciezka do wykonywalnego programu,
+   - plik, to nazwa pliku z programem (tylko z p),
+   - arg0 i argv[0] sa nazwa pliku zawierajacego program, a nastepne argumenty 
+     zawieraja wlasciwe argumenty programu.
+
+   Jezeli wykonanie funkcji sie powiedzie, to nigdy nie nastapi powrot z jej 
+   wywolania. 
+ 
+   Funkcje exec() najczesciej wywoluje sie zaraz po wykonaniu fork() w
+   procesie potomnym.
+
+ * Przeanalizuj proc_exec.c i wykonaj ./proc_exec.
+   Sprobuj zmienic ps na hello z pierwszych zajec, a nastepnie 
+   na inny program wywolany z argumentami. Zwroc uwage na sposob obslugi
+   bledow funkcji exec. Dlaczego wywolanie funkcji syserr jest bezwarunkowe?
+
+ * Przeanalizuj simple_shell.c i wykonaj ./simple_shell.
+   Uwaga: wyjscie z programu przez Ctrl-D. Jest to prosty interpretator 
+   polecen. Potrafi wykonac tylko polecenia zewnetrzne, czyli takie,
+   ktore moze zlecic innemu procesowi. 
+   Sprobuj dodac do niego mozliwosc wykonywania procesow w tle, czyli 
+   takich procesow, na ktore nie czeka interpretator polecen.
+
+6. Konczenie procesu
+   -----------------
+
+   Proces moze spowodowac zakonczenie samego siebie przez wywolanie funkcji:
+
+       void exit(int kod_zakonczenia);
+        
+   W przypadku poprawnego zakonczenia kod zakonczenia powinien byc rowny 0,
+   a rozny od 0, jezeli nastapil blad.
+
+7. Funkcja system()
+   ----------------
+
+   Oprocz pary funkcji fork-exec mozna uzyc funkcji system(), ktora powoduje
+   wywolanie /bin/bash z argumentem tej funkcji.  Jest to drozsze niz para
+   fork-exec, bo powoduje powstanie dodatkowego procesu (interpretatora 
+   polecen).
+
+
+INFORMACJE DODATKOWE
+--------------------
+
+O funkcjach systemowych
+-----------------------
+
+
+Kazda z funkcji, ktore tutaj omawiamy wymaga pewnych dzialan systemu
+operacyjnego, a dokladniej - wykonania funkcji systemowych. 
+Piszac program nie uzywamy bezposrednio funkcji systemowych,
+ale odpowiadajacych im funkcji bibliotecznych, ktore wywoluja 
+wlasciwa funkcje i wykonuje pewne dodatkowe czynnosci.
+
+Funkcja systemowa nie jest zwyklym wywolaniem funkcji. Jest wykonanie
+oznacza przejscie w tryb uprzywilejowany i zlecenie systemowi 
+operacyjnemu wykonania pewnych czynnosci na rzecz procesu. 
+Ze wzgledu na przekraczania granic ochrony jest to drozsze niz 
+zwykle wywolanie funkcji. Pamietaj o tym piszac programy!
+
+Kazda funkcja systemowa przekazuje swoj kod zakonczenia. Jest to 0, jezeli
+funkcja zakonczyla sie pomyslnie lub liczba ujemna oznaczajaca kod bledu
+w przeciwnym przypadku. Funkcja z biblioteki C, ktora wywoluje funkcje
+systemowa sprawdza, czy nie nastapil blad i jezeli tak, to przypisuje 
+wartosc bledu na globalna zmienna errno i przekazuje w wyniku -1.
+Dzieki kodowi bledu uzyskujemy wiecej informacji o powodach wystapienia 
+danego bledu. Przyklad wykorzystania zmiennej errno mozna znalezc w funkcji 
+syserr w pliku err.c, ktora korzysta z globalnej tablicy sys_errlist 
+zawierajacej opisy wszystkich kodow bledow.
+
+W dalszym ciagu zajec bedziemy uzywac pewnego skrotu myslowego, a mianowicie
+bedziemy nazywac funkcja systemowa odpowiednia funkcje biblioteczna 
+- na przyklad funkcja systemowa fork().
+
+Zalecamy uzywania funkcji syserr do obslugi bledow funkcji systemowych.
+
+O plikach naglowkowych
+----------------------
+  a) Plik naglowkowy `unistd.h' zawiera deklaracje standardowych funkcji 
+     uniksowych (fork(), write(), etc.).  Warto go dolaczyc do programu, aby 
+     kompilator nie generowal ostrzezen takich jak, "implicit declaration of 
+     function `fork'".
+  b) Deklaracja funkcji wait() znajduje sie w `sys/wait.h'.
+
+
+ZADANIE 2
+---------
+  
+   ------------------------------------------------------------------
+  |                                                                  |
+  |   Napisz program tworzacy "linie" 5 procesow, gdzie kazdy        |
+  |   proces potomny jest przodkiem nastepnego procesu.              |
+  |   Kazdy proces macierzysty powinien zaczekac na zakonczenie      |
+  |   swojego potomka.                                               |
+  |                                                                  |
+  |   Do obslugi bledow nalezy wykorzystac funkcje z biblioteki err.  |
+  |                                                                  |
+   ------------------------------------------------------------------
+

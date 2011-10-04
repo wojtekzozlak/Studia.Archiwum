@@ -1,0 +1,3 @@
+Kuznice;1000a;
+Nosal;1206;
+Nosalowa Przelecz;1103;

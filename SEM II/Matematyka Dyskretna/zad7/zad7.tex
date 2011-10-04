@@ -1,0 +1,105 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+
+\newtheorem{lemma}{Twierdzenie} % definicja środowiska Lemat
+
+
+\pagestyle{fancy}
+\lhead{MD'2010 - zadanie domowe nr 7}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+
+Idąc po najmniejszej linii menalnego oporu skorzystamy tu z dość mocnego Tw. Kirchoffa, które brzmi następująco:
+
+\begin{lemma} Twierdzenie Kirchoffa (macierzowe o drzewach) \footnote{Dowód tego niebywałego twierdzenia można znaleźć pod adresem: http://www.math.fau.edu/locke/Graphmat.htm \\ Wykorzystuje on Wzór Bineta-Cauchy'ego, którego dowód znajduje się pod adresem: http://www.lacim.uqam.ca/~lauve/courses/su2005-550/BS3.pdf} \\
+Niech $G$ będzie grafem spójnym o $n$ wierzchołkach $v_1, v_2, ... v_n$. Niech A będzie laplasjanem grafu $G$. Wtedy liczba wszystkich drzew rozpinających grafu $G$ będzie równa dopełnieniu algebraicznemu dowolnego wyrazu macierzy $A$.
+\end{lemma}
+
+Laplasjan etykietowanego grafu, to macierz $n$ na $n$ zdefiniowana następująco:
+
+\begin{displaymath}
+a_{ij} = \left\{ \begin{array}{ll}
+deg(v_i) & \textrm{dla $i=j$}\\
+-1 & \textrm{gdy $i\not=j$ oraz $v_i$, $v_j$ połączone}\\
+0 & \textrm{wpp}
+\end{array} \right.
+\end{displaymath}
+
+Jest $m$ wierzchołków stopnia $n$ oraz $n$ wierzchołków stopnia $m$. Naturalnym etykietowaniem do zapisu naszego laplasjanu wydaje się (pogrubione liczby ,,wypełniają'' wolną przestrzeń bloków swoimi kopiami):
+
+\begin{displaymath}
+\left(
+\begin{array}{ccc|ccc}
+m          &             & \mathbf{0} &            &             &            \\
+           & \ddots      &            &            & \mathbf{-1} &            \\
+\mathbf{0} &             & m          &            &             &            \\ \hline
+           &             &            & n          &             & \mathbf{0} \\
+           & \mathbf{-1} &            &            & \ddots      &            \\
+           &             &            & \mathbf{0} &             & n          
+
+\end{array} \right)
+\end{displaymath}
+
+Ale zrobimy trochę inaczej, przyjmiemy sobie etykietowanie reprezentujące macierz:
+
+\begin{displaymath}
+\left(
+\begin{array}{cc|ccc|ccc}
+m      & -1     & 0          & \cdots      & 0          & -1         & \cdots      & -1         \\
+-1     & n      & -1         & \cdots      & -1         & 0          & \cdots      & 0          \\ \hline
+0      & -1     & m          &             & \mathbf{0} &            &             &            \\
+\vdots & \vdots &            & \ddots      &            &            & \mathbf{-1} &            \\
+0      & -1     & \mathbf{0} &             & m          &            &             &            \\ \hline 
+-1     & 0      &            &             &            & n          &             & \mathbf{0} \\
+\vdots & \vdots &            & \mathbf{-1} &            &            & \ddots      &            \\
+-1     & 0      &            &             &            & \mathbf{0} &             & n          
+
+\end{array} \right)
+\end{displaymath}
+
+
+Warto zauważyć, że zakładamy przy tym niezerowość $m$ oraz $n$ (wtedy problem się trywializuje) oraz, że w skrajnym przypadku część bloków znika (jest w nich $n-1$, lub $m-1$ elementów, czyli czasami zero). Nie przeszkadza nam to jednak w niczym, najwyżej zrobi się prościej obliczniowo.
+
+Do policzenia dopełnienia algebraicznego musimy wybrać jakiś wiersz i kolumne i je usunąć. Robimy tak z wierszem nr $1$ oraz kolumną nr $2$ otrzymując:
+
+\begin{displaymath}
+\left(
+\begin{array}{c|ccc|ccc}
+-1     & -1         & \cdots      & -1         & 0          & \cdots      & 0          \\ \hline
+0      & m          &             & \mathbf{0} &            &             &            \\
+\vdots &            & \ddots      &            &            & \mathbf{-1} &            \\
+0      & \mathbf{0} &             & m          &            &             &            \\ \hline 
+-1     &            &             &            & n          &             & \mathbf{0} \\
+\vdots &            & \mathbf{-1} &            &            & \ddots      &            \\
+-1     &            &             &            & \mathbf{0} &             & n          
+
+\end{array} \right)
+\end{displaymath}
+
+Pragniemy (mocno...) uzyskać macierz trójkątną, w czym przeszkadza las jedynek na lewo od bloku z $n$-ami. Szczęśliwie - możemy je wszystkie zredukować korzystając z pierwszego wiersza nic przy tym nie psując. Robimy tak i dochodzimy do:
+
+\begin{displaymath}
+\left(
+\begin{array}{c|ccc|ccc}
+-1     & -1         & \cdots      & -1         & 0          & \cdots      & 0          \\ \hline
+0      & m          &             & \mathbf{0} &            &             &            \\
+\vdots &            & \ddots      &            &            & \mathbf{-1} &            \\
+0      & \mathbf{0} &             & m          &            &             &            \\ \hline 
+0      &            &             &            & n          &             & \mathbf{0} \\
+\vdots &            & \mathbf{0} &            &            & \ddots      &            \\
+0      &            &             &            & \mathbf{0} &             & n          
+
+\end{array} \right)
+\end{displaymath}
+
+Co jest macierzą trójkątną. Zatem wyznacznik jest iloczynem elementów na przekątnej równym $(-1)\cdot m^{n-1}n^{m-1}$. Dopełnienie każe nam to wymnożyć razy $(-1)^{a+b}$ gdzie $a$ i $b$ to numery usuniętego wiersza i kolumny. Zatem ostatecznie dopełnienie wynosi $(-1)^{1 + 1 + 2}\cdot m^{n-1}n^{m-1} = m^{n-1}n^{m-1}$.  Co chcieliśmy udowodnić.
+
+
+\end{document}

@@ -1,0 +1,1 @@
+javac -cp xmlrpc-2.0.1/target/xmlrpc-2.1-dev.jar *.java

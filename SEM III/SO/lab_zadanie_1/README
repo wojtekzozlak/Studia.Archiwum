@@ -1,0 +1,9 @@
+bst_tree program
+****************************************
+
+1 Compilation
+-------------
+1.1 `make` command builds default version of `nadzorca` and `vertex` programs.
+1.2 `vertex` is a auxiliary program and is not designed to be used directly.
+1.3 `make quiet=1` command builds quiet version of program which does not
+    prompt. 

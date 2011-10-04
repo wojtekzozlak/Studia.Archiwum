@@ -1,0 +1,22 @@
+XML-RPC
+
+W katalogu znajduja sie dwie przykladowe implementacje serwera i klienta,
+jedna w Javie, druga w Pythonie. Oczywiscie mozna uzywac serwera napisanego
+w jednym jezyku, a klienta - w innym.
+
+Aby programy w Javie zadzialaly nizbedne jest zainstalowanie biblioteki
+Apache XML-RPC, dostepnej pod adresem http://ws.apache.org/xmlrpc/
+
+Opis XML-RPC moz¿na znalezc w XML-RPC HOWTO, dostepnym pod adresem
+http://xmlrpc-c.sourceforge.net/xmlrpc-howto/xmlrpc-howto.html
+
+Sa tam tez przyklady w innch jezykach programowania.
+
+Patrzac na zamieszczone tam przykady w C i C, nietrudno jest zauwazyc, ze
+w jezykach takich jak Java czy Python (Ruby, PHP, ...) niektore rzeczy robi
+sie latwiej. Przegladajac FAQ dla XML-RPC.NET
+(http://www.xml-rpc.net/faq/xmlrpcnetfaq.html), mozna stwierdzic, ze i na
+platformie .NET nie jest bardzo trudno. Mozna tam zobaczyc zastosowanie
+atrybutow (adnotacji w nawiasach kwadratowych przy
+klasach/interfejsach/funkcjach w Javie zwanych metadanymi) do okreslania
+ktore metody powinny zostac udostepnione.

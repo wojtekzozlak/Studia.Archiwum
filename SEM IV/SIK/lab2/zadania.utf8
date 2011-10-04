@@ -1,0 +1,22 @@
+W katalogu znajdują następujące programy:
+s_client1, s_server3, s_server4.
+
+Programy kompilujemy, wywołując make.
+
+1. W obecnej wersji s_server3 nie jest w stanie obsługiwać wielu klientów
+   jednocześnie - klient musi sie odłączyć, aby można było zacząć pracę
+   z następnym. Wprowadź obsługę wielu klientów na raz bez konieczności
+   kończenia pracy.
+
+2. Zmień strukturę programu, aby po przyjściu sygnału serwer nie przyjmował
+   więcej zgłoszeń oraz zakończył się dopiero po odłączeniu się ostatniego
+   klienta.
+
+3. Dodaj możliwość wydawania polecenia po stronie serwera - np. można
+   wprowadzić z klawiatury polecenie ,,ile'' wypisujące liczbę aktulanie
+   podłączonych klientów.
+
+4. Napisać program umożliwiający komunikację między dwoma różnymi komputerami:
+   program czyta ze standardowego wejścia, a to co przeczyta wysyła do drugiego
+   komputera i jednocześnie czyta z połączenia sieciowego, a to co przeczyta
+   wypisuje na standardowe wyjście.

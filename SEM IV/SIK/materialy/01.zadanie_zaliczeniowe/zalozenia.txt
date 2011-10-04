@@ -1,0 +1,102 @@
+[1] Cele przedmiotu.
+ a) Poznanie własności protokołów IP, TCP i UDP
+ b) Poznanie interfejsu gniazd
+ c) Poznanie innych interfejsów do programowania progamów sieciowych, np.
+    MPI, XML-RPC
+ d) Poznanie podstaw projektowania protokołów
+ e) Nauczenie się implementowania protokołów ze szczególnym
+    zwróceniem uwagi na:
+      i. konieczność zachowania ostrożności wobec danych
+         przychodzących z sieci i od użytkownika,
+     ii. konieczność zachowania liberalności przy interpretacji
+         protokołu, jeśli chodzi o dane przychodzące z sieci,
+    iii. konieczność ścisłego zachowania działania protokołu
+         przy wysyłaniu danych,
+     iv. konieczność implementowania protokołów w bezpiecznym
+         stylu (np. używanie snprintf zamiast sprintf itp.)
+
+[2] Rytm zajęć
+ Proponujemy zajęcia w następującym układzie:
+   01.zadanie_zaliczeniowe
+   02.gniazda_TCP
+   03.gniazda_TCP-serwer_z_wieloma_klientami
+   04.gniazda_TCP-serwer_z_poll
+   05.gniazda_UDP
+   06.przeglad_programikow_sieciowych
+   07.mpi
+   08.xml-rpc
+   09.pcap
+   10-15 konsultacje z prowadzącymi
+
+[3] Rytm zaliczania
+  a) Zadanie zaliczeniowe jest ogłaszane na pierwszych zajęciach.
+     - Przewidujemy, że to powinno zmobilizować studentów bardziej do
+       słuchania w trakcie zajęć i podbierania pomysłów i rozwiązań
+       szczegółowych dla swoich programów zaliczeniowych.
+  b) Opis protokołu należy dostarczyć do 6. tygodnia semestru, czyli
+     do 21.03-25.03.
+     - Opis powinien być zgodny ze wskazówkami z pliku opis-protokolow.txt.
+  c) Opisy zostaną sprawdzone do tygodnia 11.04-15.04.
+  d) Poprawiony opis protokołu należy dostarczyć do tygodnia 25.04-29.04.
+     - Poprawiony opis nie jest sprawdzany w ogóle, jeśli nie był
+       przysłany opis w punkcie (b).
+  e) Drugie wersje opisu zostaną sprawdzona do tygodnia 9.05-13.05.
+     - Dodatkowa faza "feedbacku" służy polepszeniu jakości opisów.
+  f) Jednocześnie z powyższym punktem w każdej grupie wybrane zostaną
+     dwa protokoły do implementacji.
+     - *Każdy* ze studentów ma implementować nie swój protokół. Stąd
+       konieczność wybrania dwóch protokołów. Nie chcemy, wybrania
+       traktować jako nagrody typu - skoro wybraliśmy twój protokół,
+       studencie, to masz dodatkowy bonus, bo implementujesz znane
+       sobie opisy. Raczej chodzi o to, aby *każdy* student miał
+       możliwość zinterpretowania obcego sobie tekstu w swoim kodzie.
+  g) Interfejs użytkownika należy dostarczyć do tygodnia 23.05-27.05.
+     - Kod interfejsu ma być już stabilny - nie powinno być
+       możliwości zmieniania tego kodu. Nowy kod ma kompilować się
+       i działać z tym, co jest dostarczone w tym punkcie.
+     - Wprowadzenie tego etapu ma taki sens, że zachęci to studentów
+       do racjonalniejszej pracy i do dobrego rozdzielenia części
+       interfejsowej od samego kodu sieciowego.
+  h) Końcową wersję programu należy dostarczyć do 5.06 (niedziela
+     przed sesją).
+     - Chodzi o to, żeby uniknąć już kodowania w trakcie sesji.
+       W trakcie sesji będzie tylko ewentualne umawianie się na
+       oglądanie programów.
+  W powyższym opisie, gdzie jako termin jest wskazany tydzień,
+  właściwy termin mija przed zajęciami, na które student chodzi.
+
+[4] Rozkład punktów
+  Ocenianie będzie się odbywać według następującego rozkładu:
+    i) 1 punkt za dostarczenie opisu w terminie z punktu (b) wyżej
+   ii) 1 punkt za dostarczenie opisu w terminie z punktu (d) wyżej
+  iii) 3 punkty oceny merytorycznej protokołu
+   iv) 1 punkt za dostarczenie kodu w terminie z punktu (g) wyżej
+    v) 1 punkt oceny merytorycznej kodu z punktu (g) (ocena typu
+       działa-nie działa)
+   vi) 1 punkt za dostarczenie kodu w terminie z punktu (h) wyżej
+  vii) 7 punktów oceny merytorycznej całości kodu z punktów (g) i (h)
+  Punkty za terminy można uzyskać wyłącznie przez dostarczenie danej
+  części zaliczenia najpóźniej we wskazanym terminie. Ryzyko związane
+  z przypadkami losowymi (choroba, kolokwium itp.) spada na studenta.
+  W związku z tym warto oddawać poszczególne części zaliczenia przed
+  wskazanymi terminami.
+
+  Razem do rozdziału jest 15 punktów. Ocena końcowa z przedmiotu
+  mierzona w punktach będzie wyliczana wg wzoru: 2 x liczba punktów z
+  egzaminu + 1 x liczba punktów z laboratorium.
+
+  Ewentualne oceny z laboratorium powinny być wystawiane wg schematu:
+  [ 0- 8] - dwója
+  ( 8-10] - trója
+  (10-11] - trzy plus
+  (11-13] - cztery
+  (13-14] - cztery plus
+  (14-15] - pięć
+  Powyższe zestawienie ma charakter orientacyjny w związku z algorytmem
+  liczenia wyniku z przedmiotu.
+
+  Stawiamy najwyżej czwórkę w terminie wrześniowym. Poza tym ocena
+  w sesji wrześniowej do uznania prowadzących.
+
+[5] Propozycja zadania
+  Wstępna treść znajduje się w pliku zadanie2011.txt

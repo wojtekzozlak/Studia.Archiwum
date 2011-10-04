@@ -1,0 +1,3 @@
+;1000;
+Nosal;1206;
+Nosalowa Przelecz;1103;

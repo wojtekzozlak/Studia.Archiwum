@@ -1,0 +1,11 @@
+Kuznice;1000;
+Nosal;1206;
+Nosalowa Przelecz;1103;
+Bystre;1000;
+Murowaniec;1500;schronisko
+Przelecz miedzy Kopami;1501;uwaga na misie
+Giewont;1894;najbardziej malowniczy piorunochron w Polsce
+Kalatowki;1200;schronisko
+
+aKuznice;Kalatowki;1650;35';200;1;niebieski;;
+Kalatowki;Kuznice;1650;25';0;1;niebieski;;

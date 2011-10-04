@@ -1,0 +1,264 @@
+
+
+
+PCAP(3)                                                   PCAP(3)
+
+
+NNAAMMEE
+       pcap - Packet Capture library
+
+SSYYNNOOPPSSIISS
+       ##iinncclluuddee <<ppccaapp..hh>>
+
+       ppccaapp__tt **ppccaapp__ooppeenn__lliivvee((cchhaarr **ddeevviiccee,, iinntt ssnnaapplleenn,,
+               iinntt pprroommiisscc,, iinntt ttoo__mmss,, cchhaarr **eebbuuff))
+       ppccaapp__tt **ppccaapp__ooppeenn__oofffflliinnee((cchhaarr **ffnnaammee,, cchhaarr **eebbuuff))
+       ppccaapp__dduummppeerr__tt **ppccaapp__dduummpp__ooppeenn((ppccaapp__tt **pp,, cchhaarr **ffnnaammee))
+
+       cchhaarr eerrrrbbuuff[[PPCCAAPP__EERRRRBBUUFF__SSIIZZEE]];;
+       cchhaarr **ppccaapp__llooookkuuppddeevv((cchhaarr **eerrrrbbuuff))
+       iinntt ppccaapp__llooookkuuppnneett((cchhaarr **ddeevviiccee,, bbppff__uu__iinntt3322 **nneettpp,,
+               bbppff__uu__iinntt3322 **mmaasskkpp,, cchhaarr **eerrrrbbuuff))
+
+       iinntt ppccaapp__ddiissppaattcchh((ppccaapp__tt **pp,, iinntt ccnntt,,
+               ppccaapp__hhaannddlleerr ccaallllbbaacckk,, uu__cchhaarr **uusseerr))
+       iinntt ppccaapp__lloooopp((ppccaapp__tt **pp,, iinntt ccnntt,,
+               ppccaapp__hhaannddlleerr ccaallllbbaacckk,, uu__cchhaarr **uusseerr))
+       vvooiidd ppccaapp__dduummpp((uu__cchhaarr **uusseerr,, ssttrruucctt ppccaapp__ppkktthhddrr **hh,,
+               uu__cchhaarr **sspp))
+
+       iinntt ppccaapp__ccoommppiillee((ppccaapp__tt **pp,, ssttrruucctt bbppff__pprrooggrraamm **ffpp,,
+               cchhaarr **ssttrr,, iinntt ooppttiimmiizzee,, bbppff__uu__iinntt3322 nneettmmaasskk))
+       iinntt ppccaapp__sseettffiilltteerr((ppccaapp__tt **pp,, ssttrruucctt bbppff__pprrooggrraamm **ffpp))
+
+       uu__cchhaarr **ppccaapp__nneexxtt((ppccaapp__tt **pp,, ssttrruucctt ppccaapp__ppkktthhddrr **hh))
+
+       iinntt ppccaapp__ddaattaalliinnkk((ppccaapp__tt **pp))
+       iinntt ppccaapp__ssnnaappsshhoott((ppccaapp__tt **pp))
+       iinntt ppccaapp__iiss__sswwaappppeedd((ppccaapp__tt **pp))
+       iinntt ppccaapp__mmaajjoorr__vveerrssiioonn((ppccaapp__tt **pp))
+       iinntt ppccaapp__mmiinnoorr__vveerrssiioonn((ppccaapp__tt **pp))
+       iinntt ppccaapp__ssttaattss((ppccaapp__tt **pp,, ssttrruucctt ppccaapp__ssttaatt **ppss))
+       FFIILLEE **ppccaapp__ffiillee((ppccaapp__tt **pp))
+       iinntt ppccaapp__ffiilleennoo((ppccaapp__tt **pp))
+       vvooiidd ppccaapp__ppeerrrroorr((ppccaapp__tt **pp,, cchhaarr **pprreeffiixx))
+       cchhaarr **ppccaapp__ggeetteerrrr((ppccaapp__tt **pp))
+       cchhaarr **ppccaapp__ssttrreerrrroorr((iinntt eerrrroorr))
+
+       vvooiidd ppccaapp__cclloossee((ppccaapp__tt **pp))
+       vvooiidd ppccaapp__dduummpp__cclloossee((ppccaapp__dduummppeerr__tt **pp))
+
+DDEESSCCRRIIPPTTIIOONN
+       The Packet Capture library provides a high level interface
+       to packet capture systems. All  packets  on  the  network,
+       even  those  destined  for  other  hosts,  are  accessible
+       through this mechanism.
+
+
+RROOUUTTIINNEESS
+       ppccaapp__ooppeenn__lliivvee(())  is  used  to  obtain  a  packet  capture
+       descriptor to look at packets on the network.  _d_e_v_i_c_e is a
+
+
+
+                           24 June 1998                         1
+
+
+
+
+
+PCAP(3)                                                   PCAP(3)
+
+
+       string that specifies the network device to open.  _s_n_a_p_l_e_n
+       specifies the maximum number of bytes to capture.  _p_r_o_m_i_s_c
+       specifies if the interface is to be put  into  promiscuous
+       mode.   (Note  that  even  if this parameter is false, the
+       interface could well be in promiscuous mode for some other
+       reason.)   _t_o___m_s  specifies  the read timeout in millisec-
+       onds.  _e_b_u_f is used to return error text and is  only  set
+       when ppccaapp__ooppeenn__lliivvee(()) fails and returns NNUULLLL.
+
+       ppccaapp__ooppeenn__oofffflliinnee(())  is  called to open a ``savefile'' for
+       reading.  _f_n_a_m_e specifies the name of the  file  to  open.
+       The  file  has the same format as those used by ttccppdduummpp((11))
+       and ttccppsslliiccee((11)).  The name "-" in  a  synonym  for  ssttddiinn.
+       _e_b_u_f  is  used  to  return error text and is only set when
+       ppccaapp__ooppeenn__oofffflliinnee(()) fails and returns NNUULLLL.
+
+       ppccaapp__dduummpp__ooppeenn(()) is called  to  open  a  ``savefile''  for
+       writing.  The  name  "-" in a synonym for ssttddoouutt.  NNUULLLL is
+       returned on failure.  _p is a _p_c_a_p struct  as  returned  by
+       ppccaapp__ooppeenn__oofffflliinnee(())  or ppccaapp__ooppeenn__lliivvee(()).  _f_n_a_m_e specifies
+       the name of the  file  to  open.   If  NNUULLLL  is  returned,
+       ppccaapp__ggeetteerrrr(()) can be used to get the error text.
+
+       ppccaapp__llooookkuuppddeevv(())  returns  a  pointer  to a network device
+       suitable for use with  ppccaapp__ooppeenn__lliivvee(())  and  ppccaapp__llooookkuupp--
+       nneett(()).   If there is an error, NNUULLLL is returned and _e_r_r_b_u_f
+       is filled in with with an appropriate error message.
+
+       ppccaapp__llooookkuuppnneett(()) is used to determine the  network  number
+       and  mask associated with the network device ddeevviiccee.  Both
+       _n_e_t_p and _m_a_s_k_p are _b_p_f___u___i_n_t_3_2 pointers.  A return  of  -1
+       indicates  an error in which case _e_r_r_b_u_f is filled in with
+       with an appropriate error message.
+
+       ppccaapp__ddiissppaattcchh(()) is used to collect  and  process  packets.
+       _c_n_t  specifies  the  maximum  number of packets to process
+       before returning. A _c_n_t of -1 processes  all  the  packets
+       received  in  one buffer. A _c_n_t of 0 processes all packets
+       until an error occurs, EEOOFF is reached, or the  read  times
+       out  (when doing live reads and a non-zero read timeout is
+       specified).  _c_a_l_l_b_a_c_k specifies a  routine  to  be  called
+       with  three arguments: a _u___c_h_a_r pointer which is passed in
+       from ppccaapp__ddiissppaattcchh(()), a pointer to the _p_c_a_p___p_k_t_h_d_r  struct
+       (which precede the actual network headers and data), and a
+       _u___c_h_a_r pointer to the packet data. The number  of  packets
+       read is returned.  Zero is returned when EEOOFF is reached in
+       a ``savefile.'' A return of -1 indicates an error in which
+       case ppccaapp__ppeerrrroorr(()) or ppccaapp__ggeetteerrrr(()) may be used to display
+       the error text.
+
+       ppccaapp__dduummpp(()) outputs a packet to  the  ``savefile''  opened
+       with  ppccaapp__dduummpp__ooppeenn(()).   Note  that its calling arguments
+       are suitable for use with ppccaapp__ddiissppaattcchh(()).
+
+
+
+
+                           24 June 1998                         2
+
+
+
+
+
+PCAP(3)                                                   PCAP(3)
+
+
+       ppccaapp__ccoommppiillee(()) is used to compile the string  _s_t_r  into  a
+       filter  program.   _p_r_o_g_r_a_m  is  a pointer to a _b_p_f___p_r_o_g_r_a_m
+       struct and is filled in by ppccaapp__ccoommppiillee(()).  _o_p_t_i_m_i_z_e  con-
+       trols  whether  optimization on the resulting code is per-
+       formed.  _n_e_t_m_a_s_k specifies the netmask of the local net.
+
+       ppccaapp__sseettffiilltteerr(()) is used to specify a filter program.   _f_p
+       is  a  pointer  to an array of _b_p_f___p_r_o_g_r_a_m struct, usually
+       the result of a call to ppccaapp__ccoommppiillee(()).  --11 is returned on
+       failure; 00 is returned on success.
+
+       ppccaapp__lloooopp(())  is similar to ppccaapp__ddiissppaattcchh(()) except it keeps
+       reading packets until _c_n_t  packets  are  processed  or  an
+       error  occurs.  It does nnoott return when live read timeouts
+       occur.  Rather, specifying  a  non-zero  read  timeout  to
+       ppccaapp__ooppeenn__lliivvee(())  and  then calling ppccaapp__ddiissppaattcchh(()) allows
+       the reception and processing of any  packets  that  arrive
+       when   the   timeout   occurs.    A  negative  _c_n_t  causes
+       ppccaapp__lloooopp(()) to loop forever (or at least  until  an  error
+       occurs).
+
+       ppccaapp__nneexxtt(()) returns a _u___c_h_a_r pointer to the next packet.
+
+       ppccaapp__ddaattaalliinnkk(())   returns   the   link  layer  type,  e.g.
+       DDLLTT__EENN1100MMBB.
+
+       ppccaapp__ssnnaappsshhoott(()) returns the snapshot length specified when
+       ppccaapp__ooppeenn__lliivvee was called.
+
+       ppccaapp__iiss__sswwaappppeedd(()) returns true if the current ``savefile''
+       uses a different byte order than the current system.
+
+       ppccaapp__mmaajjoorr__vveerrssiioonn(()) returns the major number of the  ver-
+       sion of the pcap used to write the savefile.
+
+       ppccaapp__mmiinnoorr__vveerrssiioonn(())  returns the minor number of the ver-
+       sion of the pcap used to write the savefile.
+
+       ppccaapp__ffiillee(()) returns the name of the ``savefile.''
+
+       iinntt ppccaapp__ssttaattss(())  returns  0  and  fills  in  a  ppccaapp__ssttaatt
+       struct.  The  values  represent packet statistics from the
+       start of the run to the time of the call. If there  is  an
+       error  or  the  under lying packet capture doesn't support
+       packet statistics, -1 is returned and the error  text  can
+       be obtained with ppccaapp__ppeerrrroorr(()) or ppccaapp__ggeetteerrrr(()).
+
+       ppccaapp__ffiilleennoo(())  returns  the  file descriptor number of the
+       ``savefile.''
+
+       ppccaapp__ppeerrrroorr(()) prints the text of  the  last  pcap  library
+       error on ssttddeerrrr, prefixed by _p_r_e_f_i_x.
+
+       ppccaapp__ggeetteerrrr(())  returns  the  error  text pertaining to the
+
+
+
+                           24 June 1998                         3
+
+
+
+
+
+PCAP(3)                                                   PCAP(3)
+
+
+       last pcap library error.
+
+       ppccaapp__ssttrreerrrroorr(()) is  provided  in  case  ssttrreerrrroorr(1)  isn't
+       available.
+
+       ppccaapp__cclloossee(())  closes the files associated with _p and deal-
+       locates resources.
+
+       ppccaapp__dduummpp__cclloossee(()) closes the ``savefile.''
+
+
+SSEEEE AALLSSOO
+       tcpdump(1), tcpslice(1)
+
+AAUUTTHHOORRSS
+       Van Jacobson, Craig Leres and Steven McCanne, all  of  the
+       Lawrence Berkeley National Laboratory, University of Cali-
+       fornia, Berkeley, CA.
+
+       The current version is available via anonymous ftp:
+
+              _f_t_p_:_/_/_f_t_p_._e_e_._l_b_l_._g_o_v_/_l_i_b_p_c_a_p_._t_a_r_._Z
+
+BBUUGGSS
+       Please send bug reports to libpcap@ee.lbl.gov.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           24 June 1998                         4
+
+

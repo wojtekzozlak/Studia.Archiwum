@@ -1,0 +1,85 @@
+Test 1:
+#include <iostream>
+#include "rational.h"
+int main()
+{
+Rational r1(489, -315), r2(-778);
+std::cout << (r1 + r2) << std::endl << std::endl;
+return 0;
+}
+Output: -779-58/105
+
+Test 2:
+#include <iostream>
+#include "rational.h"
+int main()
+{
+Rational r1(-156, -838), r2(712, -3);
+std::cout << (r1 + r2) << std::endl << std::endl;
+return 0;
+}
+Output: -237-185/1257
+
+Test 3:
+#include <iostream>
+#include "rational.h"
+int main()
+{
+Rational r1(-43, 381); long r2 = 669;
+std::cout << (r1 + r2) << std::endl << std::endl;
+return 0;
+}
+Output: Test 4:
+#include <iostream>
+#include "rational.h"
+int main()
+{
+Rational r2(-75, 155); long r1 = 67;
+std::cout << (r1 + r2) << std::endl << std::endl;
+return 0;
+}
+Output: 66+16/31
+
+Test 5:
+#include <iostream>
+#include "rational.h"
+int main()
+{
+Rational r1(-949, 539), r2(202);
+std::cout << (r1 - r2) << std::endl << std::endl;
+return 0;
+}
+Output: -203-410/539
+
+Test 6:
+#include <iostream>
+#include "rational.h"
+int main()
+{
+Rational r1(817, -22), r2(71, -7);
+std::cout << (r1 - r2) << std::endl << std::endl;
+return 0;
+}
+Output: -26-153/154
+
+Test 7:
+#include <iostream>
+#include "rational.h"
+int main()
+{
+Rational r1(-125, -301); long r2 = 843;
+std::cout << (r1 - r2) << std::endl << std::endl;
+return 0;
+}
+Output: -842-176/301
+
+Test 8:
+#include <iostream>
+#include "rational.h"
+int main()
+{
+Rational r2(-880, 719); long r1 = 943;
+std::cout << (r1 - r2) << std::endl << std::endl;
+return 0;
+}
+Output: 

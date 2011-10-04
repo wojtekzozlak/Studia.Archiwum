@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#-------------------------------------------------------------------
+#
+# Program ilustruje roznice pomiedzy rodzajem zastosowanych nawiasow
+# do grupowania komend
+#
+#-------------------------------------------------------------------
+
+variable1=VALUE_1
+echo Wartosc zmiennej to $variable1
+
+# uruchomienie kopii interpretatora polecen 
+( variable1=VALUE_2 )
+echo Wartosc zmiennej po przypisaniu w nawiasach okraglych to $variable1
+
+# zmiany w aktualnym srodowisku
+{ variable1=VALUE_3; }
+echo Wartosc zmiennej po przypisaniu w nawiasach klamrowych to $variable1

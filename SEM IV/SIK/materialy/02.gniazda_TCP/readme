@@ -1,0 +1,50 @@
+1. Struktura adresu uzywana przez funkcje gniazd, struktury opisujace
+   specyficzne adresy sa rzutowane na te strukture.
+
+struct sockaddr {
+    unsigned short   sa_family;   /* address family, AF_xxx */
+    char             sa_data[14]; /* 14 bytes of protocol address */
+};
+
+2. Format adresu w rodzinie AF_INET
+
+struct sockaddr_in {
+    short            sin_family;  /* address family: AF_INET */
+    unsigned short   sin_port;    /* port in network byte order */
+    struct in_addr   sin_addr;    /* internet address */
+    char             sin_zero[8];
+};
+
+3. Adres IPv4
+
+struct in_addr {
+    unsigned long    s_addr;        /* address in network byte order */
+};
+
+4. Opis adresu komputera uzywany przez funkcje getaddrinfo
+
+struct addrinfo {
+    int ai_flags;             /* input flags */
+    int ai_family;            /* protocol family for socket */
+    int ai_socktype;          /* socket type */
+    int ai_protocol;          /* protocol for socket */
+    socklen_t ai_addrlen;     /* length of socket-address */
+    struct sockaddr *ai_addr; /* socket-address for socket */
+    char *ai_canonname;       /* canonical name for service location */
+    struct addrinfo *ai_next; /* pointer to next in list */
+};
+
+5. Opis adresu komputera uzywany przez funkcje gethostbyname (przestarzala)
+
+struct hostent {
+    char    *h_name;       /* official name of host */
+    char    **h_aliases;   /* alias list */
+    int     h_addrtype;    /* host address type */
+    int     h_length;      /* length of address */
+    char    **h_addr_list; /* list of addresses */
+};
+#define h_addr  h_addr_list[0]  /* for backward compatibility */
+
+Pole h_addr_list sluzy do pokazania nastepnego adresu - sytuacja ta jest
+spotykana, gdy aktualny komputer ma wiele interfejsow sieciowych, czyli
+na przyklad, gdy jest ruterem.

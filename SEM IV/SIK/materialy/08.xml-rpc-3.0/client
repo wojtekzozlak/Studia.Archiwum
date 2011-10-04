@@ -1,0 +1,1 @@
+java  -cp .:/usr/share/java/servlet.jar:xmlrpc-3.0/lib/commons-logging-1.1.jar:xmlrpc-3.0/lib/ws-commons-util-1.0.1.jar:xmlrpc-3.0/lib/xmlrpc-client-3.0-sources.jar:xmlrpc-3.0/lib/xmlrpc-client-3.0.jar:xmlrpc-3.0/lib/xmlrpc-common-3.0-sources.jar:xmlrpc-3.0/lib/xmlrpc-common-3.0.jar:xmlrpc-3.0/lib/xmlrpc-server-3.0-sources.jar:xmlrpc-3.0/lib/xmlrpc-server-3.0.jar JavaClient

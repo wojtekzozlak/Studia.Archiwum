@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#-----------------------------------------------------
+# Skrypt dla nazwy danej jako argument, 
+# wypisuje zawartosc pliku, 
+# lub wszystkie pliki w katalogu
+#
+#-----------------------------------------------------
+if test "$1"
+then if test -e "$1" -a -r "$1" # testy lekko redundantne
+    then if [ -f "$1" ] # mozna uzywac tez nawiasow
+	then cat $1
+	elif test -d "$1"
+	then ls $1
+	else echo "nie umiem poradzic sobe z plikiem $1"
+	fi
+    else
+	echo "plik nie istnieje lub nie masz praw do odczytu"
+    fi	  
+else echo Podaj nazwe pliku lub katalogu
+fi
+

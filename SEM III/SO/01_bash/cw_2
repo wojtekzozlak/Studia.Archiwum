@@ -1,0 +1,27 @@
+#!/bin/bash
+
+DIR=$PWD
+if [ ! -z "$*" ]
+then
+    DIR=""
+    for i ; do
+      if [ -d "$i" ] 
+      then
+        BUFF=`echo "$i" | replace " " "\ "`
+        DIR="$DIR $BUFF"
+      else
+        echo "$i nie jest katalogiem"
+      fi
+    done
+fi
+
+for i in $DIR ; do
+echo "ls $i"
+  for plik in `ls $i`
+  do
+    if [ -s "$i/$plik" ] ; then
+      echo $plik
+    fi
+  done
+done
+    

@@ -1,0 +1,48 @@
+Funkcja poll()
+--------------
+
+#include <poll.h>
+
+int poll(struct pollfd *desk, nfds_t ile_desk, int czas_oczekiwania);
+
+W wywołaniu funkcji poll() podaje się wskaźnik do tablicy struktur pollfd
+(parametr "desk"), liczbę struktur w tablicy "desk" (parametr "ile_desk")
+oraz czas oczekiwania, po którym nastąpi powrót z funkcji, jeśli żaden
+z deskryptorów nie zmieni stanu. Parametr "czas_oczekiwania" jest
+wyrażony w milisekundach. Podanie ujemnej liczby milisekund oznacza
+nieskończone oczekiwanie.
+
+Struktura pollfd opisuje jeden obserwowany deskryptor.
+
+struct pollfd {
+	int fd;
+	short events;
+	short revents;
+};
+
+Pola:
+fd - numer obserwowanego deskryptora
+events - flagi obserwowane zdarzenia
+revents - flagi zdarzeń, które zaszły w czasie wywołania poll()
+
+W polu events można ustawić następujące flagi:
+POLLIN - obserwowanie nadejścia danych do odczytu
+POLLOUT - obserwowanie możliwości zapisania danych
+POLLPRI - obserwowanie nadejścia danych wyjątkowych (out-of-band)
+
+Po wywołaniu funkcji poll() w polu revents ustawione są flagi oznaczające
+zdarzenia, które zaszły. Mogą to być flagi POLLIN, POLLOUT i POLLPRI -
+oznaczają wtedy zajście odpowiadającego im zdarzenia. Oprócz tego mogą
+zostać ustawione również inne flagi:
+POLLERR - wystąpił błąd
+POLLHUP - rozłączenie terminala (hang-up)
+POLLNVAL - niewłaściwy deskryptor
+
+Funkcja poll() zwraca liczbę deskryptorów dla których zaszło jakieś zdarzenie.
+
+Mierzenie czasu
+---------------
+
+Funkcji poll() można użyć do zaimplementowania usypiania procesu na czas
+określony z większą dokładnością niż w sekundach (oferowanego przez funkcję
+sleep()).

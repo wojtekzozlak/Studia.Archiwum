@@ -1,0 +1,3 @@
+#!/bin/bash
+MAX=$1
+for $i

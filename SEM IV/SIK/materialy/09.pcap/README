@@ -1,0 +1,41 @@
+W katalogu znajduja sie trzy programy w jezyku C:
+
+pierwszy.c
+stat.c
+enty.c
+
+Ilustruja one podstawowe funkcje biblioteki podajacej informacje
+dotyczace urzadzen sieciowych podlaczonych do danego komputera.
+
+Program pierwszy.c wypisuje informacje o pierwszym pakiecie w pliku
+wygenerowanym przez tcpdump lub informuje, ze w pliku nie ma pakietow.
+Skompilowany program wywoluje sie tak:
+
+pierwszy <plik>
+
+Program stat.c wypisuje udostepniane przez biblioteke pcap statystyki
+dotyczace pliku wygenerowanego przez tcpdump. Parametry wywolania:
+
+stat <plik>
+
+Program enty.c wypisuje informacje o n+1-ym pakiecie w pliku
+wygenerowanym przez tcpdump lub informuje, ze w pliku nie ma tylu
+pakietow. Parametry wywolania:
+
+enty <plik> <ile opuscic>
+
+W katalogu znajduja sie rowniez przykladowe pliki ze zrzutami:
+
+plik1, plik2, plik3, plik4, plik11, dump4, dump5
+
+Pliki plik* zawieraja odpowiednio:
++ 1000 pakietow,
++ 1 pakiet,
++ 0 pakietow,
++ 1 obciety pakiet,
++ uszkodzony wersja pliku plik1 (pcap powinien zwrocic blad przy probie
+  odczytania uszkodzonego pakietu)
+
+Pliki dump* zawieraja pakiety z ramkami Ethernetu, w ktorych mozna
+znalezc naglowki protokolow IP, ARP, TCP.
+

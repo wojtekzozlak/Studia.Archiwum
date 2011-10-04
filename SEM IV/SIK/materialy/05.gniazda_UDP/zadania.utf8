@@ -1,0 +1,29 @@
+W katalogu znajdują się następujące programy:
+rserv, rtime, rserv6, rtime6.
+
+Programy kompilujemy, wywołując make.
+
+1. Zmodyfikuj kod serwera rserv, tak aby wypisywał adres i numer portu klienta,
+   od którego otrzymał żądanie.
+
+2. Zmodyfikuj kod klienta rtime, tak aby wypisywał adres i numer portu serwera,
+   od którego otrzymał odpowiedź.
+
+3. Wprowadź do klienta rtime element wysyłania z potwierdzeniem - klient po
+   wysłaniu czeka 4 sekundy, jeśli w tym czasie nie otrzyma odpowiedzi,
+   to ponawia zapytanie. Po trzech nieudanych próbach skontaktowania się
+   z serwerem kończy pracę, informując o porażce.
+
+4. Ustalamy jednakowy numer portu, na którym nasłuchują wszystkie serwery
+   uruchomione w laboratorium i każdy uruchamia serwer na swoim komputerze.
+   Zmień klienta w ten sposób, żeby wysyłał rozgłoszenie do wszystkich
+   komputerów w sieci lokalnej (patrz plik readme) i odbierał czas ze
+   wszystkich działających serwerów, które odpowiedzą w ciągu 20 sekund.
+
+5. Programy rserv6 i rtime6 są odpowiednikami rserv i rtime używającymi IPv6.
+   Znajdź różnice w kodzie źródłowym tych programów.
+
+6. Wykonaj dla rserv6 i rtime6 zadania opisane w punkcie 1. i 2.
+
+7. Czy klient rtime działa z serwerem rserv6? Czy klient rtime6 działa
+   z serwerem rserv? Spróbuj to wyjaśnić.

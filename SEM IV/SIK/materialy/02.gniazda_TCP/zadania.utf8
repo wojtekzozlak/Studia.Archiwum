@@ -1,0 +1,41 @@
+W katalogu znajdują się dwie pary programów:
+(a) s_client1a, s_server1a,
+(b) s_client1b, s_server1b.
+
+Programy kompilujemy, wywołując odpowiednio:
+make a
+make b
+
+1. Skompiluj i uruchom te programy.
+
+2. Przeanalizuj ostrzeżenia generowane przez kompilator z włączoną opcją
+   -Wall podczas kompilacji programów (a). Wytłumacz, dlaczego ignorowanie
+   tych ostrzeżeń może prowadzić do błędnego działania programu?
+
+3. Porównaj kod programów (a) i (b) i znajdź różnice. Jak każda z tych różnic
+   wpływa na poprawność programu?
+
+W dalszej części zajmujemy się już tylko programami (b).
+
+4. Zmodyfikuj kod klienta, tak aby mógł się łączyć z serwerem uruchomionym na
+   innym komputerze. Wywołanie klienta powinno wyglądać tak:
+   ./s_client1b host port
+
+5. Zwiększ bufor odbiorczy w serwerze i bufor nadawczy w kliencie do rozmiaru
+   rzędu 100-200 KiB. Zmodyfikuj kod serwera, tak aby zamiast wypisywać otrzymane
+   dane, wypisywał liczbę bajtów odczytanych przez funkcję read. Zmodyfikuj kod
+   klienta, tak aby zamiast wprowadzać z klawiatury tekst do wysłania, wprowadzać
+   długość danych do wysłania i liczbę powtórzeń. Np. po wprowadzeniu wartości
+   157 i 12 klient wywołuje 12 razy funkcję write, za każdym razem wysyłając
+   157 bajtów (mogą to być śmieci), po czym kończy działanie.
+   Uruchom serwer i klienta na różnych komputerach. Zaobserwuj jak zmieniają się
+   wartości wypisywane przez serwer, gdy po stronie klienta wpiszemy różne
+   wartości np.:
+   a) 1 30
+   b) 100 25
+   c) 1000 20
+   d) 10000 15
+   Poeksperymentuj z tymi wartościami. Czy na podstawie wartości otrzymywanych
+   po stronie serwera da się coś wywnioskować na temat buforowania i MTU sieci?
+
+6. Wprowadź możliwość podawania numeru portu serwera jako argumentu programu.

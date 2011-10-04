@@ -1,0 +1,73 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2" />
+<title>MPI</title>
+</head>
+<body>
+
+<p><a href="http://www-unix.mcs.anl.gov/mpi">Strona projektu MPI</a></p>
+
+<p><a href="greeting.c">Pierwszy przykład</a>, który jest omawiany na
+zajęciach.</p>
+
+<p>W laboratorium zainstalowana jest implementacja
+<a href="http://www-unix.mcs.anl.gov/mpi/mpich">MPICH</a>
+w wersji 1.2.6-3.
+Kompiluje się skryptem mpicc, którego argumenty są identyczne jak gcc.
+Przykład polecenia kompilującego plik greeting.c:<br>
+<br>
+mpicc -Wall -o greeting greeting.c<br>
+<br>
+Programy uruchamia się skryptem mpirun.
+Przykład polecenia uruchamiającego 5 kopii (procesów) programu greeting:<br>
+<br>
+mpirun -machinefile machines -np 5 ./greeting<br>
+<br>
+Plik machines powinien zawierać nazwy stacji roboczych, na których ma być
+uruchomiony program, np.:<br>
+<br>
+green11<br>
+green10<br>
+green09<br>
+<br>
+Liczba komputerów nie musi być równa liczbie procesów, które chcemy uruchomić.
+Dla każdego uruchamianego nielokalnie procesu zostaniemy poproszeni
+o podanie hasła.
+Obowiązuje hasło ze students dla aktualnie zalogowanego użytkownika.
+Żeby nie musieć podawać haseł, należy w katalogu $HOME/.ssh wywołać
+polecenie<br>
+<br>
+ssh-keygen -t rsa<br>
+<br>
+Na wszystkie pytania należy odpowiedzieć enterem.
+Następnie należy zmienić nazwę utworzonego pliku id_rsa.pub na
+authorized_keys.
+</p>
+
+<p><a href="sorting.c">Drugi przykład</a>, implementujący rozproszoną wersję
+algorytmu odd-even transposition-sort.
+Danych jest <i>n</i> procesorów numerowanych od 0 do <i>n</i> - 1.
+Na początku procesor <i>i</i> posiada klucz <i>k</i>(<i>i</i>),
+który jest liczbą całkowitą.
+Algorytm sortuje klucze, tak aby na końcu ich porządek był zgodny z numeracją
+procesorów<br>
+<br>
+<i>k</i>(<i>n</i> - 1) >= ... >= <i>k</i>(<i>1</i>) >= <i>k</i>(<i>0</i>).<br>
+<br>
+Elementarną operacją algorytmu jest
+<i>transposition</i>(<i>i</i>, <i>i</i> + 1), która wykonuje 
+porównanie i ewentualną zamianę kluczy pomiędzy procesorami <i>i</i> oraz 
+<i>i</i> + 1.
+Algorytm wykonuje <i>n</i> kroków numerowanych od 0 do <i>n</i>-1.
+W kroku parzystym wykonywane są operacje<br>
+<br>
+<i>transposition</i>(0, 1); <i>transposition</i>(2, 3);
+<i>transposition</i>(4, 5); ...<br>
+<br>
+W kroku nieparzystym wykonywane są operacje<br>
+<br>
+<i>transposition</i>(1, 2); <i>transposition</i>(3, 4);
+<i>transposition</i>(5, 6); ...<br>
+</p>
+
+</body>
+</html>

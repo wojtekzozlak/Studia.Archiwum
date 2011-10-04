@@ -1,0 +1,146 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{MD'2010 - zadanie domowe nr 2}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+Na pierwszy rzut oka widać, że mamy do czynienia z problemem rekurencyjnym.
+Zastanówmy się więc, czy mając policzony ($n-1$)szy trójkąt, jesteśmy jakoś w stanie policzyć $n$-ty.
+
+
+Trójkąt o 1 większy, uzyskujemy dokładając (np. u dołu) dodatkowy rządek, o podstawie szerokości $n$.
+Nasza nowa figura zawiera wszystkie trójkąty z przypadku $n-1$ oraz pare dodatkowych.
+Łatwo zauważyć, że te ''pare dodatkowych'' musi zawierać w sobie fragment dołożonego rządku.
+Policzmy ile ich jest.
+
+
+Warto odnotować, że dodany rządek składa się z dwóch rodzajów trójkątów.
+$n$ z nich ma normalną orientację, $n-1$ jest obrócone o 180$^{\circ}$.
+
+
+Zacznijmy od tych z normalną orientacją.
+Licząc pojedynczo jest ich $n$, parami (wraz z trojkątami z rządka wyżej) tworzą $n-1$ trójkątów o boku 2, trójkami (wraz z 2 wyższymi rządkami) dają $n-2$ trójkątów o boku 3 itd.
+Zatem w sumie zawiera je w sobie $n + (n - 1) + ... + 1 = \frac{n(n+1)}{2}$ trójkątów.
+
+
+Z tymi o orientacji odwrotnej będzie nieco gorzej.
+Pojedynczo jest ich $n -1$, z rządkiem wyżej są w stanie stworzyć trójkąty o boku 2, ale będzie ich już o 2 mniej (bo nasz trójkąt się zwęża u góry, one natomiast rozszerzają), czyli $n - 3$ itd.
+W sumie daje to 
+\[
+  (n - 1) + (n - 3) + ... + (1 + [2 \backslash n]) = \sum_{l=0}^{\lfloor \frac{n}{2} \rfloor - 1}(n - 1 - 2l)
+\]
+(gdzie $[2 \backslash n]$ to notacja Iversona z podzielnością $n$ przez 2). \\ \\
+
+
+Podsumowując:
+\begin{equation}
+  T_{n} = T_{n-1} + \frac{n(n+1)}{2} + \sum_{l=0}^{\lfloor \frac{n}{2} \rfloor - 1}(n - 1 - 2l) \label{eq:wzor_rekurencyjny}
+\end{equation}
+
+Wzór ten rozwija się w prosty sposób w szereg, przy czym szczęśliwie
+$\frac{1(1+1)}{2} + \sum_{l=0}^{\lfloor \frac{1}{2} \rfloor - 1}(1 - 1 - 2l) = 1 + 0 = 1 = T_{1}$\\
+
+
+zatem
+\begin{equation}
+  T_{n} = \sum_{k=1}^{n} \left( \frac{k(k+1)}{2} + \sum_{l=0}^{\lfloor \frac{k}{2} \rfloor - 1}(k - 1 - 2l) \right) \label{eq:wzor_jawny_1}
+\end{equation}
+
+Teraz doprowadzę to cudowne wyrażenie do postaci jawnej metodą małych kroczków.
+Korzystając z właściwości sumy skończonej podzielę sobie \ref{eq:wzor_jawny_1} na kawałeczki:
+
+\[
+  T_{n} = \sum_{k=1}^{n} \left( \frac{k(k+1)}{2} \right) + \sum_{k=1}^{n} \left( \sum_{l=0}^{\lfloor \frac{k}{2} \rfloor - 1}(k - 1 - 2l) \right) = L + R
+\]
+
+No to od lewej...
+
+\[
+  L = \sum_{k=1}^{n} \left( \frac{k(k+1)}{2} \right) = \frac{1}{2}\sum_{k=1}^{n} k^{2} + \frac{1}{2}\sum_{k=1}^{n} k
+\]
+
+\tiny{ (korzystajac z klasycznych wzorów na sumy) }
+
+\normalsize
+\[
+  L = \frac{n(n+1)(2n+1)}{12} + \frac{n(n+1)}{4} = \frac{n(n+1)(2n+1) + 3n(n+1)}{12} =
+\]
+\begin{equation}
+  \frac{n(n+1)((2n+1) + 3)}{12} = \frac{n(n+1)(2n+4)}{12} = \frac{n(n+1)(n+2)}{6} \label{eq:L_ladne}
+\end{equation} \\ \\
+
+
+Prawą stronę zaczniemy od sumy wewnętrznej:
+\[
+  \sum_{l=0}^{\lfloor \frac{k}{2} \rfloor - 1}(k - 1 - 2l) = \sum_{l=1}^{\lfloor \frac{k}{2} \rfloor}k - \sum_{l=1}^{\lfloor \frac{k}{2} \rfloor} 1 - 2\sum_{l=1}^{\lfloor \frac{k}{2} \rfloor - 1} l =
+\]
+\[
+  \lfloor \frac{k}{2} \rfloor k  - \lfloor \frac{k}{2} \rfloor - (\lfloor \frac{k}{2}  \rfloor - 1)\lfloor \frac{k}{2}  \rfloor =
+  \lfloor \frac{k}{2} \rfloor k  - \lfloor \frac{k}{2} \rfloor - \lfloor \frac{k}{2}  \rfloor^2 + \lfloor \frac{k}{2}  \rfloor = 
+  \lfloor \frac{k}{2} \rfloor k  - \lfloor \frac{k}{2}  \rfloor^2
+\]
+
+Teraz, zauważmy, że dzięki notacji Iversona:
+\[
+  I_{k} = [\neg (2 \backslash k)]
+\]
+\[
+  \lfloor \frac{k}{2} \rfloor = \frac{k - I_{k}}{2}
+\]
+I wtedy:
+\[
+  \lfloor \frac{k}{2} \rfloor k  - \lfloor \frac{k}{2}  \rfloor^2 = \frac{k^2 - kI_{k}}{2} - \left( \frac{k - I_{k}}{2} \right)^2 =
+  \frac{2k^2 - 2kI_{k} - (k^2 - 2kI_{k} + I_{k}^2)}{4} = 
+\]
+\[
+  \frac{k^2 - I_{k}^2}{4} =  \frac{k^2 - I_{k}}{4} 
+\]\\ \\
+
+W tym momencie możemy wrócić do oblicznia $R$
+
+\[
+  R = \sum_{k=1}^{n} \left( \sum_{l=0}^{\lfloor \frac{k}{2} \rfloor - 1}(k - 1 - 2l) \right) = \sum_{k=1}^{n} \frac{k^2 - I_{k}}{4} = \frac{1}{4} \sum_{k=1}^{n} (k^2 - I_{k}) = 
+\]
+\tiny{(ponieważ suma skończona)} \normalsize
+\[
+  \frac{n(n+1)(2n+1)}{24} - \frac{1}{4} \sum_{k=1}^{n} I_{k}
+\]
+
+\noindent $\sum_{k=1}^{n} I_{k}$ to ilość liczb nieparzystych w przedziale $[1;n]$, czyli dokładnie $\lceil \frac{n}{2} \rceil$
+
+\[
+  \frac{n(n+1)(2n+1)}{24} - \frac{1}{4} \sum_{k=1}^{n} I_{k} = \frac{n(n+1)(2n+1)}{24} - \frac{\lceil \frac{n}{2} \rceil}{4} = 
+\]
+\begin{equation}
+  \frac{n(n+1)(2n+1) - 6\lceil \frac{n}{2} \rceil}{24}  \label{eq:R_ladne}
+\end{equation} \\ \\
+
+
+Uff... to teraz składając (\ref{eq:L_ladne}) i (\ref{eq:R_ladne}) razem, uzyskujemy ostatecznie (\ref{eq:wzor_jawny_1}):
+\[
+  T_{n} = \frac{n(n+1)(n+2)}{6} + \frac{n(n+1)(2n+1) - 6\lceil \frac{n}{2} \rceil}{24} =
+\]
+\[
+  \frac{4n(n+1)(n+2) + n(n+1)(2n+1) - 6\lceil \frac{n}{2} \rceil}{24} =
+  \frac{n(n+1)(4(n+2) + (2n+1)) - 6\lceil \frac{n}{2} \rceil}{24} =
+\]
+\[
+  \frac{n(n+1)(4n+8 + 2n+1) - 6\lceil \frac{n}{2} \rceil}{24} =
+\]
+\[
+  \frac{n(n+1)(6n+9) - 6\lceil \frac{n}{2} \rceil}{24} =
+\]
+\[
+  \frac{3n(n+1)(2n+3) - 6\lceil \frac{n}{2} \rceil}{24} =
+\]
+\[
+  \frac{n(n+1)(2n+3) - 2\lceil \frac{n}{2} \rceil}{8}
+\]
+\end{document}

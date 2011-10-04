@@ -1,0 +1,289 @@
+== Zasady opisywania protokołów ==
+
+Autor: Aleksy Schubert
+
+=== Streszczenie ===
+
+Niniejszy dokument opisuje strukturę i podstawowe wymagania dotyczące sposobu 
+opisywania protokołów. 
+
+Spodziewamy się, że każdy opis protokołu będzie miał następującą strukturę:
+# Streszczenie
+# Opis celów protokołu
+# Opis założeń protokołu
+# Opis formatu komunikatów
+# Opis wymienianych komunikatów
+# Opis stanów
+# Podsumowanie używanych numerów
+Przedstawione dokumenty nie muszą się ograniczać do tego kształtu. Mogą zawierać
+dodatkowe sekcje, które objaśniają i precyzują inne istotne aspekty działania 
+protokołu, np. bezpieczeństwo, odporność na awarie itp. Także konstrukcja
+protokołu może wykraczać poza zakreślone tutaj ramy (można sobie wyobrazić, że
+twórcy opracują jakiś system trybów lub poziomów działania protokołu, który
+nie da się prosto ująć w ramach prostego wyliczenia stanów i komunikatów).
+
+=== Cele ===
+
+Opis protokołu powinien opisywać w sposób zrozumiały jego działanie. W obecnym 
+dokumencie wyznaczamy pewien standard opisu protokołu, który powinien zmniejszyć
+ilość niedomówień związanych z interpretacją.
+
+W sekcji tej powinno być opisane, jakim celom ma służyć protokół, np. 
+zapewnianiu przesyłania danych strumieniowych do komunikacji multimedialnej.
+
+=== Założenia ===
+
+Zakładamy, że opisy protokołów będą wykonywane w języku polskim i będą stanowiły
+podstawę do tworzenia przez niezależne zespoły programistów implementacji.
+Różne implementacje w założeniu mają ze sobą współdziałać. Zakładamy, że 
+komunikacja między twórcą opisu protokołu a implementatorami jest ograniczona
+(np. ze względu na brak czasu twórcy opisu). Zakładamy, że opisy mogą być
+wykonane zarówno w formatach pozwalających na wstawianie rysunków, jak i
+w czystym ASCII (być może wzbogaconym o możliwość wpisywania polskich znaków
+diakrytycznych). Zakładamy, że opisy będą pozwalały na napisanie w języku C
+(w wersji pod sysemy uniksowe) kodu źródłowego, który skompilowany na dwóch
+maszynach o różnej architekturze będzie dawał mogące ze sobą współpracować 
+programy.
+
+W części tej m.in. powinny znaleźć się informacje o tym, z czego
+opisywany protokół korzysta. W szczególności powinny znaleźć się tutaj 
+informacje o tym:
+* w jakiej warstwie działa protokół, 
+* z jakich protokołów korzysta do transportu (UDP, TCP, RTP, itp.),
+* z jakich protokołów usługowych bezpośrednio korzysta (np. DHCP, DNS itp.),
+* z jakich funkcjonalności wspomnianych wyżej protokołów korzysta (np. numer 
+  portu),
+* z jakiego modelu komunikacji korzystamy (klient-serwer, P2P itp.).
+
+=== Format komunikatów ===
+
+Przy opisie protokołu przeznaczonym do interpretacji bez udziału twórcy 
+protokołu konieczne jest jednoznaczne opisanie binarnego formatu wymienianych
+komunikatów. Ten format powinien uwzględniać takie elementy jak:
+* porządek oktetów w liczbach (sieciowy, little endian, big endian itp.),
+* sposób interpretacji znaków (w arytmetyce uzupełnień do 2, do 1, itp.),
+* format liczb zmiennoprzecinkowych (np. IEEE 754),
+* dopuszczalne uzupełnienia formatu (np. czy liczby dwuoktetowe są uzupełniane
+  do czterech oktetów i jakimi danymi (zerami, przez 0xFF, losowymi danymi 
+  itp.),
+* jakie pola występują w komunikacie i w jakiej kolejności.
+Opisanie tego ostatniego elementu wymaga użycia jakiegoś formatu opisu
+komunikatów. Przyjmujemy, że nasze opisy będą używać formatu przedstawionego 
+poniżej. Zakładamy, że oktety określonej według poniższych zasad reprezentacji
+są przesyłane przez sieć w ten sposób, że najpierw transmitowany jest pierwszy
+oktet, potem drugi, itd. aż do ostatniego.
+
+Uwaga: na zajęciach przyjmujemy, że przez sieć przesyłane są liczby w sieciowym 
+porządku oktetów.
+
+==== Typy podstawowe ====
+
+Będziemy używali następujących typów podstawowych:
+* octet,
+* int,
+* float.
+Typ octet oznacza zawsze wielkość ośmiobitową bez określenia sposobu 
+interpretacji jako liczby całkowitej. Typ ten przydaje się, gdy chcemy określić,
+że w danym miejscu znajdują się dane, które są opisane w innej części dokumentu.
+Potrzeba taka zachodzi na przykład, gdy najpierw opisujemy ogólny format
+komunikatu, a następnie uszczegóławiamy go, opisując konkretne komunikaty.
+
+W wypadku typów całkowitoliczbowych będziemy używali prefiksów określających,
+czy zapisywana liczba jest ze znakiem (uwaga: należy określić, który
+format liczb ze znakiem jest stosowany) oraz sufiksów określających wielkość
+reprezentacji. Będziemy stosowali dwa rodzaje prefiksów: "u" oraz "s". Dozwolone
+są wszystkie sufiksy będące wielokrotnościami liczby 8, czyli: 8, 16, 24, 32, 40,
+itd. Przykładowe typy całkowitoliczbowe to: uint32, sint16 itp.
+
+W wypadku typów zmiennoprzecinkowych będziemy używali tylko sufiksów 32 i 64
+na oznaczenie wielkości liczby (32 bity, 64 bity). Przykłady: float32, float64.
+
+==== Typy złożone ====
+
+Oprócz typów podstawowych możemy też korzystać z typów złożonych. Pierwszy 
+rodzaj typu złożonego to tablica. Tablice opisujemy według wzoru:
+  TYP [WIELKOŚĆ] NAZWA;
+gdzie TYP to jeden z typów podstawowych lub wcześniej zdefiniowanych, NAZWA
+to nazwa pola, zaś WIELKOŚĆ to liczba elementów tablicy. Tablice są zawsze
+indeksowane od 0 do WIELKOŚĆ-1. Wartość oznaczona tutaj jako WIELKOŚĆ musi 
+być znana na etapie specyfikacji protokołu lub obliczalna na podstawie 
+części komunikatu odebranej przed przetwarzaniem tablicy. Wartość WIELKOŚĆ może 
+być opisana symbolicznie.
+
+Format binarny tablicy opisanej jako
+  TYP [WIELKOŚĆ] NAZWA;
+jest następujący: po kolei umieszczane są oktety reprezentacji binarnej pola o 
+indeksie 0, 1, itd. aż do pola o indeksie WIELKOŚĆ-1. Na przykład reprezentacja 
+binarna tablicy:
+  uint16 [3] ala;
+zawierającej elementy ala[0]=34324, ala[1]=4534, ala[2]=233 wyglądałaby 
+binarnie tak (zakładamy sieciową reprezentację uint16):
+
+0x86 0x14 0x11 0xB6 0x00 0xE9
+
+Opis
+  uint16 [3] ala;
+można też równoważnie przedstawić jako
+  uint16 [ARRAY_LEN] ala;
+przy czym należy wcześniej opisać (nie wprowadzamy tu specjalnej składni), że
+symbol ARRAY_LEN ma wartość 3.
+
+Oprócz tablic możemy używać struktur. Struktury opisujemy, korzystając z
+następującego formatu:
+    NAZWA_STRUKTURY {
+        TYP1 NAZWA1;
+        ...
+        TYPN NAZWAN;
+    }
+Reprezentacja binarna takiej struktury wygląda w ten sposób, że najpierw 
+umieszczane są oktety pola NAZWA1, potem NAZWA2 itd. według kolejności
+tekstowego występowania aż do pola NAZWAN. NAZWA_STRUKTURY może być
+wykorzystywana do opisywania innych typów. Określenie TYPi obejmuje także
+opisaną powyżej specyfikację rodzaju i wielkości tablicy. Przykład struktury:
+    PROTOCOL_MSG {
+        uint8                  message_type;
+        uint32                 total_length;
+        uint32                 payload_length;
+        octet [payload_length] payload;
+        octet [padding_length] padding;
+        uint32                 mac;
+    }
+gdzie padding_length= total_length - payload_length - 13. Warto zwrócić
+uwagę, że liczba 13 odpowiada łącznej długości pól message_type, total_length,
+payload_length i mac.
+
+==== Opisy długości ====
+
+Jeśli w komunikacie występuje pole opisujące długość jakiejś części komunikatu,
+to przy opisie tego pola powinny być jawnie wymienione nazwy pól, jakie ta
+długość obejmuje. W wypadku komunikatu PROTOCOL_MSG opisanego w poprzedniej
+sekcji opis pola total_length powinien brzmieć w przybliżeniu tak:
+
+total_length - pole zawierające długość całego pakietu, długość ta obejmuje 
+               pola: message_type, total_length, payload_length, payload, 
+               padding, mac.
+
+Nie używamy natomiast skrótów myślowych takich jak w tym opisie:
+
+total_length - pole zawierające długość całego pakietu.
+
+gdyż mogą pojawić się wątpliwości interpretacyjne, czy chodzi o cały pakiet
+rzeczywiście, czy o jego część za polem total_length, czy oktety pola 
+total_length też wchodzą w skład tej wartości itp.
+
+=== Opis komunikatów ===
+
+Niezależnie od opisu ogólnego formatu komunikatów koniecznie jest podanie
+formatu wszystkich konkretnych komunikatów wraz z celami, do jakich te
+komunikaty mają służyć oraz z opisem przetwarzania, jakie mają one powodować.
+Każdy komunikat powinien mieć określoną symboliczną nazwę. Nazwa ta powinna
+zawierać napis MSG.
+
+Czasami dogodnie jest wprowadzić grupy komunikatów. Każda wprowadzona grupa
+komunikatów powinna wymieniać jednoznacznie komunikaty, które do niej należą.
+Przy korzystaniu z grup komunikatów można używać notacji typu:
+* NAZWA_GRUPY + KOMUNIKAT - na oznaczenie zbioru komunikatów zawierającego
+  wszystkie komunikaty z grupy NAZWA_GRUPY oraz dodatkowo komunikat KOMUNIKAT,
+* NAZWA_GRUPY - KOMUNIKAT - na oznaczenie zbioru komunikatów zawierającego
+  wszystkie komunikaty z grupy NAZWA_GRUPY oprócz komunikatu KOMUNIKAT,
+* NAZWA_GRUPY1 + NAZWA_GRUPY2 - na oznaczenie zbioru komunikatów zawierającego
+  wszystkie komunikaty z grupy NAZWA_GRUPY1 oraz wszystkie komunikaty grupy
+  NAZWA_GRUPY2,
+* NAZWA_GRUPY1 - NAZWA_GRUPY2 - na oznaczenie zbioru komunikatów zawierającego
+  te komunikaty z grupy NAZWA_GRUPY1, które nie należą do grupy NAZWA_GRUPY2.
+Każda symboliczna nazwa grupy powinna zawierać napis GRP.
+
+=== Opis stanów ===
+
+Przy opisie protokołu często zdarza się, że w pewnych momentach sensownie mogą
+być zinterpretowane tylko niektóre komunikaty. Naturalne w tym momencie staje
+się wprowadzenie pojęcia stanu. Stan określony jest przez sposób reakcji na
+komunikaty oraz na inne zdarzenia (np. przekroczenie czasu, reakcja użytkownika,
+reakcja systemu operacyjnego itp.). Opisy stanów powinny zawierać dokładne
+wyszczególnienie 
+* założeń 
+* działań, jakie powinny być wykonywane w reakcji na zdarzenia.
+W szczególności jasno powinno być określone:
+* jakie rodzaje zdarzeń są dopuszczalne w danym stanie (oprócz przyjścia 
+  komunikatu),
+* jak wygląda reakcja na te zdarzenia,
+* jak powinna wyglądać reakcja na wszystkie możliwe komunikaty (nie tylko
+  zgodne z pozytywnym scenariuszem działania protokołu).
+Jeśli protokół przewiduje utrzymywanie jakichś dodatkowych zmiennych, to
+należy w każdym przejściu jawnie wskazywać, jakie zmiany tych zmiennych
+mają nastąpić. Także, jeśli wykonanie jakiejś akcji zależy od wartości
+zmiennej, to należy to jasno opisać.
+
+Dobrze też, gdy opis protokołu zawiera rysunek przedstawiający wszystkie
+stany w postaci automatu. Na rysunku tym stany powinny być oznaczone w postaci
+zamkniętych obszarów (kół, prostokątów, owali itp.), zaś zdarzenia w postaci
+strzałek między stanami. Zdarzenia inicjowane przez implementację (np. wysłanie 
+komunikatu, wypisanie czegoś na terminal) powinny być dodatkowo oznaczane 
+znakiem wykrzyknika (!), zaś zdarzenia odbierane przez implementację (np. 
+odebranie komunikatu, wciśnięcie klawisza przez użytkownika) za pomocą
+znaku zapytania (?). Przykład:
+                              | USER_INITS?
+                              | x:=0
+                             \|/
+                    ----------------------
+                    | DISCONNECTED_STATE | /____________
+                    ---------------------- \           |
+                              |                        |
+                              | USER_STARTS?           |
+                              | x:=x+1                 |
+                             \|/                       |
+                  -------------------------            |
+                  | INIT_CONNECTION_STATE |            |
+                  -------------------------            |
+                              |                        |
+                              | CONNECT_MSG!           |
+                             \|/                       |
+                    ----------------------             |
+                    | WAIT_CONNECT_STATE |             |
+                    ----------------------             |
+                   /           |\                      |
+       TIMEOUT?   /            | \ TIMEOUT?            |
+         x>3     /             |  \  x<=3              |
+               |/_ CONNECT_MSG?|   \                   |
+   --------------              |    \                  |
+   |    ABORT   |              |     -------------------
+   --------------             \|/
+                    ---------------------
+                    |  WORKING_STATE    |
+                    ---------------------
+                             ...
+
+Każda symboliczna nazwa stanu powinna zawierać napis STATE.
+
+Istotne jest także, aby w tej części pojawiła się informacja na temat tego,
+co się dzieje, gdy wysyłany komunikat nie może być wysłany (np. dlatego,
+że połączenie sieciowe zostało zerwane choćby w wyniku długotrwałego
+odłączenia kabla sieciowego maszyny docelowej), a także, co się dzieje,
+gdy w danym momencie przychodzi komunikat, którego się nie spodziewamy.
+
+=== Numery ===
+
+W sekcji tej powinny być zgromadzone skrótowe opisy wszystkich użytych w
+dokumencie wartości symbolicznych wraz z odpowiadającymi im rzeczywistymi 
+liczbami. Jeśli na przykład wprowadziliśmy komunikat ALA_MSG, któremu 
+przypisaliśmy liczbowy typ o wartości 3, to w tej sekcji powinien znaleźć się 
+opis w stylu:
+
+ALA_MSG=3 - typ komunikatu wysyłanego przez Alę.
+
+=== Uwagi końcowe ===
+
+Nie narzucamy żadnego formatu tworzenia diagramów automatów (w szczególności
+nie narzucamy UML-a), szczegóły prezentacji automatów są do negocjacji z 
+prowadzącymi. Prowadzący może wymagać, aby teksty były zapisane w takim 
+formacie, w którym jednoznacznie są reprezentowane polskie znaki diakrytyczne.
+Opis protokołu nie powinien być zbyt obszerny - nalezy dążyć do zwięzłego, ale
+pełnego opisu.
+
+Dla lepszego zrozumienia potrzeby istnienia tego dokumentu warto obejrzeć
+następujące specyfikacje:
+* http://www.xmlrpc.com/spec - specyfikacja XMLRPC
+* http://www.gamers.org/dEngine/quake/Qdem/dem-1.0.2-5.html#ss5.3 - 
+* http://wiki.theory.org/index.php/BitTorrentSpecification
+* ftp://sunsite.icm.edu.pl/pub/doc/rfc/rfc1661.txt
+* ftp://sunsite.icm.edu.pl/pub/doc/rfc/rfc2246.txt (sekcja 4)

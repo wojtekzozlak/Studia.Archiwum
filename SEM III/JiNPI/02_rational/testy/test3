@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+# Wojciech Sirko
+# automatyczna testerka do zadania 3 (Rational) z JNP1
+
+my $num = 1;
+
+my $file = "kotlet_z_jajka_234911"; # jakaś unikatowa nazwa :P
+my $out = "./out3";
+my $gcc_out = "./gcc_out3";
+
+sub run
+{
+	my($str1, $str2) = @_;
+
+	
+	my $source = "#include <iostream>\n#include \\\"rational.h\\\"\nint main()\n{\n$str1\n$str2\nreturn 0;\n}";
+
+	system("printf \"$source\" > ./$file.cpp; printf \"Test $num:\n$source\nOutput: \" >> $out; printf \"Test $num:\n\" >> $gcc_out");
+	if(system("g++ rational.o $file.cpp -o $file -O2 2>> $gcc_out"))
+	{
+		system("echo \"Compilation error\n\" >> $out");
+	}
+	else
+	{
+		system("./$file >> $out");
+	}
+	system("printf \"\n\" >> $gcc_out");
+
+	$num++;
+}
+
+sub cout
+{
+	return "std::cout << (@_) << std::endl << std::endl;";
+}
+
+sub rand2
+{
+	return int(rand(2000)) - 1000;
+}
+
+system("rm $out $gcc_out 2> /dev/null");
+
+if(system("g++ -c rational.cc -o rational.o -O2 2>> $gcc_out"))
+{
+	print "Compilation of rational failed.\n";
+	exit(-1);
+}
+
+my @str1 = ("Rational r1, r2(-7), r3(-441, -481), r4(-48841, 0);",
+	"Rational r1(123, 0), r2(-7, -1), r3(10000000, -100000), r4(-13, 1);",
+	"Rational r1(-13, -124), r2, r3(-5995, -1111), r4(-444, 0));",
+	"Rational r1(-7), r2(-666, 0), r3(-1245, -4444), r4(1234, 5);",
+	"Rational r1(13, 7), r2(15, 0); long r3 = 15, r4 = 0;",
+	"long r1 = -7, r2 = 1231; Rational r3(-1561, 0), r4(-10000, -1000);",
+	"long r1 = 401; Rational r2(1249, 124); long r3 = -124; Rational r4(-123, -4);",
+	"long r1 = -13; Rational r2(-555, 0); long r3 = 0; Rational r4(125);");
+
+my @op = ("+", "-", "*", "/", "+=", "-=", "*=", "/=");
+
+my @var = ("r1", "r2", "r3", "r4", "(-r1)");
+
+my $num_tests = scalar(@op) * scalar(@var) * scalar(@var) * scalar(@str1);
+
+for my $s(@str1)
+{
+	for my $t(@var)
+	{
+		for my $v(@var)
+		{
+			for my $u(@op)
+			{
+				print "Test $num/$num_tests\n";
+				run($s, cout("$t $u $v"));
+			}
+		}
+	}
+}
+
+system("rm $file $file.cpp 2> /dev/null");
+

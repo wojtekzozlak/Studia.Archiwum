@@ -1,0 +1,61 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{MD'2010 - zadanie domowe nr 5}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+\small Zaczniemy od rozważenia funkcji $f(n, k)$ zwracającej ilość rozstawień $k$ nieszachujących się wież na planszy $A_{n}$, zdefiniowanej następująco:
+\[
+	A_{n} = \{(i, j) : 1 \le i \le j \le n\}
+\]
+Spróbujemy znaleźć jakąś zależność rekurencyjną jej dotyczącą. Rozbijmy problem $f(n, k)$ na dwa przypadki
+\begin{enumerate}
+\item{Pierwszy wiersz naszej planszy jest pusty. Wtedy mamy do rozstawienia $k$ wież na planszy $A_{n-1}$, czyli $f(n-1, k)$ możliwości }
+\item{W pierwszym wierszu planszy stoi jedna wieża (więcej wszak nie może). Rozstawmy najpierw pozostałe $k-1$ wiersz w pozostałych $n-1$ wierszach (czyli planszy $A_{n-1}$). Jest $f(n-1, k-1)$ takich kombinacji. Następnie dostawiamy wieżę w pierwszym wierszu. $k-1$ pól jest już szachowanych, dlatego zostaje $n - (k - 1) = n + 1 - k$ miejsc. Razem daje to $(n + 1 - k)f(n-1, k-1)$ rozstawień.  }
+\end{enumerate}
+W ten sposób uzyskaliśmy, że
+\[
+f(n, k) = (n + 1 - k)f(n-1, k-1) + f(n-1, k)
+\]
+\\
+Weźmy teraz funkcję $g(n, k) = \big\{ {n + 1 \atop n + 1 - k} \big\}$, z definicji liczb stirlinga:
+\[
+g(n, k) = \bigg\{ {n + 1 \atop n + 1 - k} \bigg\} = (n + 1 - k)\bigg\{ {n \atop n + 1 - k} \bigg\} + \bigg\{ {n \atop n - k} \bigg\} =
+\]
+\[
+= (n + 1 - k)g(n-1, k-1) + g(n-1, k)
+\]
+
+Ojej! Wygląda podobnie. Ale to jeszcze nic nie znaczy, trzeba jeszcze przyjrzeć się warunkom brzegowym.
+
+\[
+f(n, n) = 1
+\]
+\[
+f(n, 1) = \frac{n(n+1)}{2}
+\]
+\[
+g(n, n) = \bigg\{ {n + 1 \atop 1} \bigg\} = 1
+\]
+\[
+g(n, 1) = \bigg\{ {n + 1 \atop n } \bigg\} = \bigg( {n + 1 \atop 2} \bigg) = \frac{n(n+1)}{2}
+\]
+A to wspaniała wiadomość, bowiem mamy dwie funkcja o takiej samej zależności rekurencyjnej, posiadające identyczne warunki brzegowe. Zatem 
+\[
+f(n,k) = g(n,k) = \bigg\{ {n + 1 \atop n + 1 - k} \bigg\}
+\]
+
+Mając takie narzędzie właściwy problem rozwiąże się dość szybko. Ile jest możliwych rozstawień na danej planszy $B = \{ (i,j) : 1 \le i \le j \le n \}\setminus\{(1, n)\}$?
+Weźmy wszystkie rozstawienia dla planszy $A_{n}a$ a następnie odejmijmy wszystkie te, w których na polu $(1, n)$ stoi jakaś wieża. Jest ich tyle co rozstawień $k-1$ wież na planszy $A_{n-2}$ (wieża stojąca w $(1,n)$ zabiera skrajny wiersz i kolumnę). Jest tego dokładnie rzecz biorąc
+\[
+  f(n, k) - f(n-2, k-1) = \bigg\{ {n + 1 \atop n + 1 - k} \bigg\} - \bigg\{ {n - 1 \atop n - k} \bigg\}
+\]
+
+\end{document}

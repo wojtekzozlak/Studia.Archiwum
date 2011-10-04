@@ -1,0 +1,410 @@
+Zajecia maja na celu zapoznanie z programami sieciowymi pozwalajacymi
+na diagnozowanie i sterowanie lokalna konfiguracja sieciowa oraz na
+podstawowy kontakt z serwerami w sieci.
+
+Przedstawiaæ bêdziemy tutaj nastêpuj±ce programy i pliki:
+1. ifconfig
+2. arp
+3. route
+4. ping
+5. tcpdump
+6. traceroute/mtr
+7. pliki konfiguruj±ce sieæ
+8. dig
+9. netstat
+10. telnet
+
+
+1. Jesli chodzi o program ifconfig, to nalezy zalecic uruchomienie
+programu (uwaga na sciezke dostepu). Powinien sie ukazac napis w
+stylu: 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Bcast:127.255.255.255  Mask:255.0.0.0
+          UP BROADCAST LOOPBACK RUNNING  MTU:3584  Metric:1
+          RX packets:2832 errors:0 dropped:0 overruns:0
+          TX packets:2832 errors:0 dropped:0 overruns:0
+
+eth0      Link encap:Ethernet  HWaddr 00:60:8C:B3:EB:E2
+          inet addr:148.81.12.166  Bcast:148.81.12.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING PROMISC MULTICAST  MTU:1500  Metric:1
+          RX packets:5359911 errors:57 dropped:57 overruns:47
+          TX packets:563378 errors:0 dropped:0 overruns:0
+          Interrupt:10 Base address:0x300 
+
+Nalezy wyjasnic po kolei wszystkie widoczne tutaj napisy. Trzeba
+koniecznie powiedziec, iz odpowiednie opcje pozwalaja na zmiane
+widocznych tu parametrow, np:
+
+$/sbin/ifconfig broadcast 128.121.121.121
+
+ustanawia adres rozglaszania na 128.121.121.121. Wazna tez jest
+mozliwosc uruchamiania danego interfejsu, np:
+
+$/sbin/ifconfig eth0 up
+
+Uwaga: wszystkie powyzsze instrukcje, oprocz zwyklego wykonania
+ifconfig, mozna wykonaæ tylko, gdy ma siê prawa root'a.
+
+Wiêcej szczegó³ów:
+ man ifconfig
+
+2. Program arp s³u¿y do zarz±dzania pamieci± arp - asdresów fizycznych
+   maszyn pod³±czonych do sieci lokalnej - przewa¿nie
+   Ethernet-u. Proste, bezparametrowe wywolanie daje w wyniku np:
+
+Address                 HWtype  HWaddress           Flags Mask            Iface
+melkor.mimuw.edu.pl     ether   08:00:20:75:D9:63   C                     eth0
+jaskier.mimuw.edu.pl            (incomplete)                              eth0
+zaa.mimuw.edu.pl        ether   08:00:20:1D:D3:D4   C                     eth0
+lipa.mimuw.edu.pl       ether   00:C0:F0:16:92:E2   C                     eth0
+spider12.mimuw.edu.pl   ether   00:00:EF:06:0D:CC   C                     eth0
+
+   Widzimy tutaj kolumny:
+   Address   - to nazwa komputera
+   HWtype    - rodzaj sprzetu odpowiadajacego danemu adresowi
+               (np. ether, arcnet, pronet ...)
+   HWaddress - adres sprzetowy
+   Flags     - znaczniki (C - pelna pozycja, M - stala pozycja, P -
+               pozycja udostepniana przy proxy) 
+   Mask      - maska u¿ywana przy proxy (Linux nie obs³uguje)
+   Iface     - interfejs, przez ktory siegamy do danego komputera
+
+Wiêcej szczegó³ów: 
+ man arp
+ man 7 arp
+
+3. Program route jest bardzo podobny do ifconfig i arp. Tym razem 
+   jednak zmieniamy/ogl±damy zawarto¶æ tablicy tras. Wywo³anie bezparametrowe
+   tego programu daje wynik w stylu:
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+localnet        *               255.255.255.0   U     0      0      104 eth0
+loopback        *               255.0.0.0       U     0      0        4 lo
+default         spider12.mimuw. 0.0.0.0         UG    0      0      145 eth0
+
+Tytu³ oznajmia nam, ¿e mamy do czynienia z tablic± tras. Potem
+pojawiaj± siê kolejne kolumny tabeli:
+
+Destination - adres docelowy (sieci lub komputera)
+Gateway - bramka, przez któr± pakiety trafiaj± do celu (* oznacza
+          nieustawion± warto¶æ) 
+Genmask - maska sieci dla sieci docelowej; wartosci wyj±tkowe:
+          255.255.255.255 - je¶li celem jest komputer, 0.0.0.0 - je¶li
+          to jest domy¶lna trasa
+Flags   - znaczniki opisuj±ce rodzaj trasy
+Metric  - odleglosc do celu (zwykle w etapach, 0 - oznacza bie¿±c± sieæ)
+Ref     - liczba odwolan do trasy (w Linux-ie nieuzywane = 0)
+Use     - liczba siegniec po dana trase do tablicy (ostatnio sa tutaj
+          w Linux-ie bardzo male wartosci, gdyz gniazda uzywaja
+          wlasnej tablicy)
+Iface   - interfejs, do ktorego beda przesylane pakiety - zwykle eth0
+          lub lo
+
+localnet - oznacza siec lokalna
+loopback - oznacza adres petli zwrotnej
+default  - oznacza domysln± trasê
+
+Podobnie jak w wypadku poprzednich programow podanie odpowiednich
+opcji pozwala nie tylko na czytanie, ale i na zapisywanie wartosci do
+tablicy, np: 
+
+$/sbin/route add -net 127.0.0.0
+
+powoduje dodanie do tablicy tras pozycji dla sieci petli zwrotnej.
+
+Wiêcej szczegó³ów:
+ man route
+
+4. Program ping slu¿y zasadniczo do diagnozowania sieci. Najprostsza
+   forma diagnozy to napisanie
+
+$ping rainbow
+
+   Wypisuje sie tutaj taki tekst
+
+PING rainbow.mimuw.edu.pl (10.1.1.4) from 10.1.2.9 : 56(84) bytes of data.
+64 bytes from rainbow.mimuw.edu.pl (10.1.1.4): icmp_seq=1 ttl=63 time=0.798 ms
+64 bytes from rainbow.mimuw.edu.pl (10.1.1.4): icmp_seq=2 ttl=63 time=0.993 ms
+64 bytes from rainbow.mimuw.edu.pl (10.1.1.4): icmp_seq=3 ttl=63 time=0.821 ms
+
+--- rainbow.mimuw.edu.pl ping statistics ---
+3 packets transmitted, 3 received, 0% loss, time 2015ms
+rtt min/avg/max/mdev = 0.798/0.870/0.993/0.093 ms
+
+   przy czym lista wierszy ze statystykami moze byc dluzsza w
+   zaleznosci od tego, jak dlugo nie wcisnelismy Ctrl-C. Pierwszy
+   wiersz zawiera nazwe komputera (podana w wierszu wywolania, ale z 
+   dolepiona nazwa dziedziny), jego adres IP oraz liczbe wysylanych
+   oktetow danych. Potem nastepuja wiersze ze statystykami
+   poszczegolnych wyslanych pakietow. Na koncu nastepuje statystyka
+   calej sesji.
+
+   Mamy tutaj jednak dostepne wiele interesujacych opcji takich jak:
+
+$ping -c100 148.81.12.157
+
+   Co oznacza wyslanie i odebranie 100 pakietow.
+
+$ping -s 100 148.81.12.147
+
+   Co oznacza wyslanie i odebranie pakietow o rozmiarze 100 oktetow.
+
+$ping -b 255.255.255.255
+
+  Co oznacza wys³anie i odebranie pakietów pod adres rzg³aszania.
+
+Wiêcej szczegó³ów:
+ man ping
+
+5. Program tcpdump s³u¿y do ogl±dania ruchu w sieci
+
+$ /usr/sbin/tcpdump
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), capture size 96 bytes
+15:36:26.042816 IP pieprz.mimuw.edu.pl.32777 > absurd.mimuw.edu.pl.ssh: P 2358089518:2358089602(84) ack 2464439003 win 63840 <nop,nop,timestamp 12383677 3092544775>
+15:36:26.043343 IP absurd.mimuw.edu.pl.ssh > pieprz.mimuw.edu.pl.32777: . ack 84 win 63712 <nop,nop,timestamp 3092544798 12383677>
+15:36:26.046277 IP pieprz.mimuw.edu.pl.32777 > absurd.mimuw.edu.pl.domain:  51068+ PTR? 9.2.1.10.in-addr.arpa. (39)
+15:36:26.047715 IP absurd.mimuw.edu.pl.domain > pieprz.mimuw.edu.pl.32777:  51068* 1/3/3 PTR[|domain]
+
+4 packets captured
+4 packets received by filter
+0 packets dropped by kernel
+
+Pozwala na ¶ledzenie, jakie pakiety docieraj± do lokalnego komputera. 
+Mo¿na za¿czyæ sobie, aby wypisywa³ informacje tylko o niektórych
+protoko³ach, portach itp. Na przyk³ad
+
+$ /usr/sbin/tcpdump tcp
+
+daje tylko pakiety protoko³u TCP, za¶
+
+$ /usr/sbin/tcpdump tcp port 80
+
+lub
+
+$ /usr/sbin/tcpdump tcp port http
+
+wy¶wietla tylko po³±czenia WWW.
+
+Wiêcej szczegó³ów:
+ man tcpdump
+
+6. Programy traceroute i mtr s³u¿± do pokazywania trasy, jak± pakiety
+przebywaj± od naszego komputera do komputera wskazanego w parametrze:
+
+eprz alx]$ /usr/sbin/traceroute www.siemens.com
+traceroute to www.siemens.de (192.138.228.1), 30 hops max, 38 byte packets
+ 1  spider6 (10.1.6.31)  1.024 ms  0.498 ms  0.544 ms
+ 2  c96 (193.0.96.31)  1.721 ms  0.999 ms  1.097 ms
+ 3  icm-c4-193-0-64-105.rtr.net.icm.edu.pl (193.0.64.105)  1.351 ms  1.747 ms  1.452 ms
+ 4  z-ochoty.poznan-gw.10Gb.pol34.pl (212.191.224.33)  30.007 ms  20.068 ms  19.892 ms
+ 5  hbg-b2-pos0-0-0.telia.net (213.248.77.213)  34.873 ms  29.049 ms  25.214 ms
+ 6  hbg-bb1-pos0-1-0.telia.net (213.248.65.177)  32.216 ms  25.790 ms  25.862 ms
+ 7  ffm-bb1-pos7-0-0.telia.net (213.248.64.42)  46.121 ms  38.646 ms  38.914 ms
+ 8  ffm-b3-pos0-1-0.telia.net (213.248.64.62)  47.192 ms  40.733 ms  38.700 ms
+ 9  ge7-2-pr2.FRA.router.COLT.net (80.81.193.61)  46.371 ms  42.170 ms  42.325 ms
+10  254-21-164-213.customer.coltnet.at (213.164.21.254)  66.305 ms  64.575 ms  64.735 ms
+11  81-163-185-213.customer.coltnet.at (213.185.163.81)  65.402 ms  67.397 ms  66.639 ms
+12  * * *
+13  * * *
+
+
+Gwiazdka (*) oznacza albo ¿e komputer jest niedostêpny, albo ¿e komputer
+nie obs³uguje protoko³u, z którego korzysta program traceroute. Program
+mtr te¿ pokazuje trasy w sieci, ale podaje lepsze statystyki.
+
+Wiêcej szczegó³ów:
+ man traceroute
+ man mtr
+
+7. Kilka ciekawych plików
+
+- /etc/hosts - zawiera adresy komputerów, dla których nie trzeba odwo³ywaæ
+  siê do systemu nazw, aby siê z nimi po³±czyæ.
+- /etc/services - zawiera listê przyporz±dkowuj±c± numery portów poszczególnym
+  us³ugom sieciowym.
+- /etc/resolv.conf - zawiera konfiguracjê komputerów, które podaj± nam
+  nazwy maszyn.
+
+Wiêcej szczegó³ów:
+ man hosts
+ man services
+ man resolv.conf
+
+8. Program dig s³u¿y do zdobywania informacji o nazwach
+   komputerów. Program ten ³±czy sie z serwerem nazw DNS i podaje
+   informacje o dziedzinach oraz komputerach. 
+
+$ dig
+
+; <<>> DiG 9.2.3 <<>>
+;; global options:  printcmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30555
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;.                              IN      NS
+
+;; ANSWER SECTION:
+.                       238923  IN      NS      e.root-servers.net.
+.                       238923  IN      NS      f.root-servers.net.
+.                       238923  IN      NS      g.root-servers.net.
+.                       238923  IN      NS      h.root-servers.net.
+.                       238923  IN      NS      i.root-servers.net.
+.                       238923  IN      NS      j.root-servers.net.
+.                       238923  IN      NS      k.root-servers.net.
+.                       238923  IN      NS      l.root-servers.net.
+.                       238923  IN      NS      m.root-servers.net.
+.                       238923  IN      NS      a.root-servers.net.
+.                       238923  IN      NS      b.root-servers.net.
+.                       238923  IN      NS      c.root-servers.net.
+.                       238923  IN      NS      d.root-servers.net.
+
+;; ADDITIONAL SECTION:
+j.root-servers.net.     325323  IN      A       192.58.128.30
+
+;; Query time: 11 msec
+;; SERVER: 10.1.2.9#53(10.1.2.9)
+;; WHEN: Sun Feb 13 16:05:52 2005
+;; MSG SIZE  rcvd: 244
+
+Co jest zapisem opisuj±cym serwery nazw dla dziedziny . (czyli korzenia
+drzewa nazw). W tym wypadku dane pochodz± od serwera o adresie IP
+10.1.2.9. Serwer ten zosta³ wybrany, poniewa¿ by³ wpisany do pliku
+/etc/resolv.conf.
+
+Mo¿emy zapytaæ siê o to samo innego serwera, np.
+
+$ dig @duch.mimuw.edu.pl
+
+Mo¿emy zapytaæ siê o konkretn± nazwê, jaki adres IP jej odpowiada:
+
+$ dig rainbow.mimuw.edu.pl A
+
+
+; <<>> DiG 9.2.3 <<>> rainbow.mimuw.edu.pl A
+;; global options:  printcmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 34071
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 4, ADDITIONAL: 3
+
+;; QUESTION SECTION:
+;rainbow.mimuw.edu.pl.          IN      A
+
+;; ANSWER SECTION:
+rainbow.mimuw.edu.pl.   86400   IN      A       10.1.1.4
+
+;; AUTHORITY SECTION:
+mimuw.edu.pl.           86400   IN      NS      rainbow.mimuw.edu.pl.
+mimuw.edu.pl.           86400   IN      NS      intra-ns.mimuw.edu.pl.
+mimuw.edu.pl.           86400   IN      NS      cob.mimuw.edu.pl.
+mimuw.edu.pl.           86400   IN      NS      absurd.mimuw.edu.pl.
+
+;; ADDITIONAL SECTION:
+cob.mimuw.edu.pl.       86400   IN      A       10.1.1.9
+absurd.mimuw.edu.pl.    86400   IN      A       10.1.2.9
+intra-ns.mimuw.edu.pl.  86400   IN      A       10.1.3.1
+
+;; Query time: 11 msec
+;; SERVER: 10.1.2.9#53(10.1.2.9)
+;; WHEN: Sun Feb 13 16:16:06 2005
+;; MSG SIZE  rcvd: 178
+
+Lub o konkretny adres IP, jakiej nazwie on odpowiada:
+
+dig -x 10.1.1.4
+
+Mo¿na te¿ zapytaæ siê o nazwy pojawiaj±ce siê w adresach pocztowych:
+
+dig mimuw.edu.pl MX
+
+Wiêcej szczegó³ów:
+ man dig
+
+9. Program netstat sluzy do ogladania stanu polaczen sieciowych, a
+   wlasciwie otwartych gniazdek. Wystarczy napisac:
+
+$netstat
+
+   aby uzyskac informacje: w stylu
+
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 elina.mimuw.edu.pl:2139 kawa.mimuw.edu.pl:7100  ESTABLISHED 
+tcp        0      0 elina.mimuw.edu.pl:1023 lipa.mimuw.edu.pl:22    ESTABLISHED 
+tcp        0      0 elina.mimuw.edu.pl:1022 lipa.mimuw.edu.pl:22    ESTABLISHED 
+tcp        0      0 elina.mimuw.edu.pl:1021 lipa.mimuw.edu.pl:22    ESTABLISHED 
+tcp        0      0 elina.mimuw.edu.pl:1019 lipa.mimuw.edu.pl:22    ESTABLISHED 
+tcp        0     52 elina.mimuw.edu.pl:1018 lipa.mimuw.edu.pl:22    ESTABLISHED 
+tcp        0      0 elina.mimuw.edu.pl:3757 harpun.mimuw.edu.pl:irc ESTABLISHED 
+tcp       57      0 elina.mimuw.edu.pl:3758 shell.warped.com:ftp    CLOSE_WAIT  
+tcp        0      0 elina.mimuw.edu.pl:22   red15.mimuw.edu.pl:1022 ESTABLISHED 
+tcp        0      0 elina.mimuw.edu.pl:1020 mazur.mimuw.edu.pl:22   ESTABLISHED 
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node Path
+unix  2      [ ]         STREAM     CONNECTED     681    
+unix  2      [ ]         STREAM                   683    /dev/log
+unix  2      [ ]         STREAM     CONNECTED     915    
+unix  2      [ ]         STREAM                   961    /dev/log
+
+   Pokazujace stany polaczen.
+   Proto - to rodzaj protokolu, przewaznie: tcp - polaczenia sieciowe
+           przy pomocy protokolu tcp, udp - protokolu udp, unix -
+           gniazda wewnatrz systemu operacyjnego
+   Recv-Q - oktety nie przyjete przez programy
+   Send-Q - oktety nie potwierdzone
+   Local Address - adres lokalny
+   Foreign Address - adres odlegly
+   State - stan polaczenia
+   I-Node - i-node
+   Path - sciezka, przez ktora proces jest polaczony z gniazdem
+
+   Za pomoca netstat mozna uzyskiwac informacje podobne do
+   uzyskiwanych za pomoca ifconfig:
+
+$netstat -i eth0
+
+   lub route
+
+$netstat -r
+
+Bardzo wa¿ne i czêsto przydatne jest polecenie
+
+$ netstat -p
+
+pozwala siê dowiedzieæ, jaki proces obs³uguje dane po³±czenie. Przydaje siê
+te¿
+
+$ netstat -l -t
+
+które wypisuje wy³±cznie serwery TCP dzia³aj±ce na bie¿±cej maszynie.
+
+
+Wiêcej szczegó³ów:
+ man netstat
+
+10. Program telnet sluzy do laczenia sie za pomoca TCP i TELNET-u z
+   odpowiednim komputerem. Zwykle uzywa sie go do ustanawiania sesji
+   pracy zdalnej, np:
+
+$telnet rainbow
+
+    Mozna jednak wykorzystac go do polaczenia sie z dowolna usluga. Na
+    przyklad:
+
+$telnet rainbow 79
+
+    daje?
+
+    Ciekawe wydaje sie polecenie
+
+$telnet ghost 25
+
+    Dziala tutaj help, mozna nawet wyslac list. Mozna sprawdzic, czy
+    istnieje adres (vrfy), lub rozwinac alias (expn).
+
+Wiêcej szczegó³ów:
+  man telnet
