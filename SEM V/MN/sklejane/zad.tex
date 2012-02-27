@@ -1,0 +1,66 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\geometry{lmargin=2cm}
+\pagestyle{fancy}
+\lhead{MN - zadanie z krzywych sklejanych}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+
+    Na początek wyznaczam rozwiązania 6 zadań interpolacyjnych Hermite'a dla
+    dwóch trzykrotnych węzłów 0 i 1 (robię to za pomocą programu, którego kod
+    jest w załączniku):
+    
+    \ \\ 
+    \begin{tabular}{l l}
+        $H_{00}(t) = -6t^5 + 15t^4 - 10t^3 + 1$ &
+            $H_{10}(t) = 6t^5 - 15t^4 - 4t^3$ \\
+        $H_{01}(t) = -3t^5 + 8t^4 - 6t^3 + t$ &
+            $H_{11}(t) = -3t^5 + 7t^4 - 4t^3$  \\
+        $H_{02}(t) = -0.5t^5 + 1.5t^4 - 1.5t^3 + 0.5t^2$ &
+            $H_{12}(t) = 0.5t^5 - t^4 + 0.5t^3$ \\
+    \end{tabular} \\ \\
+
+    Teraz wyznaczam z nich funkcje do bazy krzywej: \\
+
+    \begin{tabular}{l l}
+        $H_{i,00}(x) = H_{00}(t)$ &
+            $H_{i,10}(x) = H_{10}(t)$ \\
+        $H_{i,01}(x) = h_i H_{01}(t)$ &
+            $H_{i,11}(x) = h_i H_{11}(t)$ \\
+        $H_{i,02}(x) = h_{i}^2 H_{02}(t)$ &
+            $H_{i,12}(x) = h_{i}^2 H_{12}(t)$ \\
+    \end{tabular} \\ \\
+
+    Dla $t = (x - u_i)/h_i$. Wtedy \\ \\
+        $s_i(x) = a_i H_{i,00}(x) + b_i H_{i,01}(x) + c_i H_{i,02}(x) 
+                + a_{i+1} H_{i,10}(x) + b_{i+1} H_{i,11}(x) + c_{i+1} H_{i,12} $ \\ \\
+
+    Różniczkuję 5-krotnie: \\ \\
+
+    $s_i(x)^{(5)} = - \frac{720}{h_i^5} a_i  - \frac{360}{h_i^4} b_i - \frac{60}{h_i^3} c_i
+        + \frac{720}{h_i^5} a_{i+1} - \frac{360}{h_i^4} b_{i+1} +
+\frac{60}{h_i^3} c_{i+1} $ \\ \\
+
+    ... i składam warunek \texttt{not-a-knot} ...\\ \\
+
+    $s_0(u_1) = s_1(u_1)$ \\ \\
+    $- \frac{720}{h_0^5} a_0  - \frac{360}{h_0^4} b_0 - \frac{60}{h_0^3} c_0
+        + \frac{720}{h_0^5} a_{1} - \frac{360}{h_0^4} b_{1} + \frac{60}{h_0^3} c_{1} =
+- \frac{720}{h_1^5} a_1  - \frac{360}{h_1^4} b_1 - \frac{60}{h_1^3} c_1
+    + \frac{720}{h_1^5} a_{2} - \frac{360}{h_1^4} b_{2} + \frac{60}{h_1^3} c_{2} $ \\
+
+    ... po uporządkowaniu stronami i podzieleniu przez $60$ ... \\
+
+    $- \frac{6}{h_0^4}b_0 + \frac{6 ( h_1^4 - h_0^4 ) }{h_0^4 h_1^4}b_1 - \frac{6}{h_1^4}b_2
+     - \frac{1}{h_0^3}c_0 + \frac{h_0^3 + h_1^3}{h_0^3 h_1^3}c_1 - \frac{1}{h_1^3}c_2  =
+       \frac{12}{h_0^5}a_0 - \frac{12(h_0^5 + h_1^5)}{h_0^5 h_1^5}a_1 + \frac{12}{h_1^5}a_2   $
+\end{document}
+

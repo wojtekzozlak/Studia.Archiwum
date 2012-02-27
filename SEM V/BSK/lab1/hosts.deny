@@ -1,0 +1,3 @@
+in.rlogind		:	solab06.mimuw.edu.pl	:	spawn (/bin/echo "%d attempt from %n, ip %a, port %r" >> /var/connections.log)
+in.rlogind, in.telnetd	:	solab*			:	banners /etc/banners
+in.rlogind, in.telnetd	:	ALL			:	spawn (/bin/echo "%d attempt from %n, ip %a, port %r" >> /var/connections.log)

@@ -1,0 +1,88 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{bnf}
+\usepackage{amsfonts}
+\usepackage{stmaryrd}
+
+\geometry{lmargin=2cm, tmargin=3cm, bmargin=3cm}
+\pagestyle{fancy}
+\lhead{SiWP - zadanie domowe nr 2}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+
+\begin{grammar}
+  [(colon){$::=$}]
+  [(period){.}]
+  [(semicolon){$|$}]
+  [(quote){\begin{bf}}{\end{bf}}]
+  [(nonterminal){$}{$}]
+\begin{tabular}{ r c l }
+  $Var \ni$ <x> & : & <x_1> ; <x_2> ; ... \\
+  $Const \ni$ <n> & : &  ... ; \texttt{-1} ; \texttt{0} ; \texttt{1} ; ... \\
+  $Exp \ni$ <e> & : & <n> ; <x> ; <e_1 + e_2> ; <e_1 - e_2> \\
+  $Stm \ni$ <i> & : & <x := e> ; <i_1 ; i_2> ; \texttt{skip} ;
+	<\texttt{if } e_1  = e_2 \texttt{ then } i_1 \texttt{ else } i_2> ; \\
+	& & <\texttt{guard } e \texttt{ in } i \texttt{ end}> ;
+	<\texttt{loop } i \texttt{ end}> \\
+  $Prg \ni$ <p> & : & <i>
+\end{tabular}
+\end{grammar}
+
+\begin{eqnarray*}
+s \in State & = & Var \to \mathbf{Z_{\perp}} \\
+g \in Guard & = & State \to \mathbf{Z_{\perp}} \\
+N & : & Const \to \mathbf{Z_{\perp}}\\
+\mathbb{E} & : & Exp \to State \to \mathbf{Z_{\perp}} \\
+\mathbb{I} & : & Stm \to State \to Guard \to State \\
+\mathbb{P} & : & Stm \to State
+\end{eqnarray*} 
+
+{\bf Założenia:}
+\begin{enumerate}
+  \item{Funkcja $N$ w sposób klasyczny konwertuje stałe na liczby.}
+  \item{Operatory działań ($+$, $-$) są różne w zależności od kontekstu (definiują drzewo programu, lub operację na liczbach).}
+\end{enumerate}
+\ \\
+
+{\bf Wyrażenia:}
+\begin{eqnarray*}
+  \mathbb{E} \llbracket n \rrbracket \ s & = & N(n) \\
+  \mathbb{E} \llbracket x \rrbracket \ s & = & s(x)\\
+  \mathbb{E} \llbracket e_1 + e_2 \rrbracket \ s & = & \mathbb{E} \llbracket e_1 \rrbracket s + \mathbb{E} \llbracket e_2 \rrbracket s \\
+  \mathbb{E} \llbracket e_1 - e_2 \rrbracket \ s & = & \mathbb{E} \llbracket e_1 \rrbracket s - \mathbb{E} \llbracket e_2 \rrbracket s
+\end{eqnarray*}
+
+{\bf Instrukcje:}
+\begin{eqnarray*}
+  \mathbb{I} \llbracket x := e \rrbracket \ s \ g & = & s[x \to \mathbb{E} \llbracket e \rrbracket \ s] \\
+  \mathbb{I} \llbracket i_1 ; i_2 \rrbracket \ s \ g & = & \mathbb{I} \llbracket i_2 \rrbracket \ 
+    (\mathbb{I} \llbracket i_1 \rrbracket \ s \ g) \ g \\
+  \mathbb{I} \llbracket \texttt{skip} \rrbracket \ s \ g & = & s \\
+  \mathbb{I} \llbracket \texttt{if } e_1 = e_2 \texttt{ then } i_1 \texttt{ else } i_2 \rrbracket \ s \ g & = &
+  \textsf{if } \mathbb{E} \llbracket e_1 \rrbracket \ s = \mathbb{E} \llbracket e_2 \rrbracket \ s 
+\textsf{ then } \mathbb{I} \llbracket i_1 \rrbracket \ s \ g 
+\textsf{ else } \mathbb{I} \llbracket i_2 \rrbracket \ s \ g \\
+  \mathbb{I} \llbracket \texttt{guard } e \texttt{ in } i \texttt{ end} \rrbracket \ s \ g & = &
+    \textsf{let } g' = (\lambda s. \textsf{if } \mathbb{E} \llbracket e \rrbracket \ s = 0
+			\textsf{ then } 0 \textsf{ else } g(s) ) \\
+     & &                \textsf{in } \mathbb{I} \llbracket i \rrbracket \ s \ g' \\
+  \mathbb{I} \llbracket \texttt{loop } i \texttt{ end} \rrbracket & = & 
+ Fix( \lambda f.\ \lambda s.\ \lambda g. \textsf{ if } g(s) = 0 \textsf{ then } s \textsf{ else } f (\mathbb{I} \llbracket i \rrbracket \ s \ g ) \ g )\\
+    \\
+\end{eqnarray*}
+
+{\bf Programy:}
+\begin{eqnarray*}
+\mathbb{P} \llbracket i \rrbracket & = & \mathbb{I} \llbracket i \rrbracket (\lambda x. 0) (\lambda s. 1)
+\end{eqnarray*}
+
+
+\end{document}
+

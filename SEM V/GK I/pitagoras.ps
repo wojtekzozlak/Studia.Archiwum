@@ -1,0 +1,35 @@
+%!PS-Adobe-2.0
+
+% x y k n pitagoras
+/pitagoras {
+  4 dict begin
+    /n exch def
+    /k exch def
+    /y exch def
+    /x exch def
+    0 k ne {
+      newpath
+      1 0.1 k mul sub 1 0.05 k mul sub 0 setrgbcolor
+      x n 2 div sub y moveto
+      0 n rlineto
+      n 0 rlineto
+      0 n -1 mul rlineto
+      closepath fill
+
+      x n 0.25 mul sub y n 1.25 mul add translate
+      45 rotate
+      0 0 k -1 add n 2 div 2 sqrt mul pitagoras
+
+      -45 rotate
+      n 2 div 0 translate
+      -45 rotate
+      0 0 k -1 add n 2 div 2 sqrt mul pitagoras
+
+      45 rotate
+      x n 0.25 mul sub y n 1.25 mul add -1 mul translate
+    } if
+  end
+} def
+
+400 100 10 50 pitagoras
+showpage

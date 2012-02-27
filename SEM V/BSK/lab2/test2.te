@@ -1,0 +1,52 @@
+module testmod 1.0;
+
+require {
+  type user_t;
+  type dpkg_script_t;
+  type ssh_t;
+  type dpkg_t;
+  type initrc_t;
+  type kerneloops_t;
+  type sysadm_t;
+  type system_cronjob_t;
+  type syslogd_t;
+  type restorecond_t;
+  type init_t;
+  type dmesg_t;
+  type xdm_t;
+  type xdm_t;
+  type mount_t;
+  type kernel_t;
+  type nfsd_t;
+  type ftpd_t;
+  type sftpd_t;
+  attribute file_type;
+  class file { ioctl read write create open getattr setattr lock append unlink link rename relabelfrom relabelto };
+}
+
+type var_log_messages_t;
+typeattribute var_log_messages_t file_type;
+
+#==user_t
+allow user_t var_log_messages_t:file { read open getattr};
+
+#==cala_reszta?
+   allow dpkg_script_t var_log_messages_t : file { ioctl read write create getattr setattr lock append unlink link rename open } ; 
+   allow ssh_t var_log_messages_t : file { ioctl read getattr lock open } ; 
+   allow dpkg_t var_log_messages_t : file { ioctl read write create getattr setattr lock relabelfrom relabelto append unlink link rename open } ; 
+   allow initrc_t var_log_messages_t : file { ioctl read write create getattr setattr lock append unlink link rename open } ; 
+   allow kerneloops_t var_log_messages_t : file { ioctl read getattr lock open } ; 
+   allow sysadm_t var_log_messages_t : file { ioctl read write create getattr setattr lock relabelfrom relabelto append unlink link rename open } ; 
+   allow system_cronjob_t var_log_messages_t : file { ioctl read getattr lock open } ; 
+   allow syslogd_t var_log_messages_t : file { ioctl read write create getattr setattr lock append unlink link rename open } ; 
+   allow restorecond_t var_log_messages_t : file { ioctl read getattr lock relabelfrom relabelto open } ; 
+   allow init_t var_log_messages_t : file { ioctl read write getattr lock append open } ; 
+   allow dmesg_t var_log_messages_t : file { ioctl write getattr lock append open } ; 
+   allow xdm_t var_log_messages_t : file { ioctl read getattr lock open } ; 
+   allow mount_t var_log_messages_t : file { ioctl read getattr lock open } ; 
+   allow kernel_t var_log_messages_t : file { ioctl read getattr lock open } ; 
+   allow kernel_t var_log_messages_t : file { ioctl read write create getattr setattr lock append unlink link rename open } ; 
+   allow nfsd_t var_log_messages_t : file { ioctl read getattr lock open } ; 
+   allow nfsd_t var_log_messages_t : file { ioctl read write create getattr setattr lock append unlink link rename open } ; 
+   allow ftpd_t var_log_messages_t : file { ioctl read write create getattr setattr lock append unlink link rename open } ; 
+   allow sftpd_t var_log_messages_t : file { ioctl read write create getattr setattr lock append unlink link rename open } ; 

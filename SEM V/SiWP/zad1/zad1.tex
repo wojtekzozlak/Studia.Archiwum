@@ -1,0 +1,331 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{bnf}
+
+\geometry{lmargin=2cm}
+\pagestyle{fancy}
+\lhead{SiWP - zadanie domowe nr 1}
+\rhead{Wojciech Żółtak}
+
+% Część główna
+\begin{document}
+
+\begin{grammar}
+  [(colon){$::=$}]
+  [(period){.}]
+  [(semicolon){$|$}]
+  [(quote){\begin{bf}}{\end{bf}}]
+  [(nonterminal){$}{$}]
+\begin{tabular}{ r c l }
+  $Num \ni$ <n> & : &  "0" ; "1" ; ... \\
+  $Var \ni$ <x> & : & <x_1> ; <x_2> ; ... \\
+  $Lab \ni$ <l> & : & <l_1> ; <l_2> ; ... \\
+  $Expr \ni$ <e> & : & <n> ; <x> ; <e_1 + e_2> ; <e> \texttt{mod2} ; <e> \texttt{div2} \\
+  $Dec \ni$ <d> & : & \texttt{var} <x = 0> ; <d_1 ; d_2> ; \texttt{proc} <x_1(x_2)\{I\}> \\
+  $Instr \ni$ <I> & : & <x := e> ; <I_1 ; I_2> ; \texttt{skip} ; <l : \texttt{call } x(e)> ; \\
+	& & <\texttt{begin } d \texttt{ in } I \texttt{ end}> ;
+	<\texttt{if } (e \lessthan\greaterthan  0) \texttt{ then } \{I_1\} \texttt{ else } \{I_2\}> ; \\
+	& & <\texttt{while } (e \lessthan\greaterthan 0) \texttt{ do } I \texttt{ done}> ;
+	<\texttt{return to } l>
+\end{tabular}
+\end{grammar}
+
+Definicje relacji semantycznych: 
+\begin{eqnarray*}
+Proc & = & Var \times Instr \times Env \\
+\rho \in Env & = & Var \to Loc \\
+s \in Store & = & Loc \to (\mathbf{Z} \cup Proc) \\
+\mathbf{l} \in Loc & & \\
+r_i \in T_I & & \\
+\\
+Conf_E & = & (Env \times Store \times Expr) \cup \mathbf{Z} \\
+T_E & = & \mathbf{Z} \\
+Conf_D & = & (Env \times Store \times Dec) \cup (Env \times Store) \\
+T_D & = & Env \times Store \\
+Conf_I & = & (Env \times Store \times Instr) \cup Store \cup (Store \times Lab) \\
+T_I & = & Store \cup (Store \times Lab) \\
+\end{eqnarray*}
+
+{\bf Założenia:} \\
+\begin{enumerate}
+  \item{Semantyka wyrażeń jest dana z góry.}
+  \item{Istnieje funkcja $newloc : Store \to Loc$ zwracająca nieużywaną lokację w danym składzie.}
+  \item{$n$ występujące w regułach semantyki będzie, w zależności od kontekstu, ze zbioru $\mathbf{Z}$ bądź $Num$.}
+\end{enumerate}
+
+\newpage
+
+{\bf Semantyka definicji:} \\
+
+% var x = 0
+\begin{tabular}{l}
+\\
+\hline
+  $(\rho,\ s,\ \texttt{var } x = 0)
+      \ \longrightarrow\
+   (\rho[x \to \mathbf{l}],\ s[\mathbf{l} \to 0])$\\
+\end{tabular}
+dla $\mathbf{l} = newloc(s)$ \\
+\\
+
+% d1 ; d2
+\begin{tabular}{l}
+  $(\rho,\ s,\ d_1)
+      \ \longrightarrow\ 
+   (\rho',\ s')
+      \ \ \ \ 
+   (\rho',\ s',\ d_2)\
+      \longrightarrow \
+   (\rho'',\ s'')$\\
+\hline
+  $(\rho,\ s,\ d_1 ; d_2)
+      \ \longrightarrow\ 
+   (\rho'',\ s'')$\\
+\end{tabular} \\ \\
+
+
+% proc x1(x2){I}
+\begin{tabular}{l}
+  \\
+\hline
+  $(\rho,\ s,\ \texttt{proc } x_1(x_2)\{I\})
+      \ \longrightarrow\ 
+   (\rho[x_1 \to \mathbf{l}],\ s[\mathbf{l} \to (x_2,\ I,\ \rho)])$
+\end{tabular} 
+dla $\mathbf{l} = newloc(s)$
+\\ \\
+
+\ \\ \\
+
+{\bf Semantyka instrukcji:} \\
+
+% x := e
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)\
+      \longrightarrow\ 
+   n$\\
+\hline
+  $(\rho,\ s,\ x := e)
+      \ \longrightarrow\ 
+   s[\rho(x) \to n] $ \\
+\end{tabular} 
+o ile $x \in Dom(\rho)$ 
+\\ \\ 
+
+% I1 ; I2 (ok)
+\begin{tabular}{l}
+  $(\rho,\ s,\ i_1)
+      \ \longrightarrow\ 
+   s'
+      \ \ \ \ 
+   (\rho,\ s',\ i_2)
+      \ \longrightarrow\ 
+   r_i$\\
+\hline
+  $(\rho,\ s,\ i_1 ; i_2)
+      \ \longrightarrow\ 
+   r_i$\\
+\end{tabular} \\ \\
+
+% I1 ; I2 (pierwsze return)
+\begin{tabular}{l}
+  $(\rho,\ s,\ i_1)
+      \ \longrightarrow\ 
+   (s',\ l)$ \\
+\hline
+  $(\rho,\ s,\ i_1 ; i_2)
+      \ \longrightarrow\ 
+   (s',\ l)$\\
+\end{tabular} \\ \\
+
+
+% skip
+\begin{tabular}{l}
+  \\
+\hline
+  $(\rho,\ s,\ \texttt{skip})
+      \ \longrightarrow\ 
+   s$\\
+\end{tabular} \\ \\
+
+% l: call x(e) (ok)
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)
+      \ \longrightarrow\ 
+   n
+      \ \ \ \ 
+   (\rho'[y \to \mathbf{l}, \ x \to \rho(x)],\ s[\mathbf{l} \to n],\ I)
+      \ \longrightarrow\ 
+   s'$\\
+\hline
+  $(\rho,\ s,\ l : \texttt{call } x(e))
+    \ \longrightarrow\ 
+   s'$ \\
+\end{tabular}
+\begin{tabular}{l}
+ o ile $s(\rho(x)) = (y,\ I,\ \rho')$ \\
+ \tiny{} \\
+ dla $\mathbf{l} = newloc(s)$ \\
+\end{tabular} \\ \\
+
+
+% l: call x(e) (return; pasuje label)
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)
+      \ \longrightarrow\ 
+   n
+      \ \ \ \ 
+   (\rho'[y \to \mathbf{l}, \ x \to \rho(x)],\ s[\mathbf{l} \to n],\ I)
+      \ \longrightarrow\ 
+   (s', l)$\\
+\hline
+  $(\rho,\ s,\ l : \texttt{call } x(e))
+    \ \longrightarrow\ 
+   s'$ \\
+\end{tabular}
+\begin{tabular}{l}
+ o ile $s(\rho(x)) = (y,\ I,\ \rho')$ \\
+ \tiny{} \\
+ dla $\mathbf{l} = newloc(s)$ \\
+\end{tabular} \\ \\
+
+
+% l: call x(e) (return; nie pasuje label)
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)
+      \ \longrightarrow\ 
+   n
+      \ \ \ \ 
+   (\rho'[y \to \mathbf{l}, \ x \to \rho(x)],\ s[\mathbf{l} \to n],\ I)
+      \ \longrightarrow\ 
+   (s', l')$\\
+\hline
+  $(\rho,\ s,\ l : \texttt{call } x(e))
+    \ \longrightarrow\ 
+   (s',\ l')$ \\
+\end{tabular}
+\begin{tabular}{l}
+ o ile $s(\rho(x)) = (y,\ I,\ \rho')$ \\
+ oraz $l \neq l'$ \\
+ \tiny{} \\
+ dla $\mathbf{l} = newloc(s)$ \\
+\end{tabular} \\ \\
+
+% begin d in I end
+\begin{tabular}{l}
+  $(\rho,\ s,\ d)
+      \ \longrightarrow\ 
+   (\rho', s')\ 
+      \ \ \ \
+   (\rho',\ s',\ I)
+      \ \longrightarrow\ 
+   r_i $\\
+\hline
+  $(\rho,\ s,\ \texttt{begin } d \texttt{ in } I \texttt{ end})
+      \ \longrightarrow\ 
+   r_i $\\
+\end{tabular} \\ \\
+
+
+% if (e <> 0) then {I1} else {I2}  dla e <> 0
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)
+      \ \longrightarrow\ 
+   n
+      \ \ \ \ 
+   (\rho,\ s,\ I_1)
+      \ \longrightarrow\ 
+   r_i$ \\
+      \hline
+  $(\rho,\ s,\ \texttt{if } (e <> 0) \texttt{ then } \{I_1\} \texttt{ else } \{I_2\})
+      \ \longrightarrow\ 
+   r_i $\\
+\end{tabular}
+o ile $n \neq 0$ \\
+\\
+
+% if (e <> 0) then {I1} else {I2}  dla e == 0
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)
+      \ \longrightarrow\ 
+   n
+      \ \ \ \ 
+   (\rho,\ s,\ I_2)
+      \ \longrightarrow\ 
+   r_i$ \\
+      \hline
+  $(\rho,\ s,\ \texttt{if } (e <> 0) \texttt{ then } \{I_1\} \texttt{ else } \{I_2\})
+      \ \longrightarrow\ 
+   r_i $\\
+\end{tabular}
+o ile $n = 0$ \\
+\\
+
+% while (e <> 0) do I done (return)
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)
+      \ \longrightarrow\ 
+   n
+      \ \ \ \ 
+   (\rho,\ s,\ I)
+      \ \longrightarrow\
+   (s',\ l)$ \\
+\hline
+  $(\rho,\ s,\ \texttt{while } (e <> 0) \texttt{ do } I \texttt{ done})
+      \ \longrightarrow\ 
+   (s',\ l)$ \\
+\end{tabular}
+o ile $n \neq  0$
+\\ \\
+
+% while (e <> 0) do I done (ok)
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)
+      \ \longrightarrow\ 
+    n
+      \ \ \ \ 
+   (\rho,\ s,\ I)
+      \ \longrightarrow\
+    s'
+      \ \ \ \ 
+   (\rho,\ s',\ \texttt{while } (e <> 0) \texttt{ do } I \texttt{ done})
+      \ \longrightarrow\ 
+    r_i$ \\
+\hline
+  $(\rho,\ s,\ \texttt{while } (e <> 0) \texttt{ do } I \texttt{ done})
+      \ \longrightarrow\ 
+   r_i$ \\
+\end{tabular}
+o ile $n \neq  0$
+ \\ \\
+
+% while (e <> 0) do I done (fail)
+\begin{tabular}{l}
+  $(\rho,\ s,\ e)
+      \ \longrightarrow\ 
+    n$ \\
+\hline
+  $(\rho,\ s,\ \texttt{while } (e <> 0) \texttt{ do } I \texttt{ done})
+      \ \longrightarrow\ 
+   s$ \\
+\end{tabular}
+o ile $n = 0$
+\\ \\
+
+
+% return to l
+\begin{tabular}{l}
+  \\
+\hline
+  $(\rho,\ s,\ \texttt{return to } l)
+      \ \longrightarrow\ 
+   (s,\ l)$ \\
+\end{tabular}
+
+\end{document}
+

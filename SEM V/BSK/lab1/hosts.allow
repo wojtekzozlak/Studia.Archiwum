@@ -1,0 +1,1 @@
+in.telnetd	:	solab06.mimuw.edu.pl	:	spawn (/bin/echo "TELNET from %n, ip %a, port %r" >> /var/connections.log)

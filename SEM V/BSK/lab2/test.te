@@ -1,0 +1,9 @@
+module testmod 1.0;
+
+require {
+  type user_t;
+  type var_log_t;
+  class file { read open getattr };
+}
+
+allow user_t var_log_t:file { read open getattr};
