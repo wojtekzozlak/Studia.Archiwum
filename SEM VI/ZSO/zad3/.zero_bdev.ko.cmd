@@ -1,0 +1,1 @@
+cmd_/root/ZSO/zad3/zero_bdev.ko := ld -r -m elf_i386 -T /usr/src/linux-2.6.34.8/scripts/module-common.lds --build-id -o /root/ZSO/zad3/zero_bdev.ko /root/ZSO/zad3/zero_bdev.o /root/ZSO/zad3/zero_bdev.mod.o

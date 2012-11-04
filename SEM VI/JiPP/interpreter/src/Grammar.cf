@@ -1,0 +1,83 @@
+--TOKENS
+
+token UString ((upper | ["_"])+) ;
+token LString (lower (lower | ["_"] | digit)*) ;
+
+comment "--" ;
+
+--TYPES
+
+VBTrue.  BoolVal ::= "True" ;
+VBFalse. BoolVal ::= "False" ;
+
+VInt.     Value ::= Integer ;
+VDouble.  Value ::= Double ;
+VBool.    Value ::= BoolVal ;
+
+TName.    Type ::= UString ;
+
+--DECLARATIONS
+
+LVar. Var ::= LString ;
+
+VArg.  VarArg  ::= Var "Of" Type ;
+VDecl. VarDecl ::= Var "Of" Type ";" ;
+
+DType. Decl ::= Type "Made" "Of" "{" [VarDecl] "}" ";" ; 
+DFun.  Decl ::= Var "As" "Function" "(" [VarArg] ")" "Returning" Type ";" Instr ;
+DVar.  Decl ::= VarDecl ;
+DBlk.  DeclBlk ::= [Decl] ;
+
+separator VarArg "," ;
+separator VarDecl "" ;
+separator Decl "" ;
+
+
+--EXPRESSIONS
+
+EAnd.  Exp  ::= Exp "And" Exp2 ;
+EOr.   Exp2 ::= Exp2 "Or" Exp3 ;
+ENot.  Exp3 ::= "Not" Exp3 ;
+EEq.   Exp4 ::= Exp4 "=" Exp5 ;
+ENeq.  Exp4 ::= Exp4 "<>" Exp5 ;
+EGt.   Exp4 ::= Exp4 ">" Exp5 ;
+ELt.   Exp4 ::= Exp4 "<" Exp5  ;
+EGe.   Exp4 ::= Exp4 ">=" Exp5 ;
+ELe.   Exp4 ::= Exp4 "<=" Exp5 ;
+EAdd.  Exp5 ::= Exp5 "+" Exp6 ;
+ESub.  Exp5 ::= Exp5 "-" Exp6 ;
+EMul.  Exp6 ::= Exp6 "*" Exp7 ;
+EDiv.  Exp6 ::= Exp6 "/" Exp7 ;
+ECall. Exp7 ::= Var "(" [Exp] ")" ;
+ENeg.  Exp8 ::= "-" Exp8 ;
+EVal.  Exp9 ::= Value ;
+EDot.  Exp10 ::= Exp10 "." Exp11 ;
+EVar.  Exp11 ::= Var ;
+
+coercions Exp 11 ;
+
+separator Exp "," ;
+
+
+--INSTRUCTIONS
+
+IDecBlk. Instr ::= "With" DeclBlk "Do" Instr ;
+IBlk.    Instr ::= "Begin" [Instr] "End" ";" ;
+IAsg.    Instr ::= Exp10 ":=" Exp ";" ;
+IExp.    Instr ::= Exp ";" ;
+IRet.    Instr ::= "Return" Exp ";" ;
+IIfEl.   Instr ::= "If" Exp "Then" Instr "Else" Instr ;
+IIf.     Instr ::= "If" Exp "Then" Instr ;
+IWh.     Instr ::= "While" Exp "Do" Instr ;
+IBrk.    Instr ::= "Break" ";" ;
+ICont.   Instr ::= "Continue" ";" ;
+IPrint.  Instr ::= "Print" Exp ";" ;
+
+separator Instr "";
+
+
+--PROGRAM
+
+Prog. Prog ::= Instr ;
+
+entrypoints Prog ;

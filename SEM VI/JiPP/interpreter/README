@@ -1,0 +1,5 @@
+# Interpreter - Wojciech Żółtak (wz292583)
+
+1. To build interpreter run `make` command.
+
+2. `examples` directory contains example programs.

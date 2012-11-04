@@ -1,0 +1,17 @@
+------------------------------------------------------
+-- JiPP 2012 - Wojciech Żółtak (wz292583)
+--
+-- Example program - recursive fibonnaci
+--
+-- Calculates n-th fibbonaci number and prints it out.
+------------------------------------------------------
+With
+    fib As Function (n Of INTEGER) Returning INTEGER;
+    Begin
+        If n = 0 Then Return 0;
+        Else If n = 1 Then Return 1;
+        Else Return fib(n - 1) + fib(n - 2);
+    End;
+Do Begin
+    Print fib(10);
+End;

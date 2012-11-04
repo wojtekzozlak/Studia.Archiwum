@@ -1,0 +1,70 @@
+ZSO lab1 - Wojciech Żółtak (wz292583@students.mimuw.edu.pl)
+===========================================================
+
+[Zastosowanie]
+
+Biblioteka `libcall_cnt` umożliwia śledzenie wywołań wewnątrz dynamicznie
+ładowanej biblioteki przechodzących przez tablicę PLT.
+
+
+[Opis działania]
+
+Pierwsze co robi biblioteka to wyszukuje obiekt, który ma być śledzony
+poprzez wywołanie `dl_iterate_phdr` i dopasowywanie podanej nazwy do
+ścieżek załadowanych bibliotek. Dopasowanie zachodzi, gdy funkcja
+`strstr` zwraca wartość różną od NULL. Jeśli podana nazwa pasuje do kilku
+obiektów zwróconych przez `dl_iterate_phdr`, śledzony będzie jedynie
+pierwszy z nich, w porządku serwowania przez funkcję.
+
+Następnie, korzystając z informacji o nagłówkach programu dostarczonych
+przez `dl_iterate_phdr` odnajdowywana jest sekcja PT_DYNAMIC śledzonej
+biblioteki załadowana do pamięci. W niej wyszukiwane są tablice relokacji
+oznaczone znacznikiem DL_PLTREL. Wpisy w tych tablicach zawierają szukane
+adresy funkcji w tablicy GOT, które chcemy podmienić.
+
+Dla każdego znalezionego rekordu relokacji wstrzykiwana jest do pamięci
+krótka wstawka asemblerowa, postaci:
+
+		mov __addr__ %eax
+		lock addl 0x1 (%eax)
+		push __addr__
+		ret
+
+gdzie __addr__ to kolejno - adres licznika wywołań funkcji oraz faktyczny
+adres śledzonej funkcji w pamięci.
+
+Adres wstrzykniętego kodu jest wstawiany na miejsce wpisu w tablicy GOT,
+co powoduje, że wszystkie wywołania funkcji najpierw zwiększają licznik
+wywołań, a dopiero potem są przekierowywane do właściwej funkcji.
+
+Następuje także rozpoznanie, czy wywołanie jest wewnętrzne czy zewnętrzne,
+poprzez sprawdzenie, czy adres funkcji znajduje się w obrębie którejś
+z sekcji biblioteki dostarczonych przez strukturę `info` z `dl_iterate_phdr`.
+
+Dane dotyczące śledzonej funkcji trzymane są na liście, do której
+wskaźnik znajduje się w strukturze-uchwycie `struct call_cnt`.
+
+Zakończenie śledzenia biblioteki powoduje zebranie informacji o wywołaniach
+wewnętrznych/zewnętrznych i zapisanie ich w głównej strukturze.
+
+
+[Ograniczenia]
+
+- Biblioteka oczekuje, że ustawiona jest flaga LD_BIND_NOW i tablica GOT
+  wypełniona jest właściwymi adresami funkcji.
+
+- Zatrzymanie śledzenia i zwolnienie zasobów w trakcie wywoływania funkcji ze
+  śledzonej biblioteki (np. w innym wątku) niesie ze sobą (niewielkie, ale
+  jednak) ryzyko seqfaulta.
+
+  Stanie się to, gdy wątek zostanie wywłaszczony w momencie przechodzenia przez
+  wstrzyknięty kod i wybudzi się w momencie, gdy nie będzie go już w pamięci.
+
+- Wielokrotne wywołanie śledzenia na tej samej bibliotece powoduje zatrzymanie
+  poprzedniego śledzenia do czasu zatrzymania nowego śledzenia. Wyłączanie
+  śledzenia powinno się odbywać w odwrotnej kolejności niż włączanie
+  (jak cebula).
+
+- Biblioteka jest w stanie zliczać wywołania w różnych wątkach, ale nie
+  posiada ochrony własnych funkcji. Oznacza to, że rozpoczynanie i kończenie
+  śledzenia nie powinno być wywoływane równocześnie w dwóch wątkach.

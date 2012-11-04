@@ -1,0 +1,21 @@
+------------------------------------------------------
+-- JiPP 2012 - Wojciech Żółtak (wz292583)
+--
+-- Enample program - while loop
+------------------------------------------------------
+With
+    n    Of INTEGER;
+Do Begin
+    n := 10;
+
+    While True Do
+    Begin
+        If n <= 0 Then
+            Break;
+        n := n - 1;
+        If 2 * (n / 2) = n Then -- true if n = 2k
+            Continue;
+        Print n;
+    End;
+    Print n;
+End;

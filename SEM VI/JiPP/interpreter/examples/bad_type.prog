@@ -1,0 +1,14 @@
+------------------------------------------------------
+-- JiPP 2012 - Wojciech Żółtak (wz292583)
+--
+-- Example program - bad program
+--
+-- Program fails during assigment instruction check.
+------------------------------------------------------
+With
+    i Of INTEGER;
+    d Of DOUBLE;
+    b Of BOOL;
+Do Begin
+    b := i * 10 + d;
+End;
