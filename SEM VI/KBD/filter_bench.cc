@@ -1,0 +1,71 @@
+#include <cstdio>
+#include <sys/time.h>
+#include <utility>
+#include <cstdlib>
+#include <algorithm>
+#include <time.h>
+#include <iostream>
+
+#include "./generic_benchmark.h"
+
+class FilterBenchmark : public Benchmark {
+  public:
+    FilterBenchmark(int table_size, int filter)
+			: N(table_size), S(filter),
+			  input_(new int[table_size]),
+		          output_(new int[table_size]) {}
+    long long int avg;
+
+  virtual ~FilterBenchmark() {
+    delete[] input_;
+    delete[] output_;
+  }
+
+  virtual void Setup() {
+    // setting random data
+    srand(time(0));
+    for (int i = 0; i < N; ++i) {
+      input_[i] = rand() % 100;
+    }
+    // shuffle input table
+  }
+
+  virtual void Run(long long int number_of_repetitions) {
+    long long int passed = 0;
+    long long int pointer;
+    for (long long int run = 0; run < number_of_repetitions; ++run) {
+      pointer = 0;
+      for (int i = 0; i < N; ++i) {
+        if(input_[i] <= S) {
+          output_[pointer] = input_[i];
+          pointer++;
+        }
+        dummy_ = output_[pointer-1] * 10 + i;
+      }
+      passed += pointer;
+    }
+    avg = passed / number_of_repetitions;
+  }
+
+  private:
+    int N, S;
+    int *input_, *output_;
+};
+
+int main(void){
+  static const double kMillion = 1000000;
+  static const double kThousand = 1000;
+
+  int S_[10] = {0, 1, 5, 10, 25, 50, 75, 90, 95, 100};
+
+  for (int N = 1; N < 10; ++N) {
+    Benchmark* benchmark(new FilterBenchmark(2^10, S_[N]));
+    std::pair<int, long long int> result = benchmark->RunBenchmark();
+
+    printf("Throughput for % 8d, passed ~% 8lld: % 8.2fM per second.\n",
+           N, dynamic_cast<FilterBenchmark*>(benchmark)->avg, (result.first / kThousand));
+    delete benchmark;
+  }
+
+	return 0;
+}

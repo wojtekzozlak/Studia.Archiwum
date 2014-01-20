@@ -1,0 +1,42 @@
+# Wojciech Żółtak (292583)
+#
+# ZSO - zadanie nr 3 - fs_proc
+################################
+
+1. Skrócony opis rozwiązania
+============================
+
+1.1 Urządzenie blokowe
+-----------------------
+
+Urządzenie oparte jest w znacznej mierze na sterowniku `brd.c` z jądra linuksa.
+Przechowuje niepuste (pusty = pełny zer) bloki w drzewie pozycyjnym. Dane
+trzymane są w pamięci jądra (nie highmem), ze względu na relatywnie małą ilość
+(chcemy przechowywać tylko metadane).
+
+Kod nie ma zbyt wielu komentarzy, ale całość jest naprawdę bardzo podobna do
+`brd.c`.
+
+Synchronizacja odbywa się na poziomie pojedynczych `bvec` w make_request, za
+pomocą rw_semaforów.
+
+Ioctl konfiguracyjny kończy się błędem, w przypadku gdy nie jest jedynym
+procesem posiadającym uchwyt do urządzenia, bądź gdy nie jest w stanie bez
+czekania otrzymać blokady pisarza.
+
+
+1.2 Modyfikacja EXT2
+--------------------
+
+Tutaj trochę jazda bez trzymanki po omacku.
+
+Dodany ioctl używa funkcji `ext2_get_block` na każdym z bloków zawierających
+fragment żądania. Powinno to (i zdaje się robić) alokować brakujące bloki.
+
+Po zaalokowaniu bloków, poprawiany jest (atomowo) zbiór metadanych:
+- rozmiar
+- czas modyfikacji
+- czas dostępu
+
+`ext2_get_block` twierdzi, że poprawia ilość bloków przypisanych do pliku,
+więc się tymi rzeczami nie przejmuję.

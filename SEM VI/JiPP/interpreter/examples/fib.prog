@@ -1,0 +1,26 @@
+------------------------------------------------------
+-- JiPP 2012 - Wojciech Żółtak (wz292583)
+--
+-- Example program - iterative fibonnaci
+--
+-- Calculates n-th fibbonaci number and prints it out.
+------------------------------------------------------
+With
+    a1   Of INTEGER;
+    a2   Of INTEGER;
+    buff Of INTEGER;
+    n    Of INTEGER;
+Do Begin
+    n := 100000;
+
+    a1 := 0;
+    a2 := 1;
+    While n > 0 Do
+    Begin
+        buff := a2;
+        a2 := a1 + a2;
+        a1 := buff;
+        n := n - 1;
+    End;
+    Print a1;
+End;

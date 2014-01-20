@@ -1,0 +1,1 @@
+nsort xs = toList (fromList xs)

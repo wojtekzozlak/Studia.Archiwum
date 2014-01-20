@@ -1,0 +1,21 @@
+----------------------------------------------------------
+-- JiPP 2012 - Wojciech Żółtak (wz292583)
+--
+-- Example program - variables shadowing
+----------------------------------------------------------
+With
+    i Of INTEGER;
+    d Of DOUBLE;
+
+    -- Function arguments are actually shadowing global variables ..
+    fun As Function(i Of BOOL) Returning INTEGER;
+    With
+      d Of BOOL; -- .. just like declaration blocks
+    Do Begin
+        i := True;  -- i is now a BOOL, so it's correct
+        d := False; -- d is now a BOOL, so it's correct
+        Return 0;
+    End;
+Do Begin
+    fun(False);
+End;

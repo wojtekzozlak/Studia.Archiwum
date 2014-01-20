@@ -1,0 +1,33 @@
+module Bst where
+
+data Tree a = Empty | Node a (Tree a) (Tree a) deriving (Eq, Ord)
+
+instance Show a => Show (Tree a) where
+  show Empty = "_"
+  show (Node b l r) = "[" ++ show l ++ ", " ++ show b ++ ", " ++ show r ++ "]"
+
+instance Functor Tree where
+    fmap f Empty = Empty
+    fmap f (Node b l r) = Node (f b) (fmap f l) (fmap f r)
+
+-- wydajniej byloby z akumulatorem
+toList :: Tree a -> [a]
+toList Empty = []
+toList (Node a l r) = toList l ++ [a] ++ toList r
+
+insert :: (Ord a) => a -> Tree a -> Tree a
+insert e Empty = (Node e Empty Empty)
+insert e (Node v l r)
+    | v == e = (Node v l r)
+    | v > e = (Node v (insert e l) r)
+    | otherwise = (Node v l (insert e r))
+
+contains :: (Ord a) => a -> Tree a -> Bool
+contains e Empty = False
+contains e (Node v l r)
+    | v == e = True
+    | v > e = contains e l
+    | otherwise = contains e r
+
+fromList :: (Ord a) => [a] -> Tree a
+fromList xs = foldr (insert) Empty xs

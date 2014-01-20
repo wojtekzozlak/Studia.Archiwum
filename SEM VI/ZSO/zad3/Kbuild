@@ -1,0 +1,2 @@
+obj-m := zero_bdev.o
+#ccflags-y := -v

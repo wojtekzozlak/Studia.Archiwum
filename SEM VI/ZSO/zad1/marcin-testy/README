@@ -1,0 +1,2 @@
+1. Put this directory inside a directory containing libcall_cnt.so
+2. Use ./run.sh

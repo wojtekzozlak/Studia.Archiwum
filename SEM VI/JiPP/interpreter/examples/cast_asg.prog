@@ -1,0 +1,40 @@
+------------------------------------------------------
+-- JiPP 2012 - Wojciech Żółtak (wz292583)
+--
+-- Example program - casting, assignment.
+------------------------------------------------------
+With
+    i Of INTEGER;
+    d Of DOUBLE;
+    b Of BOOL;
+
+    T Made Of {
+      x Of INTEGER;
+    };
+    a Of T;
+    b Of T;
+Do Begin
+
+    -- There is an atomatic cast for basic math types...
+    Print (5 + 10.0); -- 15.0
+    Print (5.0 > 4); -- True
+
+    -- ... but only during expressions evaluation. There's no
+    -- cast during assignment.
+--  d := 5;  -- "Can't assign `TInt` to `TDouble`"
+
+
+    -- We can assign a whole record ...
+    a.x := 5;
+    b := a;
+    Print (b.x); -- 5
+
+    -- ... which (like all assigments) is done by value, not reference.
+    a.x := 10;
+    Print (b.x); -- 5
+
+    -- But we can't use a record as an argument for math/logical operations.
+--  Print (a + b); -- "`TRecord (fromList [(\"x\",TInt)])
+                   --  + TRecord (fromList [(\"x\",TInt)])`
+                   --  is not a valid expression"
+End;

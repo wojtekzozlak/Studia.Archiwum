@@ -1,0 +1,43 @@
+----------------------------------------------------------
+-- JiPP 2012 - Wojciech Żółtak (wz292583)
+--
+-- Example program - attribute pass by value / reference,
+--                   variables visibility
+--
+-- Depending on the expression the argument of a function
+-- may be passed by a reference or by a value.
+--
+-- The rule is simple - when we take something from memory
+-- it's a `lvalue` (e.g. 'x', 'x.y') but result of any
+-- operation is a new temporary value (`rvalue`).
+----------------------------------------------------------
+With
+    T Made Of {
+      i Of INTEGER;
+      d Of DOUBLE;
+    };
+    a Of T;
+    b Of T;
+    c Of INTEGER;
+
+    fun As Function(i Of INTEGER, d Of DOUBLE) Returning INTEGER;
+    Begin
+        i := 10;
+        d := 10.0;
+        c := c + 1;
+
+        Return 0;
+    End;
+Do Begin
+    a.i := 0;
+    a.d := 0.0;
+    b.i := 0;
+    b.d := 0.0;
+    c := 0;
+
+    fun(a.i, a.d);           -- passing lvalue (by reference)
+    fun(b.i + 0, b.d + 0.0); -- passing rvalue (by value)
+    Print a; -- { i: 10, d: 10.0 } (side effect)
+    Print b; -- { i: 0, d: 0.0 } (no effect)
+    Print c; -- 2 (side effect)
+End;
