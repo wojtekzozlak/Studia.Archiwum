@@ -1,0 +1,9 @@
+int main () {
+  Counter c;
+  c.incr();
+  return 0;
+}
+
+class Counter {
+  void incr () {}
+}

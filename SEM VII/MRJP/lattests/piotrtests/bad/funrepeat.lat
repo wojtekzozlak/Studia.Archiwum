@@ -1,0 +1,12 @@
+void f(int i){
+    boolean i = true;
+
+}
+
+int f() {
+
+}
+
+int main(){
+    return 0;
+}

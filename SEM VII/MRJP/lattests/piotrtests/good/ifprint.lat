@@ -1,0 +1,24 @@
+int main(){
+    boolean j = false;
+    int i = 0;
+    if (j){
+        i++;
+    } else {
+        i--;
+    }
+
+    if (j){
+        i = 10;
+    }
+
+    while(j){
+        i--;
+    }
+    int[] h = new int[10];
+    for (int x : h){
+        printInt(x);
+    }
+    "sfnfjdkn";
+    h[1];
+    return i;
+}

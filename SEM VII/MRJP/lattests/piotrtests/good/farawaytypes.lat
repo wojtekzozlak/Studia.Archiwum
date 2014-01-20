@@ -1,0 +1,23 @@
+class list{
+    Node n;
+    list next(){
+        Node m = new Node;
+        return n.next;
+    }
+}
+
+int main(){
+    Node n = new Node;
+    list l = new list;
+
+    return 0;
+}
+
+class Node{
+    int i;
+    list next;
+}
+
+list f(Node n){
+    return n.next;
+}

@@ -1,0 +1,34 @@
+int[] f(){
+    return new int[10];
+}
+
+class D{
+    int[] j;
+    B b;
+}
+
+class C extends D{
+    int[] i;
+}
+
+class B{
+    int[] i;
+}
+
+int main(){
+    C c = new C;
+    int i = c.i[1];
+    int j = c.b.i[1];
+    int k = c.j[1];
+
+    for (int x : c.i)
+        printInt(x);
+
+    for (int x : c.b.i)
+        printInt(x);
+
+    for (int x : c.j)
+        printInt(x);
+
+    return f()[1];
+}

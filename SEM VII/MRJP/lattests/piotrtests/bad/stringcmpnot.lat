@@ -1,0 +1,6 @@
+int main(){
+    "dsf" == "dsf"; // nope!
+    "dsf" != "dsf"; // nope!
+    "dsf" < "dsf"; // nope!
+    "dsf" > "dsf"; // nope!
+}

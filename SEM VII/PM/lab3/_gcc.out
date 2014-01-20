@@ -1,0 +1,67 @@
+set -e; avr-gcc -MM -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=lab3.lst -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes lab3.c \
+	| sed 's,\(.*\)\.o[ :]*,\1.o \1.d : ,g' > lab3.d; \
+	[ -s lab3.d ] || rm -f lab3.d
+
+-------- begin --------
+avr-gcc (WinAVR 20100110) 4.3.3
+Copyright (C) 2008 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+Size before:
+lab3.elf  :
+section    size   addr
+.text       382      0
+.stab      2352      0
+.stabstr   2449      0
+Total      5183
+
+
+
+
+Compiling: lab3.c
+avr-gcc -c -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=lab3.lst -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes lab3.c -o lab3.o
+
+Linking: lab3.elf
+avr-gcc -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=lab3.o -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes lab3.o  --output lab3.elf -lm -Wl,-Map=lab3.map -Wl,--cref
+
+Creating load file for Flash: lab3.hex
+avr-objcopy -O ihex -R .eeprom lab3.elf lab3.hex
+
+Creating load file for EEPROM: lab3.eep
+avr-objcopy -j .eeprom --set-section-flags=.eeprom="alloc,load" \
+	--change-section-lma .eeprom=0 -O ihex lab3.elf lab3.eep
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-lma .eeprom=0x00000000 never used
+
+Creating Extended Listing: lab3.lss
+avr-objdump -h -S lab3.elf > lab3.lss
+
+Creating Symbol Table: lab3.sym
+avr-nm -n lab3.elf > lab3.sym
+
+Converting to AVR COFF: lab3.cof
+avr-objcopy --debugging --change-section-address .data-0x800000 --change-section-address .bss-0x800000 --change-section-address .noinit-0x800000 --change-section-address .eeprom-0x810000 -O coff-ext-avr lab3.elf lab3.cof   # Extended COFF. Supported in VMLAB from rel. 3.10
+Warning: no "data" section found in output file
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-vma .eeprom+0xff7f0000 never used
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-lma .eeprom+0xff7f0000 never used
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-vma .noinit+0xff800000 never used
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-lma .noinit+0xff800000 never used
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-vma .bss+0xff800000 never used
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-lma .bss+0xff800000 never used
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-vma .data+0xff800000 never used
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-lma .data+0xff800000 never used
+
+Size after:
+lab3.elf  :
+section    size   addr
+.text       382      0
+.stab      2352      0
+.stabstr   2449      0
+Total      5183
+
+
+
+Errors: none
+-------- end --------
+

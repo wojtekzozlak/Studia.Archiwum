@@ -1,0 +1,7 @@
+int main(){
+    new void;
+    new gfdgf[10];
+    new void[10];
+    new int;
+    return 0;
+}

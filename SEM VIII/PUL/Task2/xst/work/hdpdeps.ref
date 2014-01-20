@@ -1,0 +1,57 @@
+V3 30
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/display.vhd 2013/05/21.13:16:30 P.28xd
+EN work/display 1369140703 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/display.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/display/Behavioral 1369140704 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/display.vhd \
+      EN work/display 1369140703
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/dividermain.vhd 2013/05/21.14:41:35 P.28xd
+EN work/divider 1369140705 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/dividermain.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/divider/counter 1369140706 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/dividermain.vhd \
+      EN work/divider 1369140705
+EN work/debouncer 1369140707 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/dividermain.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/debouncer/counter 1369140708 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/dividermain.vhd \
+      EN work/debouncer 1369140707
+AR work/debouncer/simple 1369140709 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/dividermain.vhd \
+      EN work/debouncer 1369140707
+EN work/demo 1369140710 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/dividermain.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/demo/simple 1369140711 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/dividermain.vhd \
+      EN work/demo 1369140710 CP work/divider CP work/debouncer CP work/timer \
+      CP work/bin2dec CP work/display
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/doubledabble.vhd 2013/05/21.12:43:15 P.28xd
+EN work/add3 1369140699 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/doubledabble.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/add3/Behavioral 1369140700 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/doubledabble.vhd \
+      EN work/add3 1369140699
+EN work/bin2dec 1369140701 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/doubledabble.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/bin2dec/Behavioral 1369140702 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/doubledabble.vhd \
+      EN work/bin2dec 1369140701 CP work/Add3
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/Timer.vhd 2013/05/21.14:51:25 P.28xd
+EN work/toggler 1369140695 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/Timer.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/toggler/Behavioral 1369140696 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/Timer.vhd \
+      EN work/toggler 1369140695
+EN work/timer 1369140697 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/Timer.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/timer/behavioral 1369140698 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task2/Timer.vhd \
+      EN work/timer 1369140697 CP work/toggler

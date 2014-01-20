@@ -1,0 +1,51 @@
+int f(int i){
+    return i;
+}
+
+int main(){
+    int x = 1;
+    x = 2;
+    3;
+    -3;
+    3 + 3;
+    true || false;
+    false && true;
+    true && true;
+    3 < 9;
+    w("fsdf", 4, true, "fdf", "fdsf");
+    f(392);
+    x++;
+    {
+        x++;
+        int y = x, z = 3, k;
+        boolean x = true;
+        {
+            string x;
+            string z = "fdsf";
+        }
+        x = false;
+        string s = "jeje";
+        s = "";
+    }
+    x++;
+    boolean w;
+    if (w && true){
+        int kxy = 3;
+    } else {
+        int iuom = 43;
+    }
+    string kxy, iuom;
+    int fgh = f(3);
+
+    x = 10 * 8 * 9 / 5;
+    boolean s = false;
+    return 90;
+}
+
+int w(string d, int i, boolean j, string s, string g){
+    string e = "fdsf" + d;
+    int u = 3 + i;
+    boolean fg = (j || false) && true || false;
+    string hu = s + g;
+    return u;
+}

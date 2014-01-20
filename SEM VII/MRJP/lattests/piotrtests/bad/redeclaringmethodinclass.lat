@@ -1,0 +1,11 @@
+class C{
+    // int i;
+    // boolean i;
+    int f(){return 0;}
+    boolean f(){return true;}
+    int f(){return 0;}
+    boolean f(){return true;}
+}
+int main(){
+    return 42;
+}

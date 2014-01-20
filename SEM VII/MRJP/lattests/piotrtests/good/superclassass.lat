@@ -1,0 +1,15 @@
+class C{
+    int i;
+}
+class D extends C{
+    void f(int x){
+        i = x;
+    }
+}
+
+int main(){
+    D d;
+    int idx_to_nothing;
+    d.f(3);
+    return 1;
+}

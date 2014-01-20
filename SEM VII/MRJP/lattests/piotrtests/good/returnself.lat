@@ -1,0 +1,17 @@
+class C{
+    int j_;
+    C init(int j){
+        self.j_ = j;
+        f(self);
+        return self;
+    }
+}
+
+int main(){
+    C c = (new C).init(9);
+    return c.j_;
+}
+
+void f(C c){
+    c.j_ = 10;
+}

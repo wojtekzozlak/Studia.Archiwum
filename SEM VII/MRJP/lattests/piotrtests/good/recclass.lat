@@ -1,0 +1,10 @@
+class C{
+    C c;
+    int i;
+}
+
+int main(){
+    C c = new C;
+    c.c.c.c.c.c.c.c.c.c.i = 1;
+    return c.c.c.c.c.c.c.c.c.c.i;
+}

@@ -1,0 +1,20 @@
+xst -intstyle ise -ifn "Z:/Studia/Studia.Aktualne/PUL/Task2b/demo.xst" -ofn "Z:/Studia/Studia.Aktualne/PUL/Task2b/demo.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2iodef.ucf -p xc3s250e-cp132-4 demo.ngc demo.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o demo_map.ncd demo.ngd demo.pcf 
+par -w -intstyle ise -ol high -t 1 demo_map.ncd demo.ncd demo.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml demo.twx demo.ncd -o demo.twr demo.pcf -ucf Basys2iodef.ucf 
+bitgen -intstyle ise -f demo.ut demo.ncd 
+bitgen -intstyle ise -f demo.ut demo.ncd 
+xst -intstyle ise -ifn "Z:/Studia/Studia.Aktualne/PUL/Task2b/demo.xst" -ofn "Z:/Studia/Studia.Aktualne/PUL/Task2b/demo.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2iodef.ucf -p xc3s250e-cp132-4 demo.ngc demo.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o demo_map.ncd demo.ngd demo.pcf 
+par -w -intstyle ise -ol high -t 1 demo_map.ncd demo.ncd demo.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml demo.twx demo.ncd -o demo.twr demo.pcf -ucf Basys2iodef.ucf 
+bitgen -intstyle ise -f demo.ut demo.ncd 
+xst -intstyle ise -ifn "Z:/Studia/Studia.Aktualne/PUL/Task2b/demo.xst" -ofn "Z:/Studia/Studia.Aktualne/PUL/Task2b/demo.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Basys2iodef.ucf -p xc3s250e-cp132-4 demo.ngc demo.ngd  
+map -intstyle ise -p xc3s250e-cp132-4 -cm area -ir off -pr off -c 100 -o demo_map.ncd demo.ngd demo.pcf 
+par -w -intstyle ise -ol high -t 1 demo_map.ncd demo.ncd demo.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml demo.twx demo.ncd -o demo.twr demo.pcf -ucf Basys2iodef.ucf 
+bitgen -intstyle ise -f demo.ut demo.ncd 
+bitgen -intstyle ise -f demo.ut demo.ncd 

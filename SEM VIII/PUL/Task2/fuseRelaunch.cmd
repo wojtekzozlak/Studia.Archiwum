@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "Z:/Studia/Studia.Aktualne/PUL/Task2/bin2dectest_isim_beh.exe" -prj "Z:/Studia/Studia.Aktualne/PUL/Task2/bin2dectest_beh.prj" "work.bin2dectest" -timescale "1ms/1ms" -override_timeprecision 

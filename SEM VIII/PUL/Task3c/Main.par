@@ -1,0 +1,168 @@
+Release 14.2 par P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+CYAN13::  Tue May 21 14:09:42 2013
+
+par -w -intstyle ise -ol high -t 1 Main_map.ncd Main.ncd Main.pcf 
+
+
+Constraints file: Main.pcf.
+Loading device for application Rf_Device from file '3s250e.nph' in environment C:\soft_x64\Xilinx\14.2\ISE_DS\ISE\.
+   "Main" is an NCD, version 3.2, device xc3s250e, package cp132, speed -4
+
+Initializing temperature to 85.000 Celsius. (default - Range: -40.000 to 100.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.320 Volts)
+
+INFO:Par:282 - No user timing constraints were detected or you have set the option to ignore timing constraints ("par
+   -x"). Place and Route will run in "Performance Evaluation Mode" to automatically improve the performance of all
+   internal clocks in this design. Because there are not defined timing requirements, a timing score will not be
+   reported in the PAR report in this mode. The PAR timing summary will list the performance achieved for each clock.
+   Note: For the fastest runtime, set the effort level to "std".  For best performance, set the effort level to "high".
+
+Device speed data version:  "PRODUCTION 1.27 2012-07-09".
+
+
+Design Summary Report:
+
+ Number of External IOBs                          32 out of 92     34%
+
+   Number of External Input IOBs                 12
+
+      Number of External Input IBUFs             12
+        Number of LOCed External Input IBUFs     12 out of 12    100%
+
+
+   Number of External Output IOBs                20
+
+      Number of External Output IOBs             20
+        Number of LOCed External Output IOBs     20 out of 20    100%
+
+
+   Number of External Bidir IOBs                  0
+
+
+
+
+Overall effort level (-ol):   High 
+Placer effort level (-pl):    High 
+Placer cost table entry (-t): 1
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 1 secs 
+Finished initial Timing Analysis.  REAL time: 1 secs 
+
+WARNING:Par:288 - The signal btn<0>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal btn<1>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal btn<2>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal btn<3>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sw<0>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sw<1>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sw<2>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sw<3>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sw<4>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sw<5>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sw<6>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal sw<7>_IBUF has no load.  PAR will not attempt to route this signal.
+
+Starting Placer
+Total REAL time at the beginning of Placer: 1 secs 
+Total CPU  time at the beginning of Placer: 1 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 4.2  Initial Clock and IO Placement
+Phase 4.2  Initial Clock and IO Placement (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 5.30  Global Clock Region Assignment
+Phase 5.30  Global Clock Region Assignment (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 6.36  Local Placement Optimization
+Phase 6.36  Local Placement Optimization (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 7.8  Global Placement
+Phase 7.8  Global Placement (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 9.18  Placement Optimization
+Phase 9.18  Placement Optimization (Checksum:d64e729) REAL time: 1 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:d64e729) REAL time: 1 secs 
+
+Total REAL time to Placer completion: 1 secs 
+Total CPU  time to Placer completion: 1 secs 
+Writing design to file Main.ncd
+
+
+
+Starting Router
+
+
+Phase  1  : 20 unrouted;      REAL time: 4 secs 
+
+Phase  2  : 8 unrouted;      REAL time: 4 secs 
+
+Phase  3  : 0 unrouted;      REAL time: 4 secs 
+
+Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+
+Updating file: Main.ncd with current fully routed design.
+
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+
+Total REAL time to Router completion: 4 secs 
+Total CPU time to Router completion: 4 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+Timing Score: 0 (Setup: 0, Hold: 0)
+
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 12 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 6 secs 
+Total CPU time to PAR completion: 5 secs 
+
+Peak Memory Usage:  251 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 14
+Number of info messages: 1
+
+Writing design to file Main.ncd
+
+
+
+PAR done!

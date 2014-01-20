@@ -1,0 +1,10 @@
+int main(){
+    C c;
+    return c.f()[1];
+}
+
+class C{
+    int[] f(){
+        return new int[10];
+    }
+}

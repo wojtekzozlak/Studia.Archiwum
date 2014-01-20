@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "Z:/Task1/Task1/n_min_test_isim_beh.exe" -prj "Z:/Task1/Task1/n_min_test_beh.prj" "work.n_min_test" 

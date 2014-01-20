@@ -1,0 +1,17 @@
+Creating   'lab1.eep'
+Creating   'lab1.hex'
+Creating   'lab1.obj'
+Creating   'lab1.lis'
+Creating   'lab1.map'
+
+Assembling 'lab1.asm'
+Including  'C:\PROGRA~2\VMLAB\include\m16def.inc'
+
+Program memory usage:
+Code             :   33 words
+Constants (dw/db):    0 words
+Unused           :   40 words
+Total            :   73 words
+
+Assembly complete with no errors.
+Deleting   'lab1.eep'

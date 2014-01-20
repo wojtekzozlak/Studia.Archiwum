@@ -1,0 +1,40 @@
+int[] f(){
+    return new boolean[10];
+}
+
+class D{
+    boolean[] j;
+    B b;
+    int[] f(){
+
+    }
+}
+
+class C extends D{
+    string[] i;
+    int[] f(){
+        return 1;
+    }
+}
+
+class B{
+    string[] i;
+}
+
+int main(){
+    C c = new C;
+    int i = c.i[1];
+    int j = c.b.i[1];
+    int k = c.j[1];
+
+    for (int x : c.i)
+        printInt(x);
+
+    for (int x : c.b.i)
+        printInt(x);
+
+    for (int x : c.j)
+        printInt(x);
+
+    return f()[1];
+}

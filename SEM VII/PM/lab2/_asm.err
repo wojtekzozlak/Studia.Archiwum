@@ -1,0 +1,17 @@
+Creating   'lcd.eep'
+Creating   'lcd.hex'
+Creating   'lcd.obj'
+Creating   'lcd.lis'
+Creating   'lcd.map'
+
+Assembling 'lcd.asm'
+Including  'C:\PROGRA~2\VMLAB\include\m16def.inc'
+
+Program memory usage:
+Code             :  176 words
+Constants (dw/db):    0 words
+Unused           :    0 words
+Total            :  176 words
+
+Assembly complete with no errors.
+Deleting   'lcd.eep'

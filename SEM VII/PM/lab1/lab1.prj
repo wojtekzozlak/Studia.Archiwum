@@ -1,0 +1,42 @@
+; ************************************************************
+; PROJECT:
+; AUTHOR:
+; ************************************************************
+
+; Micro + software running
+; ------------------------------------------------------------
+.MICRO "ATmega16"
+.PROGRAM "lab1.asm"
+.TARGET "lab1.hex"
+
+.TRACE              ; Activate micro trace
+
+; Following lines are optional; if not included
+; exactly these values are taken by default
+; ------------------------------------------------------------
+.POWER VDD=5 VSS=0  ; Power nodes
+.CLOCK 8meg         ; Micro clock
+.STORE 250m         ; Trace (micro+signals) storage time
+
+D1 VDD N0  ; x: Panel LEDs 1 - 8
+D2 VDD N1
+D3 VDD N2
+D4 VDD N3
+D5 VDD N4
+D6 VDD N5
+D7 VDD N6
+D8 VDD N7
+R0 N0 PA0 680
+R1 N1 PA1 680
+R2 N2 PA2 680
+R3 N3 PA3 680
+R4 N4 PA4 680
+R5 N5 PA5 680
+R6 N6 PA6 680
+R7 N7 PA7 680
+
+; Micro nodes: RESET, AREF, PA0-PA7, PB0-PB7, PC0-PC7, PD0-PD7, ACO, TIM1OVF
+; Define here the hardware around the micro
+; ------------------------------------------------------------
+
+

@@ -1,0 +1,6 @@
+src/parser/Lexer.C
+src/parser/Parser.C
+*.swp
+*.bak
+bin/*
+

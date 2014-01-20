@@ -1,0 +1,302 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsfonts}
+\usepackage{bm}
+
+\pagestyle{fancy}
+\lhead{ZO'2013 - zadanie domowe nr 2}
+\rhead{Wojciech Żółtak; 292583}
+
+\lstset{numbers=left}
+
+% Część główna
+\begin{document}
+
+\section*{Opis problemu}
+
+Aby udowodnić $P$-zupełność problemu sprawdzenia niepustości języka generowanego
+przez gramatykę bezkontekstową muszę:
+
+\begin{itemize}
+  \item{sformalizować kodowanie wejścia (gramatyki)}
+  \item{pokazać, że problem w ogóle należy do klasy $P$}
+  \item{udowodnić zupełność w klasie $P$}
+\end{itemize}
+
+
+\section*{Kodowanie gramatyk bezkontekstowych}
+
+Kodowanie gramatyki przedstawia się następująco:
+\begin{itemize}
+  \item{Symbolom nieterminalnym przyporządkowujemy ciągi zer nieparzystej
+        długości, przy czym symbolowi startowemu odpowiada $0$.}
+  \item{Symbolom terminalnym przyporządkowujemy ciągi zer parzystej długości.}
+  \item{Produkcja ma postać kodów symboli rozdzielonych jedynkami, tzn.
+        produkcja postaci $A \rightarrow x_{1}..x_{k}$ kodowana jest jako
+        $K_{A} 1 K_{x_{1}} 1 .. 1 K_{x_{k}} $, gdzie $K_x$ jest kodem symbolu
+        $x$.}
+  \item{Produkcje rozdzielone są parami jedynek.}
+  \item{Wszystkie produkcje okalają dwie trójki jedynek.}
+\end{itemize}
+Jest to zatem kalka z kodowania maszyn turinga z wykładu, z drobną optymalizacją
+pozwalającą na rozpoznawanie czy czytany symbol jest terminalny czy nie (po
+parzystości).
+
+Wszystkie operacje (przeczytanie produkcji dla danego nieterminala, sprawdzenie
+czy symbol jest termilanem czy nie, znalezienie wszystkich symboli) można
+w naiwny sposób wykonać w czasie wielomianowym od rozmiaru wejścia.
+
+
+
+\section*{Przynależność do klasy $P$}
+
+Algorytm sprawdzający niepustość języka generowanego przez daną gramatykę
+wygląda następująco:
+
+\begin{itemize}
+  \item{Tworzymy pusty zbiór $Productible$}
+  \item{Tak długo, aż zbiór $Productible$ przestanie się powiększać:
+    \begin{itemize}
+      \item{Niech $Prod'$ będzie pustym zbiorem}
+      \item{Dla każdego nieterminala $A$ z gramatyki:
+        \begin{itemize}
+          \item{Jeśli istnieje produkcja postaci $A \rightarrow x_{1} .. x_{k}$
+                taka, że
+\begin{displaymath}
+  \forall_{i \in {1..k}} terminal(x_{i}) \vee (\neg terminal(x_{i}) \wedge x_{i} \in Productible)
+\end{displaymath}
+
+            to dodajemy $A$ do $Prod'$}
+        \end{itemize}
+      }
+      \item{Dokładamy zawartość $Prod'$ do $Productible$}
+    \end{itemize}
+  }
+  \item{Język jest niepusty, jeśli symbol startowy należy do $Productible$}
+\end{itemize}
+
+
+Zbiór $Productible$ można interpretować jako zbiór nieterminali, z których da
+się wyprowadzić jakieś słowo. Wypadałoby pokazać jego poprawność i pełność.
+
+Jako $P_{n}$ oznaczmy zbiór nieterminali z gramatyki, z których można
+wyprodukować słowo za pomocą drzewa wyprowadzenia o wysokości nie większej niż
+$n$.
+
+$P_{0}$ jest puste.
+
+$P_{1}$ zawiera wszystkie nieterminale posiadające produkcję, która z
+prawej strony posiada wyłącznie terminale. Po pierwszej iteracji algorytmu
+zachodzi $P_{1} = Productible$, z definicji algorytmu.
+
+Rozważymy zbiór $P_{n+1}$ i wybierzmy z niego dowolny nieterminal $A$. Z
+definicji tego zbioru istnieje słowo $w$, która da się wyprowadzić z $A$ za
+pomocą drzewa wyprowadzenia o wysokości nie większej niż $n+1$. W korzeniu tego
+drzewa użyta jest pewna produkcja z $A$. Dla każdego symbolu $x$ z prawej strony
+tej produkcji
+\begin{itemize}
+  \item{$x$ jest terminalem lub}
+  \item{$x$ jest nieterminalem i $x \in P_{n}$.}
+\end{itemize}
+Druga własność wynika z tego, że gdyby $\neg terminal(x) \wedge x \notin P_{n}$,
+to całe drzewo wyprowadzenia musiało by mieć wysokość większą niż $n+1$. Co jest
+sprzeczne z założeniem o $P_{n+1}$.
+
+Powyższa obserwacja w jasny sposób przekłada się na działanie algorytmu.
+Zakładając, że na początku pewnej iteracji $P_{n} \subseteq Productible$, to po
+jej zakończeniu $P_{n+1} \subseteq Productible$, ponieważ dla dowolnego nieterminalu
+$A \in P_{n+1}$ produkcja z korzenia drzewa wyprowadzenia spełni warunek z
+algorytmu i $A$ zostanie dodane do $Productible$.
+
+Co więcej, w $k$-tym kroku zbiór $Productible$ wzbogaca się tylko o symbole
+należące do $P_{k}$, ponieważ jeśli dodajemy do $Productible$ symbol $A$,
+to znaczy, że istnieje z niego produkcja w symbole będące terminalami, bądź
+należące do $P_{k-1}$, zatem z $A$ można wyprowadzić słowo drzewem wysokości nie
+większej niż $k$ za pomocą tej produkcji.
+
+Zatem, z indukcji - po $k$-tej iteracji algorytmu zachodzi
+$P_{k} = Productibles$. \\
+
+
+No dobrze, ale ile jest tych iteracji? W szczególności - czy algorytm w ogóle
+się zatrzyma? Zuważmy, że:
+\begin{itemize}
+  \item{Jeśli dla pewnego $k$ zachodzi $P_{k} = P_{k+1}$, to $\forall_{i > k}
+        P_{k} = P_{i}$, ponieważ przy ustalonej gramatyce wynik kolejnej
+        iteracji algorytmu zależy wyłącznie od wyniku poprzedniej.}
+  \item{Moc zbiorów $P_{k}$ jest ograniczona z góry przez moc zbioru symboli
+        nieterminalnych gramatyki - $M$.}
+\end{itemize}
+W konsekwencji, po najwyżej $M$ iteracjach zbiór $Productible$ przestanie się
+powiększać. Stanie się tak, ponieważ
+\begin{itemize}
+  \item{jeśli wystąpi iteracja, po której zbiór $Productible$ nie zwiększy się,
+        to żadna kolejna iteracja nie doda do niego nowego elementu}
+  \item{jeśli każda iteracja doda coś do $Productibles$, to po $M$ krokach
+        będzie on zawierał wszystkie symbole nieterminalne, a więc nie będzie
+        dało się go dalej powiększyć}
+\end{itemize}
+
+Zatem, po $M$ iteracjach algorytm zakończy się oraz zachodzić będzie
+
+\begin{displaymath}
+  \forall_{i \in \mathbb{N}} x \in P_{i} \Rightarrow x \in Productible
+\end{displaymath}
+  oraz
+\begin{displaymath}
+  \forall_{x \in Productible} \exists_{i \in \mathbb{N}} (x \in P_{i})
+\end{displaymath}
+
+czyli zbiór $Productible$ zawierać będzie tylko i wyłącznie symbole
+nieterminalne, z których da się wyprowadzić jakieś słowo skończonym drzewem
+wyprowadzenia.
+
+W szczególności, język generowany przez gramatykę jest niepusty wtedy i tylko
+wtedy gdy jej symbol startowy należy do $Productible$.\\
+
+
+Niech $N$ będzie rozmiarem wejście.
+Cały algorytm składa się z $\mathcal{O}(M) \leq \mathcal{O}(N) $ iteracji,
+w których przeglądamy wszystkie $\mathcal{O}(N)$ produkcji, a w nich analizujemy
+$\mathcal{O}(N)$ symboli, przeglądając przy tym zbiór $Productible$, którego
+rozmiar również możemy przeszacować przez $\mathcal{O}(N)$.
+Pojedyncze operacje na gramatyce i zbiorze $Productible$ są wielomianowe, więc
+możemy je przeszacować przez $\mathcal{O}(P(N))$, gdzie $P(N)$ jest pewnym
+wielomianem. Wobec tego, cały algorytm powinien działać w czasie 
+$\mathcal{O}( N^5 * P(N))$, czyli w czasie wielomianowym.
+
+Zatem nasz problem leży w klasie $P$.
+
+\section*{Zupełność}
+
+W celu udowodnieniu zupełności w klasie $P$ posłużę się redukcją z {\it Circuit
+Value Problem} który jest $P$-zupełny. Dla przypomnienia - mając dany obwód oraz
+wartościowanie wejść należy określić wartość logiczną w wyróżnionej bramce
+wyjściowej.
+
+Obwody z wykładu nie posiadały bramek NOT - zamiast tego każde wejście było
+podawane w wersji normalnej i zanegowanej. Będę używał wersji {\it CVP} dla tego
+rodzaju obwodów. Na koniec wspomnę jak by wyglądała by redukcja dla obwodów z
+bramkami NOT. \\
+
+
+Redukcja wygląda następująco:\\
+
+\begin{itemize}
+  \item{Niech $n$ oznacza ilość bramek w obwodzie, a $2m$ ilość wejść (łącznie,
+        normalnych i zanegowanych).}
+  \item{Niech $P_{1}$ do $P_{n}$ będą bramkami z obwodu, przy czym niech $P_{1}$
+        będzie bramką wyjściową. Natomiast $x_1$ do $x_{2m}$ wartościami wejść.}
+  \item{Dla każdej bramki $P_i$ generujemy produkcje:
+    \begin{itemize}
+      \item{$S_i \rightarrow S_k S_j$, jeśli $P_i$ jest postaci $P_k \wedge P_j$}
+      \item{$S_i \rightarrow S_k V_j$, jeśli $P_i$ jest postaci $P_k \wedge x_j$
+            lub $x_j \wedge P_k$}
+      \item{$S_i \rightarrow V_k V_j$, jeśli $P_i$ jest postaci $x_k \wedge x_j$}
+
+      \item{$S_i \rightarrow S_k$, $S_i \rightarrow S_j$, jeśli $P_i$ jest postaci $P_k \vee P_j$}
+      \item{$S_i \rightarrow S_k$, $S_i \rightarrow V_j$, jeśli $P_i$ jest postaci $P_k \vee x_j$
+            lub $x_j \vee P_k$}
+      \item{$S_i \rightarrow V_k$, $S_i \rightarrow V_j$, jeśli $P_i$ jest postaci $x_k \vee x_j$}
+    \end{itemize}
+  }
+  \item{Dla każdego wejścia $x_i$ (przypominam, że to zbiór zarówno wejść
+        normalnych jak i zanegowanych) generujemy produkcje:
+    \begin{itemize}
+      \item{$V_i \rightarrow \epsilon $, gdy $x_i$ ma wartość $1$}
+      \item{$V_i \rightarrow V_i$ w przeciwnym przypadku}
+    \end{itemize}
+  }
+  \item{Produkcje wypisujemy na wyjście w takiej kolejności by te dla $P_{1}$
+        znalazły się na początku ($S_{1}$ ma być symbolem startowym).}
+\end{itemize}
+
+
+Na początek zauważmy, że powyższa gramatyka generuje słowo puste lub nic
+(ponieważ może zawierać cykle potencjalnie można budować nieskończenie długie
+drzewa wyprowadzeń i do niczego nie dojść).
+
+Dodatkowo, dla każdego nieterminala z powyższej gramatyki spełniony jest
+niezmiennik:
+
+{\it Z nieterminala można wyprowadzić słowo $\Longleftrightarrow$
+ odpowiadający mu element obwodu (bramka lub wejście) zwraca wartość $1$.}
+
+Można to pokazać indukcją strukturalną po obwodzie i odpowiednich
+nieterminalach. W szczególności:
+\begin{itemize}
+  \item{Dla nieterminali $V_i$, jeśli odpowiadające wejście ma wartość:
+    \begin{itemize}
+      \item{$1$, to jedyna produkcja powoduje wyprowadzenie słowa pustego}
+      \item{$0$, to nie da się nic wyprowadzić, bo jedyna produkcja pętli się}
+    \end{itemize}
+  }
+  \item{Dla nieterminali $S_i$, jeśli odpowiada im bramka OR mająca wartość:
+    \begin{itemize}
+      \item{$1$, to jedno z wejść spięte jest z obwodem zwracającym $1$;
+            odpowiadający mu nieterminal, według niezmiennika, pozwala
+            wyprodukować słowo puste i możemy do niego przejść wybierając
+            odpowiednią produkcję z $S_i$}
+      \item{$0$, to do obu wejść wpięte są obwody zwracające $0$, w związku z
+            czym, według niezmiennika, niezależnie od tego którą produkcję
+            wybierzemy, nie zdołamy niczego wyprodukować}
+    \end{itemize}
+  }
+  \item{Dla nieterminali $S_i$, jeśli odpowiada im bramka AND mająca wartość:
+    \begin{itemize}
+      \item{$1$, oba wejścia obwodu połączone są z obwodami zwracającymi $1$,
+            w związku z czym z obu odpowiadających nieterminali można
+            wyprowadzić słowo puste, w konsekwencji otrzymując słowo puste}
+      \item{$0$, któreś z wejść obwodu połaczone jest z obwodem zwracającym $0$,
+            w związku z czym z odpowiadającego mu nieterminala nie można
+            wyprowadzić żadnego słowa, a w konsekwencji także z $S_i$}
+    \end{itemize}
+  }
+\end{itemize}
+
+Znaczy to ni mniej ni więcej tyle, że nasza język generowany przez powyższą
+gramatykę jest niepusty (przy czym zawiera wtedy wyłącznie $\epsilon$) wtedy i
+tylko wtedy gdy obwód zwraca wartość $1$. \\
+
+Pozostaje uzasadnić, że redukcja jest wykonalna w pamięci logarytmicznej. Znaczy
+to mniej więcej tyle, że mamy do dyspozycji skończoną liczbę liczników.
+Wystarczy zauważyć, że o ile potrzebujemy ,,ponumerować'' bramki i wejścia, to
+wcale nie musimy takiego mapowania pamiętać. Możemy wyliczać je dla
+pojedynczych elementów ,,na żądanie'' przy pomocy stałej liczby liczników,
+przeglądając całe wejście w wielomianowym czasie. Podczas generowania produkcji
+dla dowolnego elementu obwodu musimy pamiętać wyłącznie numery oraz typy
+obrabianego elementu oraz elementów wpiętych w wejścia, zatem stałą ilość
+informacji. Tak więc całość można wykonać w pamięci logarytmicznej. \\
+
+W związku z tym, nasz problem jest $P$-zupełny.
+
+
+
+\subsubsection*{Wersja z NOT}
+
+I na koniec szkic wersji dla obwodów zawierających bramki NOT. Rozwiązanie
+wygląda podobnie jak w przypadku przekształcania obwodów z bramkami NOT na
+postać z wykładów. Używa się w tym celu praw De Morgana w celu ,,zepchnięcia''
+negacji do poziomu wyjść, a następnie dodaje zanegowane kopie wejść, których
+można użyć na najniższym poziomie (samymi bramkami OR i AND nie da się generować
+negacji).
+
+Na poziomie gramatyki wygląda to w taki sposób, że każdy nieterminal
+odpowiadający bramce ma swoją dualną wersję, która zwraca wartość zanegowaną.
+Produkcje w takim dualnym nieterminalu są budowane według zasad dla przeciwnej
+bramki (czyli w negacji ORa jest jedna produkcja w dwa nieterminale,
+a w negacji AND'a są dwie produkcje w pojedyncze symbole), produkując przy tym
+nieterminale dualne do symboli odpowiadającym obwodom wpiętym w wejścia.
+Słowem, z praw De Morgana - zanegowanej bramce odpowiada bramka przeciwnego
+typu z zanegowanymi wejściami.
+
+Dla wejść natomiast generujemy dualne symbole odpowiadające ich zanegowanym
+wartościom, co odpowiada podwojejeniu wejść przy konwersji obwodów.
+
+
+\end{document}

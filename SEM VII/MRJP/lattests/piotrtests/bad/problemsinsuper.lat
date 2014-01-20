@@ -1,0 +1,17 @@
+class C{
+    int i;
+    int i;
+}
+
+class D extends C{
+    C c;
+    void f(){
+        printInt(i);
+        printInt(c.i);
+    }
+
+}
+
+int main(){
+    return 0;
+}

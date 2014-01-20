@@ -1,0 +1,146 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   9               		.text
+  10               	.Ltext0:
+  89               	.global	main
+  91               	main:
+   1:main.c        **** #include <avr\io.h>
+   2:main.c        **** #include <avr\interrupt.h>
+   3:main.c        **** #include <avr\signal.h>
+   4:main.c        **** #include <avr\eeprom.h>
+   5:main.c        **** #include <avr\pgmspace.h>
+   6:main.c        **** #include <avr\sleep.h>
+   7:main.c        **** 
+   8:main.c        **** #include "config.h" // Defines F_CPU and loads delay.
+   9:main.c        **** #include "editor.h"
+  10:main.c        **** #include "lcd.h"
+  11:main.c        **** #include "keyboard.h"
+  12:main.c        **** #include "util.h"
+  13:main.c        **** 
+  14:main.c        **** int main(void) {
+  92               	in r28,__SP_L__
+  93               		in r29,__SP_H__
+  94               	/* prologue: function */
+  95 0000 1F93      	/* frame size = 1 */
+  97 0004 CF93      	.LM1:
+  98 0006 0F92      		movw r24,r28
+  99 0008 CDB7      		adiw r24,1
+ 100 000a DEB7      		call editor_init
+ 102               	.LM2:
+  15:main.c        ****   char refreshed;
+  16:main.c        **** 
+  17:main.c        ****   editor_init(&refreshed);
+ 103               	BB1
+ 104               	.LM1:
+ 105 000c CE01      		movw r24,r28
+ 106 000e 0196      		adiw r24,1
+ 107 0010 0E94 0000 		call editor_init
+  18:main.c        ****   editor_refresh();
+ 108               	size = 1 */
+ 110 0014 0E94 0000 	.LM1:
+  19:main.c        **** 
+  20:main.c        ****   set_sleep_mode(SLEEP_MODE_STANDBY);
+ 111               	r29,__SP_H__
+ 112               	/* prologue: function */
+ 113 0018 85B7      	/* frame size = 1 */
+ 115 001c 806A      	.LM1:
+ 116 001e 85BF      		movw r24,r28
+  21:main.c        ****   sei();
+ 117               	 prologue: function */
+ 118               	/* frame size = 1 */
+ 120               	.LM1:
+ 121 0020 7894      		movw r24,r28
+ 122               		adiw r24,1
+  22:main.c        **** 
+  23:main.c        **** 
+  24:main.c        ****   for (;;) {
+  25:main.c        ****     cli();
+  26:main.c        ****     if (refreshed) {
+  27:main.c        ****       sleep_enable();
+  28:main.c        ****       sei();
+  29:main.c        ****       sleep_cpu();
+  30:main.c        ****       sleep_disable();
+  31:main.c        ****     } else {
+  32:main.c        ****       refreshed = 1;
+ 123               	nction */
+ 124               	/* frame size = 1 */
+ 126 0022 11E0      	.LM1:
+ 127               		movw r24,r28
+ 128               		adiw r24,1
+ 129               		call editor_init
+ 131               	.LM2:
+ 132 0024 F894      		call editor_refresh
+ 134               	.LM3:
+ 135               		in r24,85-32
+ 136               		andi r24,lo8(79)
+ 137 0026 8981      		ori r24,lo8(-96)
+ 138 0028 8823      		out 85-32,r24
+ 140               	.LM4:
+ 141               	/* #APP */
+ 142               	 ;  21 "main.c" 1
+ 143 002c 85B7      		sei
+ 144 002e 8064      	 ;  0 "" 2
+ 146               	.LM5:
+ 147               	/* #NOAPP */
+ 148               		ldi r17,lo8(1)
+ 149               	.L5:
+ 151               	.LM6:
+ 152               	/* #APP */
+ 153               	 ;  25 "main.c" 1
+ 154               		cli
+ 155 0034 8895      	 ;  0 "" 2
+ 157               	.LM7:
+ 158               	/* #NOAPP */
+ 159               		ldd r24,Y+1
+ 160               		tst r24
+ 161 0036 85B7      		breq .L2
+ 162 0038 8F7B      	.L7:
+ 164               	.LM8:
+ 165               		in r24,85-32
+ 166               		ori r24,lo8(64)
+ 167               		out 85-32,r24
+ 169               	.LM9:
+ 170               	/* #APP */
+ 171               	 ;  28 "main.c" 1
+ 172               		sei
+ 173 003e 8981      	 ;  0 "" 2
+ 175 0042 01F4      	.LM10:
+ 176               	 ;  29 "main.c" 1
+ 177               		sleep
+ 178               		
+ 179 0044 1983      	 ;  0 "" 2
+  33:main.c        ****       sei();
+ 180               	:
+ 181               	 ;  29 "main.c" 1
+ 182               		sleep
+ 183               		
+ 184 0046 7894      	 ;  0 "" 2
+  34:main.c        ****       editor_refresh();
+ 186               	;  0 "" 2
+ 188               	.LM11:
+ 189 0048 0E94 0000 	/* #NOAPP */
+ 190 004c 00C0      		in r24,85-32
+ 191               		andi r24,lo8(-65)
+ 192               		out 85-32,r24
+ 194               	.LM12:
+ 195               	/* #APP */
+ 196               	 ;  25 "main.c" 1
+ 197               		cli
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\Yellow\AppData\Local\Temp/ccvRLlQJ.s:2      *ABS*:0000003f __SREG__
+C:\Users\Yellow\AppData\Local\Temp/ccvRLlQJ.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Yellow\AppData\Local\Temp/ccvRLlQJ.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Yellow\AppData\Local\Temp/ccvRLlQJ.s:5      *ABS*:00000034 __CCP__
+C:\Users\Yellow\AppData\Local\Temp/ccvRLlQJ.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Yellow\AppData\Local\Temp/ccvRLlQJ.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Yellow\AppData\Local\Temp/ccvRLlQJ.s:91     .text:00000000 main
+
+UNDEFINED SYMBOLS
+editor_init
+editor_refresh

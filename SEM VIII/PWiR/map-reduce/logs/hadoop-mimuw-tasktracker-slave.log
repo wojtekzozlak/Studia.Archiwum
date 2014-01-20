@@ -1,0 +1,1160 @@
+2013-06-02 07:41:52,404 INFO org.apache.hadoop.mapred.TaskTracker: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting TaskTracker
+STARTUP_MSG:   host = slave/192.168.3.2
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 1.0.4
+STARTUP_MSG:   build = https://svn.apache.org/repos/asf/hadoop/common/branches/branch-1.0 -r 1393290; compiled by 'hortonfo' on Wed Oct  3 05:13:58 UTC 2012
+************************************************************/
+2013-06-02 07:41:52,583 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2013-06-02 07:41:52,635 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2013-06-02 07:41:52,636 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2013-06-02 07:41:52,636 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: TaskTracker metrics system started
+2013-06-02 07:41:52,867 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2013-06-02 07:41:52,870 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2013-06-02 07:41:58,014 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-06-02 07:41:58,060 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2013-06-02 07:41:58,082 INFO org.apache.hadoop.mapred.TaskLogsTruncater: Initializing logs' truncater with mapRetainSize=-1 and reduceRetainSize=-1
+2013-06-02 07:41:58,085 INFO org.apache.hadoop.mapred.TaskTracker: Starting tasktracker with owner as mimuw
+2013-06-02 07:41:58,086 INFO org.apache.hadoop.mapred.TaskTracker: Good mapred local directories are: /app/hadoop/tmp/mapred/local
+2013-06-02 07:41:58,091 INFO org.apache.hadoop.util.NativeCodeLoader: Loaded the native-hadoop library
+2013-06-02 07:41:58,100 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2013-06-02 07:41:58,101 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source TaskTrackerMetrics registered.
+2013-06-02 07:41:58,118 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcDetailedActivityForPort57100 registered.
+2013-06-02 07:41:58,118 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcActivityForPort57100 registered.
+2013-06-02 07:41:58,120 INFO org.apache.hadoop.ipc.Server: Starting SocketReader
+2013-06-02 07:41:58,122 INFO org.apache.hadoop.mapred.TaskTracker: TaskTracker up at: localhost/127.0.0.1:57100
+2013-06-02 07:41:58,122 INFO org.apache.hadoop.mapred.TaskTracker: Starting tracker tracker_slave:localhost/127.0.0.1:57100
+2013-06-02 07:41:58,121 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2013-06-02 07:41:58,121 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 57100: starting
+2013-06-02 07:41:58,121 INFO org.apache.hadoop.ipc.Server: IPC Server handler 0 on 57100: starting
+2013-06-02 07:41:58,122 INFO org.apache.hadoop.ipc.Server: IPC Server handler 1 on 57100: starting
+2013-06-02 07:41:58,122 INFO org.apache.hadoop.ipc.Server: IPC Server handler 2 on 57100: starting
+2013-06-02 07:41:58,128 INFO org.apache.hadoop.ipc.Server: IPC Server handler 3 on 57100: starting
+2013-06-02 07:42:37,258 INFO org.apache.hadoop.mapred.TaskTracker: Starting thread: Map-events fetcher for all reduce tasks on tracker_slave:localhost/127.0.0.1:57100
+2013-06-02 07:42:37,268 INFO org.apache.hadoop.util.ProcessTree: setsid exited with exit code 0
+2013-06-02 07:42:37,278 INFO org.apache.hadoop.mapred.TaskTracker:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@1f48262
+2013-06-02 07:42:37,280 WARN org.apache.hadoop.mapred.TaskTracker: TaskTracker's totalMemoryAllottedForTasks is -1. TaskMemoryManager is disabled.
+2013-06-02 07:42:37,295 INFO org.apache.hadoop.mapred.IndexCache: IndexCache created with max memory = 10485760
+2013-06-02 07:42:37,310 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ShuffleServerMetrics registered.
+2013-06-02 07:42:37,317 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50060
+2013-06-02 07:42:37,317 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50060 webServer.getConnectors()[0].getLocalPort() returned 50060
+2013-06-02 07:42:37,318 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50060
+2013-06-02 07:42:37,318 INFO org.mortbay.log: jetty-6.1.26
+2013-06-02 07:42:37,648 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50060
+2013-06-02 07:42:37,648 INFO org.apache.hadoop.mapred.TaskTracker: FILE_CACHE_SIZE for mapOutputServlet set to : 2000
+2013-06-02 07:42:37,657 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0090 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0043 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020733_0002 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0098 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0009 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0001 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0103 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0081 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0025 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0040 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0102 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020640_0001 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0096 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0077 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,660 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0076 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0049 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0069 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0054 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0004 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0034 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0035 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0021 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020640_0009 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0065 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0008 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0037 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0007 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0012 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0026 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0092 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0013 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0064 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,661 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0068 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0035 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0044 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0028 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0099 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0007 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0020 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0018 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0100 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020640_0002 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0037 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0039 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0045 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0080 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0042 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,662 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0039 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0088 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0105 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0089 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0005 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0046 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0055 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0044 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0032 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0070 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0036 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0107 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0059 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201304262047_0001 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0023 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0084 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,665 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0095 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0014 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020640_0008 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0079 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0038 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0010 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0023 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0091 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0033 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0043 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0053 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0109 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0097 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0063 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0106 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0075 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0019 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,666 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0015 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0030 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0041 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0052 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201304261613_0001 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0014 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0045 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0078 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0104 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0074 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020640_0003 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0082 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0022 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0003 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0036 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0086 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0073 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0034 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0051 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,667 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0041 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0066 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0067 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0009 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0027 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0028 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0101 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0048 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0016 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0072 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0002 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0038 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0050 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0024 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0083 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,668 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0087 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,669 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0029 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,669 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0011 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,669 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0047 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,669 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0031 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,669 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020640_0007 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,669 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0029 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0060 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0058 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0071 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0017 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0062 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020654_0046 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0056 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0085 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,670 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0094 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,671 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0093 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,671 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0011 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,671 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0006 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,671 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020640_0005 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:42:37,671 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306012004_0003 for user-log deletion with retainTimeStamp:1370238157283
+2013-06-02 07:44:08,004 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0001_m_000002_0 task's state:UNASSIGNED
+2013-06-02 07:44:08,007 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0001_m_000002_0 which needs 1 slots
+2013-06-02 07:44:08,007 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0001_m_000002_0 which needs 1 slots
+2013-06-02 07:44:08,172 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:44:08,529 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0001_m_2027113183
+2013-06-02 07:44:08,530 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0001_m_2027113183 spawned.
+2013-06-02 07:44:08,534 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0001/attempt_201306020741_0001_m_000002_0/taskjvm.sh
+2013-06-02 07:44:09,503 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0001_m_2027113183 given task: attempt_201306020741_0001_m_000002_0
+2013-06-02 07:44:13,025 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0001_m_000002_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step0b/step0b:0+17
+2013-06-02 07:44:13,027 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0001_m_000002_0 is done.
+2013-06-02 07:44:13,027 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0001_m_000002_0  was 29
+2013-06-02 07:44:13,029 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:44:13,078 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0001_m_2027113183 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:44:13,113 INFO org.apache.hadoop.io.nativeio.NativeIO: Initialized cache for UID to User mapping with a cache timeout of 14400 seconds.
+2013-06-02 07:44:13,113 INFO org.apache.hadoop.io.nativeio.NativeIO: Got UserName mimuw for UID 1000 from the native implementation
+2013-06-02 07:44:19,567 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:47913, bytes: 29, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0001_m_000002_0, duration: 10599259
+2013-06-02 07:44:32,051 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0001
+2013-06-02 07:44:32,054 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0001 for user-log deletion with retainTimeStamp:1370238272052
+2013-06-02 07:45:05,110 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0002
+2013-06-02 07:45:05,110 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0002 being deleted.
+2013-06-02 07:45:11,130 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0003_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:45:11,130 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0003_m_000001_0 which needs 1 slots
+2013-06-02 07:45:11,130 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0003_m_000001_0 which needs 1 slots
+2013-06-02 07:45:11,171 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:45:11,339 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0003_m_1162879741
+2013-06-02 07:45:11,339 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0003_m_1162879741 spawned.
+2013-06-02 07:45:11,341 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0003/attempt_201306020741_0003_m_000001_0/taskjvm.sh
+2013-06-02 07:45:11,885 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0003_m_1162879741 given task: attempt_201306020741_0003_m_000001_0
+2013-06-02 07:45:15,261 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:3268931+3268882
+2013-06-02 07:45:15,264 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0003_m_000001_0 is done.
+2013-06-02 07:45:15,264 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0003_m_000001_0  was 6169638
+2013-06-02 07:45:15,265 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:45:15,310 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0003_m_1162879741 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:45:17,156 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0003_r_000000_0 task's state:UNASSIGNED
+2013-06-02 07:45:17,156 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0003_r_000000_0 which needs 1 slots
+2013-06-02 07:45:17,156 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0003_r_000000_0 which needs 1 slots
+2013-06-02 07:45:17,166 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0003_r_2027113183
+2013-06-02 07:45:17,166 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0003_r_2027113183 spawned.
+2013-06-02 07:45:17,171 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0003/attempt_201306020741_0003_r_000000_0/taskjvm.sh
+2013-06-02 07:45:17,697 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0003_r_2027113183 given task: attempt_201306020741_0003_r_000000_0
+2013-06-02 07:45:23,560 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.2:56011, bytes: 6169638, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0003_m_000001_0, duration: 108258377
+2013-06-02 07:45:24,044 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.98 MB/s) > 
+2013-06-02 07:45:24,092 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.98 MB/s) > 
+2013-06-02 07:45:24,472 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.98 MB/s) > 
+2013-06-02 07:45:24,941 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0003_r_000000_0 is in commit-pending, task state:COMMIT_PENDING
+2013-06-02 07:45:24,941 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.98 MB/s) > 
+2013-06-02 07:45:26,175 INFO org.apache.hadoop.mapred.TaskTracker: Received commit task action for attempt_201306020741_0003_r_000000_0
+2013-06-02 07:45:27,064 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:45:27,066 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:45:27,067 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0003_r_000000_0 is done.
+2013-06-02 07:45:27,067 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0003_r_000000_0  was -1
+2013-06-02 07:45:27,070 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:45:27,105 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0003_r_2027113183 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:45:29,196 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0003_m_000003_0 task's state:UNASSIGNED
+2013-06-02 07:45:29,196 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0003_m_000003_0 which needs 1 slots
+2013-06-02 07:45:29,196 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0003_m_000003_0 which needs 1 slots
+2013-06-02 07:45:29,197 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0003_r_000000_0
+2013-06-02 07:45:29,197 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0003_r_000000_0
+2013-06-02 07:45:29,209 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0003_m_-26873523
+2013-06-02 07:45:29,209 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0003_m_-26873523 spawned.
+2013-06-02 07:45:29,210 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0003/attempt_201306020741_0003_m_000003_0/taskjvm.sh
+2013-06-02 07:45:29,690 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0003_m_-26873523 given task: attempt_201306020741_0003_m_000003_0
+2013-06-02 07:45:30,015 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_m_000003_0 0.0% 
+2013-06-02 07:45:32,994 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0003_m_000003_0 0.0% cleanup
+2013-06-02 07:45:32,995 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0003_m_000003_0 is done.
+2013-06-02 07:45:32,995 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0003_m_000003_0  was -1
+2013-06-02 07:45:32,995 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:45:33,036 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0003_m_-26873523 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:45:35,254 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0003
+2013-06-02 07:45:35,254 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0003_m_000003_0 not found in cache
+2013-06-02 07:45:35,256 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0003 for user-log deletion with retainTimeStamp:1370238335256
+2013-06-02 07:46:11,323 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0004
+2013-06-02 07:46:11,323 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0004 being deleted.
+2013-06-02 07:46:17,332 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0005_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:46:17,332 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0005_m_000001_0 which needs 1 slots
+2013-06-02 07:46:17,332 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0005_m_000001_0 which needs 1 slots
+2013-06-02 07:46:17,368 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:46:17,520 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0005_m_-168574505
+2013-06-02 07:46:17,520 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0005_m_-168574505 spawned.
+2013-06-02 07:46:17,521 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0005/attempt_201306020741_0005_m_000001_0/taskjvm.sh
+2013-06-02 07:46:18,039 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0005_m_-168574505 given task: attempt_201306020741_0005_m_000001_0
+2013-06-02 07:46:21,395 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0005_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:3268954+3268859
+2013-06-02 07:46:21,396 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0005_m_000001_0 is done.
+2013-06-02 07:46:21,396 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0005_m_000001_0  was 6169592
+2013-06-02 07:46:21,396 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:46:21,436 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0005_m_-168574505 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:46:29,741 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:35898, bytes: 6169592, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0005_m_000001_0, duration: 250738447
+2013-06-02 07:46:41,381 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0005
+2013-06-02 07:46:41,384 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0005 for user-log deletion with retainTimeStamp:1370238401381
+2013-06-02 07:46:50,406 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0006_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:46:50,406 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0006_m_000001_0 which needs 1 slots
+2013-06-02 07:46:50,406 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0006_m_000001_0 which needs 1 slots
+2013-06-02 07:46:50,463 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:46:50,607 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0006_m_1977184072
+2013-06-02 07:46:50,607 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0006_m_1977184072 spawned.
+2013-06-02 07:46:50,608 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0006/attempt_201306020741_0006_m_000001_0/taskjvm.sh
+2013-06-02 07:46:51,064 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0006_m_1977184072 given task: attempt_201306020741_0006_m_000001_0
+2013-06-02 07:46:54,363 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0006_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step3a/part-00000:0+155
+2013-06-02 07:46:54,366 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0006_m_000001_0 is done.
+2013-06-02 07:46:54,366 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0006_m_000001_0  was 330
+2013-06-02 07:46:54,366 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:46:54,408 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0006_m_1977184072 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:47:00,934 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48006, bytes: 330, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0006_m_000001_0, duration: 757159
+2013-06-02 07:47:14,460 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0006
+2013-06-02 07:47:14,463 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0006 for user-log deletion with retainTimeStamp:1370238434461
+2013-06-02 07:47:23,486 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0007_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:47:23,487 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0007_m_000001_0 which needs 1 slots
+2013-06-02 07:47:23,487 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0007_m_000001_0 which needs 1 slots
+2013-06-02 07:47:23,547 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:47:23,726 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0007_m_-209274589
+2013-06-02 07:47:23,726 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0007_m_-209274589 spawned.
+2013-06-02 07:47:23,727 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0007/attempt_201306020741_0007_m_000001_0/taskjvm.sh
+2013-06-02 07:47:24,236 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0007_m_-209274589 given task: attempt_201306020741_0007_m_000001_0
+2013-06-02 07:47:27,614 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0007_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:3269150+3268663
+2013-06-02 07:47:27,615 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0007_m_000001_0 is done.
+2013-06-02 07:47:27,615 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0007_m_000001_0  was 6169279
+2013-06-02 07:47:27,616 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:47:27,661 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0007_m_-209274589 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:47:33,113 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:35964, bytes: 6169279, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0007_m_000001_0, duration: 282165504
+2013-06-02 07:47:47,542 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0007
+2013-06-02 07:47:47,547 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0007 for user-log deletion with retainTimeStamp:1370238467543
+2013-06-02 07:47:53,557 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0008_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:47:53,557 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0008_m_000001_0 which needs 1 slots
+2013-06-02 07:47:53,557 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0008_m_000001_0 which needs 1 slots
+2013-06-02 07:47:53,612 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:47:53,750 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0008_m_1605983914
+2013-06-02 07:47:53,750 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0008_m_1605983914 spawned.
+2013-06-02 07:47:53,751 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0008/attempt_201306020741_0008_m_000001_0/taskjvm.sh
+2013-06-02 07:47:54,228 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0008_m_1605983914 given task: attempt_201306020741_0008_m_000001_0
+2013-06-02 07:47:57,547 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0008_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step4a/part-00000:0+2105
+2013-06-02 07:47:57,549 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0008_m_000001_0 is done.
+2013-06-02 07:47:57,549 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0008_m_000001_0  was 4254
+2013-06-02 07:47:57,549 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:47:57,611 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0008_m_1605983914 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:48:03,658 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48042, bytes: 4254, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0008_m_000001_0, duration: 770210
+2013-06-02 07:48:17,621 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0009_m_000004_0 task's state:UNASSIGNED
+2013-06-02 07:48:17,622 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0009_m_000004_0 which needs 1 slots
+2013-06-02 07:48:17,622 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0009_m_000004_0 which needs 1 slots
+2013-06-02 07:48:17,622 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0008
+2013-06-02 07:48:17,632 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0008 for user-log deletion with retainTimeStamp:1370238497626
+2013-06-02 07:48:17,660 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:48:17,866 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0009_m_1115583118
+2013-06-02 07:48:17,866 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0009_m_1115583118 spawned.
+2013-06-02 07:48:17,868 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0009/attempt_201306020741_0009_m_000004_0/taskjvm.sh
+2013-06-02 07:48:18,344 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0009_m_1115583118 given task: attempt_201306020741_0009_m_000004_0
+2013-06-02 07:48:21,692 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_m_000004_0 0.0% setup
+2013-06-02 07:48:21,695 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0009_m_000004_0 is done.
+2013-06-02 07:48:21,695 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0009_m_000004_0  was -1
+2013-06-02 07:48:21,699 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:48:21,734 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0009_m_1115583118 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:48:23,637 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0009_m_000000_0 task's state:UNASSIGNED
+2013-06-02 07:48:23,638 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0009_m_000000_0 which needs 1 slots
+2013-06-02 07:48:23,638 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0009_m_000000_0 which needs 1 slots
+2013-06-02 07:48:23,639 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0009_m_000004_0
+2013-06-02 07:48:23,639 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0009_m_000004_0
+2013-06-02 07:48:23,640 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0009_m_000004_0 not found in cache
+2013-06-02 07:48:23,652 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0009_m_1878839649
+2013-06-02 07:48:23,652 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0009_m_1878839649 spawned.
+2013-06-02 07:48:23,654 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0009/attempt_201306020741_0009_m_000000_0/taskjvm.sh
+2013-06-02 07:48:24,204 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0009_m_1878839649 given task: attempt_201306020741_0009_m_000000_0
+2013-06-02 07:48:27,692 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_m_000000_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:0+3271811
+2013-06-02 07:48:27,693 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0009_m_000000_0 is done.
+2013-06-02 07:48:27,693 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0009_m_000000_0  was 6196922
+2013-06-02 07:48:27,693 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:48:27,744 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0009_m_1878839649 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:48:29,658 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0009_r_000000_0 task's state:UNASSIGNED
+2013-06-02 07:48:29,658 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0009_r_000000_0 which needs 1 slots
+2013-06-02 07:48:29,658 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0009_r_000000_0 which needs 1 slots
+2013-06-02 07:48:29,671 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0009_r_1162879741
+2013-06-02 07:48:29,671 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0009_r_1162879741 spawned.
+2013-06-02 07:48:29,672 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0009/attempt_201306020741_0009_r_000000_0/taskjvm.sh
+2013-06-02 07:48:30,127 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0009_r_1162879741 given task: attempt_201306020741_0009_r_000000_0
+2013-06-02 07:48:35,956 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.2:56075, bytes: 6196922, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0009_m_000000_0, duration: 124020851
+2013-06-02 07:48:36,451 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.99 MB/s) > 
+2013-06-02 07:48:36,513 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.99 MB/s) > 
+2013-06-02 07:48:36,840 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.99 MB/s) > 
+2013-06-02 07:48:37,418 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0009_r_000000_0 is in commit-pending, task state:COMMIT_PENDING
+2013-06-02 07:48:37,419 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.99 MB/s) > 
+2013-06-02 07:48:38,674 INFO org.apache.hadoop.mapred.TaskTracker: Received commit task action for attempt_201306020741_0009_r_000000_0
+2013-06-02 07:48:39,473 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:48:39,476 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:48:39,476 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0009_r_000000_0 is done.
+2013-06-02 07:48:39,476 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0009_r_000000_0  was -1
+2013-06-02 07:48:39,477 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:48:39,530 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0009_r_1162879741 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:48:41,696 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0009_m_000003_0 task's state:UNASSIGNED
+2013-06-02 07:48:41,697 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0009_m_000003_0 which needs 1 slots
+2013-06-02 07:48:41,697 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0009_m_000003_0 which needs 1 slots
+2013-06-02 07:48:41,698 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0009_r_000000_0
+2013-06-02 07:48:41,698 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0009_r_000000_0
+2013-06-02 07:48:41,708 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0009_m_935182513
+2013-06-02 07:48:41,708 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0009_m_935182513 spawned.
+2013-06-02 07:48:41,709 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0009/attempt_201306020741_0009_m_000003_0/taskjvm.sh
+2013-06-02 07:48:42,201 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0009_m_935182513 given task: attempt_201306020741_0009_m_000003_0
+2013-06-02 07:48:42,563 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_m_000003_0 0.0% 
+2013-06-02 07:48:45,544 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0009_m_000003_0 0.0% cleanup
+2013-06-02 07:48:45,545 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0009_m_000003_0 is done.
+2013-06-02 07:48:45,545 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0009_m_000003_0  was -1
+2013-06-02 07:48:45,545 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:48:45,587 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0009_m_935182513 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:48:47,754 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0009
+2013-06-02 07:48:47,754 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0009_m_000003_0 not found in cache
+2013-06-02 07:48:47,758 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0009 for user-log deletion with retainTimeStamp:1370238527755
+2013-06-02 07:48:56,764 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0010_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:48:56,764 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0010_m_000001_0 which needs 1 slots
+2013-06-02 07:48:56,764 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0010_m_000001_0 which needs 1 slots
+2013-06-02 07:48:56,797 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:48:56,933 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0010_m_1430086408
+2013-06-02 07:48:56,933 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0010_m_1430086408 spawned.
+2013-06-02 07:48:56,934 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0010/attempt_201306020741_0010_m_000001_0/taskjvm.sh
+2013-06-02 07:48:57,438 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0010_m_1430086408 given task: attempt_201306020741_0010_m_000001_0
+2013-06-02 07:49:00,763 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0010_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step5a/part-00000:17525+17525
+2013-06-02 07:49:00,767 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0010_m_000001_0 is done.
+2013-06-02 07:49:00,767 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0010_m_000001_0  was 34602
+2013-06-02 07:49:00,769 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:49:00,810 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0010_m_1430086408 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:49:09,014 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36059, bytes: 34602, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0010_m_000001_0, duration: 1997423
+2013-06-02 07:49:20,849 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0010
+2013-06-02 07:49:20,852 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0010 for user-log deletion with retainTimeStamp:1370238560850
+2013-06-02 07:49:29,869 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0011_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:49:29,870 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0011_m_000001_0 which needs 1 slots
+2013-06-02 07:49:29,870 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0011_m_000001_0 which needs 1 slots
+2013-06-02 07:49:29,898 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:49:30,041 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0011_m_-1167052813
+2013-06-02 07:49:30,041 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0011_m_-1167052813 spawned.
+2013-06-02 07:49:30,043 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0011/attempt_201306020741_0011_m_000001_0/taskjvm.sh
+2013-06-02 07:49:30,797 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0011_m_-1167052813 given task: attempt_201306020741_0011_m_000001_0
+2013-06-02 07:49:34,292 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:3284425+3253388
+2013-06-02 07:49:34,292 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0011_m_000001_0 is done.
+2013-06-02 07:49:34,292 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0011_m_000001_0  was 6141223
+2013-06-02 07:49:34,293 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:49:34,340 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0011_m_-1167052813 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:49:35,887 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0011_r_000000_0 task's state:UNASSIGNED
+2013-06-02 07:49:35,887 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0011_r_000000_0 which needs 1 slots
+2013-06-02 07:49:35,887 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0011_r_000000_0 which needs 1 slots
+2013-06-02 07:49:35,894 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0011_r_-26873523
+2013-06-02 07:49:35,894 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0011_r_-26873523 spawned.
+2013-06-02 07:49:35,896 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0011/attempt_201306020741_0011_r_000000_0/taskjvm.sh
+2013-06-02 07:49:36,384 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0011_r_-26873523 given task: attempt_201306020741_0011_r_000000_0
+2013-06-02 07:49:42,234 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.2:56110, bytes: 6141223, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0011_m_000001_0, duration: 120638918
+2013-06-02 07:49:42,705 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.98 MB/s) > 
+2013-06-02 07:49:42,767 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.98 MB/s) > 
+2013-06-02 07:49:43,100 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.98 MB/s) > 
+2013-06-02 07:49:43,631 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0011_r_000000_0 is in commit-pending, task state:COMMIT_PENDING
+2013-06-02 07:49:43,631 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_r_000000_0 0.22222224% reduce > copy (2 of 3 at 0.98 MB/s) > 
+2013-06-02 07:49:44,906 INFO org.apache.hadoop.mapred.TaskTracker: Received commit task action for attempt_201306020741_0011_r_000000_0
+2013-06-02 07:49:45,725 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:49:45,726 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:49:45,726 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0011_r_000000_0 is done.
+2013-06-02 07:49:45,726 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0011_r_000000_0  was -1
+2013-06-02 07:49:45,726 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:49:45,764 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0011_r_-26873523 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:49:47,922 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0011_m_000003_0 task's state:UNASSIGNED
+2013-06-02 07:49:47,922 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0011_m_000003_0 which needs 1 slots
+2013-06-02 07:49:47,923 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0011_m_000003_0 which needs 1 slots
+2013-06-02 07:49:47,923 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0011_r_000000_0
+2013-06-02 07:49:47,923 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0011_r_000000_0
+2013-06-02 07:49:47,936 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0011_m_368660970
+2013-06-02 07:49:47,937 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0011_m_368660970 spawned.
+2013-06-02 07:49:47,937 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0011/attempt_201306020741_0011_m_000003_0/taskjvm.sh
+2013-06-02 07:49:48,407 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0011_m_368660970 given task: attempt_201306020741_0011_m_000003_0
+2013-06-02 07:49:48,762 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_m_000003_0 0.0% 
+2013-06-02 07:49:51,741 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0011_m_000003_0 0.0% cleanup
+2013-06-02 07:49:51,743 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0011_m_000003_0 is done.
+2013-06-02 07:49:51,744 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0011_m_000003_0  was -1
+2013-06-02 07:49:51,744 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:49:51,788 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0011_m_368660970 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:49:53,975 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0011
+2013-06-02 07:49:53,976 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0011_m_000003_0 not found in cache
+2013-06-02 07:49:53,978 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0011 for user-log deletion with retainTimeStamp:1370238593976
+2013-06-02 07:50:27,016 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0012
+2013-06-02 07:50:27,016 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0012 being deleted.
+2013-06-02 07:50:36,026 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0013_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:50:36,026 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0013_m_000001_0 which needs 1 slots
+2013-06-02 07:50:36,026 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0013_m_000001_0 which needs 1 slots
+2013-06-02 07:50:36,070 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:50:36,275 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0013_m_728959111
+2013-06-02 07:50:36,275 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0013_m_728959111 spawned.
+2013-06-02 07:50:36,277 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0013/attempt_201306020741_0013_m_000001_0/taskjvm.sh
+2013-06-02 07:50:37,039 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0013_m_728959111 given task: attempt_201306020741_0013_m_000001_0
+2013-06-02 07:50:40,397 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0013_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:3325035+3212778
+2013-06-02 07:50:40,398 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0013_m_000001_0 is done.
+2013-06-02 07:50:40,398 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0013_m_000001_0  was 6064803
+2013-06-02 07:50:40,398 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:50:40,558 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0013_m_728959111 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:50:48,246 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48111, bytes: 6064803, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0013_m_000001_0, duration: 333629527
+2013-06-02 07:51:00,065 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0013
+2013-06-02 07:51:00,070 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0013 for user-log deletion with retainTimeStamp:1370238660065
+2013-06-02 07:51:33,117 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0014
+2013-06-02 07:51:33,117 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0014 being deleted.
+2013-06-02 07:51:42,126 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0015_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:51:42,126 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0015_m_000001_0 which needs 1 slots
+2013-06-02 07:51:42,126 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0015_m_000001_0 which needs 1 slots
+2013-06-02 07:51:42,183 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:51:42,425 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0015_m_-1526329499
+2013-06-02 07:51:42,425 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0015_m_-1526329499 spawned.
+2013-06-02 07:51:42,426 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0015/attempt_201306020741_0015_m_000001_0/taskjvm.sh
+2013-06-02 07:51:43,081 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0015_m_-1526329499 given task: attempt_201306020741_0015_m_000001_0
+2013-06-02 07:51:46,421 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0015_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:3421599+3116214
+2013-06-02 07:51:46,424 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0015_m_000001_0 is done.
+2013-06-02 07:51:46,424 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0015_m_000001_0  was 5886006
+2013-06-02 07:51:46,431 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:51:46,579 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0015_m_-1526329499 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:51:54,002 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48159, bytes: 5886006, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0015_m_000001_0, duration: 281816501
+2013-06-02 07:52:09,175 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0016_m_000003_0 task's state:UNASSIGNED
+2013-06-02 07:52:09,175 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0016_m_000003_0 which needs 1 slots
+2013-06-02 07:52:09,175 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0016_m_000003_0 which needs 1 slots
+2013-06-02 07:52:09,176 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0015
+2013-06-02 07:52:09,178 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0015 for user-log deletion with retainTimeStamp:1370238729176
+2013-06-02 07:52:09,223 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:52:09,365 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0016_m_-1951983790
+2013-06-02 07:52:09,365 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0016_m_-1951983790 spawned.
+2013-06-02 07:52:09,366 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0016/attempt_201306020741_0016_m_000003_0/taskjvm.sh
+2013-06-02 07:52:09,869 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0016_m_-1951983790 given task: attempt_201306020741_0016_m_000003_0
+2013-06-02 07:52:13,196 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_m_000003_0 0.0% setup
+2013-06-02 07:52:13,200 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0016_m_000003_0 is done.
+2013-06-02 07:52:13,200 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0016_m_000003_0  was -1
+2013-06-02 07:52:13,208 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:52:13,240 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0016_m_-1951983790 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:52:15,193 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0016_m_000000_0 task's state:UNASSIGNED
+2013-06-02 07:52:15,193 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0016_m_000000_0 which needs 1 slots
+2013-06-02 07:52:15,193 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0016_m_000000_0 which needs 1 slots
+2013-06-02 07:52:15,194 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0016_m_000003_0
+2013-06-02 07:52:15,194 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0016_m_000003_0
+2013-06-02 07:52:15,194 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0016_m_000003_0 not found in cache
+2013-06-02 07:52:15,204 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0016_m_1391279565
+2013-06-02 07:52:15,204 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0016_m_1391279565 spawned.
+2013-06-02 07:52:15,205 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0016/attempt_201306020741_0016_m_000000_0/taskjvm.sh
+2013-06-02 07:52:15,656 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0016_m_1391279565 given task: attempt_201306020741_0016_m_000000_0
+2013-06-02 07:52:18,953 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_m_000000_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step8a/part-00000:389659+389660
+2013-06-02 07:52:18,955 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0016_m_000000_0 is done.
+2013-06-02 07:52:18,955 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0016_m_000000_0  was 736872
+2013-06-02 07:52:18,955 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:52:18,996 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0016_m_1391279565 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:52:21,209 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0016_r_000000_0 task's state:UNASSIGNED
+2013-06-02 07:52:21,209 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0016_r_000000_0 which needs 1 slots
+2013-06-02 07:52:21,209 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0016_r_000000_0 which needs 1 slots
+2013-06-02 07:52:21,222 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0016_r_-168574505
+2013-06-02 07:52:21,222 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0016_r_-168574505 spawned.
+2013-06-02 07:52:21,223 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0016/attempt_201306020741_0016_r_000000_0/taskjvm.sh
+2013-06-02 07:52:21,720 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0016_r_-168574505 given task: attempt_201306020741_0016_r_000000_0
+2013-06-02 07:52:27,432 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.2:56158, bytes: 736872, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0016_m_000000_0, duration: 13045598
+2013-06-02 07:52:28,062 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.12 MB/s) > 
+2013-06-02 07:52:28,113 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.12 MB/s) > 
+2013-06-02 07:52:28,217 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.12 MB/s) > 
+2013-06-02 07:52:28,481 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0016_r_000000_0 is in commit-pending, task state:COMMIT_PENDING
+2013-06-02 07:52:28,481 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.12 MB/s) > 
+2013-06-02 07:52:30,223 INFO org.apache.hadoop.mapred.TaskTracker: Received commit task action for attempt_201306020741_0016_r_000000_0
+2013-06-02 07:52:31,087 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:52:31,089 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:52:31,089 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0016_r_000000_0 is done.
+2013-06-02 07:52:31,089 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0016_r_000000_0  was -1
+2013-06-02 07:52:31,089 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:52:31,127 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0016_r_-168574505 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:52:33,237 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0016_m_000002_0 task's state:UNASSIGNED
+2013-06-02 07:52:33,238 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0016_m_000002_0 which needs 1 slots
+2013-06-02 07:52:33,238 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0016_m_000002_0 which needs 1 slots
+2013-06-02 07:52:33,238 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0016_r_000000_0
+2013-06-02 07:52:33,239 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0016_r_000000_0
+2013-06-02 07:52:33,248 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0016_m_560004280
+2013-06-02 07:52:33,248 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0016_m_560004280 spawned.
+2013-06-02 07:52:33,248 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0016/attempt_201306020741_0016_m_000002_0/taskjvm.sh
+2013-06-02 07:52:33,768 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0016_m_560004280 given task: attempt_201306020741_0016_m_000002_0
+2013-06-02 07:52:34,127 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_m_000002_0 0.0% 
+2013-06-02 07:52:37,100 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0016_m_000002_0 0.0% cleanup
+2013-06-02 07:52:37,103 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0016_m_000002_0 is done.
+2013-06-02 07:52:37,103 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0016_m_000002_0  was -1
+2013-06-02 07:52:37,103 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:52:37,143 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0016_m_560004280 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:52:39,278 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0016
+2013-06-02 07:52:39,279 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0016_m_000002_0 not found in cache
+2013-06-02 07:52:39,282 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0016 for user-log deletion with retainTimeStamp:1370238759279
+2013-06-02 07:52:48,288 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0017_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:52:48,288 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0017_m_000001_0 which needs 1 slots
+2013-06-02 07:52:48,288 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0017_m_000001_0 which needs 1 slots
+2013-06-02 07:52:48,329 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:52:48,532 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0017_m_-937975244
+2013-06-02 07:52:48,533 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0017_m_-937975244 spawned.
+2013-06-02 07:52:48,534 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0017/attempt_201306020741_0017_m_000001_0/taskjvm.sh
+2013-06-02 07:52:49,053 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0017_m_-937975244 given task: attempt_201306020741_0017_m_000001_0
+2013-06-02 07:52:52,386 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0017_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:3601181+2936632
+2013-06-02 07:52:52,389 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0017_m_000001_0 is done.
+2013-06-02 07:52:52,389 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0017_m_000001_0  was 5547489
+2013-06-02 07:52:52,390 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:52:52,433 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0017_m_-937975244 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:52:59,733 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48195, bytes: 5547489, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0017_m_000001_0, duration: 323079065
+2013-06-02 07:53:12,334 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0017
+2013-06-02 07:53:12,338 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0017 for user-log deletion with retainTimeStamp:1370238792335
+2013-06-02 07:53:18,343 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0018_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:53:18,343 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0018_m_000001_0 which needs 1 slots
+2013-06-02 07:53:18,343 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0018_m_000001_0 which needs 1 slots
+2013-06-02 07:53:18,377 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:53:18,508 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0018_m_1333373864
+2013-06-02 07:53:18,508 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0018_m_1333373864 spawned.
+2013-06-02 07:53:18,509 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0018/attempt_201306020741_0018_m_000001_0/taskjvm.sh
+2013-06-02 07:53:19,032 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0018_m_1333373864 given task: attempt_201306020741_0018_m_000001_0
+2013-06-02 07:53:22,417 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0018_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step9a/part-00000:681889+681889
+2013-06-02 07:53:22,420 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0018_m_000001_0 is done.
+2013-06-02 07:53:22,420 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0018_m_000001_0  was 1262238
+2013-06-02 07:53:22,421 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:53:22,470 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0018_m_1333373864 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:53:30,512 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36313, bytes: 1262238, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0018_m_000001_0, duration: 71409825
+2013-06-02 07:53:42,378 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0018
+2013-06-02 07:53:42,382 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0018 for user-log deletion with retainTimeStamp:1370238822379
+2013-06-02 07:53:51,399 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0019_m_000002_0 task's state:UNASSIGNED
+2013-06-02 07:53:51,399 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0019_m_000002_0 which needs 1 slots
+2013-06-02 07:53:51,400 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0019_m_000002_0 which needs 1 slots
+2013-06-02 07:53:51,476 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:53:51,703 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0019_m_1918384840
+2013-06-02 07:53:51,704 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0019_m_1918384840 spawned.
+2013-06-02 07:53:51,705 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0019/attempt_201306020741_0019_m_000002_0/taskjvm.sh
+2013-06-02 07:53:52,242 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0019_m_1918384840 given task: attempt_201306020741_0019_m_000002_0
+2013-06-02 07:53:55,611 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0019_m_000002_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step9b/part-00000:0+1081183
+2013-06-02 07:53:55,614 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0019_m_000002_0 is done.
+2013-06-02 07:53:55,614 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0019_m_000002_0  was 1577783
+2013-06-02 07:53:55,616 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:53:55,668 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0019_m_1918384840 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:54:02,299 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48218, bytes: 1577783, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0019_m_000002_0, duration: 163158722
+2013-06-02 07:54:15,443 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0019
+2013-06-02 07:54:15,446 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0019 for user-log deletion with retainTimeStamp:1370238855443
+2013-06-02 07:54:21,450 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0020_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:54:21,450 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0020_m_000001_0 which needs 1 slots
+2013-06-02 07:54:21,450 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0020_m_000001_0 which needs 1 slots
+2013-06-02 07:54:21,478 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:54:21,620 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0020_m_1624555609
+2013-06-02 07:54:21,620 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0020_m_1624555609 spawned.
+2013-06-02 07:54:21,621 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0020/attempt_201306020741_0020_m_000001_0/taskjvm.sh
+2013-06-02 07:54:22,138 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0020_m_1624555609 given task: attempt_201306020741_0020_m_000001_0
+2013-06-02 07:54:25,497 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0020_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step10a/part-00000:809459+809459
+2013-06-02 07:54:25,499 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0020_m_000001_0 is done.
+2013-06-02 07:54:25,499 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0020_m_000001_0  was 1339458
+2013-06-02 07:54:25,502 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:54:25,549 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0020_m_1624555609 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:54:33,652 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36388, bytes: 1339458, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0020_m_000001_0, duration: 50677087
+2013-06-02 07:54:45,488 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0020
+2013-06-02 07:54:45,491 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0020 for user-log deletion with retainTimeStamp:1370238885489
+2013-06-02 07:54:54,499 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0021_m_000002_0 task's state:UNASSIGNED
+2013-06-02 07:54:54,499 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0021_m_000002_0 which needs 1 slots
+2013-06-02 07:54:54,499 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0021_m_000002_0 which needs 1 slots
+2013-06-02 07:54:54,545 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:54:54,729 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0021_m_-1330381147
+2013-06-02 07:54:54,729 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0021_m_-1330381147 spawned.
+2013-06-02 07:54:54,730 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0021/attempt_201306020741_0021_m_000002_0/taskjvm.sh
+2013-06-02 07:54:55,401 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0021_m_-1330381147 given task: attempt_201306020741_0021_m_000002_0
+2013-06-02 07:54:58,773 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0021_m_000002_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step10b/part-00000:0+1394218
+2013-06-02 07:54:58,773 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0021_m_000002_0 is done.
+2013-06-02 07:54:58,773 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0021_m_000002_0  was 2020234
+2013-06-02 07:54:58,774 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:54:58,917 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0021_m_-1330381147 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:55:05,028 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48246, bytes: 2020234, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0021_m_000002_0, duration: 188660043
+2013-06-02 07:55:18,535 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0021
+2013-06-02 07:55:18,538 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0021 for user-log deletion with retainTimeStamp:1370238918536
+2013-06-02 07:55:24,543 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0022_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:55:24,543 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0022_m_000001_0 which needs 1 slots
+2013-06-02 07:55:24,543 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0022_m_000001_0 which needs 1 slots
+2013-06-02 07:55:24,572 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:55:24,703 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0022_m_-41306727
+2013-06-02 07:55:24,704 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0022_m_-41306727 spawned.
+2013-06-02 07:55:24,704 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0022/attempt_201306020741_0022_m_000001_0/taskjvm.sh
+2013-06-02 07:55:25,203 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0022_m_-41306727 given task: attempt_201306020741_0022_m_000001_0
+2013-06-02 07:55:28,568 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0022_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step11a/part-00000:722872+722872
+2013-06-02 07:55:28,569 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0022_m_000001_0 is done.
+2013-06-02 07:55:28,569 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0022_m_000001_0  was 1157802
+2013-06-02 07:55:28,569 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:55:28,610 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0022_m_-41306727 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:55:36,861 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36461, bytes: 1157802, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0022_m_000001_0, duration: 54865786
+2013-06-02 07:55:48,581 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0022
+2013-06-02 07:55:48,585 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0022 for user-log deletion with retainTimeStamp:1370238948581
+2013-06-02 07:55:57,606 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0023_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:55:57,606 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0023_m_000001_0 which needs 1 slots
+2013-06-02 07:55:57,606 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0023_m_000001_0 which needs 1 slots
+2013-06-02 07:55:57,636 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:55:57,764 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0023_m_101309006
+2013-06-02 07:55:57,764 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0023_m_101309006 spawned.
+2013-06-02 07:55:57,765 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0023/attempt_201306020741_0023_m_000001_0/taskjvm.sh
+2013-06-02 07:55:58,259 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0023_m_101309006 given task: attempt_201306020741_0023_m_000001_0
+2013-06-02 07:56:01,709 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0023_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4055594+2482219
+2013-06-02 07:56:01,709 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0023_m_000001_0 is done.
+2013-06-02 07:56:01,709 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0023_m_000001_0  was 4699043
+2013-06-02 07:56:01,710 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:56:01,755 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0023_m_101309006 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:56:10,177 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36505, bytes: 4699043, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0023_m_000001_0, duration: 287764334
+2013-06-02 07:56:24,667 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0023
+2013-06-02 07:56:24,671 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0023 for user-log deletion with retainTimeStamp:1370238984668
+2013-06-02 07:56:30,681 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0024_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:56:30,682 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0024_m_000001_0 which needs 1 slots
+2013-06-02 07:56:30,682 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0024_m_000001_0 which needs 1 slots
+2013-06-02 07:56:30,729 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:56:30,864 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0024_m_-2039770980
+2013-06-02 07:56:30,864 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0024_m_-2039770980 spawned.
+2013-06-02 07:56:30,865 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0024/attempt_201306020741_0024_m_000001_0/taskjvm.sh
+2013-06-02 07:56:31,352 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0024_m_-2039770980 given task: attempt_201306020741_0024_m_000001_0
+2013-06-02 07:56:34,681 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0024_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step12a/part-00000:682790+682790
+2013-06-02 07:56:34,681 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0024_m_000001_0 is done.
+2013-06-02 07:56:34,681 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0024_m_000001_0  was 1073094
+2013-06-02 07:56:34,682 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:56:34,728 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0024_m_-2039770980 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:56:40,447 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48281, bytes: 1073094, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0024_m_000001_0, duration: 56696840
+2013-06-02 07:56:54,736 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0025_m_000004_0 task's state:UNASSIGNED
+2013-06-02 07:56:54,736 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0025_m_000004_0 which needs 1 slots
+2013-06-02 07:56:54,736 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0025_m_000004_0 which needs 1 slots
+2013-06-02 07:56:54,737 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0024
+2013-06-02 07:56:54,739 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0024 for user-log deletion with retainTimeStamp:1370239014737
+2013-06-02 07:56:54,777 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:56:54,999 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0025_m_-797846487
+2013-06-02 07:56:54,999 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0025_m_-797846487 spawned.
+2013-06-02 07:56:55,000 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0025/attempt_201306020741_0025_m_000004_0/taskjvm.sh
+2013-06-02 07:56:55,536 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0025_m_-797846487 given task: attempt_201306020741_0025_m_000004_0
+2013-06-02 07:56:58,848 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_m_000004_0 0.0% setup
+2013-06-02 07:56:58,850 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0025_m_000004_0 is done.
+2013-06-02 07:56:58,850 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0025_m_000004_0  was -1
+2013-06-02 07:56:58,857 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:56:58,894 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0025_m_-797846487 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:57:00,755 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0025_m_000000_0 task's state:UNASSIGNED
+2013-06-02 07:57:00,756 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0025_m_000000_0 which needs 1 slots
+2013-06-02 07:57:00,756 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0025_m_000000_0 which needs 1 slots
+2013-06-02 07:57:00,756 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0025_m_000004_0
+2013-06-02 07:57:00,756 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0025_m_000004_0
+2013-06-02 07:57:00,757 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0025_m_000004_0 not found in cache
+2013-06-02 07:57:00,766 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0025_m_919645863
+2013-06-02 07:57:00,767 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0025_m_919645863 spawned.
+2013-06-02 07:57:00,767 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0025/attempt_201306020741_0025_m_000000_0/taskjvm.sh
+2013-06-02 07:57:01,239 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0025_m_919645863 given task: attempt_201306020741_0025_m_000000_0
+2013-06-02 07:57:04,567 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_m_000000_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:0+4100566
+2013-06-02 07:57:04,568 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0025_m_000000_0 is done.
+2013-06-02 07:57:04,568 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0025_m_000000_0  was 7746081
+2013-06-02 07:57:04,568 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:57:04,627 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0025_m_919645863 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:57:06,773 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0025_r_000000_0 task's state:UNASSIGNED
+2013-06-02 07:57:06,773 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0025_r_000000_0 which needs 1 slots
+2013-06-02 07:57:06,774 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0025_r_000000_0 which needs 1 slots
+2013-06-02 07:57:06,785 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0025_r_1977184072
+2013-06-02 07:57:06,785 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0025_r_1977184072 spawned.
+2013-06-02 07:57:06,786 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0025/attempt_201306020741_0025_r_000000_0/taskjvm.sh
+2013-06-02 07:57:07,243 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0025_r_1977184072 given task: attempt_201306020741_0025_r_000000_0
+2013-06-02 07:57:13,167 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.2:56266, bytes: 7746081, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0025_m_000000_0, duration: 235025734
+2013-06-02 07:57:13,567 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_r_000000_0 0.22222224% reduce > copy (2 of 3 at 1.61 MB/s) > 
+2013-06-02 07:57:13,621 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_r_000000_0 0.22222224% reduce > copy (2 of 3 at 1.61 MB/s) > 
+2013-06-02 07:57:14,048 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_r_000000_0 0.22222224% reduce > copy (2 of 3 at 1.61 MB/s) > 
+2013-06-02 07:57:14,812 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0025_r_000000_0 is in commit-pending, task state:COMMIT_PENDING
+2013-06-02 07:57:14,812 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_r_000000_0 0.22222224% reduce > copy (2 of 3 at 1.61 MB/s) > 
+2013-06-02 07:57:15,783 INFO org.apache.hadoop.mapred.TaskTracker: Received commit task action for attempt_201306020741_0025_r_000000_0
+2013-06-02 07:57:16,585 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:57:16,586 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_r_000000_0 1.0% reduce > reduce
+2013-06-02 07:57:16,587 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0025_r_000000_0 is done.
+2013-06-02 07:57:16,587 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0025_r_000000_0  was -1
+2013-06-02 07:57:16,587 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:57:16,621 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0025_r_1977184072 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:57:18,796 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0025_m_000003_0 task's state:UNASSIGNED
+2013-06-02 07:57:18,796 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0025_m_000003_0 which needs 1 slots
+2013-06-02 07:57:18,797 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0025_m_000003_0 which needs 1 slots
+2013-06-02 07:57:18,797 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0025_r_000000_0
+2013-06-02 07:57:18,797 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0025_r_000000_0
+2013-06-02 07:57:18,810 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0025_m_-290720081
+2013-06-02 07:57:18,810 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0025_m_-290720081 spawned.
+2013-06-02 07:57:18,811 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0025/attempt_201306020741_0025_m_000003_0/taskjvm.sh
+2013-06-02 07:57:19,305 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0025_m_-290720081 given task: attempt_201306020741_0025_m_000003_0
+2013-06-02 07:57:19,659 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_m_000003_0 0.0% 
+2013-06-02 07:57:22,635 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0025_m_000003_0 0.0% cleanup
+2013-06-02 07:57:22,635 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0025_m_000003_0 is done.
+2013-06-02 07:57:22,635 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0025_m_000003_0  was -1
+2013-06-02 07:57:22,636 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:57:22,675 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0025_m_-290720081 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:57:24,840 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0025
+2013-06-02 07:57:24,840 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0025_m_000003_0 not found in cache
+2013-06-02 07:57:24,846 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0025 for user-log deletion with retainTimeStamp:1370239044841
+2013-06-02 07:57:33,853 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0026_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:57:33,853 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0026_m_000001_0 which needs 1 slots
+2013-06-02 07:57:33,853 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0026_m_000001_0 which needs 1 slots
+2013-06-02 07:57:33,894 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:57:34,024 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0026_m_-1948596964
+2013-06-02 07:57:34,024 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0026_m_-1948596964 spawned.
+2013-06-02 07:57:34,025 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0026/attempt_201306020741_0026_m_000001_0/taskjvm.sh
+2013-06-02 07:57:34,556 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0026_m_-1948596964 given task: attempt_201306020741_0026_m_000001_0
+2013-06-02 07:57:37,885 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0026_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step13a/part-00000:643159+643159
+2013-06-02 07:57:37,887 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0026_m_000001_0 is done.
+2013-06-02 07:57:37,887 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0026_m_000001_0  was 996558
+2013-06-02 07:57:37,888 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:57:37,931 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0026_m_-1948596964 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:57:46,155 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36602, bytes: 996558, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0026_m_000001_0, duration: 70493265
+2013-06-02 07:57:57,886 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0026
+2013-06-02 07:57:57,891 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0026 for user-log deletion with retainTimeStamp:1370239077887
+2013-06-02 07:58:06,899 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0027_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:58:06,900 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0027_m_000001_0 which needs 1 slots
+2013-06-02 07:58:06,900 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0027_m_000001_0 which needs 1 slots
+2013-06-02 07:58:06,938 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:58:07,099 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0027_m_1042299445
+2013-06-02 07:58:07,099 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0027_m_1042299445 spawned.
+2013-06-02 07:58:07,101 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0027/attempt_201306020741_0027_m_000001_0/taskjvm.sh
+2013-06-02 07:58:07,657 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0027_m_1042299445 given task: attempt_201306020741_0027_m_000001_0
+2013-06-02 07:58:11,022 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0027_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4122201+2415612
+2013-06-02 07:58:11,024 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0027_m_000001_0 is done.
+2013-06-02 07:58:11,024 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0027_m_000001_0  was 4573855
+2013-06-02 07:58:11,025 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:58:11,078 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0027_m_1042299445 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:58:19,109 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48316, bytes: 4573855, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0027_m_000001_0, duration: 248852417
+2013-06-02 07:58:30,928 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0027
+2013-06-02 07:58:30,931 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0027 for user-log deletion with retainTimeStamp:1370239110929
+2013-06-02 07:59:03,979 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0028
+2013-06-02 07:59:03,979 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0028 being deleted.
+2013-06-02 07:59:12,989 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0029_m_000001_0 task's state:UNASSIGNED
+2013-06-02 07:59:12,989 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0029_m_000001_0 which needs 1 slots
+2013-06-02 07:59:12,989 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0029_m_000001_0 which needs 1 slots
+2013-06-02 07:59:13,030 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 07:59:13,216 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0029_m_1982540705
+2013-06-02 07:59:13,216 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0029_m_1982540705 spawned.
+2013-06-02 07:59:13,217 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0029/attempt_201306020741_0029_m_000001_0/taskjvm.sh
+2013-06-02 07:59:14,029 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0029_m_1982540705 given task: attempt_201306020741_0029_m_000001_0
+2013-06-02 07:59:17,392 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0029_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4131874+2405939
+2013-06-02 07:59:17,395 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0029_m_000001_0 is done.
+2013-06-02 07:59:17,395 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0029_m_000001_0  was 4554916
+2013-06-02 07:59:17,396 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 07:59:17,568 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0029_m_1982540705 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 07:59:24,944 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48367, bytes: 4554916, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0029_m_000001_0, duration: 262077885
+2013-06-02 07:59:37,025 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0029
+2013-06-02 07:59:37,027 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0029 for user-log deletion with retainTimeStamp:1370239177026
+2013-06-02 08:00:10,073 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0030
+2013-06-02 08:00:10,073 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0030 being deleted.
+2013-06-02 08:00:19,082 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0031_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:00:19,082 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0031_m_000001_0 which needs 1 slots
+2013-06-02 08:00:19,082 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0031_m_000001_0 which needs 1 slots
+2013-06-02 08:00:19,121 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:00:19,304 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0031_m_62078582
+2013-06-02 08:00:19,304 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0031_m_62078582 spawned.
+2013-06-02 08:00:19,306 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0031/attempt_201306020741_0031_m_000001_0/taskjvm.sh
+2013-06-02 08:00:20,069 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0031_m_62078582 given task: attempt_201306020741_0031_m_000001_0
+2013-06-02 08:00:23,467 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0031_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4136751+2401062
+2013-06-02 08:00:23,471 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0031_m_000001_0 is done.
+2013-06-02 08:00:23,471 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0031_m_000001_0  was 4545167
+2013-06-02 08:00:23,471 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:00:23,528 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0031_m_62078582 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:00:30,724 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48414, bytes: 4545167, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0031_m_000001_0, duration: 264900038
+2013-06-02 08:00:43,117 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0031
+2013-06-02 08:00:43,122 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0031 for user-log deletion with retainTimeStamp:1370239243118
+2013-06-02 08:00:49,127 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0032_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:00:49,127 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0032_m_000001_0 which needs 1 slots
+2013-06-02 08:00:49,127 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0032_m_000001_0 which needs 1 slots
+2013-06-02 08:00:49,153 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:00:49,280 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0032_m_-1631125127
+2013-06-02 08:00:49,280 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0032_m_-1631125127 spawned.
+2013-06-02 08:00:49,281 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0032/attempt_201306020741_0032_m_000001_0/taskjvm.sh
+2013-06-02 08:00:49,788 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0032_m_-1631125127 given task: attempt_201306020741_0032_m_000001_0
+2013-06-02 08:00:53,145 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0032_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step16a/part-00000:0+612855
+2013-06-02 08:00:53,145 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0032_m_000001_0 is done.
+2013-06-02 08:00:53,145 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0032_m_000001_0  was 1048434
+2013-06-02 08:00:53,146 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:00:53,190 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0032_m_-1631125127 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:01:01,395 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36798, bytes: 1048434, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0032_m_000001_0, duration: 53152145
+2013-06-02 08:01:13,163 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0032
+2013-06-02 08:01:13,166 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0032 for user-log deletion with retainTimeStamp:1370239273164
+2013-06-02 08:01:22,175 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0033_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:01:22,175 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0033_m_000001_0 which needs 1 slots
+2013-06-02 08:01:22,175 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0033_m_000001_0 which needs 1 slots
+2013-06-02 08:01:22,213 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:01:22,397 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0033_m_-1839086523
+2013-06-02 08:01:22,398 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0033_m_-1839086523 spawned.
+2013-06-02 08:01:22,400 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0033/attempt_201306020741_0033_m_000001_0/taskjvm.sh
+2013-06-02 08:01:22,994 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0033_m_-1839086523 given task: attempt_201306020741_0033_m_000001_0
+2013-06-02 08:01:26,354 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0033_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4138851+2398962
+2013-06-02 08:01:26,355 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0033_m_000001_0 is done.
+2013-06-02 08:01:26,356 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0033_m_000001_0  was 4541256
+2013-06-02 08:01:26,356 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:01:26,518 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0033_m_-1839086523 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:01:33,441 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48441, bytes: 4541256, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0033_m_000001_0, duration: 249002135
+2013-06-02 08:01:46,216 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0033
+2013-06-02 08:01:46,220 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0033 for user-log deletion with retainTimeStamp:1370239306216
+2013-06-02 08:01:52,225 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0034_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:01:52,225 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0034_m_000001_0 which needs 1 slots
+2013-06-02 08:01:52,225 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0034_m_000001_0 which needs 1 slots
+2013-06-02 08:01:52,253 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:01:52,397 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0034_m_1040972376
+2013-06-02 08:01:52,398 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0034_m_1040972376 spawned.
+2013-06-02 08:01:52,399 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0034/attempt_201306020741_0034_m_000001_0/taskjvm.sh
+2013-06-02 08:01:52,924 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0034_m_1040972376 given task: attempt_201306020741_0034_m_000001_0
+2013-06-02 08:01:56,283 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0034_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step17a/part-00000:611545+611545
+2013-06-02 08:01:56,286 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0034_m_000001_0 is done.
+2013-06-02 08:01:56,286 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0034_m_000001_0  was 936024
+2013-06-02 08:01:56,287 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:01:56,444 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0034_m_1040972376 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:02:04,531 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36872, bytes: 936024, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0034_m_000001_0, duration: 61620877
+2013-06-02 08:02:16,304 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0034
+2013-06-02 08:02:16,307 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0034 for user-log deletion with retainTimeStamp:1370239336305
+2013-06-02 08:02:25,321 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0035_m_000002_0 task's state:UNASSIGNED
+2013-06-02 08:02:25,321 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0035_m_000002_0 which needs 1 slots
+2013-06-02 08:02:25,321 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0035_m_000002_0 which needs 1 slots
+2013-06-02 08:02:25,360 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:02:25,558 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0035_m_-280849903
+2013-06-02 08:02:25,558 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0035_m_-280849903 spawned.
+2013-06-02 08:02:25,560 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0035/attempt_201306020741_0035_m_000002_0/taskjvm.sh
+2013-06-02 08:02:26,273 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0035_m_-280849903 given task: attempt_201306020741_0035_m_000002_0
+2013-06-02 08:02:29,735 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0035_m_000002_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step17b/part-00000:0+1741983
+2013-06-02 08:02:29,738 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0035_m_000002_0 is done.
+2013-06-02 08:02:29,738 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0035_m_000002_0  was 2524785
+2013-06-02 08:02:29,740 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:02:29,794 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0035_m_-280849903 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:02:36,143 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48466, bytes: 2524785, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0035_m_000002_0, duration: 213999963
+2013-06-02 08:02:49,373 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0036_m_000003_0 task's state:UNASSIGNED
+2013-06-02 08:02:49,374 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0036_m_000003_0 which needs 1 slots
+2013-06-02 08:02:49,374 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0036_m_000003_0 which needs 1 slots
+2013-06-02 08:02:49,374 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0035
+2013-06-02 08:02:49,379 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0035 for user-log deletion with retainTimeStamp:1370239369375
+2013-06-02 08:02:49,432 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:02:49,658 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0036_m_-1847301081
+2013-06-02 08:02:49,658 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0036_m_-1847301081 spawned.
+2013-06-02 08:02:49,659 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0036/attempt_201306020741_0036_m_000003_0/taskjvm.sh
+2013-06-02 08:02:50,125 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0036_m_-1847301081 given task: attempt_201306020741_0036_m_000003_0
+2013-06-02 08:02:53,457 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_m_000003_0 0.0% setup
+2013-06-02 08:02:53,458 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0036_m_000003_0 is done.
+2013-06-02 08:02:53,458 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0036_m_000003_0  was -1
+2013-06-02 08:02:53,463 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:02:53,496 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0036_m_-1847301081 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:02:55,391 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0036_m_000000_0 task's state:UNASSIGNED
+2013-06-02 08:02:55,391 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0036_m_000000_0 which needs 1 slots
+2013-06-02 08:02:55,391 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0036_m_000000_0 which needs 1 slots
+2013-06-02 08:02:55,392 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0036_m_000003_0
+2013-06-02 08:02:55,392 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0036_m_000003_0
+2013-06-02 08:02:55,392 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0036_m_000003_0 not found in cache
+2013-06-02 08:02:55,401 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0036_m_1729516067
+2013-06-02 08:02:55,401 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0036_m_1729516067 spawned.
+2013-06-02 08:02:55,402 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0036/attempt_201306020741_0036_m_000000_0/taskjvm.sh
+2013-06-02 08:02:55,861 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0036_m_1729516067 given task: attempt_201306020741_0036_m_000000_0
+2013-06-02 08:02:59,182 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_m_000000_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step18a/part-00000:610874+610875
+2013-06-02 08:02:59,185 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0036_m_000000_0 is done.
+2013-06-02 08:02:59,186 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0036_m_000000_0  was 934656
+2013-06-02 08:02:59,186 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:02:59,231 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0036_m_1729516067 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:03:01,405 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0036_r_000000_0 task's state:UNASSIGNED
+2013-06-02 08:03:01,406 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0036_r_000000_0 which needs 1 slots
+2013-06-02 08:03:01,406 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0036_r_000000_0 which needs 1 slots
+2013-06-02 08:03:01,419 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0036_r_-209274589
+2013-06-02 08:03:01,420 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0036_r_-209274589 spawned.
+2013-06-02 08:03:01,421 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0036/attempt_201306020741_0036_r_000000_0/taskjvm.sh
+2013-06-02 08:03:01,927 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0036_r_-209274589 given task: attempt_201306020741_0036_r_000000_0
+2013-06-02 08:03:07,665 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.2:56375, bytes: 934656, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0036_m_000000_0, duration: 22018445
+2013-06-02 08:03:08,270 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.15 MB/s) > 
+2013-06-02 08:03:08,325 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.15 MB/s) > 
+2013-06-02 08:03:08,438 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.15 MB/s) > 
+2013-06-02 08:03:08,853 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0036_r_000000_0 is in commit-pending, task state:COMMIT_PENDING
+2013-06-02 08:03:08,853 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.15 MB/s) > 
+2013-06-02 08:03:10,424 INFO org.apache.hadoop.mapred.TaskTracker: Received commit task action for attempt_201306020741_0036_r_000000_0
+2013-06-02 08:03:11,294 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_r_000000_0 1.0% reduce > reduce
+2013-06-02 08:03:11,295 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_r_000000_0 1.0% reduce > reduce
+2013-06-02 08:03:11,296 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0036_r_000000_0 is done.
+2013-06-02 08:03:11,296 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0036_r_000000_0  was -1
+2013-06-02 08:03:11,296 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:03:11,333 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0036_r_-209274589 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:03:13,436 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0036_m_000002_0 task's state:UNASSIGNED
+2013-06-02 08:03:13,436 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0036_m_000002_0 which needs 1 slots
+2013-06-02 08:03:13,436 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0036_m_000002_0 which needs 1 slots
+2013-06-02 08:03:13,437 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0036_r_000000_0
+2013-06-02 08:03:13,437 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0036_r_000000_0
+2013-06-02 08:03:13,446 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0036_m_1616307864
+2013-06-02 08:03:13,446 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0036_m_1616307864 spawned.
+2013-06-02 08:03:13,447 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0036/attempt_201306020741_0036_m_000002_0/taskjvm.sh
+2013-06-02 08:03:13,987 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0036_m_1616307864 given task: attempt_201306020741_0036_m_000002_0
+2013-06-02 08:03:14,366 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_m_000002_0 0.0% 
+2013-06-02 08:03:17,334 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0036_m_000002_0 0.0% cleanup
+2013-06-02 08:03:17,334 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0036_m_000002_0 is done.
+2013-06-02 08:03:17,334 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0036_m_000002_0  was -1
+2013-06-02 08:03:17,335 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:03:17,376 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0036_m_1616307864 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:03:19,494 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0036
+2013-06-02 08:03:19,495 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0036_m_000002_0 not found in cache
+2013-06-02 08:03:19,499 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0036 for user-log deletion with retainTimeStamp:1370239399496
+2013-06-02 08:03:28,505 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0037_m_000002_0 task's state:UNASSIGNED
+2013-06-02 08:03:28,505 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0037_m_000002_0 which needs 1 slots
+2013-06-02 08:03:28,505 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0037_m_000002_0 which needs 1 slots
+2013-06-02 08:03:28,557 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:03:28,778 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0037_m_2083788727
+2013-06-02 08:03:28,778 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0037_m_2083788727 spawned.
+2013-06-02 08:03:28,779 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0037/attempt_201306020741_0037_m_000002_0/taskjvm.sh
+2013-06-02 08:03:29,349 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0037_m_2083788727 given task: attempt_201306020741_0037_m_000002_0
+2013-06-02 08:03:32,682 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0037_m_000002_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step18b/part-00000:0+1742673
+2013-06-02 08:03:32,682 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0037_m_000002_0 is done.
+2013-06-02 08:03:32,682 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0037_m_000002_0  was 2525843
+2013-06-02 08:03:32,684 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:03:32,729 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0037_m_2083788727 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:03:38,902 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48502, bytes: 2525843, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0037_m_000002_0, duration: 202667031
+2013-06-02 08:03:52,541 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0037
+2013-06-02 08:03:52,545 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0037 for user-log deletion with retainTimeStamp:1370239432541
+2013-06-02 08:03:58,548 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0038_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:03:58,548 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0038_m_000001_0 which needs 1 slots
+2013-06-02 08:03:58,548 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0038_m_000001_0 which needs 1 slots
+2013-06-02 08:03:58,574 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:03:58,714 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0038_m_1289944707
+2013-06-02 08:03:58,714 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0038_m_1289944707 spawned.
+2013-06-02 08:03:58,715 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0038/attempt_201306020741_0038_m_000001_0/taskjvm.sh
+2013-06-02 08:03:59,278 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0038_m_1289944707 given task: attempt_201306020741_0038_m_000001_0
+2013-06-02 08:04:02,618 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0038_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step19a/part-00000:0+610390
+2013-06-02 08:04:02,620 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0038_m_000001_0 is done.
+2013-06-02 08:04:02,620 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0038_m_000001_0  was 1044078
+2013-06-02 08:04:02,622 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:04:02,667 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0038_m_1289944707 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:04:10,819 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:36999, bytes: 1044078, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0038_m_000001_0, duration: 62832387
+2013-06-02 08:04:22,586 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0038
+2013-06-02 08:04:22,591 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0038 for user-log deletion with retainTimeStamp:1370239462587
+2013-06-02 08:04:31,599 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0039_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:04:31,599 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0039_m_000001_0 which needs 1 slots
+2013-06-02 08:04:31,599 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0039_m_000001_0 which needs 1 slots
+2013-06-02 08:04:31,626 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:04:31,766 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0039_m_2036015208
+2013-06-02 08:04:31,767 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0039_m_2036015208 spawned.
+2013-06-02 08:04:31,768 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0039/attempt_201306020741_0039_m_000001_0/taskjvm.sh
+2013-06-02 08:04:32,322 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0039_m_2036015208 given task: attempt_201306020741_0039_m_000001_0
+2013-06-02 08:04:35,673 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0039_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4140378+2397435
+2013-06-02 08:04:35,674 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0039_m_000001_0 is done.
+2013-06-02 08:04:35,674 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0039_m_000001_0  was 4538227
+2013-06-02 08:04:35,674 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:04:35,723 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0039_m_2036015208 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:04:41,739 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48527, bytes: 4538227, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0039_m_000001_0, duration: 268144962
+2013-06-02 08:04:55,650 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0039
+2013-06-02 08:04:55,654 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0039 for user-log deletion with retainTimeStamp:1370239495650
+2013-06-02 08:05:01,660 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0040_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:05:01,660 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0040_m_000001_0 which needs 1 slots
+2013-06-02 08:05:01,660 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0040_m_000001_0 which needs 1 slots
+2013-06-02 08:05:01,686 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:05:01,822 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0040_m_955144790
+2013-06-02 08:05:01,822 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0040_m_955144790 spawned.
+2013-06-02 08:05:01,823 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0040/attempt_201306020741_0040_m_000001_0/taskjvm.sh
+2013-06-02 08:05:02,364 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0040_m_955144790 given task: attempt_201306020741_0040_m_000001_0
+2013-06-02 08:05:05,749 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0040_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step20a/part-00000:0+610316
+2013-06-02 08:05:05,750 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0040_m_000001_0 is done.
+2013-06-02 08:05:05,750 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0040_m_000001_0  was 1043970
+2013-06-02 08:05:05,750 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:05:05,800 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0040_m_955144790 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:05:13,999 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:37073, bytes: 1043970, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0040_m_000001_0, duration: 52421653
+2013-06-02 08:05:25,708 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0040
+2013-06-02 08:05:25,711 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0040 for user-log deletion with retainTimeStamp:1370239525709
+2013-06-02 08:05:34,718 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0041_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:05:34,718 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0041_m_000001_0 which needs 1 slots
+2013-06-02 08:05:34,718 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0041_m_000001_0 which needs 1 slots
+2013-06-02 08:05:34,746 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:05:34,893 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0041_m_-1975178874
+2013-06-02 08:05:34,893 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0041_m_-1975178874 spawned.
+2013-06-02 08:05:34,894 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0041/attempt_201306020741_0041_m_000001_0/taskjvm.sh
+2013-06-02 08:05:35,420 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0041_m_-1975178874 given task: attempt_201306020741_0041_m_000001_0
+2013-06-02 08:05:38,781 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0041_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4140441+2397372
+2013-06-02 08:05:38,783 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0041_m_000001_0 is done.
+2013-06-02 08:05:38,783 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0041_m_000001_0  was 4538119
+2013-06-02 08:05:38,783 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:05:38,943 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0041_m_-1975178874 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:05:47,303 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:37115, bytes: 4538119, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0041_m_000001_0, duration: 282106119
+2013-06-02 08:06:01,784 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0042_m_000003_0 task's state:UNASSIGNED
+2013-06-02 08:06:01,784 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0042_m_000003_0 which needs 1 slots
+2013-06-02 08:06:01,784 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0042_m_000003_0 which needs 1 slots
+2013-06-02 08:06:01,785 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0041
+2013-06-02 08:06:01,791 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0041 for user-log deletion with retainTimeStamp:1370239561786
+2013-06-02 08:06:01,829 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:06:01,960 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0042_m_-62438873
+2013-06-02 08:06:01,960 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0042_m_-62438873 spawned.
+2013-06-02 08:06:01,961 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0042/attempt_201306020741_0042_m_000003_0/taskjvm.sh
+2013-06-02 08:06:02,473 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0042_m_-62438873 given task: attempt_201306020741_0042_m_000003_0
+2013-06-02 08:06:05,813 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_m_000003_0 0.0% setup
+2013-06-02 08:06:05,815 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0042_m_000003_0 is done.
+2013-06-02 08:06:05,816 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0042_m_000003_0  was -1
+2013-06-02 08:06:05,816 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:06:05,853 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0042_m_-62438873 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:06:07,800 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0042_m_000000_0 task's state:UNASSIGNED
+2013-06-02 08:06:07,800 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0042_m_000000_0 which needs 1 slots
+2013-06-02 08:06:07,800 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0042_m_000000_0 which needs 1 slots
+2013-06-02 08:06:07,801 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0042_m_000003_0
+2013-06-02 08:06:07,801 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0042_m_000003_0
+2013-06-02 08:06:07,801 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0042_m_000003_0 not found in cache
+2013-06-02 08:06:07,808 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0042_m_610065731
+2013-06-02 08:06:07,809 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0042_m_610065731 spawned.
+2013-06-02 08:06:07,810 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0042/attempt_201306020741_0042_m_000000_0/taskjvm.sh
+2013-06-02 08:06:08,325 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0042_m_610065731 given task: attempt_201306020741_0042_m_000000_0
+2013-06-02 08:06:11,652 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_m_000000_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step21a/part-00000:610296+610297
+2013-06-02 08:06:11,654 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0042_m_000000_0 is done.
+2013-06-02 08:06:11,654 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0042_m_000000_0  was 933576
+2013-06-02 08:06:11,655 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:06:11,698 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0042_m_610065731 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:06:13,819 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0042_r_000000_0 task's state:UNASSIGNED
+2013-06-02 08:06:13,819 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0042_r_000000_0 which needs 1 slots
+2013-06-02 08:06:13,819 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0042_r_000000_0 which needs 1 slots
+2013-06-02 08:06:13,827 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0042_r_1605983914
+2013-06-02 08:06:13,827 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0042_r_1605983914 spawned.
+2013-06-02 08:06:13,828 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0042/attempt_201306020741_0042_r_000000_0/taskjvm.sh
+2013-06-02 08:06:14,299 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0042_r_1605983914 given task: attempt_201306020741_0042_r_000000_0
+2013-06-02 08:06:20,024 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.2:56455, bytes: 933576, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0042_m_000000_0, duration: 36656008
+2013-06-02 08:06:20,617 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.15 MB/s) > 
+2013-06-02 08:06:20,667 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.15 MB/s) > 
+2013-06-02 08:06:20,777 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.15 MB/s) > 
+2013-06-02 08:06:21,246 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0042_r_000000_0 is in commit-pending, task state:COMMIT_PENDING
+2013-06-02 08:06:21,246 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_r_000000_0 0.16666667% reduce > copy (1 of 2 at 0.15 MB/s) > 
+2013-06-02 08:06:22,833 INFO org.apache.hadoop.mapred.TaskTracker: Received commit task action for attempt_201306020741_0042_r_000000_0
+2013-06-02 08:06:23,638 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_r_000000_0 1.0% reduce > reduce
+2013-06-02 08:06:23,639 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_r_000000_0 1.0% reduce > reduce
+2013-06-02 08:06:23,640 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0042_r_000000_0 is done.
+2013-06-02 08:06:23,640 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0042_r_000000_0  was -1
+2013-06-02 08:06:23,640 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:06:23,676 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0042_r_1605983914 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:06:25,854 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0042_m_000002_0 task's state:UNASSIGNED
+2013-06-02 08:06:25,854 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0042_m_000002_0 which needs 1 slots
+2013-06-02 08:06:25,854 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0042_m_000002_0 which needs 1 slots
+2013-06-02 08:06:25,855 INFO org.apache.hadoop.mapred.TaskTracker: Received KillTaskAction for task: attempt_201306020741_0042_r_000000_0
+2013-06-02 08:06:25,855 INFO org.apache.hadoop.mapred.TaskTracker: About to purge task: attempt_201306020741_0042_r_000000_0
+2013-06-02 08:06:25,869 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0042_m_-729920219
+2013-06-02 08:06:25,869 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0042_m_-729920219 spawned.
+2013-06-02 08:06:25,871 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0042/attempt_201306020741_0042_m_000002_0/taskjvm.sh
+2013-06-02 08:06:26,367 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0042_m_-729920219 given task: attempt_201306020741_0042_m_000002_0
+2013-06-02 08:06:26,723 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_m_000002_0 0.0% 
+2013-06-02 08:06:29,699 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0042_m_000002_0 0.0% cleanup
+2013-06-02 08:06:29,701 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0042_m_000002_0 is done.
+2013-06-02 08:06:29,702 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0042_m_000002_0  was -1
+2013-06-02 08:06:29,702 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:06:29,745 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0042_m_-729920219 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:06:31,910 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0042
+2013-06-02 08:06:31,910 INFO org.apache.hadoop.mapred.IndexCache: Map ID attempt_201306020741_0042_m_000002_0 not found in cache
+2013-06-02 08:06:31,916 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0042 for user-log deletion with retainTimeStamp:1370239591910
+2013-06-02 08:06:40,919 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0043_m_000002_0 task's state:UNASSIGNED
+2013-06-02 08:06:40,919 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0043_m_000002_0 which needs 1 slots
+2013-06-02 08:06:40,919 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0043_m_000002_0 which needs 1 slots
+2013-06-02 08:06:40,962 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:06:41,153 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0043_m_1016103403
+2013-06-02 08:06:41,153 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0043_m_1016103403 spawned.
+2013-06-02 08:06:41,154 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0043/attempt_201306020741_0043_m_000002_0/taskjvm.sh
+2013-06-02 08:06:41,937 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0043_m_1016103403 given task: attempt_201306020741_0043_m_000002_0
+2013-06-02 08:06:45,493 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0043_m_000002_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step21b/part-00000:0+1743132
+2013-06-02 08:06:45,496 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0043_m_000002_0 is done.
+2013-06-02 08:06:45,496 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0043_m_000002_0  was 2526533
+2013-06-02 08:06:45,498 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:06:45,552 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0043_m_1016103403 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:06:52,961 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48564, bytes: 2526533, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0043_m_000002_0, duration: 152706082
+2013-06-02 08:07:04,954 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0043
+2013-06-02 08:07:04,958 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0043 for user-log deletion with retainTimeStamp:1370239624955
+2013-06-02 08:07:38,007 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0044
+2013-06-02 08:07:38,008 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0044 being deleted.
+2013-06-02 08:07:47,018 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0045_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:07:47,018 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0045_m_000001_0 which needs 1 slots
+2013-06-02 08:07:47,018 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0045_m_000001_0 which needs 1 slots
+2013-06-02 08:07:47,055 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:07:47,266 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0045_m_1132531582
+2013-06-02 08:07:47,266 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0045_m_1132531582 spawned.
+2013-06-02 08:07:47,268 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0045/attempt_201306020741_0045_m_000001_0/taskjvm.sh
+2013-06-02 08:07:48,077 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0045_m_1132531582 given task: attempt_201306020741_0045_m_000001_0
+2013-06-02 08:07:51,474 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0045_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4140487+2397326
+2013-06-02 08:07:51,476 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0045_m_000001_0 is done.
+2013-06-02 08:07:51,476 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0045_m_000001_0  was 4538018
+2013-06-02 08:07:51,477 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:07:51,633 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0045_m_1132531582 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:07:58,767 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.3:48615, bytes: 4538018, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0045_m_000001_0, duration: 247040633
+2013-06-02 08:08:11,054 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0045
+2013-06-02 08:08:11,059 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0045 for user-log deletion with retainTimeStamp:1370239691059
+2013-06-02 08:08:44,091 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0046
+2013-06-02 08:08:44,091 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0046 being deleted.
+2013-06-02 08:08:50,098 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0047_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:08:50,099 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0047_m_000001_0 which needs 1 slots
+2013-06-02 08:08:50,099 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0047_m_000001_0 which needs 1 slots
+2013-06-02 08:08:50,128 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:08:50,253 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0047_m_749716856
+2013-06-02 08:08:50,253 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0047_m_749716856 spawned.
+2013-06-02 08:08:50,253 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0047/attempt_201306020741_0047_m_000001_0/taskjvm.sh
+2013-06-02 08:08:50,828 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0047_m_749716856 given task: attempt_201306020741_0047_m_000001_0
+2013-06-02 08:08:54,171 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0047_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph/graph.txt:4140504+2397309
+2013-06-02 08:08:54,172 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0047_m_000001_0 is done.
+2013-06-02 08:08:54,172 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0047_m_000001_0  was 4537899
+2013-06-02 08:08:54,173 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:08:54,223 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0047_m_749716856 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:09:02,538 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:37316, bytes: 4537899, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0047_m_000001_0, duration: 237924587
+2013-06-02 08:09:14,127 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0047
+2013-06-02 08:09:14,131 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0047 for user-log deletion with retainTimeStamp:1370239754128
+2013-06-02 08:09:47,169 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0048
+2013-06-02 08:09:47,169 WARN org.apache.hadoop.mapred.TaskTracker: Unknown job job_201306020741_0048 being deleted.
+2013-06-02 08:09:53,176 INFO org.apache.hadoop.mapred.TaskTracker: LaunchTaskAction (registerTask): attempt_201306020741_0049_m_000001_0 task's state:UNASSIGNED
+2013-06-02 08:09:53,176 INFO org.apache.hadoop.mapred.TaskTracker: Trying to launch : attempt_201306020741_0049_m_000001_0 which needs 1 slots
+2013-06-02 08:09:53,176 INFO org.apache.hadoop.mapred.TaskTracker: In TaskLauncher, current free slots : 2 and trying to launch attempt_201306020741_0049_m_000001_0 which needs 1 slots
+2013-06-02 08:09:53,213 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user mimuw on this TT.
+2013-06-02 08:09:53,352 INFO org.apache.hadoop.mapred.JvmManager: In JvmRunner constructed JVM ID: jvm_201306020741_0049_m_-423479570
+2013-06-02 08:09:53,352 INFO org.apache.hadoop.mapred.JvmManager: JVM Runner jvm_201306020741_0049_m_-423479570 spawned.
+2013-06-02 08:09:53,353 INFO org.apache.hadoop.mapred.TaskController: Writing commands to /app/hadoop/tmp/mapred/local/ttprivate/taskTracker/mimuw/jobcache/job_201306020741_0049/attempt_201306020741_0049_m_000001_0/taskjvm.sh
+2013-06-02 08:09:53,895 INFO org.apache.hadoop.mapred.TaskTracker: JVM with ID: jvm_201306020741_0049_m_-423479570 given task: attempt_201306020741_0049_m_000001_0
+2013-06-02 08:09:57,225 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201306020741_0049_m_000001_0 1.0% hdfs://master:54310/user/mimuw/graph-tmp/step24b/part-00000:871597+871597
+2013-06-02 08:09:57,228 INFO org.apache.hadoop.mapred.TaskTracker: Task attempt_201306020741_0049_m_000001_0 is done.
+2013-06-02 08:09:57,229 INFO org.apache.hadoop.mapred.TaskTracker: reported output size for attempt_201306020741_0049_m_000001_0  was 949596
+2013-06-02 08:09:57,229 INFO org.apache.hadoop.mapred.TaskTracker: addFreeSlot : current free slots : 2
+2013-06-02 08:09:57,275 INFO org.apache.hadoop.mapred.JvmManager: JVM : jvm_201306020741_0049_m_-423479570 exited with exit code 0. Number of tasks it ran: 1
+2013-06-02 08:10:05,454 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 192.168.3.2:50060, dest: 192.168.3.1:37389, bytes: 949596, op: MAPRED_SHUFFLE, cliID: attempt_201306020741_0049_m_000001_0, duration: 38496774
+2013-06-02 08:10:17,230 INFO org.apache.hadoop.mapred.TaskTracker: Received 'KillJobAction' for job: job_201306020741_0049
+2013-06-02 08:10:17,234 INFO org.apache.hadoop.mapred.UserLogCleaner: Adding job_201306020741_0049 for user-log deletion with retainTimeStamp:1370239817231

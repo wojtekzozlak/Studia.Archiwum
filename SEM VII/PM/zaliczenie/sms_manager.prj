@@ -1,0 +1,41 @@
+; ************************************************************
+; PROJECT:
+; AUTHOR:
+; ************************************************************
+
+; Micro + software running
+; ------------------------------------------------------------
+.MICRO "ATmega16"
+.TOOLCHAIN "GCC"
+.GCCPATH   "C:\Program Files\WinAVR-20100110"
+.GCCMAKE   AUTO
+.TARGET    "sms_manager.hex"
+.SOURCE    "main.c" "config.h" "lcd.c" "lcd.h" "keyboard.h" "keyboard.c" "editor.h" "editor.c"
+
+.TRACE              ; Activate micro trace
+
+; Following lines are optional; if not included
+; exactly these values are taken by default
+; ------------------------------------------------------------
+.POWER VDD=5 VSS=0  ; Power nodes
+.CLOCK 8meg         ; Micro clock
+.STORE 2000m         ; Trace (micro+signals) storage time
+
+; Micro nodes: RESET, AREF, PA0-PA7, PB0-PB7, PC0-PC7, PD0-PD7, ACO, TIM1OVF
+; Define here the hardware around the micro
+; ------------------------------------------------------------
+
+XLCD  LCD(16 2 250k) pd0 gnd pd1 pd5 pd4 pd3 pd2 gnd gnd gnd gnd
+.PLOT V(pc1) V(pc2) V(pc3) V(pc4) V(pc5)
+;V(pb2) V(pc0) V(pc1) V(pc2) V(pc3) V(pc4) V(pc5) V(pc6) V(pc7)
+
+XKeyboard KEY4x4 pa0 pa1 pa2 pa3 pa4 pa5 pa6 pa7
+X ND2 pa0 pa1 N1
+X ND2 pa2 pa3 N2
+X ND2 N1 VDD N3
+X ND2 N2 VDD N4
+X ND2 N3 N4 N5
+X ND2 N5 VDD pb2
+
+
+

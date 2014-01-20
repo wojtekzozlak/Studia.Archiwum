@@ -1,0 +1,5 @@
+vhdl work "n_unary_counter.vhd"
+vhdl work "n_median.vhd"
+vhdl work "minmax.vhd"
+vhdl work "magic_box.vhd"
+vhdl work "main.vhd"

@@ -1,0 +1,138 @@
+PWiR'2013 - Zadanie zaliczeniowe nr 4            Wojciech Żółtak (wz292583)
+==============================================================================
+
+
+1. Szkic rozwiązania
+---------------------
+
+Rozwiązanie zadania jest implementacją algorytmu BFS w modelu MapReduce.
+Obliczenie składa się z trzech rodzajów zadań:
+
+- MERGE_AND_STEP - Złączania danych i wykonywania kroku po krawędziach grafu
+- FIND_MIN - Znajdowania minimalnej odległości dla każdego z wierzchołków
+- FINALIZE - Produkowania wyniku końcowego.
+
+
+Program wykonuje naprzemiennie krok po krawędziach grafu oraz agregację
+minimalnych odległości tak długo aż osiągnie limit kroków, bądź przestanie
+generować nowe dane. Na koniec, generuje raport w postaci wyjścia o formie
+wymaganej przez treść zadania.
+
+
+Autor postanowił, że dane o sąsiedztwie w grafie nie będą częścią "wyjścia"
+żadnego z zadań, ze względu na ich dużą ilość oraz uproszczenie całej koncepcji
+rozwiązania.
+
+
+Do zatrzymania algorytmu w przypadku braku ograniczenia na ilość kroków
+wykorzystany jest COUNTER w zadaniu FIND_MIN - zlicza on ilość zrelaksowanych
+wierzchołków. W przypadku gdy wynosi 0 możemy zakończyć obliczenie.
+
+
+2. Szczegółowy opis zadań
+-----------------------------
+
+2.1 MERGE_AND_STEP
+....................
+
+2.1.1 Map - zbieranie danych o grafie
+........................................
+
+Dane wejściowe pochodzą z dwóch źródeł
+- pliki podane przez użytkownika (opis grafu)
+- pliki wygenerowane przez poprzednie iteracje algorytmu (odległości)
+
+Aby móc wykonać krok z wierzchołka musimy wiedzieć w jakiej odległości od
+wierzchołka startowego się znajduje oraz kim są jego sąsiedzi. Dane te pochodzą
+z dwóch źródeł, dlatego najpierw trzeba je połączyć. Łączenie odbywa się przez
+generowanie częściowo wypełnionych obiektów NodeInfo, które zostaną złączone w
+trakcie redukcji.
+
+Mapper wykrywa, z którym typem danych ma do czynienia patrząc na format w jakim
+zapisana została etykieta wierzchołka - w przypadku danych o odległościach jest
+ona ujemna (kodowana wzorem "(X * -1) - 1").
+
+
+Format wejścia:
+* LongWritable -> Text [offset_w_pliku -> treść_linii]
+
+Format wyjścia:
+* LongWritable -> NodeInfo [etykieta -> informacje]
+
+
+
+2.1.2 Reduce - złączenie danych i wykonanie kroku
+....................................................
+
+Reducer na początek złącza dane otrzymane z mappera - składając częściowo
+wypełnione struktury NodeInfo w całość.
+
+Następnie, wykonuje krok algorytmu przechodząc po krawędzi z wierzchołka, tzn.
+produkując mapowania postaci:
+        etykieta_sąsiada -> (odległość + 1)
+oraz dodatkowo
+        etykieta_wierzchołka -> odległość
+w celu spropagowania już wyliczonej odległości.
+
+Dodatkowo, odległość oryginalna kodowana jest liczbą ujemną (tak jak wcześniej)
+- pozwala to sprawdzić w późniejszej fazie, czy dokonano relaksacji wierzchołka.
+
+
+Format wejścia:
+* LongWritable -> NodeInfo [etykieta -> informacje]
+
+Format wyjścia:
+* LongWritable -> LongWritable [etykieta -> odległość]
+
+
+
+2.2 FIND_MIN
+...............
+
+2.2.1 Map - wczytanie danych
+...............................
+
+Mapper zajmuje się wyłącznie deserializacją danych z pliku.
+
+Format wejścia:
+* LongWritable -> Text [offset_w_pliku -> treść_linii]
+
+Format wyjścia:
+* LongWritable -> LongWritable [etykieta -> odległość]
+
+
+2.2.2 Reduce - znalezienie minimalnej odległości
+...................................................
+
+Redukcja polega na znalezieniu minimalnej odległości do analizowane wierzchołka,
+sprawdzeniu czy coś się zmieniło i ewentualnym oznaczeniu go jako przejrzany.
+
+W szczególności - jeśli analizujemy wierzchołek i odległość do niego nie
+zmieniła się, to znaczy, że wykonano z niego wcześniej krok i można go oznaczyć
+jako przejrzany.
+
+Etykiety wierzchołków kodowane są jako liczby ujemne, by móc użyć wyników
+zadania w kolejnej iteracji MERGE_AND_STEP.
+
+
+Format wejścia:
+* LongWritable -> LongWritable [etykieta -> odległość]
+
+Format wyjścia:
+* LongWritable -> Text [etykieta -> (odległość + " " + czy_przejrzany)
+
+
+
+2.3 FINALIZE
+.................
+
+Ostatnie zadanie jest mało interesujące - po prostu wczytuje dane wyprodukowane
+przez FIND_MIN i "transponuje", tzn. agreguje wierzchołki po odległościach.
+
+
+
+3. Wyjaśnienie do logów
+............................
+
+Logi wygenerowane zostały dla grafu testowego `soc-LiveJournal1.txt`,
+wierzchołka 2871423 bez ograniczenia na ilość kroków.

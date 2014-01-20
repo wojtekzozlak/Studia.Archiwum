@@ -1,0 +1,29 @@
+Command line:
+   bin2dectest_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  1548
+
+Tue May 21 14:46:34 2013
+
+
+ Elaboration Time: 0.0468 sec
+
+ Current Memory Usage: 505.336 Meg
+
+ Total Signals          : 165
+ Total Nets             : 665
+ Total Signal Drivers   : 116
+ Total Blocks           : 180
+ Total Primitive Blocks : 82
+ Total Processes        : 116
+ Total Traceable Variables  : 109
+ Total Scalar Nets and Variables : 1244
+Total Line Count : 125
+
+ Total Simulation Time: 0.0468 sec
+
+ Current Memory Usage: 505.336 Meg
+
+Tue May 21 14:46:49 2013
+

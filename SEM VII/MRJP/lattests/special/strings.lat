@@ -1,0 +1,25 @@
+class X {
+  string a;
+  int b;
+}
+
+class Y extends X {
+  string c;
+}
+
+int main() {
+  Y y = new Y;
+
+  printString(y.a);
+  printString(y.c);
+
+  string x;
+  string[] tab = new string[10];
+  for (string s : tab) {
+    printString(x);
+    x = x + s + "-";
+  }
+  printString(x);
+
+  return 0;
+}

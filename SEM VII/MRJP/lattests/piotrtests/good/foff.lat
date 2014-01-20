@@ -1,0 +1,15 @@
+class C {
+    int i;
+}
+
+
+
+int main() {
+  C xs;
+  int i = xs.i;
+  return 0;
+}
+
+int length (C xs) {
+  return 0;
+}

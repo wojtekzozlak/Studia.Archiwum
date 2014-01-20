@@ -1,0 +1,9 @@
+boolean f(){
+    return true;
+}
+
+int main(){
+    1 + true;
+    -true;
+    -f();
+}

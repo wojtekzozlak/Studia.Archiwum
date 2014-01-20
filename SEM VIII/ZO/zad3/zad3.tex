@@ -1,0 +1,170 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsfonts}
+\usepackage{bm}
+
+\pagestyle{fancy}
+\lhead{ZO'2013 - zadanie domowe nr 3}
+\rhead{Wojciech Żółtak; 292583}
+
+\lstset{numbers=left}
+
+% Część główna
+\begin{document}
+
+\section*{Zacznijmy od czegoś prostego, czyli $k=0$}
+
+Żeby wyrobić sobie intuicję co do problemu, naszych własnych potrzeb oraz
+możliwości, spróbujmy rozwiązać problem w wersji ztrywializowanej - dla maszyny
+alternującej, która nie wykonuje alternacji. Istnieją dwa rodzaje takich maszyn:
+\begin{itemize}
+  \item{w których osiągalne są wyłącznie stany egzystencjalne}
+  \item{w których osiągalne są wyłącznie stany uniwersalne}
+\end{itemize}
+
+W pierwszym przypadku maszyna alternująca odpowiada niedeterministycznej
+maszynie turinga. Wiadomo również, że $PSPACE = NPSPACE$, zatem trywialnie język
+rozpoznawany przez maszynę należy do $PSPACE$. \\
+
+
+Rozpatrzmy maszynę, w której osiągalne są wyłącznie stany uniwersalne. Na
+pierwszy rzut oka sytuacja wydaje się dość nieciekawa - żeby ,,zasymulować''
+maszynę alternującą pracującą w stanach uniwersalnych na niedeterministycznej
+maszynie turinga wypadałoby pamiętać bardzo dużo rzeczy - np. zbiór stanów, w
+których się znajdujemy razem z odpowiadającymi im taśmami. To stanowczo
+zbyt wiele dla pamięci wielomianowej.
+
+Intuicyjnie, aby udowodnić, że słowo należy do języka należy sprawdzić
+,,wszystko''. Dużo łatwiej pokazać, iż słowo do niego nie należy - wystarczy
+znaleźć ,,coś'' - obliczenie, które jest kontrprzykładem. Z definicji maszyny
+alternującej  warunkiem koniecznym i dostatecznym do odrzucenia słowa jest
+istnienie
+\begin{itemize}
+  \item{obliczenia prowadzącego do bezpośredniego odrzucenia wejścia lub}
+  \item{nieskończonego (pętlącego się) obliczenia.}
+\end{itemize}
+
+To co chciałoby się zrobić, to skonstruować niedeterministyczną maszynę turinga,
+która akceptuje wejście wówczas, gdy uda się jej ,,zgadnąć'' odrzucające
+obliczenie, a następnie zanegować jej odpowiedź (tzn. akceptować wejście gdy nie
+znajdzie się kontrprzykładu). Problem sprawiają jednak obliczenia nieskończone -
+maszyna powinna zaakceptować gdy zapętli się, ale.. no właśnie, pętli się, więc
+nie akceptuje. Spróbujmy wyeliminować ten problem konstruując dla naszej maszyny
+alternującej maszynę totalną.
+
+
+\section*{Alternująca maszyna totalna dla $L(M_a) \in PSPACE$}
+
+Kiedy wiadomo, że obliczenie zapętla się? Gdy powtórzy się konfiguracja maszyny.
+Kiedy wiadomo, że konfiguracja się powtórzyła? Nasza maszyna pracuje w pamięci
+wielomianowej, którą można oszacować z góry przez jakiś wielomian $w(n)$. Niech
+$A$ będzie rozmiarem alfabetu (wliczając blanki), a $Q$ łączną ilością stanów
+egzystencjalnych i uniwersalnych maszyny. Ilość konfiguracji jakie może
+wygenerować maszyna dla wejścia długości $n$ jest zatem nie większa niż
+$A^{w(n)} * w(n) * Q$ - taśma zapisana jest jakimiś symbolami, gdzieś znajduje
+się głowica i jesteśmy w jakimś stanie. To dość spora liczba, ale zapisana
+binarnie z powodzeniem zmieści się w pamięci wielomianowej.
+
+Mając maszynę alternującą $M_a$ pracującą w pamięci wielomianowej możemy ją
+przerobić w taki sposób, żeby
+\begin{itemize}
+  \item{zliczała kroki wykonywane w ,,pierwotnym'' obliczeniu (przed przeróbką),}
+  \item{nie zapisywała na taśmę blanków (można dodać nowy symbol do alfabetu,
+        który w pierwotnym obliczniu maszyny jest interpretowany jak blank,
+        chociaż formalnie nim nie jest i jest zapisywany na taśmę w momencie,
+        gdy pierwotna maszyna zapisałaby blank),}
+  \item{zliczała ilość pamięci zużywanej na pierwotne obliczenie (poprzez
+        zliczanie napotkanych blanków - dlatego chcieliśmy uniemożliwić
+        zapisywanie ich na taśmę przez maszynę)}
+  \item{dla każdego nowego oszacowania zużywanej pamięci wylicza nowy limit
+        kroków}
+  \item{jeśli ilość kroków przekroczy aktualny limit obliczenie jest przerywane a wejście
+        odrzucane}
+\end{itemize}
+Ponieważ maszyna w momencie gdy się zapętla nie zwiększa ilości zużywanej
+pamięci, to nie jest ona w stanie zwiększyć aktualnego limitu, jednocześnie
+ciągle wykonując kolejne kroki. Zatem z pewnością się zatrzyma. Natomiast
+skończone obliczenie nie zostanie przedwcześnie ,,wywłaszczone'' ponieważ
+niezmiennie limit kroków dostosowany jest do aktualnie wykorzystywanej pamięci i
+jego przekroczenie oznaczałoby zapętlenie, a więc sprzeczność. \\ \\
+
+Zatem, maszyna taka jest totalna.
+
+
+\section*{Wracając do początku}
+
+Mając do dyspozycji konwersję do maszyny totalnej możemy dokończyć nasze
+wcześniejsze rozwiązanie dla $k=0$. Dla maszyny, w której w obliczeniu osiągalne
+są wyłacznie stany uniwersalne bierzemy jej wersję totalną, a następnie za
+pomocą niedeterministycznej maszyny turinga zgadujemy obliczenie, które kończy
+się odrzuceniem. W przypadku gdy się to uda - odrzucamy słowo wejściowe, w
+przypadku przeciwnym, akceptujemy. Ponieważ $PSPACE = NPSPACE$ wszystko jest w
+porządku.
+
+Ponadto, bez straty ogólności, możemy dodatkowo przyjąć, że nasza maszyna
+startuje w dowolnej konfiguracji, byle tylko nie wykonywała żadnej alternacji
+w trakcie obliczeń. \\
+
+
+Przypadek $k=0$ wydaje się być dobrą podstawą do indukcji po $k$. Załóżmy zatem,
+że umiemy rozwiązać nasz problem dla $k-1$ i spróbujmy za jego pomocą zbudować
+rozwiązanie dla $k$.
+
+Ponownie, istnieją dwa przypadki:
+\begin{itemize}
+  \item{maszyna startuje w stanie egzystencjalnym lub}
+  \item{maszyna startuje w stanie uniwersalnym}
+\end{itemize}
+
+Nasze rozwiązanie dla $k-1$ przemieńmy w wyrocznię, która dla zadanej
+konfiguracji maszyny, przy założeniu, że nie wykona ona więcej niż $k-1$
+alternacji, umie stwierdzić czy dalsze obliczenie zakończy się akceptacją czy
+odrzuceniem.
+
+W przypadku gdy startujemy w stanie egzystencjalnym niedeterministyczna maszyna
+turinga może zgadywać ścieżkę do stanu akceptującego. Jeśli natrafi na stan, w
+którym następuje alternacja wystarczy, że zapyta wyrocznię czy dalsze obliczenie
+kończy się sukcesem. Wówczas akceptujemy.
+
+W przypadku gdy startujemy w stanie uniwersalnym, postępujemy podobnie. Nasza
+maszyna będzie wykorzystywać maszynę, która zgaduje obliczenie-kontrprzykład. W
+momencie alternacji pyta wyrocznię, czy dalsze obliczenie na maszynie
+alternującej odrzuciłoby wejście. Jeśli tak, to maszyna pomocnicza akceptuje.
+Nasza maszyna akceptuje wówczas gdy maszyna pomocnicza tego NIE robi.
+
+W obu przypadkach korzystamy z wyroczni - działającej w $PSPACE$ oraz symulujemy
+obliczenie w maszynie alternującej, które z założenia jest w $PSPACE$. Zatem
+całość też jest w $PSPACE$.\\
+
+
+Ponownie, problemem może być pętlenie się maszyny w obrębie pojedynczej
+,,warstwy''. I ponownie - możemy użyć wersji totalnej naszej maszyny
+alternującej.
+
+Dodatkowo, bez straty ogólności możemy założyć, że nasza maszyna startuje z
+dowolnej konfiguracji, o ile dowolne obliczenie nie spowoduje wykonania wiecej
+niż $k$ alternacji.
+
+
+
+\section*{Podsumowując - indukcja}
+
+Podsumowując powyższe rozważania:
+\begin{itemize}
+  \item{Umiemy rozwiązać nasz problem w $PSPACE$ dla $k=0$.}
+  \item{Zakładając, że umiemy rozwiązać nasz problem w $PSPACE$ dla $k-1$
+        umiemy skonstruować rozwiązanie dla $k$, które jest w $PSPACE$.}
+\end{itemize}
+
+Z indukcji, dla dowolnego naturalnego $k$, dla języka $L$ rozpoznawanego w
+pamięci wielomianowej przez maszynę alternującą maksymalnie $k$ razy
+zachodzi $L \in PSPACE$.
+
+
+
+\end{document}

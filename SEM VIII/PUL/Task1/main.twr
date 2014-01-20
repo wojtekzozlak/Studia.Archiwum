@@ -1,0 +1,252 @@
+--------------------------------------------------------------------------------
+Release 14.2 Trace  (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+C:\soft_x64\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v
+3 -s 4 -n 3 -fastpaths -xml main.twx main.ncd -o main.twr main.pcf -ucf
+Basys2iodef.ucf
+
+Design file:              main.ncd
+Physical constraint file: main.pcf
+Device,package,speed:     xc3s250e,cp132,-4 (PRODUCTION 1.27 2012-07-09)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+btn<0>         |led<0>         |   10.880|
+btn<0>         |led<1>         |   11.223|
+btn<0>         |led<2>         |   12.987|
+btn<0>         |led<3>         |   12.713|
+btn<0>         |led<4>         |   11.999|
+btn<0>         |led<5>         |   13.509|
+btn<0>         |led<6>         |   14.687|
+btn<0>         |led<7>         |   12.825|
+btn<0>         |seg<0>         |   11.792|
+btn<0>         |seg<1>         |   11.011|
+btn<0>         |seg<2>         |   11.314|
+btn<0>         |seg<3>         |   11.837|
+btn<0>         |seg<4>         |   12.165|
+btn<0>         |seg<5>         |   11.236|
+btn<0>         |seg<6>         |   11.818|
+btn<0>         |seg<7>         |   10.930|
+btn<1>         |led<0>         |   10.753|
+btn<1>         |led<1>         |   11.096|
+btn<1>         |led<2>         |   12.860|
+btn<1>         |led<3>         |   12.586|
+btn<1>         |led<4>         |   11.872|
+btn<1>         |led<5>         |   13.382|
+btn<1>         |led<6>         |   14.560|
+btn<1>         |led<7>         |   12.698|
+btn<1>         |seg<0>         |   11.520|
+btn<1>         |seg<1>         |   10.739|
+btn<1>         |seg<2>         |   11.042|
+btn<1>         |seg<3>         |   11.565|
+btn<1>         |seg<4>         |   11.893|
+btn<1>         |seg<5>         |   10.964|
+btn<1>         |seg<6>         |   11.546|
+btn<1>         |seg<7>         |   10.658|
+btn<2>         |led<0>         |   10.519|
+btn<2>         |led<1>         |   10.711|
+btn<2>         |led<2>         |   12.475|
+btn<2>         |led<3>         |   12.201|
+btn<2>         |led<4>         |   11.487|
+btn<2>         |led<5>         |   12.997|
+btn<2>         |led<6>         |   14.175|
+btn<2>         |led<7>         |   12.313|
+btn<2>         |seg<0>         |   11.205|
+btn<2>         |seg<1>         |   10.424|
+btn<2>         |seg<2>         |   10.727|
+btn<2>         |seg<3>         |   11.250|
+btn<2>         |seg<4>         |   11.578|
+btn<2>         |seg<5>         |   10.649|
+btn<2>         |seg<6>         |   11.231|
+btn<2>         |seg<7>         |   10.343|
+btn<3>         |led<0>         |   11.271|
+btn<3>         |led<1>         |   11.277|
+btn<3>         |led<2>         |   12.900|
+btn<3>         |led<3>         |   12.908|
+btn<3>         |led<4>         |   12.114|
+btn<3>         |led<5>         |   13.422|
+btn<3>         |led<6>         |   14.600|
+btn<3>         |led<7>         |   12.738|
+btn<3>         |seg<0>         |   11.734|
+btn<3>         |seg<1>         |   10.953|
+btn<3>         |seg<2>         |   11.256|
+btn<3>         |seg<3>         |   11.779|
+btn<3>         |seg<4>         |   12.107|
+btn<3>         |seg<5>         |   11.178|
+btn<3>         |seg<6>         |   11.760|
+btn<3>         |seg<7>         |   10.872|
+sw<0>          |led<0>         |   12.204|
+sw<0>          |led<1>         |   13.438|
+sw<0>          |led<2>         |   12.537|
+sw<0>          |led<3>         |   12.617|
+sw<0>          |led<4>         |   12.831|
+sw<0>          |led<5>         |   13.082|
+sw<0>          |led<6>         |   14.202|
+sw<0>          |led<7>         |   12.776|
+sw<0>          |seg<0>         |   13.614|
+sw<0>          |seg<1>         |   14.993|
+sw<0>          |seg<2>         |   14.446|
+sw<0>          |seg<3>         |   13.659|
+sw<0>          |seg<4>         |   13.987|
+sw<0>          |seg<5>         |   13.058|
+sw<0>          |seg<6>         |   13.640|
+sw<0>          |seg<7>         |   14.674|
+sw<1>          |led<0>         |   12.348|
+sw<1>          |led<1>         |   13.605|
+sw<1>          |led<2>         |   13.184|
+sw<1>          |led<3>         |   14.021|
+sw<1>          |led<4>         |   14.219|
+sw<1>          |led<5>         |   13.789|
+sw<1>          |led<6>         |   14.364|
+sw<1>          |led<7>         |   13.273|
+sw<1>          |seg<0>         |   14.625|
+sw<1>          |seg<1>         |   16.004|
+sw<1>          |seg<2>         |   15.457|
+sw<1>          |seg<3>         |   14.670|
+sw<1>          |seg<4>         |   14.998|
+sw<1>          |seg<5>         |   14.069|
+sw<1>          |seg<6>         |   14.651|
+sw<1>          |seg<7>         |   15.685|
+sw<2>          |led<0>         |   11.247|
+sw<2>          |led<1>         |   12.851|
+sw<2>          |led<2>         |   12.052|
+sw<2>          |led<3>         |   12.083|
+sw<2>          |led<4>         |   12.281|
+sw<2>          |led<5>         |   13.012|
+sw<2>          |led<6>         |   13.743|
+sw<2>          |led<7>         |   12.168|
+sw<2>          |seg<0>         |   14.911|
+sw<2>          |seg<1>         |   16.290|
+sw<2>          |seg<2>         |   15.743|
+sw<2>          |seg<3>         |   14.956|
+sw<2>          |seg<4>         |   15.284|
+sw<2>          |seg<5>         |   14.355|
+sw<2>          |seg<6>         |   14.937|
+sw<2>          |seg<7>         |   15.971|
+sw<3>          |led<0>         |   14.881|
+sw<3>          |led<1>         |   15.030|
+sw<3>          |led<2>         |   15.038|
+sw<3>          |led<3>         |   15.035|
+sw<3>          |led<4>         |   15.233|
+sw<3>          |led<5>         |   14.421|
+sw<3>          |led<6>         |   15.307|
+sw<3>          |led<7>         |   15.154|
+sw<3>          |seg<0>         |   14.794|
+sw<3>          |seg<1>         |   16.173|
+sw<3>          |seg<2>         |   15.626|
+sw<3>          |seg<3>         |   14.839|
+sw<3>          |seg<4>         |   15.167|
+sw<3>          |seg<5>         |   14.238|
+sw<3>          |seg<6>         |   14.820|
+sw<3>          |seg<7>         |   15.854|
+sw<4>          |led<0>         |   15.760|
+sw<4>          |led<1>         |   15.909|
+sw<4>          |led<2>         |   15.917|
+sw<4>          |led<3>         |   15.914|
+sw<4>          |led<4>         |   16.112|
+sw<4>          |led<5>         |   15.266|
+sw<4>          |led<6>         |   16.155|
+sw<4>          |led<7>         |   16.033|
+sw<4>          |seg<0>         |   14.416|
+sw<4>          |seg<1>         |   15.795|
+sw<4>          |seg<2>         |   15.248|
+sw<4>          |seg<3>         |   14.461|
+sw<4>          |seg<4>         |   14.789|
+sw<4>          |seg<5>         |   13.860|
+sw<4>          |seg<6>         |   14.442|
+sw<4>          |seg<7>         |   15.476|
+sw<5>          |led<0>         |   16.028|
+sw<5>          |led<1>         |   16.230|
+sw<5>          |led<2>         |   16.185|
+sw<5>          |led<3>         |   16.182|
+sw<5>          |led<4>         |   16.380|
+sw<5>          |led<5>         |   15.569|
+sw<5>          |led<6>         |   16.396|
+sw<5>          |led<7>         |   16.301|
+sw<5>          |seg<0>         |   13.712|
+sw<5>          |seg<1>         |   15.091|
+sw<5>          |seg<2>         |   14.544|
+sw<5>          |seg<3>         |   13.757|
+sw<5>          |seg<4>         |   14.085|
+sw<5>          |seg<5>         |   13.156|
+sw<5>          |seg<6>         |   13.738|
+sw<5>          |seg<7>         |   14.772|
+sw<6>          |led<0>         |   14.528|
+sw<6>          |led<1>         |   14.677|
+sw<6>          |led<2>         |   14.685|
+sw<6>          |led<3>         |   14.682|
+sw<6>          |led<4>         |   14.891|
+sw<6>          |led<5>         |   14.034|
+sw<6>          |led<6>         |   14.961|
+sw<6>          |led<7>         |   14.801|
+sw<6>          |seg<0>         |   13.422|
+sw<6>          |seg<1>         |   14.801|
+sw<6>          |seg<2>         |   14.254|
+sw<6>          |seg<3>         |   13.467|
+sw<6>          |seg<4>         |   13.795|
+sw<6>          |seg<5>         |   12.866|
+sw<6>          |seg<6>         |   13.448|
+sw<6>          |seg<7>         |   14.482|
+sw<7>          |led<0>         |   10.900|
+sw<7>          |led<1>         |   11.001|
+sw<7>          |led<2>         |    9.963|
+sw<7>          |led<3>         |   10.408|
+sw<7>          |led<4>         |   10.894|
+sw<7>          |led<5>         |   11.101|
+sw<7>          |led<6>         |   12.625|
+sw<7>          |led<7>         |    9.001|
+sw<7>          |seg<0>         |   12.661|
+sw<7>          |seg<1>         |   14.040|
+sw<7>          |seg<2>         |   13.493|
+sw<7>          |seg<3>         |   12.706|
+sw<7>          |seg<4>         |   13.034|
+sw<7>          |seg<5>         |   12.105|
+sw<7>          |seg<6>         |   12.687|
+sw<7>          |seg<7>         |   13.721|
+---------------+---------------+---------+
+
+
+Analysis completed Tue May 21 14:22:48 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 158 MB
+
+
+

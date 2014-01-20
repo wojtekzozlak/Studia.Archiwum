@@ -1,0 +1,169 @@
+//////////////////////////////////////////////////////////////////////
+// PWiR - zadanie drugie                  Wojciech Żółtak; wz292583 //
+//////////////////////////////////////////////////////////////////////
+
+
+1. Algorytm
+-------------
+
+Rozwiązanie opiera się na prostym algorytmie polegającym na wyliczaniu
+pojedynczego zapytania w pojedynczym wątku.
+
+Każdy wątek utrzymuje prywatną tablicę rozmiaru K, w której trzyma odległości
+oraz etykiety K najbliższych punktów (na początek jest zainicjowana
+nieskończonością). Dla każdego punktu ze zbioru treningowego oblicza dystans i
+próbuje umieścić w tabeli. Na koniec, w czasie K^2 szuka najczęściej
+występującej etykiety.
+
+
+Dlaczego tak naiwny algorytm ma szanse działać?
+
+Każde zapytanie MUSI wyliczyć odległości od wszystkich N punktów. W przypadku
+gdy każdy wątek liczy własne zapytanei lokalność dostępu do pamięci jest bardzo
+wysoka (wątki w danej grupie w tym samym momencie przetwarzają ten same punkt)
+co rodzi nadzieję na wysoki współczynnik trafień w cache.
+
+
+Dopóki ilość zapytań w danych wejściowych jest duża algorytm powinien zachowywać
+dość dobre parametry. W przypadku ilości zapytań mniejszej niż łączna ilość
+wątków równocześnie uruchamianych na karcie, algorytm powinien działać w czasie
+zależnym tylko od N i K.
+
+
+
+
+2. Optymalizacje
+------------------
+
+- Testy wykonywane były na pliku wejściowym wygenerowanym przez komendę
+
+    `./gen > in`
+
+  z ustawionymi następującymi stałymi:
+
+    N 10000
+    D 20
+    L 100
+    Q 100000
+    K 30
+  (nie za duże N, żeby wersja zupełnie niezoptymalizowana skończyła się liczyć
+  w sensownym czasie)
+
+  na programach `knn_brute`, `knn_1`, `knn_2`, `knn_3`, `knn` generowanych przez
+  Make.
+
+
+
+
+a) Przekazanie stałych do kompilatora.
+Zamiast przekazywać stałe jako argumenty do wywołania kernela można przekazać
+je jako makra preprocesora do kompilacji. Pozwala to wykazać się
+optymalizatorowi, np. poprzez rozwinięcie pętli.
+
+Speedup : 1.42x
+
+
+
+
+b) Trzymanie współrzędnych punktu z zapytania w rejestrach.
+Zamiast atakować pamięć globalną i cache można przenieść współrzędne punktu z
+zapytania do rejestru. Jest ich stosunkowo niewiele, korzysta się z nich za to
+przy wyliczaniu każdego dystansu.
+
+Speedup : 1.28x
+
+
+
+c) Użycie kopca.
+Aktualizacja zbioru K-najbliższych sąsiadów przy pomocy wstawiania do tablicy
+jest bardzo kosztowna. Zamiast tego, można użyć kopca MAX. W przypadku gdy
+obliczona odległość jest mniejsza od tej w wierzchołku kopa nadpisuje się
+wierzchołek i poprawia kopiec przez spychanie w dół.
+
+Powinno poprawiać to złożoność algorytmu odpowiedzi na pojedyncze zapytanie
+z O(K * N) do O(log(K) * N). Log_2(30) ~= 5, co daje ~6 razy mniej operacji na
+zapytanie. Ponadto, wstawienie do tablicy jest Teta(K), podczas gdy w kopcu nie
+zawsze musimy spychać element aż do samego spodu.
+
+Speedup: 5.49x
+
+
+
+d) Dobranie optymalnej ilości watków w grupie.
+Poprzednie wersje używały 32 wątków na grupę. Zwiększenie tej wartości do 128
+dawało maksymalny wzrost wydajności. Dalsze zwiększanie tej wartości nie
+powodowało zwiększenia wydajności (czasem wręcz odwrotnie).
+
+Dzieje się tak prawdopodobnie ze względu na stosunkową dużą ilość zmiennych
+prywatnych używanych przez kernele. Szybka pamięć przeznaczona na rejestry jest
+mocno ograniczone, więc większe ilości wątków powodują "wylewanie się" jej do
+pamięci globalnej. Wykonywanie większej ilości zapytań na raz nie rekompensuje
+strat na dostępie do pamięci.
+
+Speedup: 1.55x
+
+
+
+------------------------------------------------------------------------------
+-- Log z wywołania `./test.sh` przy powyższych ustawieniach pliku `gen.cpp` --
+------------------------------------------------------------------------------
+
+5. 128 local threads
+427
+434
+db9390ee1576fa628122edc9af6e446b out
+
+4. Heap in place of array
+666
+672
+db9390ee1576fa628122edc9af6e446b out
+
+3. Query point coords in registers
+3660
+3666
+db9390ee1576fa628122edc9af6e446b out
+
+2. Compile-time constants
+4687
+4693
+db9390ee1576fa628122edc9af6e446b out
+
+1. Pure brute
+6673
+6679
+db9390ee1576fa628122edc9af6e446b out
+
+
+
+
+
+3. Co jeszcze można by poprawić, a na co autor nie miał czasu
+----------------------------------------------------------------
+
+a) Zrównoleglenie zapytania na wiele wątków
+
+Słabością algorytmu jest jego działanie dla stosunkowo małych Q. Można by to
+poprawić wykonując go na kilku wątkach, które na koniec uzgodniłyby wynik
+poprzez "złączanie" tablic najbliższych sąsiadów.
+
+W ogólności zwiększyłoby to ilość pracy niezbędnej do wykonania przy pojedynczym
+zapytaniu. Jednak w przypadku małych Q jednostki obliczeniowe nie są zapełnione.
+Zysk z wykorzystania wolnych zasobów pownien z nawiązką rekompensować narzut z
+uzgadniania wyników.
+
+Dodatkowo, automatyczne wykrywanie ilości wątków, które powinny być używane do
+pojedynczych zapytań spowodowałoby, że dla dużych Q algorytm mógłby zachowywać
+się w zasadzie tak samo jak obecna wersja.
+
+
+
+b) Ściąganie danych do pamięci lokalnej
+
+Zamiast sięgać do pamięci globalnej po współrzędne punktów wątki mogłby
+wczytywać dane blokami do pamięci lokalnej i korzystać z niej.
+
+Przykładowo, po przerobieniu bloku danych, pierwszy wątek grupy zlecałby
+transfer pamięci, a reszta czekała na barierze.
+
+Trudno oszacować zysk takiego zabiegu. Zastosowany algorytm powinno cechować
+bardzo dobre wykrzystanie cache'u, od którego pamięć lokalna nie jest szybsza.

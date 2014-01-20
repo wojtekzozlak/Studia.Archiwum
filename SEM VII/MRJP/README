@@ -1,0 +1,193 @@
+==============================================
+= Kompilator Latte (Wojciech Żółtak, 292583) =
+==============================================
+
+1. Założenia dotyczące języka
+------------------------------
+
+Kompilator obsługuje język `latte` wraz ze wszystkimi rozszerzeniami opisanymi
+w treści zadania. Nieoczywiste założenia opisane są poniżej.
+
+
+1.1 Zasięgi (scopes) zmiennych
+.................................
+
+Działanie zasięgów:
+- W pojedynczym zasięgu mogą być zdefiniowane zmienne dowolne zmienne o
+  unikalnych identyfikatorach.
+- Zasięgi łączone są w łańcuchy.
+- Jeśli szukany identyfikator nie jest zdefiniowany w danym zasięg, to pyta on
+  o niego kolejny zasięg. Jeśli jest ostatnim zasięgiem z łańcucha,
+  identyfikator uznawany jest za niezdefiniowany.
+- Zmienna może być zadeklarowana w zasięgu tylko jeśli dany identyfikator jest
+  wolny w danym zasięgu. Może ona przysłonić zmienne w zasięgach będących dalej
+  w łańcuchu.
+
+
+Rodzaje zasięgów:
+- Zasięg globalny (ZGL) - zawiera definicje globalnych funkcji.
+- Zasięg klasy (ZKL) - zawiera definicje metod i atrybutów klasy
+- Zasięg blokowy (ZBL) - zawiera definicje dowolnych zmiennych
+
+
+Początkowy łańcuch zasięgów dla funkcji:
+  ZGL >> ZBL z definicjami argumentów << Pusty ZBL
+
+
+Początkowy łańcuch zasięgów dla metod klas:
+  ZGL >> ZKL dla klasy metody << ZBL z `self` oraz definicjami argumentów << 
+    Pusty ZBL
+  (`self` może zostać przysłonięte przez argumenty metody)
+
+
+Nowe ZBL wprowadzane są przez instrukcje sterujące:
+- while, dla wykonywanej instrukcji (nawet jak sama nie jest blokiem)
+- if, oddzielnie dla obu instrukcji (nawet jak same są blokami)
+- for, jeden zawierającą iterator, a na nim nowy pusty (nawet jak instrukcja
+  nie jest blokiem)
+Oznacza to, że zmienne definiowane w sterowanym kodzie nie są widoczne na
+zewnątrz i mogą przysłaniać wcześniej zdefiniowane zmienne
+
+
+Konsekwencją zasięgów jest współdzielenie przez funkcje, metody i zmienne
+przestrzeni nazw.
+
+
+1.2 Klasy
+...........
+
+- Klasa może dziedziczyć po innej klasie, o ile została ona już wcześniej
+  zadeklarowana (dzięki czemu nie mogą powstać cykle).
+- Atrybut nie może nadpisywać atrybutu / metody z nadklasy.
+- Metoda może nadpisać metodę z nadklasy jeśli ma tą samą sygnaturę. Jest
+  wtedy metodą wirtualną.
+
+
+`null`
+- Jedyne co można zrobić z obiektem typu `null` to zrzutowanie go na jakiś typ
+  klasowy.
+
+
+Rzutowanie
+- Rzutować można za pomocą słowa kluczowego `cast`:
+    cast (Typ) wyrażenie
+- Rzutować można jedynie klasy i `null`.
+- Rzutować można na dowolny typ klasowy (nie ma gwarancji poprawności
+  zrzutowania).
+- Instancja klasy jest instancją nadklasy, więc rzutowanie w górę hierarchii
+  klas nie jest wymagane.
+
+
+`self`
+- `self` wewnątrz metody klasy jest referencją do instancji danej klasy.
+- Może być przysłaniane (patrz opis działania zasięgów).
+- Może zostać nadpisane inną, zgodną referencją (to po prostu zmienna).
+
+
+1.3 Typ void
+..............
+
+Nie moża tworzyć instancji typu Void. Nie może być także typem argumentu
+funkcji.
+
+
+1.4 Operacje na typach
+........................
+
+- Zmienne logiczne, ciągi znaków i instancje klas mogę być porównywane tylko
+  przez operatory == oraz !=.
+
+- Porównanie ciągów znaków i klas odbywa się na poziomie referencji, nie
+  zawartości.
+
+
+2. Kompliacja do x86_32
+-----------------------------------------
+
+2.1 Wstęp
+............
+
+Kompilacja do x86_32 obsługuje wszystkie rozszerzenia języka latte (tablice,
+klasy, metody wirtualne).
+
+Wynikiem kompilacji programu o nazwie `sciezka/nazwa_pliku.lat` są pliki
+`nazwa-pliku.s` oraz `nazwa-pliku`, będące odpowiednio kodem asemblera
+x86_32 oraz plikiem wykonywalnym.
+
+
+2.2 Szczegóły implementacyjne
+--------------------------------
+
+- Wynikowy kod asemblera korzysta ze składni AT&T.
+
+- Funkcje wołane są w standardowej konwencji x86_32 dla systemów linux, tzn.
+  argumenty odkładane są na stosie w odwrotnej kolejności (pierwszy argument
+  na szczycie stosu w momencie wykonania instrukcji "call"). Wartości zwracane
+  są przez rejestr %eax.
+
+- Funkcje zakładają, że w momencie przejęcia przez nie sterowania zachodzi
+  równość ESP = 12 mod 16, zgodnie z konwencją stosowaną przez GCC. W momencie
+  wykonania instrukcji "call" w programie ESP zawsze jest wyrównane do 16.
+
+
+
+2.3 Optymalizacje
+....................
+
+- Zwijanie stałych liczbowych / logicznych.
+
+- Brak instrukcji push/pop w ciałach funkcji (poza prologiem i epilogiem).
+  Wszystkie operacje na stosie opierają się na odwołaniach względem
+  %ebp bądź %esp.
+
+- Wartości logiczne i operacje na nich realizowane za pomocą samych skoków
+  (bez instancjonowania faktycznej wartości) tam gdzie to możliwe.
+
+- Miejsce na zmienne na stosie jest rezerwowane dopiero w momencie ich
+  deklaracji i zwalniane po wyjściu z odpowiedniego bloku.
+
+
+3. Struktura projektu
+-----------------------
+
+3.1 Użyte narzędzia
+.....................
+
+Gramatyka została wygenerowana za pomocą BNFC, a następnie ręcznie doprowadzona
+do stanu używalności (tak sama z siebie to nie działa). Wyjście z BNFC jest
+gotowym wejściem do FLexa i Bisona oraz szkieletem klas dla drzewa gramatyki.
+
+Ponadto, korzystam z inteligentnych wskaźników z biblioteki BOOST
+(boost::shared_ptr<T>). Są one także częścią C++11, jednak wsparcie dla niego w
+G++ jest ciągle eksperymentalne.
+
+
+3.2 Drzewo katalogów
+.....................
+
+- src/core
+
+  zawiera definicje klas reprezentujących typy w języku Latte, środowisko
+  obliczenia i zasięgi  
+
+
+- src/grammar
+
+  zawiera gramatykę języka w formacie LBNF oraz wygenerowane pliki wejściowe
+  dla FLexa i Bisona
+
+
+- src/jvm
+
+  zawiera klasy odpowiedzialne za kompilację programu do formatu JVM
+
+
+- src/parser
+
+  zawiera wygenerowane pliki parsera oraz klasę-szkielet implementującą wzorzec
+  projektowy visitor dla drzewa programu
+
+
+- src/syntaxCheck
+
+  zawiera klasy odpowiedzialne za sprawdzanie poprawności składniowej programu

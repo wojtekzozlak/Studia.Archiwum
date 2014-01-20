@@ -1,0 +1,7 @@
+--------------------------------------------------------------------------------
+-- Company: University of Warsaw
+-- Author: Marcin Peczarski
+-- Description: test bench for divider demo example
+-- Creation date: 01.02.2011
+-- Modification date: 18.03.2013
+--------------------------------------------------------------------------------

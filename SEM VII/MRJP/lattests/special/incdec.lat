@@ -1,0 +1,29 @@
+class X {
+  int y;
+}
+
+int main() {
+  int[] tab = new int[2];
+  tab[0]++;
+  tab[1]--;
+
+  X[] tab2 = new X[1];
+  tab2[0] = new X;
+  tab2[1] = new X;
+  tab2[0].y++;
+  tab2[1].y--;
+
+  X x = new X;
+  x.y++;
+  x.y--;
+  x.y--;
+
+
+  printInt(tab[0]);
+  printInt(tab[1]);
+  printInt(tab2[0].y);
+  printInt(tab2[1].y);
+  printInt(x.y);
+
+  return 0;
+}

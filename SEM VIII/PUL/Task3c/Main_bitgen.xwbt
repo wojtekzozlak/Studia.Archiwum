@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=Z:\Studia\Studia.Aktualne\PUL\Task3c\Main.ncd
+OUTFILE=Z:\Studia\Studia.Aktualne\PUL\Task3c\Main.bit
+FAMILY=Spartan3E
+PART=xc3s250e-4cp132
+WORKINGDIR=Z:\Studia\Studia.Aktualne\PUL\Task3c
+LICENSE=WebPack
+USER_INFO=200815024_200816043_0_852

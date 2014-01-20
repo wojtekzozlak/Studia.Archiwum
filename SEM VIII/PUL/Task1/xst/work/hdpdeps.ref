@@ -1,0 +1,79 @@
+V3 40
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/magic_box.vhd 2013/05/05.23:15:17 P.28xd
+EN work/magic_box 1369138951 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/magic_box.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/magic_box/Behavioral 1369138952 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/magic_box.vhd \
+      EN work/magic_box 1369138951 CP work/n_min CP work/n_max \
+      CP work/n_unary_counter CP work/n_median
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/main.vhd 2013/05/05.23:15:17 P.28xd
+EN work/main 1369138953 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/main.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/main/Behavioral 1369138954 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/main.vhd \
+      EN work/main 1369138953 CP work/magic_box
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd 2013/05/05.23:15:17 P.28xd
+EN work/max_bit_propagator 1369138931 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/max_bit_propagator/Behavioral 1369138932 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd \
+      EN work/max_bit_propagator 1369138931
+EN work/min_bit_propagator 1369138933 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/min_bit_propagator/Behavioral 1369138934 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd \
+      EN work/min_bit_propagator 1369138933
+EN work/n_min 1369138935 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/n_min/Behavioral 1369138936 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd \
+      EN work/n_min 1369138935 CP work/min_bit_propagator
+EN work/n_max 1369138937 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/n_max/Behavioral 1369138938 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/minmax.vhd \
+      EN work/n_max 1369138937 CP work/max_bit_propagator
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_median.vhd 2013/05/05.23:15:17 P.28xd
+EN work/bit_anihilator 1369138945 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_median.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/bit_anihilator/Behavioral 1369138946 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_median.vhd \
+      EN work/bit_anihilator 1369138945
+EN work/median_step 1369138947 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_median.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/std_logic_misc 1341906178
+AR work/median_step/Behavioral 1369138948 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_median.vhd \
+      EN work/median_step 1369138947 CP work/bit_anihilator
+EN work/n_median 1369138949 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_median.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/n_median/Behavioral 1369138950 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_median.vhd \
+      EN work/n_median 1369138949 CP work/median_step
+FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_unary_counter.vhd 2013/05/05.23:15:17 P.28xd
+EN work/bit_shifter 1369138939 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_unary_counter.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/bit_shifter/Behavioral 1369138940 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_unary_counter.vhd \
+      EN work/bit_shifter 1369138939
+EN work/n_shifter 1369138941 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_unary_counter.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/n_shifter/Behavioral 1369138942 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_unary_counter.vhd \
+      EN work/n_shifter 1369138941 CP work/bit_shifter
+EN work/n_unary_counter 1369138943 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_unary_counter.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/n_unary_counter/Behavioral 1369138944 \
+      FL //students/wz292583/Studia/Studia.Aktualne/PUL/Task1/n_unary_counter.vhd \
+      EN work/n_unary_counter 1369138943 CP work/n_shifter

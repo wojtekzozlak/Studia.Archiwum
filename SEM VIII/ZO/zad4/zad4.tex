@@ -1,0 +1,234 @@
+% Preambuła
+\documentclass[a4paper,11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsfonts}
+\usepackage{bm}
+
+\pagestyle{fancy}
+\lhead{ZO'2013 - zadanie domowe nr 4}
+\rhead{Wojciech Żółtak; 292583}
+
+\lstset{numbers=left}
+
+% Część główna
+\begin{document}
+
+Nierówną walkę z problemem, który więcej wydaje się mieć więcej wspólnego z
+rachunkiem prawdopodobieństwa niż złożnością obliczeniową, zaczniemy od prostej
+obserwacji. Treść zadania mówi, że algorytm musi działać poprawnie wyłącznie dla
+grafów 3-kolorowalnych. Znaczy to, że możemy założyć o grafie wejściowym, że
+3-kolorowalny jest. W najgorszym wypadku damy złą odpowiedź, ale przecież nam
+wolno.
+
+Jak się tak zastanowić, to z klasycznego 3-kolorowania do 2-kolorowania bez
+trójkątów monochromatycznych droga jest dość prosta. Każdy trójkąt z definicji
+3-kolorowania musi być pokolorowany na 3 różne kolory. Zatem wystarczy np.
+utożsamić dwa dowolne kolory i już! Wyszło. Szkoda tylko, że problem znalezienia
+3-kolorowania jest NP-trudny... \\
+
+
+\subsection*{Szukając na ślepo}
+
+Spróbujmy trochę inaczej. Dla ustalenia uwagi - powiedzmy, że mamy 3
+kolory - R, G, B, z których dwa pierwsze wykorzystujemy do 2-kolorowania.
+2-kolorowanie jest ,,dobre'', jeśli zachowuje kolory R i G z 3-kolorowania
+na wierzchołkach, które leżą na jakimś trójkącie
+(wierzchołki, które miały kolor B mogą być pokolorowane dowolnie, podobnie
+wierzchołki poza trójkątami).
+
+
+Załóżmy, że mamy jakieś 2-kolorowanie grafu, które nie jest dobre. Zauważmy przy
+tym, że kolorowania mogą być w różny sposób ,,niedobre'', tzn. niektóre w jakiś
+sposób mogą być lepsze od innych (mimo bycia złymi). Spróbujmy to jakoś
+sformalizować - intuicyjnie 2-kolorowanie jest tym lepsze im mniej trzeba w nim
+poprawić, żeby uzyskać kolorowanie, które jest rozwiązaniem problemu. Niech
+zatem ,,dobroć'' rozwiązania będzie ilością wierzchołków leżących na jakimś
+trójkącie, posiadających w 3-kolorowaniu kolory R i G, które w naszym 2-kolorowaniu
+są pomalowane odwrotnie. Jest to ilość ,,kroków'' (pojedynczych zamian kolorów)
+jakie trzeba wykonać, żeby dojść do rozwiązania bazującego na tym konkretnym
+3-kolorowaniu. 
+
+Niepokojące może się wydawać, że odnosimy się do obiektu, którego nie znamy
+(,,dobrego'' kolorowania). Istotnie - nie znamy jego postaci, więc nie możemy
+zmierzyć dokładnie ,,jak dobre'' jest nasze kolorowanie. Możemy się za to
+zastanawiać jaką mamy szansę się do niego zbliżyć próbując coś poprawić. \\
+
+
+Przyjrzyjmy się naszemy 2-kolorowaniu. Ponieważ jest złe, to posiada trójkąt
+monochromatyczny. Dla ustalenia uwagi załóżmy, że ma on kolor R.
+Może da się go poprawić? Spróbujmy zamienić w nim kolor losowo
+wybranego wierzchołka i zastanówmy się jaki ma to wpływ na jakość rozwiązania.
+W zależności od tego jaki kolor wierzchołek ma w 3-kolorowaniu, na którym bazuje
+szukane przez nas rozwiązanie mogą stać się różne rzeczy:
+\begin{itemize}
+  \item{Dla B nic się nie zmienia w kwestii jakości, ponieważ z definicji
+        wierzchołki takie nie mają na nią wpływu.}
+  \item{Dla R oddalimy się od rozwiązania o 1, ponieważ zmienimy kolor
+        wierzchołka na niewłaściwy}
+  \item{Dla G przybliżymy się do rozwiązania o 1, ponieważ poprawimy kolor
+        wierzchołka na pożądany}
+\end{itemize}
+Co prawda nie wiemy jak dokładnie ułożone są wierzchołki w 3-kolorowaniu, ale
+nic nam to nie psuje - ponieważ losujemy, prawdopodobieństwo wylosowania danego
+wariantu wynosi dokładnie $\frac{1}{3}$. Sytuacja dla trójkąta w kolorze G jest
+zupełnie analogiczna - wierzchołki R i G zamieniają się rolami, ale pod względem
+prawdopodobieństwa poprawienia/pogorszenia rozwiązania operacja zachowuje się
+tak samo. \\
+
+
+No dobrze, to podsumujmy - wybierając losowy trójkąt monochromatyczny w złym
+2-kolorowaniu i zamieniając w nim kolor losowego wierzchołek możemy przybliżyć
+się do rozwiązania o 1 krok, oddalić o 1 krok lub nic nie zmienić, z
+prawdopodobieństwiem $\frac{1}{3}$ każde. Wiemy też, że odległość dowolnego
+złego 2-kolorowania od rozwiązania jest nie większa niż ilość wierzchołków $N$.
+Ale zaraz... coś tu nie gra. Przed chwila udowadnialiśmy, że jeśli rozwiązanie
+jest ,,niedobre'' to możemy je pogorszyć, a teraz twierdzimy, że jakość
+kolorowania ma ograniczenie dolne. Odpowiedź jest prosta - nasze kolorowanie
+możemy zepsuć tak bardzo, że aż stanie się dobre! Jeśli wszystkie wierzchołki R
+i G są źle pomalowane, to znaczy, że zamieniliśmy kolory ze sobą, czyli
+uzyskaliśmy rozwiązanie dualne do naszego pierwotnego. Nie można bardziej
+,,popsuć'' rozwiązania, bo przesłanka o jego niepoprawności nie jest spełniona.
+Ponadto, jeśli podgraf złożony wyłącznie z trójkątów nie jest spójny, to może
+się okazać, że nawet mając ,,jakość'' gdzię między $0$ a $n$ i tak trzymamy w
+ręku dobre rozwiązanie. Nie jest to jednak dla nas problem - możemy z
+powodzeniem założyć pesymistycznie, że na takowe nie wpadniemy i z pewnością nasze
+dalsze szacunki nie stracą swojej mocy. \\
+
+
+
+\subsection*{Spacer losowy}
+
+Jeśli będziemy potwarzać operację ,,poprawiania'' wielokrotnie, będziemy
+,,błądzili'' po odcinku od $0$ do $n$ opisującym odległość od rozwiązania
+pewnego rozwiązania (chociaż nie wiemy jakiego). Jest to
+zatem wariacja na temat spaceru losowego po odcinku, w którym z
+prawdopodobieństwem $\frac{1}{3}$ idziemy w prawo, w lewo, bądź pozostajamy w
+miejscu. Nasz odcinek ma bariery pochłaniające na końcach, które wiążą się ze
+znalezieniem rozwiązania. To czego będziemy szukać, to wartość oczekiwana ilości
+kroków potrzebnych do dotarcia do którejś z barier z losowego punktu na odcinku.
+Aby to policzyć rozpiszemy sobie układ równań: \\
+
+\begin{eqnarray}
+  \nonumber E_0 & = & 0 \\
+  \nonumber E_i & = & \frac{1}{3}(E_{i-1} + E_{i} + E_{i+1}) + 1
+  \ \ \ \mbox{(dla $0 < i < n$)}\\
+  \nonumber E_n & = & 0
+\end{eqnarray}
+
+Rozpisując środkowe równanie otrzymujemy:
+
+\begin{eqnarray}
+  \nonumber \frac{2}{3} E_i & = & \frac{1}{3}(E_{i-1} + E_{i+1}) + 1 \\
+  \nonumber E_i & = & \frac{1}{2}(E_{i-1} + E_{i+1}) + \frac{3}{2}
+\end{eqnarray}
+
+Spróbujmy rozpisać parę kolejnych równań i może coś z tego wyniknie.
+
+\begin{eqnarray}
+  \nonumber h_1 & = & \frac{1}{2}(h_0 + h_2) + \frac{3}{2} \\
+  \nonumber h_1 & = & \frac{h_2}{2} + \frac{3}{2} \\
+  \nonumber & & \ \\
+  \nonumber & & \ \\
+  \nonumber h_2 & = & \frac{1}{2}(h_1 + h_3) + \frac{3}{2} \\
+  \nonumber h_2 & = & \frac{1}{2}(\frac{h_2}{2} + h_3 + \frac{3}{2}) + \frac{3}{2} \\
+  \nonumber \frac{3}{4}h_2 & = & \frac{h_3}{2} + \frac{9}{4} \\
+  \nonumber h_2 & = & \frac{2}{3}h_3 + 3
+\end{eqnarray}
+
+Naprawdę nie chcemy tego dalej rozpisywać. Spróbujmy zgadnąć jak to się rozwija
+dalej i udowodnić indukcyjnie. Udowodnimy indukcyjnie, że dla równań opisujących
+środek ścieżki zachodzi:
+
+\begin{eqnarray}
+  \nonumber h_{i} = \frac{i}{i+1}h_{i+1} + \frac{3i}{2}
+\end{eqnarray}
+
+Pierwszy krok dowodu mamy zrobiony powyżej. Pozostaje udowodnić przejście między
+kolejnymi $i$ korzystając z tezy indukcyjnej:
+
+\begin{eqnarray}
+  \nonumber h_{i + 1} & = & \frac{1}{2}(h_{i} + h_{i+2}) + \frac{3}{2}\\
+  \nonumber h_{i + 1} & = & \frac{1}{2}(\frac{i}{i+1}h_{i+1} + \frac{3i}{2}
+    + h_{i+2}) + \frac{3}{2} \\
+  \nonumber h_{i + 1} & = & \frac{i}{2(i+1)}h_{i+1} + \frac{3i}{4}
+    + \frac{h_{i+2}}{2} + \frac{3}{2} \\
+  \nonumber \frac{i + 2}{2(i + 1)}h_{i+1} & = & \frac{h_{i+2}}{2}
+    + \frac{3(i + 2)}{2} \\
+  \nonumber h_{i+1} & = & \frac{i + 1}{i + 2}h_{i + 2} + \frac{3(i + 1)}{2}
+\end{eqnarray}
+
+Udało się! Ale to połowa roboty. Teraz należy wykonać drugi przebieg, tym razem
+od końca, i wyliczyć konkretne wartości oczekiwane. Znów posłużymy się indukcją.
+Nasza teza, dla $0 < i < n$ brzmi:
+
+\begin{eqnarray}
+  \nonumber h_{n-i} & = & \frac{3(n - i)i}{2}
+\end{eqnarray}
+
+Jest spełniona dla $i = 1$:
+
+\begin{eqnarray}
+  \nonumber h_{n-1} & = & \frac{n-1}{n}h_{n} + \frac{3(n-1)}{2} =
+    \frac{3(n-1)}{2} = \frac{3(n-1)1}{2}
+\end{eqnarray}
+
+Więc spróbujmy jej użyć do wykonania kroku:
+
+\begin{eqnarray}
+  \nonumber h_{n-i-1} & = & \frac{n-i-1}{n-i}h_{n-i} + \frac{3(n - i - 1)}{2} \\
+  \nonumber h_{n-i-1} & = & \frac{(n-i-1)3(n-i)i}{2(n-i)} +
+    \frac{3(n - i - 1)}{2} \\
+  \nonumber h_{n-i-1} & = & \frac{3(n-i-1)i}{2} + \frac{3(n - i - 1)}{2} \\
+  \nonumber h_{n-i-1} & = & \frac{3(n-(i+1))(i + 1)}{2}
+\end{eqnarray}
+
+I wyszło. Mamy jawne wzory na wartości oczekiwane dla różnych miejsc startowych.
+Nie wiemy jednak skąd będziemy startować, ani z jakim prawdopodobieństwem.
+Dlatego zamiast wyliczać dokładną wartość oczekiwaną posłużymy się jej
+pesymistycznym oszacowaniem. Nie bawiąc się w szczegóły zauważamy, że dla $0 < i
+< n$ wynik jest zawsze ograniczony z góry przez $2n^2$.
+
+Teraz, korzystając z nierówności Markowa:
+
+\begin{eqnarray}
+  \nonumber P(|X| \ge \epsilon) & \le & \frac{E(|X|)}{\epsilon} \\
+  \nonumber P(|X| \ge 8n^2) & \le & \frac{2n^2}{8n^2} = \frac{1}{4}
+\end{eqnarray}
+
+Powyższy napis znaczy tyle, że prawdopodobieństwo, iż po $8n^2$ krokach wciąż
+nie znajdziemy rozwiązania jest mniejsze, bądź równe $\frac{1}{4}$. Zatem
+wykonanie $8n^2$ kroków gwarantuje dostatecznie dużą skuteczność algorytmu.
+
+
+\subsection*{Podsumowując}
+
+Nasz algorytm działa w następujący sposób:
+
+\begin{itemize}
+  \item{Losuje 2-kolorowanie grafu}
+  \item{Dopóki nie uda się uzyskać poprawnego 2-kolorowania (ale nie dłużej niż
+        $8n^2$ iteracji):
+    \begin{itemize}
+      \item{Wybiera losowy trójkąt monochromatyczny}
+      \item{Zmienia w nim kolor losowego wierzchołka}
+    \end{itemize}
+  }
+  \item{Jeśli udało się znaleźć 2-kolorowanie, to zwraca je jako wynik, jeśli
+        nie to stwierdza, że ono nie istnieje.}
+\end{itemize}
+
+Wylosowanie 2-kolorowania, sprawdzenie jego poprawności, znalezienie trójkątów
+monochromatycznych i zamiana koloru wierzchołka są operacjami wielomianowymi.
+Maksymalna ilość iteracji jaką wykonuje algorytm też jest wielomianowa, zatem
+cały działa w czasie wielomianowym.
+
+Jeśli graf jest 3-kolorowalny, to z prawdopodobieństwem $\frac{1}{4}$ nie uda nam
+się znaleźć rozwiązania.
+
+Zatem, wszystko jest tak jak być powinno.
+
+\end{document}

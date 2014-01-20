@@ -1,0 +1,73 @@
+class el {
+    int value;
+    el prev, next;
+}
+ 
+class list {
+    el first, last;
+}
+ 
+void addFirst (list lst, int val) {
+    el v = new el;
+    v.value = val;
+    v.next = lst.first;
+    if (lst.first != cast(el)null) {
+        lst.first.prev = v;
+    } else {
+        lst.last = v;
+    }
+    lst.first = v;
+}
+ 
+void addLast (list lst, int val) {
+    el v = new el;
+    v.value = val;
+    v.prev = lst.last;
+    if (lst.last != cast(el)null) {
+        lst.last.next = v;
+    } else {
+        lst.first = v;
+    }
+    lst.last = v;
+}
+ 
+void removeFirst(list lst) {
+    if (lst.first == lst.last) {
+        lst.first = cast(el)null;
+        lst.last = cast(el)null;
+    } else {
+        lst.first = lst.first.next;
+        lst.first.prev = cast(el)null;
+    }
+}
+ 
+void removeLast(list lst) {
+    if (lst.first == lst.last) {
+        lst.first = cast(el)null;
+        lst.last = cast(el)null;
+    } else {
+        lst.last = lst.last.prev;
+        lst.last.next = cast(el)null;
+    }
+}
+ 
+int main() {
+    list lst = new list;
+    addLast(lst, 1);
+    addLast(lst, 2);
+    addLast(lst, 3);
+    addLast(lst, 4);
+    addLast(lst, 5);
+   
+    removeFirst(lst);
+    removeFirst(lst);
+    removeLast(lst);
+   
+    el it = lst.first;
+    while(it != cast(el)null) {
+        printInt(it.value);
+        it = it.next;
+    }
+ 
+    return 0;
+}

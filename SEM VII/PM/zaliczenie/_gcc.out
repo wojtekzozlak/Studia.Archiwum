@@ -1,0 +1,83 @@
+set -e; avr-gcc -MM -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=editor.lst -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes editor.c \
+	| sed 's,\(.*\)\.o[ :]*,\1.o \1.d : ,g' > editor.d; \
+	[ -s editor.d ] || rm -f editor.d
+set -e; avr-gcc -MM -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=keyboard.lst -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes keyboard.c \
+	| sed 's,\(.*\)\.o[ :]*,\1.o \1.d : ,g' > keyboard.d; \
+	[ -s keyboard.d ] || rm -f keyboard.d
+set -e; avr-gcc -MM -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=main.lst -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes main.c \
+	| sed 's,\(.*\)\.o[ :]*,\1.o \1.d : ,g' > main.d; \
+	[ -s main.d ] || rm -f main.d
+
+-------- begin --------
+avr-gcc (WinAVR 20100110) 4.3.3
+Copyright (C) 2008 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+Size before:
+sms_manager.elf  :
+section     size      addr
+.text       4980         0
+.data         26   8388704
+.bss         285   8388730
+.eeprom      144   8454144
+.stab       8928         0
+.stabstr    5220         0
+Total      19583
+
+
+
+
+Compiling: main.c
+avr-gcc -c -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=main.lst -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes main.c -o main.o
+In file included from main.c:3:
+c:/program files/winavr-20100110/lib/gcc/../../avr/include/avr\signal.h:36:2: warning: #warning "This header file is obsolete.  Use <avr/interrupt.h>."
+
+Compiling: keyboard.c
+avr-gcc -c -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=keyboard.lst -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes keyboard.c -o keyboard.o
+
+Compiling: editor.c
+avr-gcc -c -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=editor.lst -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes editor.c -o editor.o
+
+Linking: sms_manager.elf
+avr-gcc -mmcu=atmega16 -I. -std=gnu99 -O2 -gstabs -Wa,-adhlns=main.o -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums  -Wall -Wstrict-prototypes main.o lcd.o keyboard.o editor.o  --output sms_manager.elf -lm -Wl,-Map=sms_manager.map -Wl,--cref
+
+Creating load file for Flash: sms_manager.hex
+avr-objcopy -O ihex -R .eeprom sms_manager.elf sms_manager.hex
+
+Creating load file for EEPROM: sms_manager.eep
+avr-objcopy -j .eeprom --set-section-flags=.eeprom="alloc,load" \
+	--change-section-lma .eeprom=0 -O ihex sms_manager.elf sms_manager.eep
+
+Creating Extended Listing: sms_manager.lss
+avr-objdump -h -S sms_manager.elf > sms_manager.lss
+
+Creating Symbol Table: sms_manager.sym
+avr-nm -n sms_manager.elf > sms_manager.sym
+
+Converting to AVR COFF: sms_manager.cof
+avr-objcopy --debugging --change-section-address .data-0x800000 --change-section-address .bss-0x800000 --change-section-address .noinit-0x800000 --change-section-address .eeprom-0x810000 -O coff-ext-avr sms_manager.elf sms_manager.cof   # Extended COFF. Supported in VMLAB from rel. 3.10
+Discarding local symbol outside any compilation unit: .do_copy_data_start
+Discarding local symbol outside any compilation unit: .do_copy_data_loop
+Discarding local symbol outside any compilation unit: .do_clear_bss_start
+Discarding local symbol outside any compilation unit: .do_clear_bss_loop
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-vma .noinit+0xff800000 never used
+c:\program files\winavr-20100110\bin\avr-objcopy.exe: --change-section-lma .noinit+0xff800000 never used
+
+Size after:
+sms_manager.elf  :
+section     size      addr
+.text       4958         0
+.data         26   8388704
+.bss         285   8388730
+.eeprom      144   8454144
+.stab       8880         0
+.stabstr    5220         0
+Total      19513
+
+
+
+Errors: none
+-------- end --------
+

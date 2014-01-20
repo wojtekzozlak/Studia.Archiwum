@@ -1,0 +1,20 @@
+Running: C:\soft_x64\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o Z:/Studia/Studia.Aktualne/PUL/Task2/bin2dectest_isim_beh.exe -prj Z:/Studia/Studia.Aktualne/PUL/Task2/bin2dectest_beh.prj work.bin2dectest -timescale 1ms/1ms -override_timeprecision 
+ISim P.28xd (signature 0xa0883be4)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "Z:/Studia/Studia.Aktualne/PUL/Task2/doubledabble.vhd" into library work
+Parsing VHDL file "Z:/Studia/Studia.Aktualne/PUL/Task2/doubledabbletest.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture behavioral of entity add3 [add3_default]
+Compiling architecture behavioral of entity bin2dec [bin2dec_default]
+Compiling architecture behavioral of entity bin2dectest
+Time Resolution for simulation is 1ps.
+Compiled 8 VHDL Units
+Built simulation executable Z:/Studia/Studia.Aktualne/PUL/Task2/bin2dectest_isim_beh.exe
+Fuse Memory Usage: 34836 KB
+Fuse CPU Usage: 764 ms

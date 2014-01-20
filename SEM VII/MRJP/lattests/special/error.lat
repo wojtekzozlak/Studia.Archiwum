@@ -1,0 +1,6 @@
+int main() {
+  printString("visible");
+  error();
+  printString("invsible");
+  return 0;
+}

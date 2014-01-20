@@ -1,0 +1,57 @@
+class evaluable {
+    int evaluate() {
+        return 0;
+    }
+}
+ 
+class operation extends evaluable {
+    evaluable left, right;
+ 
+    void set(evaluable leftt, evaluable rightt) {
+        left = leftt;
+        right = rightt;
+    }
+}
+ 
+class plus extends operation {
+    int evaluate() {
+        return left.evaluate() + right.evaluate();
+    }
+}
+ 
+class minus extends operation {
+    int evaluate() {
+        return left.evaluate() - right.evaluate();
+    }
+}
+ 
+class times extends operation {
+    int evaluate() {
+        return left.evaluate() * right.evaluate();
+    }
+}
+ 
+class constant extends evaluable {
+    int value;
+    int evaluate() {
+        return value;
+    }
+}
+ 
+int main() {
+    constant one = new constant, two = new constant, three = new constant;
+    one.value = 1;
+    two.value = 2;
+    three.value = 3;
+ 
+    operation vminus = new minus;
+    vminus.set(three, two);
+    operation vplus = new plus;
+    vplus.set(vminus, one);
+    operation vtimes = new times;
+    vtimes.set(three, vplus);
+ 
+    printInt(vtimes.evaluate());
+ 
+    return 0;
+}

@@ -1,0 +1,4 @@
+vhdl work "Timer.vhd"
+vhdl work "doubledabble.vhd"
+vhdl work "display.vhd"
+vhdl work "dividermain.vhd"

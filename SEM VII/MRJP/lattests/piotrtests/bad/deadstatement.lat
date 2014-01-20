@@ -1,0 +1,5 @@
+int main(){
+    return 0;
+    int x = true;
+    boolean g = 1;
+}
